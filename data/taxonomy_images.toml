@@ -1,0 +1,4 @@
+[categories]
+postgresql = "img/categories/postgresql.jpg"
+security   = "img/categories/security.jpg"
+"query tuning" = "img/categories/query-tuning.jpg"

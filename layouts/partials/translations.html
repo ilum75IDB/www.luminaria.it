@@ -1,0 +1,59 @@
+{{/* layouts/partials/translations.html */}}
+
+{{/* Congo può chiamare questo partial con:
+     - una Page (.)  -> header
+     - un dict (dict "ctx" . "dir" "up") -> footer
+   Quindi NON possiamo fare ".ctx" direttamente se "." è una Page.
+*/}}
+
+{{ $p := . }}
+
+{{ if (reflect.IsMap .) }}
+  {{ with (index . "ctx") }}
+    {{ $p = . }}
+  {{ end }}
+{{ end }}
+
+{{/* Lista traduzioni:
+   - se esistono, usa le traduzioni della pagina
+   - altrimenti (404/taxonomy/term strani), fallback su Home
+*/}}
+{{ $translations := $p.AllTranslations }}
+{{ if or (not $translations) (eq (len $translations) 0) }}
+  {{ $translations = $p.Site.Home.AllTranslations }}
+{{ end }}
+
+{{ $lang := $p.Site.Language.Lang }}
+{{ $currentFlag := printf "/img/flags/%s.png" $lang }}
+
+<details class="relative">
+  <summary class="list-none cursor-pointer select-none flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800">
+    <img
+      src="{{ $currentFlag | relURL }}"
+      alt="{{ $lang }}"
+      class="h-5 w-5 rounded-sm"
+      loading="lazy"
+    />
+    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+      {{ upper $lang }}
+    </span>
+    <span class="text-neutral-500 dark:text-neutral-400">▾</span>
+  </summary>
+
+  {{/* z-index alto + overlay sopra i contenuti */}}
+  <div class="absolute right-0 mt-2 w-44 rounded-2xl border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900 overflow-hidden z-[9999]">
+    {{ range $t := $translations }}
+      {{ if ne $t.Site.Language.Lang $lang }}
+        {{ $tlang := $t.Site.Language.Lang }}
+        {{ $flag := printf "/img/flags/%s.png" $tlang }}
+        <a
+          class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800"
+          href="{{ $t.RelPermalink }}"
+        >
+          <img src="{{ $flag | relURL }}" alt="{{ $tlang }}" class="h-5 w-5 rounded-sm" loading="lazy" />
+          <span class="text-neutral-800 dark:text-neutral-200">{{ upper $tlang }}</span>
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+</details>

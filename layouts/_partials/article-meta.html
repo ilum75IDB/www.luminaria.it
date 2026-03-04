@@ -1,0 +1,32 @@
+{{/* layouts/_partials/article-meta.html */}}
+
+{{- $kind := .Kind -}}
+{{- $isSectionLike := or (eq $kind "section") (eq $kind "taxonomy") (eq $kind "term") (eq $kind "home") -}}
+
+{{- $showDate := .Params.showDate | default (.Site.Params.article.showDate | default true) -}}
+{{- $showReadingTime := .Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true) -}}
+
+{{/* Su section/taxonomy/term/home NON ha senso mostrare meta (date/reading time). */}}
+{{- if $isSectionLike -}}
+  {{- /* niente */ -}}
+{{- else -}}
+  {{- $hasDate := and $showDate (not .Date.IsZero) -}}
+  {{- $hasReading := and $showReadingTime (gt .ReadingTime 0) -}}
+
+  {{- if or $hasDate $hasReading -}}
+    <span class="whitespace-nowrap">
+      {{- if $hasDate -}}
+        {{- .Date | time.Format ":date_long" -}}
+      {{- end -}}
+
+      {{- if and $hasDate $hasReading -}}
+        {{- print " · " -}}
+      {{- end -}}
+
+      {{- if $hasReading -}}
+        {{- printf "%d min" .ReadingTime -}}
+      {{- end -}}
+    </span>
+  {{- end -}}
+{{- end -}}
+

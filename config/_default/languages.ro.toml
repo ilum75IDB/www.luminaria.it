@@ -1,0 +1,10 @@
+languageCode = "ro"
+languageName = "Română"
+languageDirection = "ltr"
+weight = 4
+
+title = "Ivan Luminaria"
+
+[params]
+  dateFormat = "2 January 2006"
+

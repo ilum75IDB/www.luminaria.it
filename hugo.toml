@@ -1,0 +1,7 @@
+baseURL = 'https://www.luminaria.it/'
+title = "Ivan Luminaria"
+theme = "congo"
+languageCode = 'it'
+
+defaultContentLanguage = "it"
+defaultContentLanguageInSubdir = true

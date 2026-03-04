@@ -1,0 +1,11 @@
+# Hugo build output
+public/
+resources/_gen/
+.hugo_build.lock
+
+# OS / editor
+.DS_Store
+**/.DS_Store
+
+# robaccia accidentale
+--disableFastRemder/

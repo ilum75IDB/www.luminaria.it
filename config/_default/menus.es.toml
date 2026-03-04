@@ -1,0 +1,15 @@
+[[main]]
+  name = "Quién soy"
+  pageRef = "about"
+  weight = 10
+
+[[main]]
+  name = "Database Strategy"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  name = "Know-How & Impact"
+  pageRef = "resumes"
+  weight = 30
+

@@ -1,0 +1,10 @@
+languageCode = "it"
+languageName = "Italiano"
+languageDirection = "ltr"
+weight = 1
+
+title = "Ivan Luminaria"
+
+[params]
+  dateFormat = "2 January 2006"
+

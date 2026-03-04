@@ -1,0 +1,26 @@
+<nav class="site-nav sticky top-0 z-[1000] isolate flex items-center justify-between py-4 px-6
+            bg-white/80 backdrop-blur dark:bg-neutral-900/80
+            border-b border-neutral-200/70 dark:border-neutral-800/70">
+  <div class="flex items-center">
+    <a class="site-brand text-2xl font-bold text-primary-600" href="{{ "/" | relLangURL }}">
+      Ivan Luminaria
+    </a>
+  </div>
+
+  <div class="flex items-center">
+    <ul class="flex flex-row list-none items-center">
+      {{ range .Site.Menus.main }}
+        <li class="ml-6">
+          <a class="font-medium text-gray-800 hover:text-primary-600" href="{{ .URL | relLangURL }}">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+
+    {{/* Language switcher: a destra del menu */}}
+    <div class="ml-6 mr-2 flex items-center">
+      {{ partial "translations.html" . }}
+    </div>
+  </div>
+</nav>
