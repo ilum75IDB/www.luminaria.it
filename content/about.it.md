@@ -10,7 +10,7 @@ layout: "simple"
 <div class="profile-header flex flex-col sm:flex-row sm:items-center items-start">
   <div class="flex-none">
     <img
-      src="img/ivan_luminaria_avatar.png"
+      src='{{< staticurl "img/ivan_luminaria_avatar.png" >}}'
       alt="Ivan Luminaria"
       class="profile-avatar rounded-full shadow-xl border-4 border-slate-100">
   </div>
