@@ -40,7 +40,7 @@ In automotive, process synchronization and data quality across the supply chain 
 
 I have designed data architectures in environments where error is not an option.
 
-👉 [Download the roadmap of my competencies as Data Warehouse Architect](/downloads/CV-IvanLuminaria-DWHArchitect%28English%29.pdf)
+👉 [Download the roadmap of my competencies as Data Warehouse Architect]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
 
 ---
 
@@ -82,7 +82,7 @@ Real on-call responsibility.
 Here, tuning is not cosmetic improvement.  
 It is operational protection.
 
-👉 [Download the roadmap of my competencies as Oracle Performance Expert](/downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert%28ENG%29.pdf)
+👉 [Download the roadmap of my competencies as Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
 
 ---
 
@@ -100,7 +100,7 @@ I can lead.
 I can mentor.  
 I can help developers grow in both technical depth and architectural thinking.
 
-👉 [Download the roadmap of my competencies as PL/SQL Architect & Mentor](/downloads/CV-IvanLuminaria-OraclePLSQLDeveloper%28ENG%29.pdf)
+👉 [Download the roadmap of my competencies as PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ I connect strategic vision with technical detail.
 Roadmaps with implementation.  
 Decisions with consequences.
 
-👉 [Download the roadmap of my competencies as Project Manager](/downloads/CV-IvanLuminaria-ProjectManager%28ENG%29.pdf)
+👉 [Download the roadmap of my competencies as Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}}

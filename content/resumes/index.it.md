@@ -38,7 +38,7 @@ Nell’automotive conta la sincronizzazione dei processi e la qualità del dato 
 
 Ho progettato architetture dati in ambienti dove il margine di errore non è contemplato.
 
-👉 [Scarica la roadmap delle mie competenze come Data Warehouse Architect](/downloads/CV-IvanLuminaria-DWHArchitect%28English%29.pdf)
+👉 [Scarica la roadmap delle mie competenze come Data Warehouse Architect]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
 
 ---
 
@@ -80,7 +80,7 @@ Reperibilità reale.
 Qui il tuning non è un miglioramento estetico.  
 È protezione dell’operatività.
 
-👉 [Scarica la roadmap delle mie competenze come Oracle Performance Expert](/downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert%28ENG%29.pdf)
+👉 [Scarica la roadmap delle mie competenze come Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
 
 ---
 
@@ -98,7 +98,7 @@ Posso guidare.
 Posso fare mentoring.  
 Posso aiutare sviluppatori a crescere in profondità tecnica e progettuale.
 
-👉 [Scarica la roadmap delle mie competenze come PL/SQL Architect & Mentor](/downloads/CV-IvanLuminaria-OraclePLSQLDeveloper%28ENG%29.pdf)
+👉 [Scarica la roadmap delle mie competenze come PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
 
 ---
 
@@ -122,4 +122,4 @@ Collego visione strategica e dettaglio tecnico.
 Roadmap e implementazione.  
 Decisioni e conseguenze.
 
-👉 [Scarica la roadmap delle mie competenze come Project Manager](/downloads/CV-IvanLuminaria-ProjectManager%28ENG%29.pdf)
+👉 [Scarica la roadmap delle mie competenze come Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
