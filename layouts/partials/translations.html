@@ -24,7 +24,7 @@
 {{ end }}
 
 {{ $lang := $p.Site.Language.Lang }}
-{{ $currentFlag := printf "/img/flags/%s.png" $lang }}
+{{ $currentFlag := printf "img/flags/%s.png" $lang }}
 
 <details class="relative">
   <summary class="list-none cursor-pointer select-none flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-neutral-100 dark:hover:bg-neutral-800">
@@ -45,7 +45,7 @@
     {{ range $t := $translations }}
       {{ if ne $t.Site.Language.Lang $lang }}
         {{ $tlang := $t.Site.Language.Lang }}
-        {{ $flag := printf "/img/flags/%s.png" $tlang }}
+        {{ $flag := printf "img/flags/%s.png" $tlang }}
         <a
           class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800"
           href="{{ $t.RelPermalink }}"
