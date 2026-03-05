@@ -11,7 +11,7 @@
     <ul class="flex flex-row list-none items-center">
       {{ range .Site.Menus.main }}
         <li class="ml-6">
-          <a class="font-medium text-gray-800 hover:text-primary-600" href="{{ .URL | relLangURL }}">
+          <a class="font-medium text-gray-800 hover:text-primary-600" href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}">
             {{ .Name }}
           </a>
         </li>
