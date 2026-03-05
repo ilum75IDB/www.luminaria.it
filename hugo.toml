@@ -1,4 +1,5 @@
-baseURL = 'https://www.luminaria.it/'
+###  baseURL = 'https://www.luminaria.it/'
+baseURL = "https://ilum75IDB.github.io/www.luminaria.it/"
 title = "Ivan Luminaria"
 theme = "congo"
 languageCode = 'it'
