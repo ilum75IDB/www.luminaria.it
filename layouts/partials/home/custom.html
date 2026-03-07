@@ -1,0 +1,172 @@
+{{/* Editorial homepage layout — inspired by magazine/newspaper style */}}
+{{- $recentLimit := .Site.Params.homepage.recentLimit | default 6 -}}
+
+{{/* Collect all regular pages from posts, sorted by date desc */}}
+{{- $allPosts := where .Site.RegularPages "Section" "posts" -}}
+
+{{/* ========== LATEST SECTION ========== */}}
+{{ if gt (len $allPosts) 0 }}
+<section class="editorial-section">
+  <h2 class="editorial-section-title">{{ i18n "shortcode.recent_articles" | default "Latest" }}</h2>
+
+  {{/* Hero: most recent article */}}
+  {{- $hero := index $allPosts 0 -}}
+  <article class="editorial-hero">
+    {{- $images := $hero.Resources.ByType "image" }}
+    {{- $feature := "" }}
+    {{- if $hero.Params.image }}
+      {{- $feature = $images.GetMatch $hero.Params.image }}
+    {{- end }}
+    {{- if not $feature }}
+      {{- $thumbnail := $images.GetMatch ($hero.Params.thumbnail | default "*thumb*") }}
+      {{- $feature = $images.GetMatch ($hero.Params.feature | default "*feature*") | default $thumbnail }}
+    {{- end }}
+    {{- with $feature }}
+      <a href="{{ $hero.Permalink }}" class="editorial-hero-img-link">
+        <img
+          class="editorial-hero-img"
+          srcset="{{ (.Fill "800x400 smart").Permalink }} 800w, {{ (.Fill "1200x600 smart").Permalink }} 1200w"
+          src="{{ (.Fill "800x400 smart").Permalink }}"
+          alt="{{ $hero.Title }}"
+          width="1200" height="600"
+          {{ if $.Site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
+        />
+      </a>
+    {{- end }}
+    <h3 class="editorial-hero-title">
+      <a href="{{ $hero.Permalink }}">{{ $hero.Title | emojify }}</a>
+    </h3>
+    <div class="editorial-hero-meta">
+      {{ .Site.Params.author.name }} · {{ $hero.Date | time.Format ":date_long" }}
+    </div>
+    {{ if $hero.Params.description }}
+      <p class="editorial-hero-desc">{{ $hero.Params.description }}</p>
+    {{ end }}
+  </article>
+
+  {{/* Grid: next articles */}}
+  {{- $gridPosts := after 1 $allPosts -}}
+  {{- $gridPosts = first (sub $recentLimit 1) $gridPosts -}}
+  {{ if gt (len $gridPosts) 0 }}
+    <div class="editorial-grid">
+      {{- range $gridPosts }}
+        {{- $article := . -}}
+        <article class="editorial-grid-item">
+          {{- $images := .Resources.ByType "image" }}
+          {{- $feature := "" }}
+          {{- if .Params.image }}
+            {{- $feature = $images.GetMatch .Params.image }}
+          {{- end }}
+          {{- if not $feature }}
+            {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+            {{- $feature = $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+          {{- end }}
+          {{- with $feature }}
+            <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
+              <img
+                class="editorial-grid-img"
+                srcset="{{ (.Fill "160x120 smart").Permalink }} 160w, {{ (.Fill "320x240 smart").Permalink }} 320w"
+                src="{{ (.Fill "160x120 smart").Permalink }}"
+                alt="{{ $article.Title }}"
+                width="160" height="120"
+                {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
+              />
+            </a>
+          {{- end }}
+          <div class="editorial-grid-text">
+            <h4 class="editorial-grid-title">
+              <a href="{{ .Permalink }}">{{ .Title | emojify }}</a>
+            </h4>
+            <div class="editorial-grid-meta">
+              {{ site.Params.author.name }} · {{ .Date | time.Format ":date_long" }}
+            </div>
+          </div>
+        </article>
+      {{- end }}
+    </div>
+  {{ end }}
+
+  {{/* Show more link to posts section */}}
+  {{ with .Site.GetPage "section" "posts" }}
+    <div class="editorial-showmore">
+      <a href="{{ .Permalink }}">Show more &rarr;</a>
+    </div>
+  {{ end }}
+</section>
+{{ end }}
+
+{{/* ========== CATEGORY SECTIONS ========== */}}
+{{- $sections := slice "project-management" "postgresql" -}}
+{{- range $sectionSlug := $sections -}}
+  {{- $section := site.GetPage (printf "posts/%s" $sectionSlug) -}}
+  {{- if $section -}}
+    {{/* Collect all regular pages recursively under this section */}}
+    {{- $sectionPosts := where $section.RegularPagesRecursive "Kind" "page" -}}
+    {{- if gt (len $sectionPosts) 0 }}
+    <section class="editorial-section">
+      <h2 class="editorial-section-title">{{ $section.Title }}</h2>
+
+      {{/* Hero for this section */}}
+      {{- $sHero := index $sectionPosts 0 -}}
+      <article class="editorial-category-hero">
+        <h3 class="editorial-category-hero-title">
+          <a href="{{ $sHero.Permalink }}">{{ $sHero.Title | emojify }}</a>
+        </h3>
+        <div class="editorial-hero-meta">
+          {{ site.Params.author.name }} · {{ $sHero.Date | time.Format ":date_long" }}
+        </div>
+        {{ if $sHero.Params.description }}
+          <p class="editorial-hero-desc">{{ $sHero.Params.description }}</p>
+        {{ end }}
+      </article>
+
+      {{/* Grid for remaining posts in section */}}
+      {{- $sGrid := after 1 $sectionPosts -}}
+      {{- $sGrid = first 4 $sGrid -}}
+      {{ if gt (len $sGrid) 0 }}
+        <div class="editorial-grid">
+          {{- range $sGrid }}
+            {{- $article := . -}}
+            <article class="editorial-grid-item">
+              {{- $images := .Resources.ByType "image" }}
+              {{- $feature := "" }}
+              {{- if .Params.image }}
+                {{- $feature = $images.GetMatch .Params.image }}
+              {{- end }}
+              {{- if not $feature }}
+                {{- $thumbnail := $images.GetMatch (.Params.thumbnail | default "*thumb*") }}
+                {{- $feature = $images.GetMatch (.Params.feature | default "*feature*") | default $thumbnail }}
+              {{- end }}
+              {{- with $feature }}
+                <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
+                  <img
+                    class="editorial-grid-img"
+                    srcset="{{ (.Fill "160x120 smart").Permalink }} 160w, {{ (.Fill "320x240 smart").Permalink }} 320w"
+                    src="{{ (.Fill "160x120 smart").Permalink }}"
+                    alt="{{ $article.Title }}"
+                    width="160" height="120"
+                    {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
+                  />
+                </a>
+              {{- end }}
+              <div class="editorial-grid-text">
+                <h4 class="editorial-grid-title">
+                  <a href="{{ .Permalink }}">{{ .Title | emojify }}</a>
+                </h4>
+                <div class="editorial-grid-meta">
+                  {{ site.Params.author.name }} · {{ .Date | time.Format ":date_long" }}
+                </div>
+              </div>
+            </article>
+          {{- end }}
+        </div>
+      {{ end }}
+
+      {{/* Show more link to section */}}
+      <div class="editorial-showmore">
+        <a href="{{ $section.Permalink }}">Show more &rarr;</a>
+      </div>
+    </section>
+    {{- end -}}
+  {{- end -}}
+{{- end }}
