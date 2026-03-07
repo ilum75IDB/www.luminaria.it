@@ -686,8 +686,9 @@ footer {
     min-width: 0;
   }
 
-  /* Desktop: hide mobile-top-block, show desktop cover */
-  .mobile-top-block {
+  /* Desktop: hide mobile-only elements, show desktop cover */
+  .mobile-top-block,
+  .author-mobile-badge {
     display: none !important;
   }
 
@@ -729,7 +730,7 @@ footer {
   color: #9ca3af;
 }
 
-/* Mobile: single column, no sidebar, show mobile top block */
+/* Mobile: single column, no sidebar, show mobile top block + badge */
 @media (max-width: 767px) {
   .article-two-col {
     display: block !important;
@@ -738,6 +739,9 @@ footer {
     display: none !important;
   }
   .mobile-top-block {
+    display: block !important;
+  }
+  .author-mobile-badge {
     display: block !important;
   }
   .desktop-cover {
