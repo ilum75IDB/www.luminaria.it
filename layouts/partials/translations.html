@@ -34,10 +34,10 @@
       class="h-5 w-5 rounded-sm"
       loading="lazy"
     />
-    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+    <span class="lang-code text-sm font-medium">
       {{ upper $lang }}
     </span>
-    <span class="text-neutral-500 dark:text-neutral-400">▾</span>
+    <span class="lang-arrow">▾</span>
   </summary>
 
   {{/* z-index alto + overlay sopra i contenuti */}}
@@ -51,7 +51,7 @@
           href="{{ $t.RelPermalink }}"
         >
           <img src="{{ $flag | relURL }}" alt="{{ $tlang }}" class="h-5 w-5 rounded-sm" loading="lazy" />
-          <span class="text-neutral-800 dark:text-neutral-200">{{ upper $tlang }}</span>
+          <span class="lang-code">{{ upper $tlang }}</span>
         </a>
       {{ end }}
     {{ end }}

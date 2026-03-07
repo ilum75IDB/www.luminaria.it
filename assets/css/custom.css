@@ -275,6 +275,32 @@ nav details > div {
   position: absolute;
 }
 /* ============================
+   LANGUAGE SWITCHER — contrast fix (issue #2)
+   ============================ */
+
+/* Light mode */
+.lang-code {
+  color: #374151 !important; /* gray-700 */
+  font-weight: 500;
+}
+.lang-arrow {
+  color: #6b7280 !important; /* gray-500 */
+}
+
+/* Dark mode */
+.dark .lang-code {
+  color: #e5e7eb !important; /* gray-200: alto contrasto su sfondo scuro */
+}
+.dark .lang-arrow {
+  color: #9ca3af !important; /* gray-400 */
+}
+
+/* Dropdown items */
+nav details .lang-code {
+  font-weight: 400;
+}
+
+/* ============================
    NAV SPACING (brand + language)
    ============================ */
 
