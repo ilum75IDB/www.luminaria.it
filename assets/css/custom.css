@@ -672,3 +672,21 @@ footer {
 .dark .author-badge-name {
   color: #e5e7eb !important;
 }
+
+/* ---- Author footer (bottom of article) ---- */
+.author-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.author-footer-img {
+  max-width: 15%;
+  height: auto;
+  margin: 0 !important;
+}
+
+.author-footer-name {
+  font-size: 1.1rem;
+}
