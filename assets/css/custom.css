@@ -233,6 +233,12 @@ a:focus {
   outline: none !important;
 }
 
+/* Tag links: no underline on hover (the border pill is enough) */
+.article-meta + div a:hover,
+div.flex.flex-wrap.text-xs a:hover {
+  text-decoration: none !important;
+}
+
 /* ============================
    PROSE "KEYWORDS" IN TEXT
    Vuoi che le parole chiave nel testo siano blu come il nome:
