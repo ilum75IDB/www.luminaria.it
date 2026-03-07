@@ -7,10 +7,14 @@
 */}}
 
 {{ $p := . }}
+{{ $dir := "down" }}
 
 {{ if (reflect.IsMap .) }}
   {{ with (index . "ctx") }}
     {{ $p = . }}
+  {{ end }}
+  {{ with (index . "dir") }}
+    {{ $dir = . }}
   {{ end }}
 {{ end }}
 
@@ -37,11 +41,12 @@
     <span class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
       {{ upper $lang }}
     </span>
-    <span class="text-neutral-500 dark:text-neutral-400">▾</span>
+    <span class="text-neutral-500 dark:text-neutral-400">{{ if eq $dir "up" }}▴{{ else }}▾{{ end }}</span>
   </summary>
 
   {{/* z-index alto + overlay sopra i contenuti */}}
-  <div class="absolute right-0 mt-2 w-44 rounded-2xl border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900 overflow-hidden z-[9999]">
+  <div class="absolute right-0 w-44 rounded-2xl border border-neutral-200 bg-white shadow-lg dark:border-neutral-700 dark:bg-neutral-900 overflow-hidden z-[9999]"
+       style="{{ if eq $dir "up" }}bottom: 100%; margin-bottom: 0.5rem;{{ else }}margin-top: 0.5rem;{{ end }}">
     {{ range $t := $translations }}
       {{ if ne $t.Site.Language.Lang $lang }}
         {{ $tlang := $t.Site.Language.Lang }}
