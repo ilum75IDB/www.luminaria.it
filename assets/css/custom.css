@@ -35,17 +35,19 @@ html, body {
    HEADER / NAV BRAND
    ============================ */
 
-/* 1. BRAND: IVAN LUMINARIA (Blu Postgres & Uppercase) */
-nav a.text-2xl.font-bold {
+/* 1. BRAND: IVAN LUMINARIA (Blu Postgres & Uppercase)
+   Il logo.html di Congo usa: <div class="z-40 flex ..."><a class="decoration-primary-500 ..."> */
+nav .z-40 > a {
   color: var(--ivan-blue) !important;
   text-transform: uppercase !important;
-  font-size: 1.875rem !important; /* Grande come un H2 */
+  font-size: 1.875rem !important;
   letter-spacing: 0.05em;
   text-decoration: none !important;
 }
 
-nav a.text-2xl.font-bold:hover {
-  color: var(--ivan-red) !important; /* Diventa Rosso Oracle all'hover */
+nav .z-40 > a:hover {
+  color: var(--ivan-red) !important;
+  text-decoration: none !important;
 }
 
 /* 2. TITOLI: Grigio Antracite */
@@ -54,10 +56,43 @@ h1, h2, h3, h4,
   color: var(--ivan-gray-title) !important;
 }
 
-/* 3. MENU NAVIGAZIONE — solo desktop inline menu */
-@media (min-width: 640px) {
-  nav ul li {
-    margin-left: 1.5rem !important;
+/* 3. MENU NAVIGAZIONE — hybrid layout con breakpoint a 1100px
+   Sotto 1100px: hamburger menu (burger overlay)
+   Sopra 1100px: menu inline orizzontale
+   ============================================ */
+
+/* Burger toggle: visibile sotto 1100px */
+.burger-toggle {
+  display: block;
+}
+
+/* Menu inline desktop: nascosto sotto 1100px */
+.desktop-menu {
+  display: none !important;
+}
+
+/* Nav allineamento (sotto 1100px: top-aligned come mobile) */
+.desktop-nav-align {
+  align-items: flex-start;
+}
+
+/* Desktop: sopra 1100px mostra menu inline, nasconde burger */
+@media (min-width: 1100px) {
+  .burger-toggle {
+    display: none !important;
+  }
+  .desktop-menu {
+    display: flex !important;
+  }
+  .desktop-nav-align {
+    align-items: center;
+  }
+  .desktop-menu-item {
+    margin-bottom: 0;
+    margin-inline-end: 1.75rem;
+  }
+  .desktop-menu-item:last-child {
+    margin-inline-end: 0;
   }
 }
 
@@ -343,7 +378,7 @@ nav[aria-label="Breadcrumb"] a:hover,
    (il tema crea vari stacking context: qui mettiamo i paletti)
    ============================ */
 
-/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido */
+/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido + padding */
 nav {
   position: fixed !important;
   top: 0 !important;
@@ -353,6 +388,8 @@ nav {
   overflow: visible !important;
   background: #ffffff !important;
   backdrop-filter: none !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
 }
 .dark nav {
   background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
@@ -363,9 +400,9 @@ body {
   padding-top: 5.5rem; /* ~88px: aggiusta se vuoi più/meno aria */
 }
 
-@media (max-width: 639px) {
+@media (max-width: 1099px) {
   body {
-    padding-top: 5rem; /* mobile leggermente più bassa */
+    padding-top: 5rem; /* sotto 1100px: navbar leggermente più bassa */
   }
 }
 
@@ -407,19 +444,8 @@ nav details .lang-code {
 }
 
 /* ============================
-   NAV SPACING (brand + language)
+   NAV SPACING — padding ora applicato direttamente su nav (sezione fix sopra)
    ============================ */
-
-/* Se per qualche motivo il tema sovrascrive i padding della navbar */
-nav.site-nav {
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-}
-
-/* Il brand non deve stare "incollato" al bordo */
-nav.site-nav a.site-brand {
-  padding-left: 0.25rem;
-}
 
 /* ============================
    SKIP TO CONTENT (Ir al contenuto / Vai al contenuto)

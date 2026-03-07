@@ -25,6 +25,12 @@
   pageRef = "resumes"
   weight = 30
 
+[[main]]
+  name = "Language"
+  weight = 40
+  [main.params]
+    action = "locale"
+
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

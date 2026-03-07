@@ -13,3 +13,9 @@
   pageRef = "resumes"
   weight = 30
 
+[[main]]
+  name = "Lingua"
+  weight = 40
+  [main.params]
+    action = "locale"
+
