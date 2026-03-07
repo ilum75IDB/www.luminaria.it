@@ -433,23 +433,26 @@ nav details > div {
    LANGUAGE SWITCHER — flag sizing (issue #13)
    ============================ */
 
-/* Flag icon in the trigger (small) */
+/* Flag icon in the trigger — match nav link size (22px) */
 .lang-flag-sm {
-  width: 14px;
-  height: 14px;
+  width: 22px;
+  height: 22px;
   object-fit: cover;
 }
 
 /* Flag icon in the dropdown items */
 .lang-flag {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   object-fit: cover;
 }
 
-/* Language switcher summary: compact to align with nav items */
-details summary.list-none {
-  gap: 0.375rem; /* ~6px */
+/* Language switcher text — match nav link font size */
+.desktop-menu-item .lang-code {
+  font-size: 22px !important;
+}
+.desktop-menu-item .lang-arrow {
+  font-size: 22px !important;
 }
 
 /* ============================
