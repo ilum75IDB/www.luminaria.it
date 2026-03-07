@@ -468,9 +468,20 @@ a.skip-to-content:focus {
   margin-inline-end: 5.5rem;     /* shift left, clear the lang switcher fully */
 }
 
-/* Align footer language switcher with header's — push it to the right edge */
-footer .flex.items-center.justify-between > .flex.flex-row {
-  margin-inline-end: -0.5rem;    /* nudge right, closer to the page edge */
+/* Footer full-width: break out of body's max-w-7xl container
+   to align with the fixed navbar (both get px-6 = 1.5rem padding) */
+footer {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 1.5rem !important;   /* matches navbar px-6 */
+  padding-right: 1.5rem !important;
+  border-top: 1px solid;
+  border-color: rgb(229 231 235); /* neutral-200 */
+}
+.dark footer {
+  border-color: rgb(38 38 38); /* neutral-800 */
 }
 
 #to-top a {
