@@ -29,12 +29,15 @@
     </div>
   {{- end -}}
 
-  {{/* Taxonomies (tags) */}}
+  {{/* Taxonomies (tags) — with case-insensitive dedup */}}
   {{- if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) -}}
     <div class="mt-3 flex flex-wrap text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+      {{- $seen := slice -}}
       {{- range $taxonomy, $terms := .Site.Taxonomies -}}
-        {{- if gt (len ($.GetTerms $taxonomy)) 0 -}}
-          {{- range $.GetTerms $taxonomy -}}
+        {{- range $.GetTerms $taxonomy -}}
+          {{- $key := .LinkTitle | lower -}}
+          {{- if not (in $seen $key) -}}
+            {{- $seen = $seen | append $key -}}
             <a
               href="{{ .Permalink }}"
               class="mx-1 my-1 rounded-md border border-neutral-200 px-1 py-[1px] hover:border-primary-300 hover:text-primary-700 dark:border-neutral-600 dark:hover:border-primary-600 dark:hover:text-primary-400"
