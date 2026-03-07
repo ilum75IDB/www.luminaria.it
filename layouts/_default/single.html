@@ -33,15 +33,16 @@
     <div id="content" class="scroll-mt-28"></div>
 
 
-    <section class="prose mt-6 max-w-full dark:prose-invert">
-      {{- with .Site.Params.author }}
-      <div class="author-badge">
-        {{- with .image }}
-        <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author.name }}" class="author-badge-avatar" />
-        {{- end }}
-        <span class="author-badge-name">{{ .name }}</span>
-      </div>
+    {{- with .Site.Params.author }}
+    <div class="author-badge">
+      {{- with .image }}
+      <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author.name }}" class="author-badge-avatar" />
       {{- end }}
+      <span class="author-badge-name">{{ .name }}</span>
+    </div>
+    {{- end }}
+
+    <section class="prose mt-6 max-w-full dark:prose-invert">
       {{ .Content | emojify }}
     </section>
     <footer class="pt-8">
