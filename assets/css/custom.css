@@ -750,6 +750,17 @@ footer {
   article header h1 {
     font-size: 1.75rem !important;
   }
+  /* Navbar: padding, smaller brand, centered burger */
+  nav {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  nav .z-40 > a {
+    font-size: 1.35rem !important;
+  }
+  nav .z-40 {
+    align-items: center !important;
+  }
 }
 
 /* ---- Mobile top block & author badge ---- */
