@@ -35,7 +35,7 @@
     <img
       src="{{ $currentFlag | relURL }}"
       alt="{{ $lang }}"
-      class="h-3.5 w-3.5 rounded-sm"
+      class="lang-flag-sm rounded-sm"
       loading="lazy"
     />
     <span class="lang-code text-xs font-medium">
@@ -56,7 +56,7 @@
           class="flex items-center gap-2 px-3 py-2 text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800"
           href="{{ $t.RelPermalink }}"
         >
-          <img src="{{ $flag | relURL }}" alt="{{ $tlang }}" class="h-4 w-4 rounded-sm" loading="lazy" />
+          <img src="{{ $flag | relURL }}" alt="{{ $tlang }}" class="lang-flag rounded-sm" loading="lazy" />
           <span class="lang-code">{{ upper $tlang }}</span>
         </a>
       {{ end }}

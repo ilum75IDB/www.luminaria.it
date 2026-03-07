@@ -430,6 +430,29 @@ nav details > div {
   position: absolute;
 }
 /* ============================
+   LANGUAGE SWITCHER — flag sizing (issue #13)
+   ============================ */
+
+/* Flag icon in the trigger (small) */
+.lang-flag-sm {
+  width: 14px;
+  height: 14px;
+  object-fit: cover;
+}
+
+/* Flag icon in the dropdown items */
+.lang-flag {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+
+/* Language switcher summary: compact to align with nav items */
+details summary.list-none {
+  gap: 0.375rem; /* ~6px */
+}
+
+/* ============================
    LANGUAGE SWITCHER — contrast fix (issue #2)
    ============================ */
 
