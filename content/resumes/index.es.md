@@ -67,19 +67,43 @@ Es arquitectura aplicada a la inteligencia.
 
 ---
 
+## Project Manager con background técnico
+
+Mi experiencia en gestión de proyectos ha madurado coordinando iniciativas en entornos complejos:
+
+Telecomunicaciones internacionales,
+Instituciones financieras centrales,
+Seguros,
+Farmacéutico,
+Automoción y Administración Pública.
+
+En estos sectores, el error tiene un coste real.
+
+Un Project Manager técnico comprende el impacto de las decisiones.
+Sabe cuándo un compromiso es aceptable.
+Y cuándo no lo es.
+
+Conecto visión estratégica con detalle técnico.
+Roadmaps con implementación.
+Decisiones con consecuencias.
+
+👉 [Descargar la hoja de ruta de mis competencias como Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+
+---
+
 ## Oracle DBA & Performance Tuning Expert
 
-Mi actividad como Oracle DBA se ha consolidado en entornos mission-critical para operadores como TIM, Wind, Vodafone y 3,  
-en contextos tecnológicos complejos como Huawei,  
-para instituciones financieras como el Banco de Italia, la Oficina Italiana de Cambios y Cassa Depositi e Prestiti,  
-para organizaciones aseguradoras como Generali,  
+Mi actividad como Oracle DBA se ha consolidado en entornos mission-critical para operadores como TIM, Wind, Vodafone y 3,
+en contextos tecnológicos complejos como Huawei,
+para instituciones financieras como el Banco de Italia, la Oficina Italiana de Cambios y Cassa Depositi e Prestiti,
+para organizaciones aseguradoras como Generali,
 y en proyectos industriales en el sector automotriz.
 
-Sistemas de alta disponibilidad.  
-Cargas elevadas.  
+Sistemas de alta disponibilidad.
+Cargas elevadas.
 Responsabilidad real de guardia.
 
-Aquí el tuning no es una mejora estética.  
+Aquí el tuning no es una mejora estética.
 Es protección operativa.
 
 👉 [Descargar la hoja de ruta de mis competencias como Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
@@ -90,38 +114,14 @@ Es protección operativa.
 
 He desarrollado PL/SQL en entornos Telco, Banca, Seguros, Automoción, Farmacéutico y Administración Pública.
 
-En contextos como Generali o el Banco de Italia, la lógica en base de datos es parte de la estabilidad del sistema.  
+En contextos como Generali o el Banco de Italia, la lógica en base de datos es parte de la estabilidad del sistema.
 En automoción, la coherencia del dato impacta directamente en los procesos productivos y en la cadena de suministro.
 
 Durante años he enseñado SQL y PL/SQL, contribuyendo al crecimiento técnico de desarrolladores que hoy trabajan sobre sistemas complejos.
 
-Hoy no me limito a escribir código.  
-Puedo liderar.  
-Puedo hacer mentoring.  
+Hoy no me limito a escribir código.
+Puedo liderar.
+Puedo hacer mentoring.
 Puedo ayudar a desarrolladores a crecer en profundidad técnica y arquitectónica.
 
 👉 [Descargar la hoja de ruta de mis competencias como PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
-
----
-
-## Project Manager con background técnico
-
-Mi experiencia en gestión de proyectos ha madurado coordinando iniciativas en entornos complejos:
-
-Telecomunicaciones internacionales,  
-Instituciones financieras centrales,  
-Seguros,  
-Farmacéutico,  
-Automoción y Administración Pública.
-
-En estos sectores, el error tiene un coste real.
-
-Un Project Manager técnico comprende el impacto de las decisiones.  
-Sabe cuándo un compromiso es aceptable.  
-Y cuándo no lo es.
-
-Conecto visión estratégica con detalle técnico.  
-Roadmaps con implementación.  
-Decisiones con consecuencias.
-
-👉 [Descargar la hoja de ruta de mis competencias como Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})

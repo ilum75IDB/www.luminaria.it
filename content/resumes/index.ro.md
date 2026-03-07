@@ -67,19 +67,43 @@ Este arhitectură aplicată inteligenței.
 
 ---
 
+## Project Manager cu background tehnic
+
+Experiența mea în management de proiect s-a maturizat coordonând inițiative în medii complexe:
+
+Telecomunicații internaționale,
+Instituții financiare centrale,
+Asigurări,
+Farmaceutic,
+Automotive și Administrație Publică.
+
+În aceste sectoare, eroarea are un cost real.
+
+Un Project Manager tehnic înțelege impactul deciziilor.
+Știe când un compromis este acceptabil.
+Și când nu este.
+
+Conectez viziunea strategică cu detaliul tehnic.
+Roadmap-urile cu implementarea.
+Deciziile cu consecințele.
+
+👉 [Descarcă roadmap-ul competențelor mele ca Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+
+---
+
 ## Oracle DBA & Performance Tuning Expert
 
-Activitatea mea ca Oracle DBA s-a consolidat în medii mission-critical pentru operatori precum TIM, Wind, Vodafone și 3,  
-în contexte tehnologice complexe precum Huawei,  
-pentru instituții financiare precum Banca Italiei, Oficiul Italian pentru Schimburi și Cassa Depositi e Prestiti,  
-pentru organizații de asigurări precum Generali,  
+Activitatea mea ca Oracle DBA s-a consolidat în medii mission-critical pentru operatori precum TIM, Wind, Vodafone și 3,
+în contexte tehnologice complexe precum Huawei,
+pentru instituții financiare precum Banca Italiei, Oficiul Italian pentru Schimburi și Cassa Depositi e Prestiti,
+pentru organizații de asigurări precum Generali,
 și în proiecte industriale din sectorul automotive.
 
-Sisteme cu disponibilitate ridicată.  
-Încărcări mari.  
+Sisteme cu disponibilitate ridicată.
+Încărcări mari.
 Responsabilitate reală de on-call.
 
-Aici tuning-ul nu este o îmbunătățire estetică.  
+Aici tuning-ul nu este o îmbunătățire estetică.
 Este protecție operațională.
 
 👉 [Descarcă roadmap-ul competențelor mele ca Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
@@ -90,38 +114,14 @@ Este protecție operațională.
 
 Am dezvoltat PL/SQL în medii Telco, Banking, Asigurări, Automotive, Farmaceutic și Administrație Publică.
 
-În contexte precum Generali sau Banca Italiei, logica din baza de date este parte integrantă a stabilității sistemului.  
+În contexte precum Generali sau Banca Italiei, logica din baza de date este parte integrantă a stabilității sistemului.
 În automotive, coerența datelor influențează direct procesele de producție și lanțul de aprovizionare.
 
 Timp de ani de zile am predat SQL și PL/SQL, contribuind la creșterea tehnică a dezvoltatorilor care astăzi lucrează pe sisteme complexe.
 
-Astăzi nu mă limitez la a scrie cod.  
-Pot conduce.  
-Pot face mentoring.  
+Astăzi nu mă limitez la a scrie cod.
+Pot conduce.
+Pot face mentoring.
 Pot ajuta dezvoltatorii să crească în profunzime tehnică și arhitecturală.
 
 👉 [Descarcă roadmap-ul competențelor mele ca PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
-
----
-
-## Project Manager cu background tehnic
-
-Experiența mea în management de proiect s-a maturizat coordonând inițiative în medii complexe:
-
-Telecomunicații internaționale,  
-Instituții financiare centrale,  
-Asigurări,  
-Farmaceutic,  
-Automotive și Administrație Publică.
-
-În aceste sectoare, eroarea are un cost real.
-
-Un Project Manager tehnic înțelege impactul deciziilor.  
-Știe când un compromis este acceptabil.  
-Și când nu este.
-
-Conectez viziunea strategică cu detaliul tehnic.  
-Roadmap-urile cu implementarea.  
-Deciziile cu consecințele.
-
-👉 [Descarcă roadmap-ul competențelor mele ca Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})

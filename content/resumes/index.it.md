@@ -65,19 +65,43 @@ Perché l’AI non è magia.
 
 ---
 
+## Project Manager con background tecnico
+
+La gestione di progetto è maturata coordinando attività in contesti complessi:
+
+Telecomunicazioni internazionali,
+Istituzioni finanziarie centrali,
+Assicurazioni,
+Farmaceutico,
+Automotive e Pubblica Amministrazione.
+
+In questi settori, l’errore ha un costo reale.
+
+Un Project Manager tecnico conosce l’impatto delle scelte.
+Sa quando un compromesso è accettabile.
+E quando non lo è.
+
+Collego visione strategica e dettaglio tecnico.
+Roadmap e implementazione.
+Decisioni e conseguenze.
+
+👉 [Scarica la roadmap delle mie competenze come Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+
+---
+
 ## Oracle DBA & Performance Tuning Expert
 
-La mia attività come Oracle DBA si è consolidata in ambienti mission-critical per operatori come TIM, Wind, Vodafone e 3,  
-in contesti tecnologici complessi come Huawei,  
-per istituzioni finanziarie come Banca d’Italia, Ufficio Italiano Cambi e Cassa Depositi e Prestiti,  
-per realtà assicurative come Generali,  
+La mia attività come Oracle DBA si è consolidata in ambienti mission-critical per operatori come TIM, Wind, Vodafone e 3,
+in contesti tecnologici complessi come Huawei,
+per istituzioni finanziarie come Banca d’Italia, Ufficio Italiano Cambi e Cassa Depositi e Prestiti,
+per realtà assicurative come Generali,
 e in progetti industriali in ambito Automotive.
 
-Sistemi ad alta disponibilità.  
-Carichi elevati.  
+Sistemi ad alta disponibilità.
+Carichi elevati.
 Reperibilità reale.
 
-Qui il tuning non è un miglioramento estetico.  
+Qui il tuning non è un miglioramento estetico.
 È protezione dell’operatività.
 
 👉 [Scarica la roadmap delle mie competenze come Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
@@ -88,38 +112,14 @@ Qui il tuning non è un miglioramento estetico.
 
 Ho sviluppato PL/SQL in ambienti Telco, Banking, Assicurazioni, Automotive, Farmaceutico e Pubblica Amministrazione.
 
-In contesti come Generali o Banca d’Italia, la logica nel database è parte della stabilità del sistema.  
+In contesti come Generali o Banca d’Italia, la logica nel database è parte della stabilità del sistema.
 In ambito Automotive, la coerenza dei dati impatta direttamente processi produttivi e supply chain.
 
 Per anni ho insegnato SQL e PL/SQL, contribuendo alla crescita tecnica di sviluppatori che oggi operano su sistemi complessi.
 
-Oggi non mi limito a scrivere codice.  
-Posso guidare.  
-Posso fare mentoring.  
+Oggi non mi limito a scrivere codice.
+Posso guidare.
+Posso fare mentoring.
 Posso aiutare sviluppatori a crescere in profondità tecnica e progettuale.
 
 👉 [Scarica la roadmap delle mie competenze come PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
-
----
-
-## Project Manager con background tecnico
-
-La gestione di progetto è maturata coordinando attività in contesti complessi:
-
-Telecomunicazioni internazionali,  
-Istituzioni finanziarie centrali,  
-Assicurazioni,  
-Farmaceutico,  
-Automotive e Pubblica Amministrazione.
-
-In questi settori, l’errore ha un costo reale.
-
-Un Project Manager tecnico conosce l’impatto delle scelte.  
-Sa quando un compromesso è accettabile.  
-E quando non lo è.
-
-Collego visione strategica e dettaglio tecnico.  
-Roadmap e implementazione.  
-Decisioni e conseguenze.
-
-👉 [Scarica la roadmap delle mie competenze come Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
