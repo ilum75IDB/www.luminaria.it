@@ -747,6 +747,9 @@ footer {
   .desktop-cover {
     display: none !important;
   }
+  article header h1 {
+    font-size: 1.75rem !important;
+  }
 }
 
 /* ---- Mobile top block & author badge ---- */
