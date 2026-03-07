@@ -690,3 +690,14 @@ footer {
 .author-footer-name {
   font-size: 1.1rem;
 }
+
+.author-footer-roles {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.dark .author-footer-roles {
+  color: #9ca3af;
+}
