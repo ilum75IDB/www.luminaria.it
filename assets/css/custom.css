@@ -463,7 +463,23 @@ details > summary {
 /* Dropdown items: spacing between flag and code, padding from edges */
 details > div a {
   gap: 0.5rem !important;
-  padding: 0.5rem 1rem !important;
+  padding: 0.5rem 1.5rem 0.5rem 1rem !important; /* extra right padding */
+}
+
+/* Footer language switcher — smaller text to match flag size */
+footer .lang-code {
+  font-size: 16px !important;
+}
+footer .lang-arrow {
+  font-size: 16px !important;
+}
+footer .lang-flag-sm {
+  width: 18px;
+  height: 18px;
+}
+footer .lang-flag {
+  width: 18px;
+  height: 18px;
 }
 
 /* ============================
