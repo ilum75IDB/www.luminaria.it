@@ -89,7 +89,7 @@
   {{/* Show more link to posts section */}}
   {{ with .Site.GetPage "section" "posts" }}
     <div class="editorial-showmore">
-      <a href="{{ .Permalink }}">Show more &rarr;</a>
+      <a href="{{ .Permalink }}">{{ i18n "editorial.show_more" | default "Show more" }} &rarr;</a>
     </div>
   {{ end }}
 </section>
@@ -164,7 +164,7 @@
 
       {{/* Show more link to section */}}
       <div class="editorial-showmore">
-        <a href="{{ $section.Permalink }}">Show more &rarr;</a>
+        <a href="{{ $section.Permalink }}">{{ i18n "editorial.show_more" | default "Show more" }} &rarr;</a>
       </div>
     </section>
     {{- end -}}
