@@ -68,22 +68,36 @@ nav ul li a {
 }
 
 /* Mobile hamburger overlay: centered, opaque, no scroll needed */
+/* Light mode: dark text on white overlay */
 #menu-wrapper ul li a {
   font-size: 1.5rem !important;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--ivan-gray-title) !important;
   text-decoration: none !important;
 }
-
 #menu-wrapper ul li a:hover {
-  color: #ffffff !important;
+  color: var(--ivan-red) !important;
   text-decoration: underline !important;
 }
 
-/* Language switcher inside mobile overlay — light text */
+/* Dark mode: light text on dark overlay */
+.dark #menu-wrapper ul li a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.dark #menu-wrapper ul li a:hover {
+  color: #ffffff !important;
+}
+
+/* Language switcher inside mobile overlay */
 #menu-wrapper .lang-code {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: var(--ivan-gray-title) !important;
 }
 #menu-wrapper .lang-arrow {
+  color: #6b7280 !important;
+}
+.dark #menu-wrapper .lang-code {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.dark #menu-wrapper .lang-arrow {
   color: rgba(255, 255, 255, 0.6) !important;
 }
 
@@ -97,11 +111,14 @@ nav ul li a {
   width: 100vw !important;
   height: 100vh !important;
   z-index: 99999 !important;
-  background: rgba(17, 17, 17, 0.97) !important;
-  backdrop-filter: blur(16px) !important;
+  background: rgba(255, 255, 255, 0.98) !important; /* light mode: bianco solido */
+  backdrop-filter: none !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+}
+.dark #menu-wrapper {
+  background: rgba(17, 17, 17, 0.98) !important; /* dark mode: scuro solido */
 }
 
 /* Close button (X) — pinned top-right, never centered with links */
@@ -114,11 +131,19 @@ nav ul li a {
   bottom: auto !important;
   z-index: 100000 !important;
   font-size: 2rem !important;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--ivan-gray-title) !important; /* light mode */
   cursor: pointer;
 }
 #menu-wrapper > span:first-child:hover,
 #menu-wrapper > span[class*="absolute"]:hover {
+  color: var(--ivan-red) !important;
+}
+.dark #menu-wrapper > span:first-child,
+.dark #menu-wrapper > span[class*="absolute"] {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.dark #menu-wrapper > span:first-child:hover,
+.dark #menu-wrapper > span[class*="absolute"]:hover {
   color: #ffffff !important;
 }
 
@@ -305,14 +330,19 @@ nav[aria-label="Breadcrumb"] a:hover,
    (il tema crea vari stacking context: qui mettiamo i paletti)
    ============================ */
 
-/* 1) Navbar davvero “sempre su” (fixed) */
+/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido */
 nav {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 9999 !important;
-  overflow: visible !important; /* evita che il dropdown venga “tagliato” */
+  overflow: visible !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+}
+.dark nav {
+  background: #171717 !important; /* neutral-900 */
 }
 
 /* 2) Evita che il contenuto finisca sotto la navbar fixed */
