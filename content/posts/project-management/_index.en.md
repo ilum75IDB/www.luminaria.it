@@ -2,6 +2,7 @@
 title: "Project Management"
 description: "IT project management: smart working, Scrum, AI and consulting. Practical articles from thirty years of field experience."
 layout: "list"
+image: "project-management.cover.jpg"
 ---
 
 I've seen project managers make senior developers cry in meetings. I've seen brilliant teams destroyed by PMs who confused authority with authoritarianism. I've seen software delivered "on time" that didn't work, and multi-million euro projects that ended in nothing.

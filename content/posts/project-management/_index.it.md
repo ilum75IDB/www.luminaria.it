@@ -2,6 +2,7 @@
 title: "Project Management"
 description: "Gestione di progetto nell'IT: smart working, Scrum, AI e consulenza. Articoli pratici da trent'anni di esperienza sul campo."
 layout: "list"
+image: "project-management.cover.jpg"
 ---
 
 Ho visto project manager far piangere sviluppatori senior in riunione. Ho visto team brillanti distrutti da PM che confondevano l'autorità con l'autoritarismo. Ho visto software consegnati "in tempo" che non funzionavano, e progetti da milioni di euro finiti nel nulla.

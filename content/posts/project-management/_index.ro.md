@@ -2,6 +2,7 @@
 title: "Project Management"
 description: "Managementul proiectelor IT: smart working, Scrum, AI și consultanță. Articole practice din treizeci de ani de experiență pe teren."
 layout: "list"
+image: "project-management.cover.jpg"
 ---
 
 Am văzut project manageri care au făcut dezvoltatori seniori să plângă în ședințe. Am văzut echipe strălucite distruse de PM-uri care confundau autoritatea cu autoritarismul. Am văzut software livrat „la timp" care nu funcționa, și proiecte de milioane de euro care s-au terminat în nimic.
