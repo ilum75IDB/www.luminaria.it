@@ -85,11 +85,15 @@ h1, h2, h3, h4,
     display: flex !important;
   }
   .desktop-nav-align {
-    align-items: center;
+    align-items: baseline;
   }
   .desktop-menu-item {
     margin-bottom: 0;
     margin-inline-end: 1.75rem;
+  }
+  .desktop-menu-item a,
+  .desktop-menu-item button {
+    text-transform: uppercase;
   }
   .desktop-menu-item:last-child {
     margin-inline-end: 0;
