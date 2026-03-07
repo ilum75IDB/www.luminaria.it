@@ -468,10 +468,11 @@ details > div {
   background-color: #171717 !important; /* neutral-900 */
 }
 
-/* Dropdown items: spacing between flag and code, padding from edges */
+/* Dropdown items: spacing between flag and code, centered with equal padding */
 details > div a {
   gap: 0.5rem !important;
-  padding: 0.5rem 1.5rem 0.5rem 1rem !important; /* extra right padding */
+  padding: 0.5rem 1.25rem !important;
+  justify-content: center;
 }
 
 /* Footer language switcher — smaller text to match flag size */
