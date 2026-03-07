@@ -416,9 +416,9 @@ nav {
   background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
 }
 
-/* 2) Evita che il contenuto finisca sotto la navbar fixed */
+/* 2) Evita che il contenuto finisca sotto la navbar fixed — solo lo stretto necessario */
 body {
-  padding-top: 4rem; /* ridotto: meno spazio tra navbar e contenuto */
+  padding-top: 3rem;
 }
 
 /* 2b) Margini laterali ridotti: circa lo stesso spazio dell'altezza della navbar */
@@ -432,7 +432,7 @@ body {
 
 @media (max-width: 1189px) {
   body {
-    padding-top: 3.75rem; /* sotto 1190px */
+    padding-top: 3rem;
   }
 }
 
@@ -710,7 +710,7 @@ footer {
 
 .author-sidebar-card {
   position: sticky;
-  top: 4rem;
+  top: 3rem;
   text-align: center;
   padding-top: 0;
 }
