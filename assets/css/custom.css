@@ -627,3 +627,8 @@ footer {
   background: transparent !important;
   border-left-color: var(--ivan-red) !important;
 }
+
+/* Search close button (X) — red instead of purple */
+#close-search-button:hover {
+  color: var(--ivan-red) !important;
+}
