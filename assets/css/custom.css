@@ -455,6 +455,17 @@ nav details > div {
   font-size: 22px !important;
 }
 
+/* Spacing: gap between flag and code in trigger */
+details > summary {
+  gap: 0.5rem !important; /* 8px between flag / code / arrow */
+}
+
+/* Dropdown items: spacing between flag and code, padding from edges */
+details > div a {
+  gap: 0.5rem !important;
+  padding: 0.5rem 1rem !important;
+}
+
 /* ============================
    LANGUAGE SWITCHER — contrast fix (issue #2)
    ============================ */
