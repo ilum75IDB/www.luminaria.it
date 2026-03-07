@@ -14,19 +14,19 @@
   {{- $hasReading := and $showReadingTime (gt .ReadingTime 0) -}}
 
   {{- if or $hasDate $hasReading -}}
-    <span class="whitespace-nowrap">
+    <div class="article-meta mt-2 text-sm text-neutral-500 dark:text-neutral-400">
       {{- if $hasDate -}}
-        {{- .Date | time.Format ":date_long" -}}
+        <span>{{- .Date | time.Format ":date_long" -}}</span>
       {{- end -}}
 
       {{- if and $hasDate $hasReading -}}
-        {{- print " · " -}}
+        <span class="mx-1">&middot;</span>
       {{- end -}}
 
       {{- if $hasReading -}}
-        {{- printf "%d min" .ReadingTime -}}
+        <span>{{- printf "%d min" .ReadingTime -}}</span>
       {{- end -}}
-    </span>
+    </div>
   {{- end -}}
 {{- end -}}
 
