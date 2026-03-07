@@ -67,11 +67,24 @@ nav ul li a {
   color: var(--ivan-red) !important; /* Rosso Oracle */
 }
 
-/* Mobile hamburger overlay: full-screen menu styling */
+/* Mobile hamburger overlay: centered, opaque, no scroll needed */
 #menu-wrapper ul li a {
-  font-size: 1.25rem !important;
-  padding: 0.5rem 0;
-  display: inline-block;
+  font-size: 1.5rem !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-decoration: none !important;
+}
+
+#menu-wrapper ul li a:hover {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+/* Language switcher inside mobile overlay — light text */
+#menu-wrapper .lang-code {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+#menu-wrapper .lang-arrow {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 /* Show/hide hamburger overlay via CSS checkbox hack */

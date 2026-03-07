@@ -18,35 +18,35 @@
     <div class="cursor-pointer text-2xl text-neutral-700 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
       &#9776;
     </div>
-    {{/* Fullscreen overlay */}}
+    {{/* Fullscreen overlay — opaque bg, centered menu */}}
     <div
       id="menu-wrapper"
-      class="invisible fixed inset-0 z-30 m-auto h-full w-full cursor-default overflow-auto
-             bg-neutral-100/50 opacity-0 backdrop-blur-sm transition-opacity
-             dark:bg-neutral-900/50"
+      class="invisible fixed inset-0 z-30 flex h-full w-full cursor-default
+             items-center justify-center
+             bg-neutral-900/90 opacity-0 backdrop-blur-md transition-opacity"
     >
-      <ul class="mx-auto flex w-full max-w-7xl list-none flex-col overflow-visible
-                 px-6 py-6 text-end sm:px-14 sm:py-10 md:px-24 lg:px-32">
-        {{/* Close button (✕) */}}
-        <li class="mb-1">
-          <span class="cursor-pointer text-2xl hover:text-primary-600 dark:hover:text-primary-400">
-            &#10005;
-          </span>
-        </li>
+      {{/* Close button — top right */}}
+      <span class="absolute top-5 right-6 cursor-pointer text-3xl text-white/80 hover:text-white">
+        &#10005;
+      </span>
+
+      {{/* Centered menu list */}}
+      <ul class="flex list-none flex-col items-center gap-6 text-center">
         {{ range .Site.Menus.main }}
-          <li class="group mb-1">
+          <li class="group">
             <a
               href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL }}{{ end }}"
               title="{{ .Title }}"
               onclick="close_menu()"
-              class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
+              class="text-2xl font-semibold text-white/90 hover:text-white
+                     decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-4"
             >
               {{ .Name }}
             </a>
           </li>
         {{ end }}
-        {{/* Language switcher inside mobile menu */}}
-        <li class="group mb-1 mt-2">
+        {{/* Language switcher */}}
+        <li class="mt-4">
           {{ partial "translations.html" . }}
         </li>
       </ul>
