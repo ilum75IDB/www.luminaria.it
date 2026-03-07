@@ -682,8 +682,9 @@ footer {
 }
 
 .author-footer-img {
-  max-width: 15%;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
   margin: 0 !important;
 }
 
