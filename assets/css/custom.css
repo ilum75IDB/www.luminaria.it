@@ -54,15 +54,116 @@ h1, h2, h3, h4,
   color: var(--ivan-gray-title) !important;
 }
 
-/* 3. MENU NAVIGAZIONE */
-nav ul li {
-  margin-left: 1.5rem !important;
+/* 3. MENU NAVIGAZIONE — solo desktop inline menu */
+@media (min-width: 640px) {
+  nav ul li {
+    margin-left: 1.5rem !important;
+  }
 }
 
 nav ul li a {
   font-size: 1.1rem !important;
   font-weight: 600 !important;
   color: var(--ivan-red) !important; /* Rosso Oracle */
+}
+
+/* Mobile hamburger overlay: centered, opaque, no scroll needed */
+/* Light mode: dark text on white overlay */
+#menu-wrapper ul li a {
+  font-size: 1.5rem !important;
+  color: var(--ivan-gray-title) !important;
+  text-decoration: none !important;
+}
+#menu-wrapper ul li a:hover {
+  color: var(--ivan-red) !important;
+  text-decoration: underline !important;
+}
+
+/* Dark mode: light text on dark overlay */
+.dark #menu-wrapper ul li a {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.dark #menu-wrapper ul li a:hover {
+  color: #ffffff !important;
+}
+
+/* Separatore orizzontale tra voci menù mobile overlay */
+#menu-wrapper ul > li.group {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  padding-bottom: 0.75rem;
+}
+#menu-wrapper ul > li.group:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.dark #menu-wrapper ul > li.group {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Language switcher inside mobile overlay */
+#menu-wrapper .lang-code {
+  color: var(--ivan-gray-title) !important;
+}
+#menu-wrapper .lang-arrow {
+  color: #6b7280 !important;
+}
+.dark #menu-wrapper .lang-code {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+.dark #menu-wrapper .lang-arrow {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Force overlay to cover full viewport with solid background */
+#menu-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 99999 !important;
+  background: rgba(255, 255, 255, 0.98) !important; /* light mode: bianco solido */
+  backdrop-filter: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.dark #menu-wrapper {
+  background: rgba(17, 17, 17, 0.98) !important; /* dark mode: scuro solido */
+}
+
+/* Close button (X) — pinned top-right, never centered with links */
+#menu-wrapper > span:first-child,
+#menu-wrapper > span[class*="absolute"] {
+  position: absolute !important;
+  top: 1.25rem !important;
+  right: 1.5rem !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 100000 !important;
+  font-size: 2rem !important;
+  color: var(--ivan-gray-title) !important; /* light mode */
+  cursor: pointer;
+}
+#menu-wrapper > span:first-child:hover,
+#menu-wrapper > span[class*="absolute"]:hover {
+  color: var(--ivan-red) !important;
+}
+.dark #menu-wrapper > span:first-child,
+.dark #menu-wrapper > span[class*="absolute"] {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.dark #menu-wrapper > span:first-child:hover,
+.dark #menu-wrapper > span[class*="absolute"]:hover {
+  color: #ffffff !important;
+}
+
+/* Show/hide hamburger overlay via CSS checkbox hack */
+#menu-controller:checked ~ #menu-wrapper {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* ============================
@@ -242,14 +343,19 @@ nav[aria-label="Breadcrumb"] a:hover,
    (il tema crea vari stacking context: qui mettiamo i paletti)
    ============================ */
 
-/* 1) Navbar davvero “sempre su” (fixed) */
+/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido */
 nav {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   z-index: 9999 !important;
-  overflow: visible !important; /* evita che il dropdown venga “tagliato” */
+  overflow: visible !important;
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+}
+.dark nav {
+  background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
 }
 
 /* 2) Evita che il contenuto finisca sotto la navbar fixed */
@@ -274,6 +380,32 @@ nav details > div {
 nav details > div {
   position: absolute;
 }
+/* ============================
+   LANGUAGE SWITCHER — contrast fix (issue #2)
+   ============================ */
+
+/* Light mode */
+.lang-code {
+  color: #374151 !important; /* gray-700 */
+  font-weight: 500;
+}
+.lang-arrow {
+  color: #6b7280 !important; /* gray-500 */
+}
+
+/* Dark mode */
+.dark .lang-code {
+  color: #e5e7eb !important; /* gray-200: alto contrasto su sfondo scuro */
+}
+.dark .lang-arrow {
+  color: #9ca3af !important; /* gray-400 */
+}
+
+/* Dropdown items */
+nav details .lang-code {
+  font-weight: 400;
+}
+
 /* ============================
    NAV SPACING (brand + language)
    ============================ */
@@ -323,4 +455,52 @@ a.skip-link:focus,
 a.skip-to-content:focus {
   outline: 2px solid rgba(248, 0, 0, 0.35) !important;
   outline-offset: 2px !important;
+}
+
+/* ============================
+   SCROLL-TO-TOP — avoid overlap with language switcher (issue #3)
+   ============================ */
+
+/* Move the button left so it doesn't sit on top of the footer
+   language dropdown (which opens upward in the same corner) */
+#to-top {
+  z-index: 50 !important;        /* below language dropdown (z-9999+) */
+  margin-inline-end: 5.5rem;     /* shift left, clear the lang switcher fully */
+}
+
+/* Footer full-width: break out of body's max-w-7xl container
+   to align with the fixed navbar (both get px-6 = 1.5rem padding) */
+footer {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 1.5rem !important;   /* matches navbar px-6 */
+  padding-right: 1.5rem !important;
+  border-top: 1px solid;
+  border-color: rgb(229 231 235); /* neutral-200 */
+}
+.dark footer {
+  border-color: rgb(var(--color-neutral-700)); /* coerente col tema */
+}
+
+#to-top a {
+  background: rgba(51, 103, 145, 0.12) !important; /* subtle ivan-blue tint */
+  color: var(--ivan-blue) !important;
+  backdrop-filter: blur(6px);
+}
+
+#to-top a:hover {
+  background: var(--ivan-red) !important;
+  color: #ffffff !important;
+}
+
+.dark #to-top a {
+  background: rgba(229, 231, 235, 0.12) !important;
+  color: #e5e7eb !important;
+}
+
+.dark #to-top a:hover {
+  background: var(--ivan-red) !important;
+  color: #ffffff !important;
 }

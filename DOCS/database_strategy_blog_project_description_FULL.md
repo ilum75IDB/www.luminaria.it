@@ -350,3 +350,105 @@ They exist to:
 
 Each illustration should represent the conceptual theme of the article
 or category.
+
+------------------------------------------------------------------------
+
+# 11. Bug Reporting & Issue Workflow
+
+When the user reports a bug or a visual/functional problem on the site,
+the AI assistant **must** follow this workflow automatically, without
+being asked:
+
+## Step 1 — Create the GitHub Issue
+
+As soon as the user describes a bug, the AI **must immediately** provide
+a ready-to-paste `gh issue create` command with:
+
+-   a clear, concise title
+-   a structured body containing: **Description**, **Steps to
+    Reproduce**, **Expected Behavior**, **Actual Behavior**, and
+    appropriate labels (e.g. `bug`)
+
+Example format:
+
+```bash
+gh issue create \
+  --title "Short description of the bug" \
+  --body "$(cat <<'EOF'
+## Description
+...
+
+## Steps to Reproduce
+1. ...
+
+## Expected Behavior
+...
+
+## Actual Behavior
+...
+
+## Environment
+- Theme: Congo
+- Mode: dark / light / both
+EOF
+)" \
+  --label "bug"
+```
+
+## Step 2 — Fix the Bug on the Working Branch
+
+The AI develops the fix on the designated `claude/` working branch,
+commits with a clear message referencing the issue number (e.g.
+`Fix #N — description`), and pushes.
+
+## Step 3 — Provide Local Sync Commands
+
+After pushing, the AI **must** provide the user with the exact commands
+to sync the working branch locally for testing:
+
+```bash
+# Fetch the updated branch
+git fetch origin <branch-name>
+
+# Switch to the branch (first time)
+git checkout <branch-name>
+
+# Or pull if already on the branch
+git pull origin <branch-name>
+
+# Run local dev server for testing
+hugo server -D
+```
+
+## Step 4 — Provide the Issue Close Comment
+
+Once the user confirms the fix works locally, the AI **must** generate
+a Markdown comment to be posted on the GitHub issue to document the
+resolution. The comment must include:
+
+-   **Problem**: what was broken and why
+-   **Root Cause**: technical explanation
+-   **Solution**: what was changed (files, approach)
+-   **Files Modified**: list of changed files
+
+The AI provides this as a ready-to-paste Markdown block.
+
+## Step 5 — Close the Issue
+
+After the comment is posted, the AI provides the command to close the
+issue:
+
+```bash
+gh issue close <N> --comment "Fixed in branch <branch-name>"
+```
+
+## Summary of Automatic Behaviors
+
+| User action              | AI must automatically provide            |
+|--------------------------|------------------------------------------|
+| Reports a bug            | `gh issue create` command                |
+| Bug is fixed & pushed    | `git fetch` / `checkout` / `pull` commands for local sync |
+| User confirms fix works  | Markdown close comment + `gh issue close` command |
+
+This workflow is **mandatory** and must be followed for every bug
+report without the user needing to request it explicitly.
