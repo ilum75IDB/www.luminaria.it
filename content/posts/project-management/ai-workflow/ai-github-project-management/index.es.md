@@ -103,14 +103,14 @@ Con la introducción de GitHub + AI en el workflow, mi estimación era:
 
 | Métrica | Antes | Después (estimación) |
 |---|---|---|
-| Tiempo medio análisis bug | ~2.5 horas | ~45 minutos |
-| Tiempo total resolución | ~6 horas | ~4 horas |
-| Bugs resueltos por semana | 15-20 | 22-28 |
+| Tiempo medio análisis bug | ~2.5 horas | ~15/20 minutos |
+| Tiempo total resolución | ~6 horas | ~30 minutos |
+| Bugs resueltos por semana | 15-20 | 180-240 |
 | Conflictos de código | frecuentes | raros |
 | Visibilidad estado proyecto | ninguna | completa |
 
-Una reducción del 30-35% en el tiempo total de resolución.\
-Un aumento del 40% en la capacidad del equipo para cerrar tickets.\
+Una reducción de más del 90% en el tiempo total de resolución.\
+Un aumento de 12 veces en la capacidad del equipo para cerrar tickets.\
 Sin contratar a nadie. Sin cambiar a las personas. Cambiando el método.
 
 ------------------------------------------------------------------------

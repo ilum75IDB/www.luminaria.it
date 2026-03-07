@@ -103,14 +103,14 @@ Cu introducerea GitHub + AI în workflow, estimarea mea era:
 
 | Metrică | Înainte | După (estimare) |
 |---|---|---|
-| Timp mediu analiză bug | ~2.5 ore | ~45 minute |
-| Timp total rezolvare | ~6 ore | ~4 ore |
-| Bug-uri rezolvate pe săptămână | 15-20 | 22-28 |
+| Timp mediu analiză bug | ~2.5 ore | ~15/20 minute |
+| Timp total rezolvare | ~6 ore | ~30 minute |
+| Bug-uri rezolvate pe săptămână | 15-20 | 180-240 |
 | Conflicte de cod | frecvente | rare |
 | Vizibilitate stare proiect | niciuna | completă |
 
-O reducere de 30-35% din timpul total de rezolvare.\
-O creștere de 40% a capacității echipei de a închide tichete.\
+O reducere de peste 90% din timpul total de rezolvare.\
+O creștere de 12 ori a capacității echipei de a închide tichete.\
 Fără să angajezi pe nimeni. Fără să schimbi oamenii. Schimbând metoda.
 
 ------------------------------------------------------------------------
