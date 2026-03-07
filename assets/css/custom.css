@@ -437,16 +437,28 @@ body {
   }
 }
 
-/* 2d) Prose (articolo): nessun limite di larghezza, usa tutto lo spazio */
-.prose,
-.prose > * {
-  max-width: 100% !important;
+/* 2d) Prose (articolo): rimuovi il limite di 65ch, ma rispetta il container */
+.prose {
+  max-width: none !important;
 }
 
-/* 2e) Sezione articolo: occupa tutto lo spazio disponibile */
-article section.prose {
-  width: 100% !important;
+/* 2e) Articolo + contenuto: non uscire dal viewport */
+article,
+article section.prose,
+article header {
   max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  overflow-x: hidden !important;
+}
+
+/* 2f) Immagini e media: mai più larghi del contenitore */
+article img,
+article picture,
+article video,
+article iframe {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 /* 3) Dropdown lingua sempre sopra a tutto */
