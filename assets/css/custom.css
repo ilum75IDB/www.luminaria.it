@@ -85,14 +85,26 @@ h1, h2, h3, h4,
     display: flex !important;
   }
   .desktop-nav-align {
-    align-items: center;
+    align-items: baseline;
   }
   .desktop-menu-item {
     margin-bottom: 0;
     margin-inline-end: 1.75rem;
   }
+  .desktop-menu-item a,
+  .desktop-menu-item button {
+    text-transform: uppercase;
+  }
   .desktop-menu-item:last-child {
     margin-inline-end: 0;
+  }
+  /* Align language switcher with nav menu items */
+  .desktop-menu-item details summary {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: inherit;
   }
 }
 
@@ -417,6 +429,68 @@ nav details > div {
 nav details > div {
   position: absolute;
 }
+/* ============================
+   LANGUAGE SWITCHER — flag sizing (issue #13)
+   ============================ */
+
+/* Flag icon in the trigger — match nav link size (22px) */
+.lang-flag-sm {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+}
+
+/* Flag icon in the dropdown items */
+.lang-flag {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+/* Language switcher text — match nav link font size */
+.desktop-menu-item .lang-code {
+  font-size: 22px !important;
+}
+.desktop-menu-item .lang-arrow {
+  font-size: 22px !important;
+}
+
+/* Spacing: gap between flag and code in trigger */
+details > summary {
+  gap: 0.5rem !important; /* 8px between flag / code / arrow */
+}
+
+/* Dropdown panel: solid background */
+details > div {
+  background-color: #ffffff !important;
+}
+.dark details > div {
+  background-color: #171717 !important; /* neutral-900 */
+}
+
+/* Dropdown items: spacing between flag and code, centered with equal padding */
+details > div a {
+  gap: 0.5rem !important;
+  padding: 0.5rem 1.25rem !important;
+  justify-content: center;
+}
+
+/* Footer language switcher — smaller text to match flag size */
+footer .lang-code {
+  font-size: 16px !important;
+}
+footer .lang-arrow {
+  font-size: 16px !important;
+}
+footer .lang-flag-sm {
+  width: 18px;
+  height: 18px;
+}
+footer .lang-flag {
+  width: 18px;
+  height: 18px;
+}
+
 /* ============================
    LANGUAGE SWITCHER — contrast fix (issue #2)
    ============================ */
