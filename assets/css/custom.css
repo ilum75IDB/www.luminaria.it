@@ -416,12 +416,19 @@ nav {
   background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
 }
 
-/* 2) Evita che il contenuto finisca sotto la navbar fixed — solo lo stretto necessario */
-body {
-  padding-top: 3rem;
+/* 2) Header wrapper: nav è fixed, quindi l'header è vuoto — collassalo */
+body > header,
+header.print\:hidden {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-/* 2b) Margini laterali ridotti: circa lo stesso spazio dell'altezza della navbar */
+/* 2b) Body padding-top: solo lo stretto necessario per la navbar fixed (~48px) */
+body {
+  padding-top: 3rem !important;
+}
+
+/* 2c) Margini laterali ridotti + nessun max-width sul body */
 @media (min-width: 768px) {
   body {
     padding-left: 1.5rem !important;
@@ -430,10 +437,16 @@ body {
   }
 }
 
-@media (max-width: 1189px) {
-  body {
-    padding-top: 3rem;
-  }
+/* 2d) Prose (articolo): nessun limite di larghezza, usa tutto lo spazio */
+.prose,
+.prose > * {
+  max-width: 100% !important;
+}
+
+/* 2e) Sezione articolo: occupa tutto lo spazio disponibile */
+article section.prose {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 /* 3) Dropdown lingua sempre sopra a tutto */
