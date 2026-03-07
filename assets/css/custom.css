@@ -409,6 +409,8 @@ nav {
   backdrop-filter: none !important;
   padding-left: 1.5rem !important;
   padding-right: 1.5rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }
 .dark nav {
   background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
@@ -416,12 +418,12 @@ nav {
 
 /* 2) Evita che il contenuto finisca sotto la navbar fixed */
 body {
-  padding-top: 5.5rem; /* ~88px: aggiusta se vuoi più/meno aria */
+  padding-top: 4rem; /* ridotto: meno spazio tra navbar e contenuto */
 }
 
 @media (max-width: 1189px) {
   body {
-    padding-top: 5rem; /* sotto 1190px: navbar leggermente più bassa */
+    padding-top: 3.75rem; /* sotto 1190px */
   }
 }
 
@@ -677,8 +679,8 @@ footer {
 @media (min-width: 768px) {
   .article-two-col {
     display: grid !important;
-    grid-template-columns: 120px 1fr;
-    gap: 2rem;
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
   }
 
   .article-sidebar {
@@ -699,9 +701,9 @@ footer {
 
 .author-sidebar-card {
   position: sticky;
-  top: 5rem;
+  top: 4rem;
   text-align: center;
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 .author-sidebar-card img,
