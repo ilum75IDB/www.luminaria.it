@@ -2,6 +2,7 @@
 title: "Access & Control"
 description: "Securitate MySQL și MariaDB în practică: modelul utilizator@host, privilegii granulare și capcanele unui sistem de autentificare care leagă identitatea de originea conexiunii."
 layout: "list"
+image: "security.cover.jpg"
 ---
 În MySQL securitatea începe înainte de parolă.<br>
 Începe cu întrebarea: de unde te conectezi?<br>

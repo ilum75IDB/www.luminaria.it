@@ -2,6 +2,7 @@
 title: "Access & Control"
 description: "MySQL and MariaDB security in practice: the user@host model, granular privileges and the pitfalls of an authentication system that ties identity to connection origin."
 layout: "list"
+image: "security.cover.jpg"
 ---
 In MySQL, security begins before the password.<br>
 It begins with the question: where are you connecting from?<br>
