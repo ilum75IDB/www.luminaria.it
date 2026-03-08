@@ -4,8 +4,8 @@ description: "In MySQL and MariaDB a user's identity depends on the host they co
 date: "2026-03-08T10:00:00+01:00"
 draft: false
 translationKey: "mysql_users_and_hosts"
-tags: ["MySQL", "MariaDB", "Security", "Users", "Privileges", "Authentication"]
-categories: ["MySQL", "Security"]
+tags: ["mysql", "mariadb", "security", "users", "privileges", "authentication"]
+categories: ["mysql", "security"]
 image: "mysql-users-and-hosts.cover.jpg"
 ---
 
