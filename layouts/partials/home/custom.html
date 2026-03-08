@@ -106,26 +106,35 @@
     <section class="editorial-section">
       <h2 class="editorial-section-title">{{ $section.Title }}</h2>
 
-      {{/* Hero for this section — 2-column layout */}}
+      {{/* Hero for this section — 2-column layout: [thumbnail] [title+meta+desc] */}}
       {{- $sHero := index $sectionPosts 0 -}}
+      {{- $sCoverImg := false -}}
+      {{- if $sHero.Params.image -}}
+        {{- $sCoverImg = $sHero.Resources.GetMatch $sHero.Params.image -}}
+      {{- end -}}
+      {{- if not $sCoverImg -}}
+        {{- $sCoverImg = $sHero.Resources.GetMatch ($sHero.Params.thumbnail | default "*thumb*") -}}
+      {{- end -}}
+      {{- if not $sCoverImg -}}
+        {{- $sCoverImg = $sHero.Resources.GetMatch ($sHero.Params.feature | default "*feature*") -}}
+      {{- end -}}
+      {{- if not $sCoverImg -}}
+        {{- $sCoverImg = $sHero.Resources.GetMatch "*.cover.*" -}}
+      {{- end -}}
+      {{- if not $sCoverImg -}}
+        {{- with ($sHero.Resources.ByType "image") -}}
+          {{- $sCoverImg = index . 0 -}}
+        {{- end -}}
+      {{- end -}}
       <article class="editorial-category-hero">
-        {{- $images := $sHero.Resources.ByType "image" }}
-        {{- $feature := "" }}
-        {{- if $sHero.Params.image }}
-          {{- $feature = $images.GetMatch $sHero.Params.image }}
-        {{- end }}
-        {{- if not $feature }}
-          {{- $thumbnail := $images.GetMatch ($sHero.Params.thumbnail | default "*thumb*") }}
-          {{- $feature = $images.GetMatch ($sHero.Params.feature | default "*feature*") | default $thumbnail }}
-        {{- end }}
-        {{- with $feature }}
+        {{- with $sCoverImg }}
           <a href="{{ $sHero.Permalink }}" class="editorial-category-hero-img-link">
             <img
               class="editorial-category-hero-img"
-              srcset="{{ (.Fit "240x160 smart").Permalink }} 240w, {{ (.Fit "480x320 smart").Permalink }} 480w"
-              src="{{ (.Fit "240x160 smart").Permalink }}"
+              srcset="{{ (.Resize "200x").Permalink }} 200w, {{ (.Resize "400x").Permalink }} 400w"
+              src="{{ (.Resize "200x").Permalink }}"
               alt="{{ $sHero.Title }}"
-              width="240" height="160"
+              width="{{ .Width }}" height="{{ .Height }}"
               {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
             />
           </a>
