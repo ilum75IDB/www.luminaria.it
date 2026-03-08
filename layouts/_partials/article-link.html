@@ -25,9 +25,9 @@
             sm:max-w-[10rem]" src="{{ .Permalink }}"
           {{ else }}
             class="w-24 rounded-md sm:w-40" srcset="
-            {{- (.Fill "160x120 smart").Permalink }}
-            160w, {{- (.Fill "320x240 smart").Permalink }} 2x"
-            src="{{ (.Fill "160x120 smart").Permalink }}" width="160" height="120"
+            {{- (.Fit "160x107 smart").Permalink }}
+            160w, {{- (.Fit "320x213 smart").Permalink }} 2x"
+            src="{{ (.Fit "160x107 smart").Permalink }}" width="160" height="120"
           {{ end }}
           {{ if $.Site.Params.enableImageLazyLoading | default true }}
             loading="lazy"
@@ -74,10 +74,10 @@
       {{ end }}
     </h3>
 
-    {{/* Section description: visibile anche per link interni */}}
-    {{ if and (or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term")) (.Params.description) }}
-      <p class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
-        {{ .Params.description | emojify }}
+    {{/* Description: visible for all pages */}}
+    {{ with .Params.description }}
+      <p class="article-link-desc mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+        {{ . | emojify }}
       </p>
     {{ end }}
 

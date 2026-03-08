@@ -882,8 +882,7 @@ footer {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  object-fit: cover;
-  max-height: 400px;
+  object-fit: contain;
 }
 
 .editorial-hero-title {
@@ -926,8 +925,11 @@ footer {
   color: #d1d5db;
 }
 
-/* Category hero (no image, just text) */
+/* Category hero (2-column: thumbnail + text) */
 .editorial-category-hero {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(0,0,0,0.08);
@@ -937,8 +939,42 @@ footer {
   border-bottom-color: rgba(255,255,255,0.1);
 }
 
+.editorial-category-hero-img-link {
+  flex-shrink: 0;
+}
+
+.editorial-category-hero-img {
+  width: 150px;
+  height: auto;
+  border-radius: 0.4rem;
+  object-fit: contain;
+}
+
+@media (min-width: 641px) {
+  .editorial-category-hero-img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .editorial-category-hero {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .editorial-category-hero-img {
+    width: 100%;
+  }
+}
+
+.editorial-category-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
 .editorial-category-hero-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 800;
   line-height: 1.25;
   margin: 0 0 0.4rem 0;
@@ -952,6 +988,13 @@ footer {
 .editorial-category-hero-title a:hover {
   color: var(--ivan-red) !important;
   text-decoration: none !important;
+}
+
+.editorial-category-hero-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Article grid (2 columns) */
@@ -1052,4 +1095,14 @@ footer {
 
 .editorial-showmore a:hover {
   color: var(--ivan-red) !important;
+}
+
+/* Article description in listing pages (max 2 lines) */
+.article-link-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
