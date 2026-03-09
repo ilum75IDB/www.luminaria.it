@@ -19,6 +19,16 @@ tool `WebFetch`.
 | 40 | https://github.com/ilum75IDB/ivanluminaria.com/issues/40 | Il bus matrix che ha salvato un progetto: modellare prima di scrivere codice | aperta |
 | 41 | https://github.com/ilum75IDB/ivanluminaria.com/issues/41 | Partitioning nel DWH: quando 3 anni di dati pesano troppo | aperta |
 
+## Issue Aperte — Sezione MySQL
+
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 42 | https://github.com/ilum75IDB/ivanluminaria.com/issues/42 | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | aperta |
+| 43 | https://github.com/ilum75IDB/ivanluminaria.com/issues/43 | mysqldump vs mysqlpump vs mydumper: il backup che non ti fa dormire la notte | aperta |
+| 44 | https://github.com/ilum75IDB/ivanluminaria.com/issues/44 | InnoDB buffer pool: il parametro che cambia tutto e che nessuno dimensiona | aperta |
+| 45 | https://github.com/ilum75IDB/ivanluminaria.com/issues/45 | Replica MySQL: quando lo slave resta indietro e nessuno se ne accorge | aperta |
+| 46 | https://github.com/ilum75IDB/ivanluminaria.com/issues/46 | MySQL e i lock che non ti aspetti: gap lock, next-key lock e deadlock | aperta |
+
 ## Issue Aperte — Sezione Project Management
 
 | #  | Issue | Titolo | Stato |
