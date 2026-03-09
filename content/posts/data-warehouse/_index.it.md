@@ -2,6 +2,7 @@
 title: "Data Warehouse"
 date: "2026-03-10T10:00:00+01:00"
 description: "Architettura Data Warehouse nella pratica: modellazione dimensionale, gerarchie, ETL e strategie di caricamento. Quando i dati non servono solo a funzionare, ma a decidere."
+image: "data-warehouse.cover.jpg"
 layout: "list"
 ---
 Un data warehouse non è un database con le tabelle più grandi.<br>

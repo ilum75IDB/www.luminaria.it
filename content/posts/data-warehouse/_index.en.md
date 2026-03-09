@@ -2,6 +2,7 @@
 title: "Data Warehouse"
 date: "2026-03-10T10:00:00+01:00"
 description: "Data Warehouse architecture in practice: dimensional modeling, hierarchies, ETL and loading strategies. When data is not just meant to work, but to drive decisions."
+image: "data-warehouse.cover.jpg"
 layout: "list"
 ---
 A data warehouse is not a database with bigger tables.<br>
