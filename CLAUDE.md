@@ -215,8 +215,10 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 | 13 | 2026-03-10 | —        | Tue | La tecnica del Sì-E (Yes-And)              | project-management | planned    |
 | 14 | 2026-03-17 | —        | Tue | Pagamenti a 60-90-120 giorni               | project-management | planned    |
 | 15 | 2026-03-24 | —        | Tue | Standup meeting (max 15 minuti)            | project-management | planned    |
+| 16 | 2026-03-31 | —        | Tue | AWR, ASH e i 10 minuti che hanno salvato un go-live | oracle     | planned    |
+| 17 | 2026-04-07 | —        | Tue | Oracle su Linux - i parametri kernel che nessuno configura | oracle | planned |
 
-**Next available slot**: 2026-03-31 (Tuesday)
+**Next available slot**: 2026-04-14 (Tuesday)
 
 When adding a new article, update this table, assign the next available Tuesday slot, and set the "Next available slot" line accordingly.
 
