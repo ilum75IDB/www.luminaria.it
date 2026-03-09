@@ -115,21 +115,20 @@
 
       {{/* Hero for this section — 2-column layout: [thumbnail] [title+meta+desc] */}}
       {{- $sHero := index $sectionPosts 0 -}}
-      {{- $sCoverImg := false -}}
+      {{- $heroImages := $sHero.Resources.ByType "image" -}}
+      {{- $sCoverImg := "" -}}
       {{- if $sHero.Params.image -}}
-        {{- $sCoverImg = $sHero.Resources.GetMatch $sHero.Params.image -}}
+        {{- $sCoverImg = $heroImages.GetMatch $sHero.Params.image -}}
       {{- end -}}
       {{- if not $sCoverImg -}}
-        {{- $sCoverImg = $sHero.Resources.GetMatch ($sHero.Params.thumbnail | default "*thumb*") -}}
+        {{- $thumbnail := $heroImages.GetMatch ($sHero.Params.thumbnail | default "*thumb*") -}}
+        {{- $sCoverImg = $heroImages.GetMatch ($sHero.Params.feature | default "*feature*") | default $thumbnail -}}
       {{- end -}}
       {{- if not $sCoverImg -}}
-        {{- $sCoverImg = $sHero.Resources.GetMatch ($sHero.Params.feature | default "*feature*") -}}
+        {{- $sCoverImg = $heroImages.GetMatch "*.cover.*" -}}
       {{- end -}}
       {{- if not $sCoverImg -}}
-        {{- $sCoverImg = $sHero.Resources.GetMatch "*.cover.*" -}}
-      {{- end -}}
-      {{- if not $sCoverImg -}}
-        {{- with ($sHero.Resources.ByType "image") -}}
+        {{- with $heroImages -}}
           {{- $sCoverImg = index . 0 -}}
         {{- end -}}
       {{- end -}}
