@@ -161,15 +161,16 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 
 | #  | Date       | New Date | Day | Article                                    | Section            | Status     |
 |----|------------|----------|-----|--------------------------------------------|--------------------|------------|
-| 1  | 2026-01-06 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)         | oracle             | published  |
-| 2  | 2026-01-13 | —        | Tue | 4 milioni e nessun software                | project-management | published  |
-| 3  | 2026-01-20 | —        | Tue | LIKE optimization PostgreSQL                | postgresql         | published  |
-| 4  | 2026-01-27 | —        | Tue | AI e GitHub per gestire un progetto         | project-management | published  |
-| 5  | 2026-02-03 | —        | Tue | PostgreSQL roles and users                  | postgresql         | published  |
-| 6  | 2026-02-10 | —        | Tue | Smart working nella consulenza IT           | project-management | published  |
-| 7  | 2026-02-17 | —        | Tue | MySQL users and hosts                       | mysql              | published  |
-| 8  | 2026-02-24 | —        | Tue | Galera Cluster a 3 nodi                     | mysql              | published  |
-| 9  | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                         | project-management | published  |
+| 1  | 2025-12-30 | —        | Tue | Oracle Partitioning (2 miliardi di righe)    | oracle             | published  |
+| 2  | 2026-01-06 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)         | oracle             | published  |
+| 3  | 2026-01-13 | —        | Tue | 4 milioni e nessun software                | project-management | published  |
+| 4  | 2026-01-20 | —        | Tue | LIKE optimization PostgreSQL                | postgresql         | published  |
+| 5  | 2026-01-27 | —        | Tue | AI e GitHub per gestire un progetto         | project-management | published  |
+| 6  | 2026-02-03 | —        | Tue | PostgreSQL roles and users                  | postgresql         | published  |
+| 7  | 2026-02-10 | —        | Tue | Smart working nella consulenza IT           | project-management | published  |
+| 8  | 2026-02-17 | —        | Tue | MySQL users and hosts                       | mysql              | published  |
+| 9  | 2026-02-24 | —        | Tue | Galera Cluster a 3 nodi                     | mysql              | published  |
+| 10 | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                         | project-management | published  |
 
 **Next available slot**: 2026-03-10 (Tuesday)
 
