@@ -216,7 +216,7 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 | 14 | 2026-02-17 | —        | Tue | Smart working nella consulenza IT                          | project-management | #34   | published |
 | 15 | 2026-02-24 | —        | Tue | Oracle su Linux - i parametri kernel che nessuno configura  | oracle             | #23   | planned   |
 | 16 | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                                        | project-management | #35   | published |
-| 17 | 2026-03-10 | —        | Tue | Pagamenti a 60-90-120 giorni                               | project-management | #26   | planned   |
+| 17 | 2026-03-10 | —        | Tue | Pagamenti a 60-90-120 giorni                               | project-management | #26   | published |
 
 **Next available slot**: 2026-03-17 (Tuesday)
 

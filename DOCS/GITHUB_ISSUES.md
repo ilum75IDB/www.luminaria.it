@@ -17,13 +17,13 @@ tool `WebFetch`.
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
 | 25 | https://github.com/ilum75IDB/ivanluminaria.com/issues/25 | La tecnica del Si-E (Yes-And) - come ho evitato una discussione nel team | aperta |
-| 26 | https://github.com/ilum75IDB/ivanluminaria.com/issues/26 | Pagamenti a 60-90-120 giorni - la normalita italiana che in Europa non esiste | aperta |
 | 27 | https://github.com/ilum75IDB/ivanluminaria.com/issues/27 | Standup meeting - perche funzionano solo se durano 15 minuti | aperta |
 
 ## Issue Chiuse
 
 | #  | Issue | Titolo | Chiusa il |
 |----|-------|--------|-----------|
+| 26 | https://github.com/ilum75IDB/ivanluminaria.com/issues/26 | Pagamenti a 60-90-120 giorni - la normalita italiana che in Europa non esiste | 2026-03-10 |
 | 28 | https://github.com/ilum75IDB/ivanluminaria.com/issues/28 | 4 milioni di record e nessun software - quando Excel e il database | 2026-03-09 |
 | 19 | https://github.com/ilum75IDB/ivanluminaria.com/issues/19 | Oracle Partitioning - quando 2 miliardi di righe non entrano piu in una query | 2026-03-09 |
 | 29 | https://github.com/ilum75IDB/ivanluminaria.com/issues/29 | LIKE optimization in PostgreSQL - indici e pattern matching | 2026-03-09 |
