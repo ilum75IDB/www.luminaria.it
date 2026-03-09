@@ -208,7 +208,7 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 | 6  | 2025-12-23 | —        | Tue | AI e GitHub per gestire un progetto                        | project-management | #31   | published |
 | 7  | 2025-12-30 | —        | Tue | Ragged Hierarchies (self-parenting)                        | data-warehouse     | #24   | published |
 | 8  | 2026-01-06 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)                       | oracle             | #22   | published |
-| 9  | 2026-01-13 | —        | Tue | La tecnica del Sì-E (Yes-And)                              | project-management | #25   | planned   |
+| 9  | 2026-01-13 | —        | Tue | La tecnica del Sì-E (Yes-And)                              | project-management | #25   | published |
 | 10 | 2026-01-20 | —        | Tue | PostgreSQL roles and users                                 | postgresql         | #32   | published |
 | 11 | 2026-01-27 | —        | Tue | Standup meeting (max 15 minuti)                            | project-management | #27   | planned   |
 | 12 | 2026-02-03 | —        | Tue | Galera Cluster a 3 nodi                                    | mysql              | #33   | published |
