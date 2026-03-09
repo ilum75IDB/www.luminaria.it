@@ -1,7 +1,7 @@
 ---
 title: "De single instance a Data Guard: el día en que el CEO entendió el DR"
 description: "Una base de datos Oracle en producción sin ninguna redundancia. Un fallo de disco que lo paró todo durante seis horas. Y la decisión del CEO de invertir en una arquitectura Active Data Guard con switchover automático."
-date: "2026-03-10T10:00:00+01:00"
+date: "2025-12-02T10:00:00+01:00"
 draft: false
 translationKey: "oracle_data_guard"
 tags: ["data-guard", "disaster-recovery", "high-availability", "switchover", "architecture"]
