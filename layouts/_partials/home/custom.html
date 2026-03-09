@@ -96,7 +96,7 @@
 {{ end }}
 
 {{/* ========== CATEGORY SECTIONS ========== */}}
-{{- $sections := slice "project-management" "postgresql" -}}
+{{- $sections := slice "data-warehouse" "project-management" "oracle" "postgresql" "mysql" -}}
 {{- range $sectionSlug := $sections -}}
   {{- $section := site.GetPage (printf "posts/%s" $sectionSlug) -}}
   {{- if $section -}}
@@ -109,6 +109,27 @@
       {{/* Hero for this section */}}
       {{- $sHero := index $sectionPosts 0 -}}
       <article class="editorial-category-hero">
+        {{- $images := $sHero.Resources.ByType "image" }}
+        {{- $feature := "" }}
+        {{- if $sHero.Params.image }}
+          {{- $feature = $images.GetMatch $sHero.Params.image }}
+        {{- end }}
+        {{- if not $feature }}
+          {{- $thumbnail := $images.GetMatch ($sHero.Params.thumbnail | default "*thumb*") }}
+          {{- $feature = $images.GetMatch ($sHero.Params.feature | default "*feature*") | default $thumbnail }}
+        {{- end }}
+        {{- with $feature }}
+          <a href="{{ $sHero.Permalink }}" class="editorial-hero-img-link">
+            <img
+              class="editorial-hero-img"
+              srcset="{{ (.Fill "800x400 smart").Permalink }} 800w, {{ (.Fill "1200x600 smart").Permalink }} 1200w"
+              src="{{ (.Fill "800x400 smart").Permalink }}"
+              alt="{{ $sHero.Title }}"
+              width="1200" height="600"
+              {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
+            />
+          </a>
+        {{- end }}
         <h3 class="editorial-category-hero-title">
           <a href="{{ $sHero.Permalink }}">{{ $sHero.Title | emojify }}</a>
         </h3>

@@ -136,6 +136,28 @@ When writing a new blog article, **always** follow these steps:
 2. **Write like a human** — the text **must not** sound AI-generated. Avoid generic filler, motivational closings, bullet-point-heavy structures, and overly polished phrasing. Use Ivan's voice: direct, experienced, occasionally ironic, grounded in real-world project stories. Vary sentence length, use colloquial turns where appropriate, and let opinions show.
 3. **No AI tells** — never use patterns like "In conclusion…", "It's worth noting that…", "Let's dive in…", "In today's fast-paced world…", or similar clichés typical of LLM output.
 
+## Homepage Layout
+
+The homepage (`layouts/_partials/home/custom.html`) uses an editorial magazine-style layout. Sections are displayed in a **fixed order** defined by the `$sections` slice in the template.
+
+### Section display rules
+
+- **Latest** section: 1 hero article + 5 grid articles (total 6, controlled by `homepage.recentLimit` param)
+- **Each category section**: 1 hero article (with cover image) + up to 4 grid articles (total max 5)
+
+### Section order
+
+| #  | Section                  | Slug                 | Articles displayed       |
+|----|--------------------------|----------------------|--------------------------|
+| 1  | Ultimi articoli (Latest) | *(all sections)*     | 1 hero + 5 grid = 6     |
+| 2  | Data Warehouse Architect | `data-warehouse`     | 1 hero + up to 4 grid   |
+| 3  | Project Management       | `project-management` | 1 hero + up to 4 grid   |
+| 4  | Oracle                   | `oracle`             | 1 hero + up to 4 grid   |
+| 5  | PostgreSQL               | `postgresql`         | 1 hero + up to 4 grid   |
+| 6  | MySQL                    | `mysql`              | 1 hero + up to 4 grid   |
+
+**Important**: When adding new sections, update both this table and the `$sections` slice in `layouts/_partials/home/custom.html`.
+
 ## Custom Layouts & Overrides
 
 - **`layouts/partials/translations.html`**: Custom language switcher with flag dropdown (replaces Congo default)
