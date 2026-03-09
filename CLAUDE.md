@@ -142,8 +142,8 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 1. **Cadence**: one article per Tuesday, no gaps
 2. **Time**: always `T10:00:00+01:00`
 3. **First article**: 2026-01-13 (Tuesday)
-4. **Anchor article**: "Bici vs Auto a Roma" must remain the **last published** article until explicitly told otherwise
-5. **New articles**: must be placed chronologically **before** the anchor, or set as `draft: true` if they belong after it
+4. **Anchor article**: "Bici vs Auto a Roma" must remain the **last published** article until explicitly told otherwise. When a new article is added, the anchor moves forward to the next Tuesday slot to stay last.
+5. **New articles**: are inserted in the slot immediately before the anchor. The anchor's date is bumped forward by one week to maintain its position as the final article.
 6. **All 4 language versions** of each article share the same date
 
 ### Current Schedule
@@ -156,8 +156,8 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 | 4  | 2026-02-03 | Tue | PostgreSQL roles and users                  | postgresql         |
 | 5  | 2026-02-10 | Tue | Smart working nella consulenza IT           | project-management |
 | 6  | 2026-02-17 | Tue | MySQL users and hosts                       | mysql              |
-| 7  | 2026-02-24 | Tue | **Bici vs Auto a Roma** *(anchor/ultimo)*   | project-management |
-| 8  | TBD        | --  | Galera Cluster a 3 nodi *(draft)*           | mysql              |
+| 7  | 2026-02-24 | Tue | Galera Cluster a 3 nodi                     | mysql              |
+| 8  | 2026-03-03 | Tue | **Bici vs Auto a Roma** *(anchor/ultimo)*   | project-management |
 
 When adding a new article, update this table and assign the next available Tuesday slot.
 

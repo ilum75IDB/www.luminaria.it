@@ -1,7 +1,7 @@
 ---
 title: "Bike vs Car in Rome: the morning that opened my eyes"
 description: "From Appio Latino to Prati in 50 minutes of traffic and a €35 parking bill, or 18 minutes on an electric Brompton. The choice that changed my days — and could change yours."
-date: "2026-02-24T10:00:00+01:00"
+date: "2026-03-03T10:00:00+01:00"
 draft: false
 translationKey: "bici_vs_auto_roma"
 tags: ["Urban Mobility", "Cycling", "Smart Working", "Rome", "Sustainability", "Health"]

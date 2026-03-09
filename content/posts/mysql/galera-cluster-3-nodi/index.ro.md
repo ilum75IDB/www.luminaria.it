@@ -1,8 +1,8 @@
 ---
 title: "Galera Cluster cu 3 noduri: cum am rezolvat o problemă de disponibilitate pe MySQL"
 description: "Un client cu un MySQL standalone care cădea în fiecare lună, luând cu el întreaga aplicație. Soluția mea: un Galera Cluster cu 3 noduri și replicare sincronă. De la diagnostic la punerea în producție, cu toate fișierele de configurare și parametrii critici."
-date: 2026-03-09T08:00:00+01:00
-draft: true
+date: "2026-02-24T10:00:00+01:00"
+draft: false
 translationKey: "galera_cluster_3_nodi"
 tags: ["mysql", "mariadb", "galera", "cluster", "disponibilitate ridicată", "replicare", "wsrep", "linux"]
 categories: ["mysql"]

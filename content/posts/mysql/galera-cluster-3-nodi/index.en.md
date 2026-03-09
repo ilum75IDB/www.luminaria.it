@@ -1,8 +1,8 @@
 ---
 title: "Galera Cluster with 3 nodes: how I solved a MySQL availability problem"
 description: "A client with a standalone MySQL that crashed every month, taking down the entire application. My solution: a 3-node Galera Cluster with synchronous replication. From diagnosis to production, with all configuration files and critical parameters."
-date: 2026-03-09T08:00:00+01:00
-draft: true
+date: "2026-02-24T10:00:00+01:00"
+draft: false
 translationKey: "galera_cluster_3_nodi"
 tags: ["mysql", "mariadb", "galera", "cluster", "high availability", "replication", "wsrep", "linux"]
 categories: ["mysql"]
