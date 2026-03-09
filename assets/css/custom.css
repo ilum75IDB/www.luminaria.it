@@ -1031,7 +1031,7 @@ footer {
 
 .editorial-grid-img {
   width: 100px;
-  height: 75px;
+  height: 67px;
   object-fit: cover;
   border-radius: 0.35rem;
 }
@@ -1039,7 +1039,7 @@ footer {
 @media (min-width: 641px) {
   .editorial-grid-img {
     width: 120px;
-    height: 90px;
+    height: 80px;
   }
 }
 

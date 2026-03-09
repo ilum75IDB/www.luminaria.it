@@ -25,10 +25,10 @@
       <a href="{{ $hero.Permalink }}" class="editorial-hero-img-link">
         <img
           class="editorial-hero-img"
-          srcset="{{ (.Fill "800x400 smart").Permalink }} 800w, {{ (.Fill "1200x600 smart").Permalink }} 1200w"
-          src="{{ (.Fill "800x400 smart").Permalink }}"
+          srcset="{{ (.Fill "800x533 smart").Permalink }} 800w, {{ (.Fill "1200x800 smart").Permalink }} 1200w"
+          src="{{ (.Fill "800x533 smart").Permalink }}"
           alt="{{ $hero.Title }}"
-          width="1200" height="600"
+          width="1200" height="800"
           {{ if $.Site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
         />
       </a>
@@ -65,8 +65,8 @@
             <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
               <img
                 class="editorial-grid-img"
-                srcset="{{ (.Fill "160x120 smart").Permalink }} 160w, {{ (.Fill "320x240 smart").Permalink }} 320w"
-                src="{{ (.Fill "160x120 smart").Permalink }}"
+                srcset="{{ (.Fill "160x107 smart").Permalink }} 160w, {{ (.Fill "320x213 smart").Permalink }} 320w"
+                src="{{ (.Fill "160x107 smart").Permalink }}"
                 alt="{{ $article.Title }}"
                 width="160" height="120"
                 {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
@@ -106,7 +106,7 @@
     <section class="editorial-section">
       <h2 class="editorial-section-title">{{ $section.Title }}</h2>
 
-      {{/* Hero for this section */}}
+      {{/* Hero for this section — 2-column: image | text */}}
       {{- $sHero := index $sectionPosts 0 -}}
       <article class="editorial-category-hero">
         {{- $images := $sHero.Resources.ByType "image" }}
@@ -119,26 +119,28 @@
           {{- $feature = $images.GetMatch ($sHero.Params.feature | default "*feature*") | default $thumbnail }}
         {{- end }}
         {{- with $feature }}
-          <a href="{{ $sHero.Permalink }}" class="editorial-hero-img-link">
+          <a href="{{ $sHero.Permalink }}" class="editorial-category-hero-img-link">
             <img
-              class="editorial-hero-img"
-              srcset="{{ (.Fill "800x400 smart").Permalink }} 800w, {{ (.Fill "1200x600 smart").Permalink }} 1200w"
-              src="{{ (.Fill "800x400 smart").Permalink }}"
+              class="editorial-category-hero-img"
+              srcset="{{ (.Fill "300x200 smart").Permalink }} 300w, {{ (.Fill "450x300 smart").Permalink }} 450w"
+              src="{{ (.Fill "300x200 smart").Permalink }}"
               alt="{{ $sHero.Title }}"
-              width="1200" height="600"
+              width="450" height="300"
               {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
             />
           </a>
         {{- end }}
-        <h3 class="editorial-category-hero-title">
-          <a href="{{ $sHero.Permalink }}">{{ $sHero.Title | emojify }}</a>
-        </h3>
-        <div class="editorial-hero-meta">
-          {{ $sHero.Date | time.Format ":date_long" }} · {{ $sHero.ReadingTime }} min
+        <div class="editorial-category-hero-text">
+          <h3 class="editorial-category-hero-title">
+            <a href="{{ $sHero.Permalink }}">{{ $sHero.Title | emojify }}</a>
+          </h3>
+          <div class="editorial-hero-meta">
+            {{ $sHero.Date | time.Format ":date_long" }} · {{ $sHero.ReadingTime }} min
+          </div>
+          {{ if $sHero.Params.description }}
+            <p class="editorial-category-hero-desc">{{ $sHero.Params.description }}</p>
+          {{ end }}
         </div>
-        {{ if $sHero.Params.description }}
-          <p class="editorial-hero-desc">{{ $sHero.Params.description }}</p>
-        {{ end }}
       </article>
 
       {{/* Grid for remaining posts in section */}}
