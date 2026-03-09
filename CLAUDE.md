@@ -169,3 +169,7 @@ When adding a new article, update this table, assign the next available Tuesday 
 - The `baseURL` in `hugo.toml` is set for GitHub Pages project site (`/www.luminaria.it/`); this affects all asset paths
 - PDF resumes are stored in `static/downloads/` and linked from the resumes content pages
 - The `.gitignore` excludes `public/`, `resources/_gen/`, and `.hugo_build.lock`
+
+## GitHub Issues
+
+In questo ambiente **non è disponibile `gh` CLI** e non è possibile accedere direttamente alle API di GitHub. Quando l'utente chiede di "creare una issue", in realtà sta chiedendo di **generare il comando `gh issue create` pronto per il copia-incolla**, in modo che possa eseguirlo lui stesso dal proprio terminale. Non tentare di installare `gh`, non provare workaround con `curl` o API proxy: fornisci direttamente i comandi `gh issue create --title "..." --label "..." --body "$(cat <<'EOF' ... EOF)"` completi e pronti all'uso.
