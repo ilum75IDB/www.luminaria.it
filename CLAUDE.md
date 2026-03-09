@@ -146,13 +146,13 @@ When writing a new blog article, **always** follow these steps:
 
 ## Publication Schedule
 
-Articles are published **one per week, every Tuesday at 10:00 CET**, starting from the second week of 2026 (Tuesday 13 January 2026).
+Articles are published **one per week, every Tuesday at 10:00 CET**, starting from the first week of 2026 (Tuesday 6 January 2026).
 
 ### Rules
 
 1. **Cadence**: one article per Tuesday, no gaps
 2. **Time**: always `T10:00:00+01:00`
-3. **First article**: 2026-01-13 (Tuesday)
+3. **First article**: 2026-01-06 (Tuesday)
 4. **New articles**: take the next available Tuesday slot after the last published article
 5. **All 4 language versions** of each article share the same date
 6. **Schedule table format**: always show the columns below. When reorganising dates, fill the "New Date" column; use `—` if no change is needed
@@ -161,17 +161,17 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 
 | #  | Date       | New Date | Day | Article                                    | Section            | Status     |
 |----|------------|----------|-----|--------------------------------------------|--------------------|------------|
-| 1  | 2026-01-13 | —        | Tue | 4 milioni e nessun software                | project-management | published  |
-| 2  | 2026-01-20 | —        | Tue | LIKE optimization PostgreSQL                | postgresql         | published  |
-| 3  | 2026-01-27 | —        | Tue | AI e GitHub per gestire un progetto         | project-management | published  |
-| 4  | 2026-02-03 | —        | Tue | PostgreSQL roles and users                  | postgresql         | published  |
-| 5  | 2026-02-10 | —        | Tue | Smart working nella consulenza IT           | project-management | published  |
-| 6  | 2026-02-17 | —        | Tue | MySQL users and hosts                       | mysql              | published  |
-| 7  | 2026-02-24 | —        | Tue | Galera Cluster a 3 nodi                     | mysql              | published  |
-| 8  | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                         | project-management | published  |
-| 9  | 2026-03-10 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)         | oracle             | draft      |
+| 1  | 2026-01-06 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)         | oracle             | published  |
+| 2  | 2026-01-13 | —        | Tue | 4 milioni e nessun software                | project-management | published  |
+| 3  | 2026-01-20 | —        | Tue | LIKE optimization PostgreSQL                | postgresql         | published  |
+| 4  | 2026-01-27 | —        | Tue | AI e GitHub per gestire un progetto         | project-management | published  |
+| 5  | 2026-02-03 | —        | Tue | PostgreSQL roles and users                  | postgresql         | published  |
+| 6  | 2026-02-10 | —        | Tue | Smart working nella consulenza IT           | project-management | published  |
+| 7  | 2026-02-17 | —        | Tue | MySQL users and hosts                       | mysql              | published  |
+| 8  | 2026-02-24 | —        | Tue | Galera Cluster a 3 nodi                     | mysql              | published  |
+| 9  | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                         | project-management | published  |
 
-**Next available slot**: 2026-03-17 (Tuesday)
+**Next available slot**: 2026-03-10 (Tuesday)
 
 When adding a new article, update this table, assign the next available Tuesday slot, and set the "Next available slot" line accordingly.
 
