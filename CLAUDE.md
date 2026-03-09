@@ -169,8 +169,9 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 | 6  | 2026-02-17 | —        | Tue | MySQL users and hosts                       | mysql              | published  |
 | 7  | 2026-02-24 | —        | Tue | Galera Cluster a 3 nodi                     | mysql              | published  |
 | 8  | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                         | project-management | published  |
+| 9  | 2026-03-10 | —        | Tue | Oracle ruoli e privilegi (GRANT ALL)         | oracle             | draft      |
 
-**Next available slot**: 2026-03-10 (Tuesday)
+**Next available slot**: 2026-03-17 (Tuesday)
 
 When adding a new article, update this table, assign the next available Tuesday slot, and set the "Next available slot" line accordingly.
 
@@ -192,6 +193,7 @@ Poiché `gh` CLI non è disponibile, il file **`DOCS/GITHUB_ISSUES.md`** contien
 1. **Leggere `DOCS/GITHUB_ISSUES.md`** per ottenere i link delle issue
 2. **Usare `WebFetch`** sui link per leggere il contenuto completo di ciascuna issue da GitHub
 3. Quando una issue viene chiusa o ne vengono create di nuove, **aggiornare `DOCS/GITHUB_ISSUES.md`** di conseguenza
+4. Quando l'utente chiede di **creare una nuova issue** e poi la crea dal suo terminale, **chiedere sempre il link** della issue appena creata per poterlo inserire in `DOCS/GITHUB_ISSUES.md`. Non procedere senza aver aggiornato il file
 
 ### Regole di formattazione per i comandi gh issue create
 
