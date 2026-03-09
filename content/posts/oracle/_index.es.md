@@ -1,6 +1,7 @@
 ---
 title: "Oracle"
 layout: "list"
+date: "2026-03-10T10:00:00+01:00"
 description: "Oracle Database: seguridad, rendimiento y arquitectura en la base de datos empresarial más longeva y compleja del mercado."
 image: "oracle.cover.jpg"
 ---

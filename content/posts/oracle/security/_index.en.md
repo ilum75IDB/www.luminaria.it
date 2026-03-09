@@ -1,5 +1,6 @@
 ---
 title: "Access & Control"
+date: "2026-03-10T10:00:00+01:00"
 description: "Oracle security in practice: users, roles, privileges and audit. The most granular security model on the market — and the easiest to misconfigure."
 layout: "list"
 image: "security.cover.jpg"

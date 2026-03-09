@@ -1,5 +1,6 @@
 ---
 title: "Access & Control"
+date: "2026-03-10T10:00:00+01:00"
 description: "Securitate Oracle în practică: utilizatori, roluri, privilegii și audit. Cel mai granular model de securitate de pe piață — și cel mai ușor de configurat greșit."
 layout: "list"
 image: "security.cover.jpg"

@@ -1,5 +1,6 @@
 ---
 title: "Access & Control"
+date: "2026-03-10T10:00:00+01:00"
 description: "Seguridad Oracle en la práctica: usuarios, roles, privilegios y auditoría. El modelo de seguridad más granular del mercado — y el más fácil de configurar mal."
 layout: "list"
 image: "security.cover.jpg"
