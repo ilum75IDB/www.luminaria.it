@@ -12,6 +12,13 @@ tool `WebFetch`.
 | 21 | https://github.com/ilum75IDB/ivanluminaria.com/issues/21 | AWR, ASH e i 10 minuti che hanno salvato un go-live | aperta |
 | 23 | https://github.com/ilum75IDB/ivanluminaria.com/issues/23 | Oracle su Linux - i parametri kernel che nessuno configura | aperta |
 
+## Issue Aperte — Sezione Project Management
+
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 25 | https://github.com/ilum75IDB/ivanluminaria.com/issues/25 | La tecnica del Si-E (Yes-And) - come ho evitato una discussione nel team | aperta |
+| 26 | https://github.com/ilum75IDB/ivanluminaria.com/issues/26 | Pagamenti a 60-90-120 giorni - la normalita italiana che in Europa non esiste | aperta |
+
 ## Issue Chiuse
 
 | #  | Issue | Titolo | Chiusa il |
