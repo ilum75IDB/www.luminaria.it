@@ -96,8 +96,11 @@
 {{ end }}
 
 {{/* ========== CATEGORY SECTIONS ========== */}}
-{{/* Order: PM → Oracle → PostgreSQL → MySQL. Each with its own article limit. */}}
+{{/* Order: DWH Architect → AI Manager → PM → Oracle → PostgreSQL → MySQL.
+     Each section is shown only if it contains published articles. */}}
 {{- $categorySections := slice
+  (dict "slug" "data-warehouse"     "limit" 3)
+  (dict "slug" "ai-manager"         "limit" 3)
   (dict "slug" "project-management" "limit" 5)
   (dict "slug" "oracle"             "limit" 3)
   (dict "slug" "postgresql"         "limit" 3)
