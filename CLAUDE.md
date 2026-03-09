@@ -124,6 +124,18 @@ Font: **Inter** (loaded from Google Fonts), base size 20px.
 - Goldmark is configured with `unsafe = true` to allow raw HTML in Markdown
 - Cover images for sections are placed alongside content files (e.g., `database-strategy.cover.jpg`)
 
+### Writing articles
+
+When writing a new blog article, **always** follow these steps:
+
+1. **Read the content guidelines first** — before drafting any text, read the files in `DOCS/`, in particular:
+   - `DOCS/AI_CONTENT_GUIDELINES.md` (English version)
+   - `DOCS/AI_CONTENT_GUIDELINES_IT.md` (Italian version)
+   - `DOCS/prompt-master.md` (master prompt with tone & style rules)
+   - `DOCS/DESCRIZIONE_PROGETTO_DATABASE_STRATEGY_BLOG.md` and `DOCS/database_strategy_blog_project_description_FULL.md` (project context)
+2. **Write like a human** — the text **must not** sound AI-generated. Avoid generic filler, motivational closings, bullet-point-heavy structures, and overly polished phrasing. Use Ivan's voice: direct, experienced, occasionally ironic, grounded in real-world project stories. Vary sentence length, use colloquial turns where appropriate, and let opinions show.
+3. **No AI tells** — never use patterns like "In conclusion…", "It's worth noting that…", "Let's dive in…", "In today's fast-paced world…", or similar clichés typical of LLM output.
+
 ## Custom Layouts & Overrides
 
 - **`layouts/partials/translations.html`**: Custom language switcher with flag dropdown (replaces Congo default)
