@@ -1,7 +1,7 @@
 ---
 title: "4 million euros, two multinationals, zero software: the true story of a failure foretold"
 description: "An insurance client spent over 4 million euros hiring two IT consulting giants to build a custom management system. The result: nothing. By contrast, a data warehouse built by two people in 3 years with 60,000 lines of code that runs every single day."
-date: "2026-01-13T10:00:00+01:00"
+date: "2025-12-30T10:00:00+01:00"
 draft: false
 translationKey: "consulenza_it_milioni_sprecati"
 tags: ["consulting", "data-warehouse", "insurance", "oracle", "outsourcing"]

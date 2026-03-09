@@ -1,7 +1,7 @@
 ---
 title: "When chaos becomes method: AI and GitHub to manage a project nobody wanted to touch"
 description: "A real project management case: how I proposed GitHub and artificial intelligence to transform a chaotic software project into an ordered, measurable, and faster workflow."
-date: "2026-01-27T10:00:00+01:00"
+date: "2026-02-03T10:00:00+01:00"
 draft: false
 translationKey: "ai_github_project_management"
 tags: ["ai", "github", "workflow", "bug-fixing", "software-evolution"]

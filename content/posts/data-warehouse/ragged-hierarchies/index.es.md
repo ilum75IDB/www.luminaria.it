@@ -1,7 +1,7 @@
 ---
 title: "Jerarquías desbalanceadas: cuando el cliente no tiene padre y el grupo no tiene abuelo"
 description: "Un cliente con una jerarquía de tres niveles — Top Group, Group, Client — donde no todas las ramas están completas. Cómo balanceé una ragged hierarchy con self-parenting: quien no tiene padre se convierte en padre de sí mismo."
-date: "2025-12-23T10:00:00+01:00"
+date: "2026-01-20T10:00:00+01:00"
 draft: false
 translationKey: "ragged_hierarchies"
 tags: ["hierarchies", "dimensional-modeling", "etl", "oracle", "olap", "reporting"]

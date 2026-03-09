@@ -1,7 +1,7 @@
 ---
 title: "Roluri și utilizatori în PostgreSQL: de ce totul este (doar) un ROLE"
 description: "PostgreSQL nu distinge între utilizatori și roluri: totul este un ROLE. Modelul mental corect, un caz real și un exemplu complet pentru a construi un utilizator read-only cu adevărat mentenabil."
-date: "2026-02-03T10:00:00+01:00"
+date: "2026-02-10T10:00:00+01:00"
 lastmod: "2026-02-26T09:34:00+01:00"
 draft: false
 translationKey: "postgresql_roles_and_users"

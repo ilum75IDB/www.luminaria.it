@@ -1,7 +1,7 @@
 ---
 title: "4 milioane de euro, două multinaționale, zero software: povestea reală a unui eșec anunțat"
 description: "Un client din sectorul asigurărilor a cheltuit peste 4 milioane de euro încredințând două colosuri ale consultanței IT realizarea unui software de gestiune personalizat. Rezultatul: nimic. În comparație, un data warehouse construit de două persoane în 3 ani cu 60.000 de linii de cod care funcționează în fiecare zi."
-date: "2026-01-13T10:00:00+01:00"
+date: "2025-12-30T10:00:00+01:00"
 draft: false
 translationKey: "consulenza_it_milioni_sprecati"
 tags: ["consulting", "data-warehouse", "insurance", "oracle", "outsourcing"]

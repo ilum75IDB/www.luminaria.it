@@ -1,7 +1,7 @@
 ---
 title: "4 milioni di euro, due multinazionali, zero software: storia vera di un fallimento annunciato"
 description: "Un cliente del settore assicurativo ha speso oltre 4 milioni di euro affidandosi a due colossi della consulenza IT per un gestionale su misura. Risultato: nulla. A confronto, un data warehouse costruito in due persone in 3 anni con 60.000 righe di codice che funziona ogni giorno."
-date: "2026-01-13T10:00:00+01:00"
+date: "2025-12-30T10:00:00+01:00"
 draft: false
 translationKey: "consulenza_it_milioni_sprecati"
 tags: ["consulting", "data-warehouse", "insurance", "oracle", "outsourcing"]

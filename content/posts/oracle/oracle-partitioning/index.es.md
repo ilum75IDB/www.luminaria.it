@@ -1,7 +1,7 @@
 ---
 title: "Oracle Partitioning: cuando 2 mil millones de filas ya no caben en una query"
 description: "Un cliente con una tabla de transacciones de 2 mil millones de filas y consultas de reportes que habían pasado de segundos a horas. Cómo lo resolví con partitioning Oracle — range, interval, partition pruning e índices locales."
-date: "2025-12-30T10:00:00+01:00"
+date: "2025-12-23T10:00:00+01:00"
 draft: false
 translationKey: "oracle_partitioning"
 tags: ["partitioning", "performance", "tuning", "execution-plan"]

@@ -1,7 +1,7 @@
 ---
 title: "Smart working în consultanța IT: cifrele pe care nimeni nu vrea să le vadă"
 description: "O analiză concretă asupra avantajelor economice și strategice ale muncii la distanță în companiile de consultanță IT. Cu cifre reale, raccordo-ul de la Roma și o alergare în parc la ora 6 dimineața."
-date: "2026-02-10T10:00:00+01:00"
+date: "2026-02-24T10:00:00+01:00"
 draft: false
 translationKey: "smartworking_consulenza_it"
 tags: ["smart-working", "consulting", "productivity", "remote-work"]

@@ -1,7 +1,7 @@
 ---
 title: "Gerarchie sbilanciate: quando il cliente non ha un padre e il gruppo non ha un nonno"
 description: "Un cliente con una gerarchia a tre livelli — Top Group, Group, Client — dove non tutti i rami sono completi. Come ho bilanciato una ragged hierarchy con il self-parenting: chi non ha padre diventa padre di sé stesso."
-date: "2025-12-23T10:00:00+01:00"
+date: "2026-01-20T10:00:00+01:00"
 draft: false
 translationKey: "ragged_hierarchies"
 tags: ["hierarchies", "dimensional-modeling", "etl", "oracle", "olap", "reporting"]

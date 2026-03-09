@@ -1,7 +1,7 @@
 ---
 title: "Ierarhii dezechilibrate: când clientul nu are părinte și grupul nu are bunic"
 description: "Un client cu o ierarhie pe trei niveluri — Top Group, Group, Client — unde nu toate ramurile sunt complete. Cum am echilibrat o ragged hierarchy cu self-parenting: cine nu are părinte devine propriul părinte."
-date: "2025-12-23T10:00:00+01:00"
+date: "2026-01-20T10:00:00+01:00"
 draft: false
 translationKey: "ragged_hierarchies"
 tags: ["hierarchies", "dimensional-modeling", "etl", "oracle", "olap", "reporting"]

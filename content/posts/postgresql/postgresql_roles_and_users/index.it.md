@@ -1,7 +1,7 @@
 ---
 title: "Ruoli e utenti in PostgreSQL: perché è tutto (solo) un ROLE"
 description: "PostgreSQL non distingue tra utenti e ruoli: tutto è un ROLE. Un modello mentale corretto, un caso reale e un esempio completo per creare un read-only davvero manutenibile."
-date: "2026-02-03T10:00:00+01:00"
+date: "2026-02-10T10:00:00+01:00"
 lastmod: "2026-02-26T09:34:00+01:00"
 draft: false
 translationKey: "postgresql_roles_and_users"

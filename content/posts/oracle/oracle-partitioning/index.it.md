@@ -1,7 +1,7 @@
 ---
 title: "Oracle Partitioning: quando 2 miliardi di righe non entrano più in una query"
 description: "Un cliente con una tabella transazioni da 2 miliardi di righe e query di reportistica che da secondi erano passate a ore. Come ho risolto con il partitioning Oracle — range, interval, partition pruning e indici locali."
-date: "2025-12-30T10:00:00+01:00"
+date: "2025-12-23T10:00:00+01:00"
 draft: false
 translationKey: "oracle_partitioning"
 tags: ["partitioning", "performance", "tuning", "execution-plan"]

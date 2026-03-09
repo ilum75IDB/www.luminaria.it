@@ -1,7 +1,7 @@
 ---
 title: "Când haosul devine metodă: AI și GitHub pentru gestionarea unui proiect pe care nimeni nu voia să-l atingă"
 description: "Un caz real de management de proiect: cum am propus GitHub și inteligența artificială pentru a transforma un proiect software haotic într-un flux de lucru ordonat, măsurabil și mai rapid."
-date: "2026-01-27T10:00:00+01:00"
+date: "2026-02-03T10:00:00+01:00"
 draft: false
 translationKey: "ai_github_project_management"
 tags: ["ai", "github", "workflow", "bug-fixing", "software-evolution"]

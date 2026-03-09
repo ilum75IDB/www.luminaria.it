@@ -1,7 +1,7 @@
 ---
 title: "Usuarios MySQL: por qué 'mario' y 'mario'@'localhost' no son la misma persona"
 description: "En MySQL y MariaDB la identidad de un usuario depende del host desde el que se conecta. Un caso real, el modelo de autenticación explicado a fondo y los errores más comunes en la gestión de accesos."
-date: "2026-02-17T10:00:00+01:00"
+date: "2026-01-13T10:00:00+01:00"
 draft: false
 translationKey: "mysql_users_and_hosts"
 tags: ["mariadb", "security", "users", "privileges", "authentication"]

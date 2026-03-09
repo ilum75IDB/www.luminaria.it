@@ -1,7 +1,7 @@
 ---
 title: "Utilizatori, roluri și privilegii în Oracle: de ce GRANT ALL nu este niciodată răspunsul"
 description: "Un client unde toți utilizatorii aplicativi se conectau ca schema owner cu rolul DBA. Cum am restructurat modelul de securitate Oracle aplicând principiul privilegiului minim — cu SQL real, roluri personalizate și Unified Audit."
-date: "2026-01-06T10:00:00+01:00"
+date: "2026-01-27T10:00:00+01:00"
 draft: false
 translationKey: "oracle_roles_privileges"
 tags: ["security", "roles", "privileges", "grant", "revoke", "audit"]

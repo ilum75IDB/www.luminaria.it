@@ -1,7 +1,7 @@
 ---
 title: "Ragged hierarchies: when the client has no parent and the group has no grandparent"
 description: "A client with a three-level hierarchy — Top Group, Group, Client — where not all branches are complete. How I balanced a ragged hierarchy with self-parenting: whoever has no parent becomes their own parent."
-date: "2025-12-23T10:00:00+01:00"
+date: "2026-01-20T10:00:00+01:00"
 draft: false
 translationKey: "ragged_hierarchies"
 tags: ["hierarchies", "dimensional-modeling", "etl", "oracle", "olap", "reporting"]

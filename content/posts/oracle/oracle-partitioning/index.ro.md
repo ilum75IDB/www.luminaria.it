@@ -1,7 +1,7 @@
 ---
 title: "Oracle Partitioning: când 2 miliarde de rânduri nu mai încap într-o interogare"
 description: "Un client cu o tabelă de tranzacții de 2 miliarde de rânduri și interogări de raportare care trecuseră de la secunde la ore. Cum am rezolvat cu partitioning Oracle — range, interval, partition pruning și indecși locali."
-date: "2025-12-30T10:00:00+01:00"
+date: "2025-12-23T10:00:00+01:00"
 draft: false
 translationKey: "oracle_partitioning"
 tags: ["partitioning", "performance", "tuning", "execution-plan"]

@@ -1,7 +1,7 @@
 ---
 title: "Quando un LIKE '%valore%' rallenta tutto: un caso reale di ottimizzazione PostgreSQL"
 description: "Un caso reale di performance in PostgreSQL dove un LIKE '%valore%' ha generato un full scan degradando i tempi di risposta. Analisi del piano di esecuzione e strategia di indicizzazione scalabile."
-date: "2026-01-20T10:00:00+01:00"
+date: "2026-01-06T10:00:00+01:00"
 lastmod: "2026-02-26T09:34:00+01:00"
 draft: false
 translationKey: "like_optimization_postgresql"
