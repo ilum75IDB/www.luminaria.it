@@ -1,11 +1,10 @@
-# CLAUDE.md — www.luminaria.it
+# CLAUDE.md — ivanluminaria.com
 
 ## Project Overview
 
 Personal and professional website of **Ivan Luminaria** — Oracle DBA, DWH Architect & Project Manager with ~30 years of experience across Oracle, PostgreSQL and MySQL environments. The site is a multilingual Hugo static site deployed to GitHub Pages.
 
-Live URL: `https://ilum75IDB.github.io/www.luminaria.it/`
-(Production target: `https://www.luminaria.it/`)
+Live URL: `https://ivanluminaria.com/`
 
 ## Tech Stack
 
@@ -166,7 +165,7 @@ When adding a new article, update this table, assign the next available Tuesday 
 ## Important Notes
 
 - The Congo theme is a **Git submodule** — always clone/checkout with `--recurse-submodules` or run `git submodule update --init`
-- The `baseURL` in `hugo.toml` is set for GitHub Pages project site (`/www.luminaria.it/`); this affects all asset paths
+- The `baseURL` in `hugo.toml` is set for the custom domain (`https://ivanluminaria.com/`)
 - PDF resumes are stored in `static/downloads/` and linked from the resumes content pages
 - The `.gitignore` excludes `public/`, `resources/_gen/`, and `.hugo_build.lock`
 
