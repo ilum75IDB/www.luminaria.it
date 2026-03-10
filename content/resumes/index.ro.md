@@ -40,7 +40,7 @@ Domenii diferite. Aceeași cerință: fiabilitate.
 
 Am proiectat arhitecturi de date în medii în care marja de eroare nu este acceptată.
 
-👉 [Descarcă roadmap-ul competențelor mele ca Data Warehouse Architect]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
+👉 [Citește CV-ul online](/ro/resumes/dwh-architect/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
 
 ---
 
@@ -87,7 +87,7 @@ Conectez viziunea strategică cu detaliul tehnic.
 Roadmap-urile cu implementarea.
 Deciziile cu consecințele.
 
-👉 [Descarcă roadmap-ul competențelor mele ca Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+👉 [Citește CV-ul online](/ro/resumes/project-manager/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
 
 ---
 
@@ -106,7 +106,7 @@ Responsabilitate reală de on-call.
 Aici tuning-ul nu este o îmbunătățire estetică.
 Este protecție operațională.
 
-👉 [Descarcă roadmap-ul competențelor mele ca Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
+👉 [Citește CV-ul online](/ro/resumes/oracle-dba/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ Pot conduce.
 Pot face mentoring.
 Pot ajuta dezvoltatorii să crească în profunzime tehnică și arhitecturală.
 
-👉 [Descarcă roadmap-ul competențelor mele ca PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
+👉 [Citește CV-ul online](/ro/resumes/oracle-plsql/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})

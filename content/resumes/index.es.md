@@ -40,7 +40,7 @@ En automoción importa la sincronización de procesos y la calidad del dato a lo
 
 He diseñado arquitecturas de datos en entornos donde el margen de error no existe.
 
-👉 [Descargar la hoja de ruta de mis competencias como Data Warehouse Architect]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
+👉 [Leer CV online](/es/resumes/dwh-architect/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
 
 ---
 
@@ -87,7 +87,7 @@ Conecto visión estratégica con detalle técnico.
 Roadmaps con implementación.
 Decisiones con consecuencias.
 
-👉 [Descargar la hoja de ruta de mis competencias como Project Manager]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+👉 [Leer CV online](/es/resumes/project-manager/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
 
 ---
 
@@ -106,7 +106,7 @@ Responsabilidad real de guardia.
 Aquí el tuning no es una mejora estética.
 Es protección operativa.
 
-👉 [Descargar la hoja de ruta de mis competencias como Oracle Performance Expert]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
+👉 [Leer CV online](/es/resumes/oracle-dba/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ Puedo liderar.
 Puedo hacer mentoring.
 Puedo ayudar a desarrolladores a crecer en profundidad técnica y arquitectónica.
 
-👉 [Descargar la hoja de ruta de mis competencias como PL/SQL Architect & Mentor]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
+👉 [Leer CV online](/es/resumes/oracle-plsql/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
