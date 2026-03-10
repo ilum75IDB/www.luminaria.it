@@ -54,7 +54,7 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 
 - **DWH/DBA Project Administration:**
   - Management and administration of over 30 critical Oracle databases (70+ instances) on Oracle Exadata clusters (3 and 5 nodes) for a major telecom client.
-  - Responsible for 24/7 on-call availability of database systems supporting 50M+ subscribers.
+  - Responsible for 24/7 on-call availability of database systems supporting 20M+ prepaid mobile subscribers.
 
 - **Advanced Performance Tuning:**
   - In-depth performance analysis via AWR, ADDM, and proactive tuning to ensure SLAs under 200ms response time on critical queries.
