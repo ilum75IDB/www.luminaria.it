@@ -30,9 +30,18 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 ## WORK EXPERIENCE
 
 ### IDEA DB CONSULTING S.R.L. | Rome, Italy (Full Remote Europe)
-**Data Warehouse Architect | Oracle & PostgreSQL Expert | Sole Director** | 2022 – Present
+**Data Warehouse Architect | Oracle & PostgreSQL Expert | Sole Director** | 2021 – Present
 
-- **DWH Design and Architecture:**
+- **DWH Architect** (for ATRADIUS) | 2022 – 2026:
+  - Designed the Surety division Data Warehouse to consolidate data from Italy, Spain, France, and Northern European countries.
+  - Integrated heterogeneous sources — Oracle databases, Microsoft SQL Server, and flat files from external systems — into a unified Oracle-based DWH.
+  - Modeled core business domains: client portfolio, policies, contracts, billing, claims, and claims transactions.
+
+- **DWH Architect** (for FAI SERVICE) | 2021 – 2023:
+  - Designed a Snowflake Schema data model on Oracle Analytics Cloud with ETL processes running on Oracle 19c in OCI.
+  - Developed dashboards and reports on OAC for billing statistics, customer segmentation, client portfolio analysis, and cost/revenue tracking.
+
+- **DWH Design and Architecture** (Banking, Telepass, and other clients):
   - Defined and implemented Data Warehouse architectures for clients in the banking sector and Telepass partners, following Kimball and Inmon methodologies.
   - Applied multidimensional data modeling (Star Schema, Snowflake) to optimize analysis and reporting across datasets exceeding 2 billion rows.
   - Designed and developed ETL/ELT flows for integrating data from 15+ heterogeneous sources.
