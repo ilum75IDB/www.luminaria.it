@@ -284,3 +284,48 @@ Le seguenti label sono già state create nel repository `ilum75IDB/ivanluminaria
 | `ai-manager`         | `#8B5CF6` | Articoli sezione AI Manager          |
 
 Quando si crea una nuova issue per un articolo, usare sempre la label `blog-article` insieme alla label della sezione corrispondente (es. `--label "oracle,blog-article"`).
+
+## Sincronizzazione repo con l'utente
+
+L'utente lavora in locale sul suo Mac, Claude lavora su una branch separata. Ogni volta che si fanno modifiche o si devono sincronizzare i repo, seguire queste regole.
+
+### Dopo ogni commit/push di Claude
+
+Dopo aver fatto commit e push sulla branch di sviluppo, fornire **sempre** all'utente i comandi per:
+
+1. Posizionarsi sulla branch corretta (se non ci è già)
+2. Aggiornare il repo locale con le modifiche
+
+Formato:
+
+```bash
+git fetch origin <branch-name>
+git checkout <branch-name>
+git pull origin <branch-name>
+```
+
+### Quando l'utente dice di aver fatto modifiche in locale
+
+Fornire i comandi per aggiornare il repo remoto in modo che Claude possa poi aggiornare il suo repo locale:
+
+```bash
+git add <files>
+git commit -m "descrizione modifiche"
+git push -u origin <branch-name>
+```
+
+Poi, dopo che l'utente conferma il push, Claude esegue `git pull origin <branch-name>` per allinearsi.
+
+### Quando l'utente dice "ora possiamo portare tutto online"
+
+Significa: merge nella branch main, push al remoto, e ritorno sulla branch di sviluppo. Fornire i comandi nell'ordine:
+
+```bash
+git checkout main
+git pull origin main
+git merge <branch-name>
+git push -u origin main
+git checkout <branch-name>
+```
+
+Dove `<branch-name>` è la branch di sviluppo corrente.
