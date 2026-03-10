@@ -46,10 +46,24 @@ Senior Oracle PL/SQL Developer con quasi 30 anni di esperienza nella progettazio
 ### IDEA DB CONSULTING S.R.L. — Roma, Italia (Full Remote Europa)
 **Senior Oracle PL/SQL Developer & DWH Architect** | 2022 – Presente
 
-- Sviluppo e manutenzione di package PL/SQL complessi per logica di business e processi ETL/ELT per clienti del settore bancario e partner Telepass.
-- Ottimizzazione di codice PL/SQL esistente e query SQL per migliorare prestazioni e scalabilità.
-- Progettazione e implementazione di moduli PL/SQL per l'integrazione e la trasformazione dei dati in contesti DWH.
-- Collaborazione con team di sviluppo e analisti funzionali per la definizione dei requisiti e la progettazione di soluzioni basate su PL/SQL.
+- **PL/SQL Developer** (per ATRADIUS) | 2022 – 2026:
+  - Sviluppo e manutenzione di oltre 60.000 righe di codice PL/SQL (package, procedure, funzioni) per il Data Warehouse della divisione Surety, che consolida dati assicurativi e creditizi da Italia, Spagna, Francia e paesi del Nord Europa.
+  - Progettazione di template PL/SQL riutilizzabili per le procedure di caricamento dati — standardizzazione del workflow ETL interno con checkpoint integrati per il tracciamento e monitoraggio in tempo reale dei flussi di caricamento, consentendo anche a sviluppatori junior di seguire un pattern consistente e ripetibile.
+  - Implementazione di monitoraggio real-time dei caricamenti tramite package PL/SQL di logging personalizzati, con visibilità immediata sullo stato delle pipeline ETL e gestione errori in tutte le fasi di caricamento.
+  - Ottimizzazione delle prestazioni batch: riduzione del ciclo di ingestione giornaliera completa da 4+ ore a meno di 2 ore tramite riscrittura delle query, pattern BULK COLLECT/FORALL e DML partition-aware.
+
+- **PL/SQL Developer** (per FINWAVE S.p.A.) | 2020 – 2022:
+  - Sviluppo di package PL/SQL per applicazioni di elaborazione transazioni finanziarie che gestiscono milioni di operazioni giornaliere per clienti bancari e assicurativi.
+  - Ottimizzazione avanzata di query e tuning del codice PL/SQL per pipeline di dati finanziari ad alto volume.
+
+- **PL/SQL Developer** (per FAI SERVICE) | 2021 – 2023:
+  - Sviluppo di procedure ETL in PL/SQL su Oracle 19c/OCI per flussi dati di statistiche fatturazione, segmentazione clienti e tracciamento costi/ricavi.
+  - Costruzione di moduli PL/SQL che alimentano dashboard Oracle Analytics Cloud con KPI finanziari aggregati.
+
+- **Sviluppo PL/SQL** (Banking, Telepass e altri clienti):
+  - Sviluppo di package PL/SQL per logica di business in applicazioni DWH del settore bancario, con elaborazione di dataset superiori a 2 miliardi di righe.
+  - Ottimizzazione di codice PL/SQL e query SQL esistenti — utilizzo del Hierarchical Profiler per identificare colli di bottiglia e migliorare i tempi di esecuzione dei percorsi critici.
+  - Collaborazione con team di sviluppo e analisti funzionali per la definizione dei requisiti e la progettazione di soluzioni basate su PL/SQL.
 
 ---
 
