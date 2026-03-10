@@ -42,10 +42,24 @@ Senior Oracle PL/SQL Developer with nearly 30 years of experience in designing, 
 ### IDEA DB CONSULTING S.R.L. | Rome, Italy (Full Remote Europe)
 **Senior Oracle PL/SQL Developer & DWH Architect** | 2022 – Present
 
-- Development and maintenance of complex PL/SQL packages for business logic and ETL/ELT processes for clients in the banking sector and Telepass partners.
-- Optimization of existing PL/SQL code and SQL queries to improve performance and scalability.
-- Design and implementation of PL/SQL modules for data integration and transformation in DWH contexts.
-- Collaboration with development teams and functional analysts for requirements definition and PL/SQL-based solution design.
+- **PL/SQL Developer** (for ATRADIUS) | 2022 – 2026:
+  - Developed and maintained over 60,000 lines of PL/SQL code (packages, procedures, functions) for the Surety division Data Warehouse, consolidating insurance claims and credit data from Italy, Spain, France, and Northern European countries.
+  - Designed reusable PL/SQL templates for data loading procedures — standardized the internal ETL workflow with built-in checkpoints for real-time tracking and monitoring of data flows, enabling junior developers to follow a consistent, repeatable pattern.
+  - Implemented real-time load monitoring via custom PL/SQL logging packages, providing instant visibility on ETL pipeline status and error handling across all loading stages.
+  - Optimized batch processing performance: reduced full daily ingestion cycle from 4+ hours to under 2 hours through query rewriting, BULK COLLECT/FORALL patterns, and partition-aware DML.
+
+- **PL/SQL Developer** (for FINWAVE S.p.A.) | 2020 – 2022:
+  - Developed PL/SQL packages for financial transaction processing applications handling millions of daily operations across banking and insurance clients.
+  - Advanced query optimization and PL/SQL code tuning for high-volume financial data pipelines.
+
+- **PL/SQL Developer** (for FAI SERVICE) | 2021 – 2023:
+  - Developed ETL procedures in PL/SQL on Oracle 19c/OCI for billing statistics, customer segmentation, and cost/revenue tracking data flows.
+  - Built PL/SQL modules feeding Oracle Analytics Cloud dashboards with aggregated financial KPIs.
+
+- **PL/SQL Development** (Banking, Telepass, and other clients):
+  - Developed PL/SQL business logic packages for banking-sector DWH applications, processing datasets exceeding 2 billion rows.
+  - Optimization of existing PL/SQL code and SQL queries — applied Hierarchical Profiler analysis to identify bottlenecks and improve critical path execution times.
+  - Collaborated with development teams and functional analysts for requirements definition and PL/SQL-based solution design.
 
 ---
 
