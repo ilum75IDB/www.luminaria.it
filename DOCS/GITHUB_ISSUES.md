@@ -30,6 +30,7 @@ tool `WebFetch`.
 | 44 | https://github.com/ilum75IDB/ivanluminaria.com/issues/44 | InnoDB buffer pool: il parametro che cambia tutto e che nessuno dimensiona | aperta |
 | 45 | https://github.com/ilum75IDB/ivanluminaria.com/issues/45 | Replica MySQL: quando lo slave resta indietro e nessuno se ne accorge | aperta |
 | 46 | https://github.com/ilum75IDB/ivanluminaria.com/issues/46 | MySQL e i lock che non ti aspetti: gap lock, next-key lock e deadlock | aperta |
+| 54 | https://github.com/ilum75IDB/ivanluminaria.com/issues/54 | Galera Cluster: due nodi giu - diagnosi e recovery da ticket reali | aperta |
 
 ## Issue Aperte — Sezione PostgreSQL
 
