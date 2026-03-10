@@ -13,74 +13,81 @@ layout: "simple"
 
 ## Profilo Professionale
 
-Professionista IT con quasi 30 anni di solida esperienza tecnica in ambienti Data Warehouse e Oracle, con un forte interesse e un focus crescente sul Project Management con metodologie Agile (Scrum). Background tecnico approfondito che include architettura DWH, amministrazione Oracle (DBA), ottimizzazione delle prestazioni e sviluppo PL/SQL. Esperienza nella gestione informale di piccoli team (3-7 persone) e nel coordinamento di attività progettuali complesse, traducendo requisiti di business in soluzioni tecniche efficaci. Formazione continua e certificata in Project Management, metodologie Agile/Scrum, tecnologie dati e strumenti di supporto. Determinato a valorizzare le competenze tecniche e manageriali acquisite per ricoprire ufficialmente il ruolo di Project Manager.
+Project Manager con quasi 30 anni di esperienza IT e un solido background tecnico in ambienti Data Warehouse e Oracle. Oltre 10 progetti completati con consegne quasi sempre rispettate, gestendo team di 3-7 persone in contesti multiculturali e remoti su progetti con budget nell'ordine di €100K-€500K. Competenze concrete in pianificazione, gestione del rischio, coordinamento delle risorse e interfaccia con gli stakeholder — maturate sul campo coordinando attività di sviluppo, rilascio e manutenzione per clienti nei settori Banking, Telco, Assicurativo e Pubblica Amministrazione. Metodologie Agile (Scrum) applicate nella gestione quotidiana dei progetti, con formazione certificata. Background tecnico approfondito (architettura DWH, Oracle DBA, PL/SQL, ETL/ELT) che consente di parlare la stessa lingua del team di sviluppo, valutare la fattibilità delle soluzioni e identificare i rischi tecnici prima che diventino problemi.
 
 ---
 
 ## Competenze Chiave
 
 - **Project Management & Metodologie**:
-  - Conoscenza dei principi di Project Management (Pianificazione, Gestione del Rischio, Monitoraggio).
-  - Metodologie Agile e Scrum (Principi, Cerimonie, Artefatti) — Formazione specifica.
-  - Creazione di diagrammi di Gantt.
-  - Definizione dei requisiti e gestione degli stakeholder.
+  - Pianificazione di progetto, definizione delle milestone e monitoraggio dell'avanzamento.
+  - Gestione del rischio e delle criticità — identificazione proattiva e piani di mitigazione.
+  - Metodologie Agile e Scrum (Sprint Planning, Daily Stand-up, Retrospective, Backlog Refinement) — Formazione certificata.
+  - Definizione dei requisiti, gestione dello scope e interfaccia con gli stakeholder.
+  - Pianificazione dei rilasci e coordinamento delle attività di delivery.
 - **Strumenti di Project Management & Produttività**:
-  - Microsoft Excel (Livello Avanzato, Formazione specifica).
-  - Conoscenza di Microsoft Project e Jira.
-  - Git e GitHub (Formazione specifica).
-- **Competenze Tecniche Rilevanti per il Project Management**:
-  - Architettura Data Warehouse (Kimball, Inmon, Google Cloud Platform — Formazione specifica).
-  - SQL (Avanzato, Data Wrangling, Analysis, AB Testing — Formazione specifica).
-  - Oracle Database: DBA, Performance Tuning, PL/SQL, Oracle 12c (New Features, Administration, Security, Backup and Recovery — Formazione specifica).
-  - Oracle Cloud.
-  - Processi ETL/ELT.
-  - Business Intelligence (Oracle Analytics Cloud).
-  - MySQL (Installazione e Configurazione — Formazione specifica).
+  - Microsoft Project e Jira (pianificazione, tracking, gestione backlog).
+  - Microsoft Excel e Google Sheets (reporting, dashboard di progetto, analisi dati — uso quotidiano).
+  - Git e GitHub (gestione del codice, issue tracking, CI/CD, workflow collaborativi).
+- **Competenze Tecniche a Supporto del PM**:
+  - Architettura Data Warehouse (Kimball, Inmon, Google Cloud Platform).
+  - Oracle Database: DBA, Performance Tuning, PL/SQL.
+  - SQL avanzato, processi ETL/ELT, Business Intelligence.
+  - Valutazione della fattibilità tecnica e stima dell'effort di sviluppo.
 - **Leadership & Comunicazione**:
-  - Coordinamento informale di team tecnici.
-  - Problem Solving e pensiero analitico.
-  - Comunicazione efficace con team tecnici e stakeholder.
-  - Mentoring e supporto tra pari.
+  - Coordinamento di team tecnici distribuiti (3-7 persone, multi-paese).
+  - Comunicazione efficace con team tecnici, stakeholder di business e management.
+  - Mentoring e sviluppo delle competenze del team.
+  - Facilitazione di meeting e gestione dei conflitti.
 
 ---
 
 ## Esperienza Professionale
 
 ### IDEA DB CONSULTING S.R.L. — Roma, Italia (Full Remote Europa)
-**Senior Data Warehouse Architect & Oracle Expert** | 2022 – Presente
+**Project Manager & Senior DWH Architect** | 2022 – Presente
 
-- Progettazione e implementazione di architetture DWH per clienti del settore bancario e partner Telepass.
-- Coordinamento tecnico delle attività progettuali, definizione delle priorità e interfaccia con i clienti per la raccolta dei requisiti e la presentazione delle soluzioni.
-- Applicazione dei principi Agile nella gestione delle attività di sviluppo e rilascio.
-- Ottimizzazione di database Oracle (OCI, Autonomous Database) e query SQL complesse.
+- **PM & DWH Lead** (per GENERALI Assicurazioni) | Feb 2024 – Mag 2025:
+  - Coordinamento delle attività progettuali e gestione delle priorità per il team di sviluppo su database Oracle nel settore assicurativo.
+  - Interfaccia diretta con il cliente per la raccolta dei requisiti, la definizione dello scope e la presentazione delle soluzioni.
+  - Monitoraggio dell'avanzamento e gestione delle criticità su database da 500GB a 8TB.
+
+- **PM & DWH Lead** (per ATRADIUS) | 2022 – 2026:
+  - Gestione del progetto di consolidamento dati per la divisione Surety — coordinamento dell'integrazione dati da 4 paesi europei (Italia, Spagna, Francia, Nord Europa).
+  - Pianificazione dei rilasci e gestione del backlog di sviluppo su oltre 60.000 righe di codice PL/SQL ETL.
+  - Tracking delle attività, reporting allo stakeholder e gestione delle dipendenze tra team.
+
+- **Project Coordinator** (Banking, Telepass e altri clienti):
+  - Coordinamento di progetti con riduzione dei tempi di elaborazione batch da 4 ore a meno di 30 minuti.
+  - Gestione dell'integrazione dati da oltre 15 sorgenti eterogenee su dataset superiori ai 2 miliardi di righe.
+  - Pianificazione e supervisione dei rilasci in ambienti Oracle OCI e Autonomous Database.
 
 ---
 
 ### NIMIS CONSULTING S.R.L. — Roma, Italia (Full Remote)
 **Senior Oracle DBA & Performance Tuning Expert** (per TIM / HUAWEI) | 2020 – 2022
 
-- Amministrazione avanzata e tuning di oltre 30 database Oracle critici (70+ istanze) su cluster Exadata.
-- Responsabile delle proprie attività e supporto tecnico specializzato al team di sviluppo per ottimizzare le interazioni con il database e risolvere problemi di prestazioni.
-- Pianificazione ed esecuzione di attività di manutenzione e patching.
-- Analisi AWR/ADDM, indicizzazione, partizionamento, Oracle TDE.
+- Pianificazione ed esecuzione di attività di manutenzione e patching su oltre 30 database Oracle critici (70+ istanze) su cluster Exadata.
+- Coordinamento con il team di sviluppo per ottimizzare le interazioni con il database e risolvere problemi di prestazioni — supporto tecnico specializzato e prioritizzazione degli interventi.
+- Gestione autonoma del proprio carico di lavoro e delle attività di tuning, con reportistica verso il responsabile di progetto.
 
 ---
 
 ### LIBERO PROFESSIONISTA / CONSULENTE INDIPENDENTE — Roma, Italia (Full Remote Europa)
-**Senior Oracle DBA & DWH Architect** | 2013 – 2020
+**Project Manager & Senior DWH Consultant** | 2013 – 2020
 
-- Consulenza e sviluppo di soluzioni Data Warehouse e Oracle per diversi clienti.
-- Coordinamento informale di piccoli team (3-7 persone) in contesti multiculturali, assegnazione dei compiti e facilitazione della collaborazione, spesso applicando un approccio iterativo e Agile alla gestione delle attività.
-- Progettazione di data model (Kimball/Inmon), sviluppo ETL/ELT e ottimizzazione SQL.
-- Formazione tecnica e mentoring per membri del team e utenti.
+- Gestione di circa 10 progetti in 7 anni per clienti nei settori Banking, Telco e servizi, con budget nell'ordine di €100K-€500K e consegne quasi sempre rispettate.
+- Coordinamento di team di 3-7 persone in contesti multiculturali e distribuiti — assegnazione dei compiti, facilitazione della collaborazione e gestione delle priorità con approccio iterativo Agile.
+- Interfaccia diretta con i clienti per la raccolta dei requisiti, la definizione dello scope, la presentazione degli avanzamenti e la gestione delle aspettative.
+- Formazione tecnica e mentoring per i membri del team — sviluppo delle competenze e onboarding dei nuovi consulenti.
 
 ---
 
 ### AUSELDA AED GROUP S.P.A. — Roma, Italia
 **Senior Data Warehouse Specialist & Oracle DBA** (per la Pubblica Amministrazione) | 2009 – 2013
 
-- Sviluppo e ottimizzazione di Data Warehouse per enti della Pubblica Amministrazione.
-- Collaborazione con i referenti di progetto per la definizione dei requisiti tecnici e la validazione delle soluzioni.
+- Collaborazione con i referenti di progetto per la definizione dei requisiti tecnici, la pianificazione delle attività e la validazione delle soluzioni.
+- Coordinamento delle attività di sviluppo e ottimizzazione dei Data Warehouse per enti della Pubblica Amministrazione.
 - Supporto tecnico e formazione utenti sulle piattaforme DWH.
 
 ---
@@ -88,9 +95,9 @@ Professionista IT con quasi 30 anni di solida esperienza tecnica in ambienti Dat
 ### ORACLE ITALIA S.R.L. — Varie sedi, Italia & Madrid, Spagna
 **Senior Consultant / DWH Specialist / Training Specialist** | 1999 – 2009
 
-- Partecipazione a progetti complessi di implementazione DWH e BI per clienti primari (Telco, Finance, Farmaceutico), con responsabilità crescenti nel coordinamento di attività specifiche e nel supporto ai consulenti junior.
-- Sviluppo PL/SQL, SQL tuning, progettazione ETL, utilizzo di Oracle Warehouse Builder.
-- **Come Training Specialist (2000-2001):** Erogazione di corsi tecnici Oracle, gestione dell'aula e adattamento dei contenuti.
+- Partecipazione a progetti complessi di implementazione DWH e BI per clienti primari (Telco, Finance, Farmaceutico), con responsabilità crescenti nel coordinamento delle attività e nel supporto ai consulenti junior.
+- Gestione delle relazioni con i referenti tecnici del cliente e reportistica sull'avanzamento delle attività.
+- **Come Training Specialist (2000-2001):** Erogazione di corsi tecnici Oracle, gestione dell'aula e adattamento dei contenuti — competenze di presentazione e formazione applicabili al ruolo di PM.
 
 ---
 
@@ -102,8 +109,8 @@ Professionista IT con quasi 30 anni di solida esperienza tecnica in ambienti Dat
 
 **Corsi di Formazione e Aggiornamento Selezionati:**
 
-- Scrum Agile — Randstad/Forma.temp (Maggio 2024)
 - Project Management — Randstad/Forma.temp (Maggio 2024)
+- Scrum Agile — Randstad/Forma.temp (Maggio 2024)
 - Data Wrangling, Analysis and AB Testing with SQL — Coursera, University of California Davis (Aprile 2021)
 - Data Science on Google Cloud Platform: Designing Data Warehouses — LinkedIn Learning (Settembre 2020)
 - Corsi di specializzazione Oracle 12c (Administration, Security, Backup and Recovery, Advanced SQL, Performance Optimization) — LinkedIn Learning (2020)
@@ -124,12 +131,12 @@ Professionista IT con quasi 30 anni di solida esperienza tecnica in ambienti Dat
 
 ## Competenze Trasversali
 
-- Solido background tecnico e capacità di tradurlo in soluzioni gestionali
-- Pianificazione e organizzazione delle attività
-- Comunicazione efficace (tecnica e interpersonale)
-- Problem Solving analitico e proattività
-- Adattabilità e interesse per l'apprendimento continuo
-- Collaborazione e supporto al team
+- Capacità di tradurre requisiti tecnici in piani di progetto concreti e gestibili
+- Gestione simultanea di più progetti con priorità concorrenti
+- Comunicazione efficace a tutti i livelli (team tecnico, stakeholder, management)
+- Problem Solving analitico e gestione proattiva dei rischi
+- Esperienza di lavoro in team distribuiti, multiculturali e full-remote
+- Mentoring e sviluppo delle competenze del team
 
 ---
 

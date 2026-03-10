@@ -13,74 +13,81 @@ layout: "simple"
 
 ## Profil Profesional
 
-Profesionist IT cu aproape 30 de ani de experienta tehnica solida in medii Data Warehouse si Oracle, cu un interes puternic si un accent crescand pe Project Management utilizand metodologii Agile (Scrum). Fundament tehnic aprofundat incluzand arhitectura DWH, administrare Oracle (DBA), optimizarea performantei si dezvoltare PL/SQL. Experienta in gestionarea informala a echipelor mici (3-7 persoane) si coordonarea activitatilor complexe de proiect, transpunand cerintele de business in solutii tehnice eficiente. Formare continua si certificata in Project Management, metodologii Agile/Scrum, tehnologii de date si instrumente de suport. Determinat sa valorifice competentele tehnice si manageriale dobandite pentru a ocupa oficial un rol de Project Manager.
+Project Manager cu aproape 30 de ani de experienta in IT si un fundament tehnic solid in medii Data Warehouse si Oracle. Peste 10 proiecte livrate cu un istoric excelent de respectare a termenelor, gestionand echipe de 3-7 persoane in contexte multiculturale si remote, pe proiecte cu bugete in intervalul €100K-€500K. Competente concrete in planificare, managementul riscurilor, coordonarea resurselor si relatia cu stakeholderii — dezvoltate pe teren coordonand activitati de dezvoltare, release si mentenanta pentru clienti din sectoarele Bancar, Telco, Asigurari si Administratie Publica. Metodologii Agile (Scrum) aplicate in managementul zilnic al proiectelor, cu formare certificata. Fundament tehnic aprofundat (arhitectura DWH, Oracle DBA, PL/SQL, ETL/ELT) care permite comunicarea eficienta cu echipele de dezvoltare, evaluarea realista a fezabilitatii si identificarea timpurie a riscurilor tehnice.
 
 ---
 
 ## Competente Cheie
 
 - **Project Management & Metodologii**:
-  - Cunoasterea principiilor de Project Management (Planificare, Managementul Riscurilor, Monitorizare).
-  - Metodologii Agile si Scrum (Principii, Ceremonii, Artefacte) — Formare specifica.
-  - Creare Diagrame Gantt.
-  - Definirea Cerintelor si Managementul Stakeholderilor.
+  - Planificarea proiectelor, definirea milestone-urilor si monitorizarea progresului.
+  - Managementul riscurilor si al criticalitatilor — identificare proactiva si planuri de mitigare.
+  - Metodologii Agile si Scrum (Sprint Planning, Daily Stand-up, Retrospective, Backlog Refinement) — Formare certificata.
+  - Definirea cerintelor, managementul scope-ului si relatia cu stakeholderii.
+  - Planificarea release-urilor si coordonarea livrarilor.
 - **Instrumente de Project Management & Productivitate**:
-  - Microsoft Excel (Nivel Avansat, Formare specifica).
-  - Cunostinte de Microsoft Project si Jira.
-  - Git si GitHub (Formare specifica).
-- **Competente Tehnice Relevante pentru Project Management**:
-  - Arhitectura Data Warehouse (Kimball, Inmon, Google Cloud Platform — Formare specifica).
-  - SQL (Avansat, Data Wrangling, Analysis, AB Testing — Formare specifica).
-  - Oracle Database: DBA, Performance Tuning, PL/SQL, Oracle 12c (New Features, Administration, Security, Backup and Recovery — Formare specifica).
-  - Oracle Cloud.
-  - Procese ETL/ELT.
-  - Business Intelligence (Oracle Analytics Cloud).
-  - MySQL (Instalare si Configurare — Formare specifica).
+  - Microsoft Project si Jira (planificare, tracking, managementul backlog-ului).
+  - Microsoft Excel si Google Sheets (raportare, dashboard-uri de proiect, analiza datelor — utilizare zilnica).
+  - Git si GitHub (managementul codului, issue tracking, CI/CD, workflow-uri colaborative).
+- **Competente Tehnice de Suport pentru PM**:
+  - Arhitectura Data Warehouse (Kimball, Inmon, Google Cloud Platform).
+  - Oracle Database: DBA, Performance Tuning, PL/SQL.
+  - SQL avansat, procese ETL/ELT, Business Intelligence.
+  - Evaluarea fezabilitatii tehnice si estimarea efortului de dezvoltare.
 - **Leadership & Comunicare**:
-  - Coordonare informala a echipelor tehnice.
-  - Problem Solving si Gandire Analitica.
-  - Comunicare eficienta cu echipele tehnice si stakeholderii.
-  - Mentorat si suport intre colegi.
+  - Coordonarea echipelor tehnice distribuite (3-7 persoane, multi-tara).
+  - Comunicare eficienta cu echipele tehnice, stakeholderii de business si managementul.
+  - Mentorat si dezvoltarea competentelor echipei.
+  - Facilitarea intalnirilor si managementul conflictelor.
 
 ---
 
 ## Experienta Profesionala
 
 ### IDEA DB CONSULTING S.R.L. — Roma, Italia (Full Remote Europa)
-**Senior Data Warehouse Architect & Oracle Expert** | 2022 – Prezent
+**Project Manager & Senior DWH Architect** | 2022 – Prezent
 
-- Proiectarea si implementarea arhitecturilor DWH pentru clienti din sectorul bancar si parteneri Telepass.
-- Coordonarea tehnica a activitatilor de proiect, definirea prioritatilor si interfatarea cu clientii pentru colectarea cerintelor si prezentarea solutiilor.
-- Aplicarea principiilor Agile in gestionarea activitatilor de dezvoltare si release.
-- Optimizarea bazelor de date Oracle (OCI, Autonomous Database) si a interogarilor SQL complexe.
+- **PM & DWH Lead** (pentru GENERALI Asigurari) | Feb 2024 – Mai 2025:
+  - Coordonarea activitatilor de proiect si gestionarea prioritatilor pentru echipa de dezvoltare pe baze de date Oracle in sectorul asigurarilor.
+  - Interfata directa cu clientul pentru colectarea cerintelor, definirea scope-ului si prezentarea solutiilor.
+  - Monitorizarea progresului si gestionarea criticalitatilor pe baze de date de 500GB la 8TB.
+
+- **PM & DWH Lead** (pentru ATRADIUS) | 2022 – 2026:
+  - Gestionarea proiectului de consolidare a datelor pentru divizia Surety — coordonarea integrarii datelor din 4 tari europene (Italia, Spania, Franta, Europa de Nord).
+  - Planificarea release-urilor si managementul backlog-ului de dezvoltare pe peste 60.000 de linii de cod PL/SQL ETL.
+  - Tracking-ul activitatilor, raportare catre stakeholder si gestionarea dependentelor intre echipe.
+
+- **Project Coordinator** (Banking, Telepass si alti clienti):
+  - Coordonarea proiectelor cu reducerea timpilor de procesare batch de la 4 ore la sub 30 de minute.
+  - Gestionarea integrarii datelor din peste 15 surse eterogene pe seturi de date depasindu 2 miliarde de randuri.
+  - Planificarea si supervizarea release-urilor in medii Oracle OCI si Autonomous Database.
 
 ---
 
 ### NIMIS CONSULTING S.R.L. — Roma, Italia (Full Remote)
 **Senior Oracle DBA & Performance Tuning Expert** (pentru TIM / HUAWEI) | 2020 – 2022
 
-- Administrare avansata si tuning a peste 30 de baze de date Oracle critice (70+ instante) pe clustere Exadata.
-- Responsabil pentru propriile activitati si furnizarea de suport tehnic specializat echipei de dezvoltare pentru optimizarea interactiunilor cu baza de date si rezolvarea problemelor de performanta.
-- Planificarea si executia activitatilor de mentenanta si patching.
-- Analiza AWR/ADDM, indexare, partitioning, Oracle TDE.
+- Planificarea si executia activitatilor de mentenanta si patching pe peste 30 de baze de date Oracle critice (70+ instante) pe clustere Exadata.
+- Coordonare cu echipa de dezvoltare pentru optimizarea interactiunilor cu baza de date si rezolvarea problemelor de performanta — suport tehnic specializat si prioritizarea interventiilor.
+- Gestionarea autonoma a volumului de munca si a activitatilor de tuning, cu raportare catre responsabilul de proiect.
 
 ---
 
 ### PROFESIONIST INDEPENDENT / CONSULTANT — Roma, Italia (Full Remote Europa)
-**Senior Oracle DBA & DWH Architect** | 2013 – 2020
+**Project Manager & Senior DWH Consultant** | 2013 – 2020
 
-- Consultanta si dezvoltare de solutii Data Warehouse si Oracle pentru diversi clienti.
-- Coordonare informala a echipelor mici (3-7 persoane) in contexte multiculturale, atribuirea sarcinilor si facilitarea colaborarii, aplicand adesea o abordare iterativa si Agile in gestionarea activitatilor.
-- Proiectarea modelelor de date (Kimball/Inmon), dezvoltare ETL/ELT si optimizare SQL.
-- Formare tehnica si mentorat pentru membrii echipei si utilizatori.
+- Gestionarea a aproximativ 10 proiecte in 7 ani pentru clienti din sectoarele Bancar, Telco si servicii, cu bugete in intervalul €100K-€500K si un istoric excelent de livrari la termen.
+- Coordonarea echipelor de 3-7 persoane in contexte multiculturale si distribuite — atribuirea sarcinilor, facilitarea colaborarii si gestionarea prioritatilor cu abordare iterativa Agile.
+- Interfata directa cu clientii pentru colectarea cerintelor, definirea scope-ului, prezentarea progreselor si gestionarea asteptarilor.
+- Formare tehnica si mentorat pentru membrii echipei — dezvoltarea competentelor si integrarea noilor consultanti.
 
 ---
 
 ### AUSELDA AED GROUP S.P.A. — Roma, Italia
 **Senior Data Warehouse Specialist & Oracle DBA** (pentru Administratia Publica) | 2009 – 2013
 
-- Dezvoltarea si optimizarea Data Warehouse-urilor pentru entitati ale Administratiei Publice.
-- Colaborare cu reprezentantii proiectelor pentru definirea cerintelor tehnice si validarea solutiilor.
+- Colaborare cu responsabilii de proiect pentru definirea cerintelor tehnice, planificarea activitatilor si validarea solutiilor.
+- Coordonarea activitatilor de dezvoltare si optimizare a Data Warehouse-urilor pentru entitati ale Administratiei Publice.
 - Suport tehnic si formare pentru utilizatorii platformelor DWH.
 
 ---
@@ -88,9 +95,9 @@ Profesionist IT cu aproape 30 de ani de experienta tehnica solida in medii Data 
 ### ORACLE ITALIA S.R.L. — Diverse locatii, Italia si Madrid, Spania
 **Senior Consultant / DWH Specialist / Training Specialist** | 1999 – 2009
 
-- Participare la proiecte complexe de implementare DWH si BI pentru clienti primari (Telco, Finance, Farmaceutic), cu responsabilitati crescande in coordonarea sarcinilor specifice si sprijinirea consultantilor juniori.
-- Dezvoltare PL/SQL, SQL tuning, proiectare ETL, utilizare Oracle Warehouse Builder.
-- **Ca Training Specialist (2000-2001):** Sustinerea de cursuri tehnice Oracle, gestionarea clasei si adaptarea continutului.
+- Participare la proiecte complexe de implementare DWH si BI pentru clienti primari (Telco, Finance, Farmaceutic), cu responsabilitati crescande in coordonarea activitatilor si sprijinirea consultantilor juniori.
+- Gestionarea relatiilor cu referentii tehnici ai clientului si raportarea progresului activitatilor.
+- **Ca Training Specialist (2000-2001):** Sustinerea de cursuri tehnice Oracle, gestionarea clasei si adaptarea continutului — competente de prezentare si formare direct aplicabile rolului de PM.
 
 ---
 
@@ -102,8 +109,8 @@ Profesionist IT cu aproape 30 de ani de experienta tehnica solida in medii Data 
 
 **Cursuri Selectate de Formare si Educatie Continua:**
 
-- Scrum Agile — Randstad/Forma.temp (Mai 2024)
 - Project Management — Randstad/Forma.temp (Mai 2024)
+- Scrum Agile — Randstad/Forma.temp (Mai 2024)
 - Data Wrangling, Analysis and AB Testing with SQL — Coursera, University of California Davis (Aprilie 2021)
 - Data Science on Google Cloud Platform: Designing Data Warehouses — LinkedIn Learning (Septembrie 2020)
 - Cursuri de specializare Oracle 12c (Administration, Security, Backup and Recovery, Advanced SQL, Performance Optimization) — LinkedIn Learning (2020)
@@ -124,12 +131,12 @@ Profesionist IT cu aproape 30 de ani de experienta tehnica solida in medii Data 
 
 ## Competente Transversale
 
-- Fundament Tehnic Solid si Capacitatea de a-l Transpune in Solutii de Management
-- Planificarea si Organizarea Activitatilor
-- Comunicare Eficienta (Tehnica si Interpersonala)
-- Rezolvare Analitica a Problemelor si Proactivitate
-- Adaptabilitate si Interes pentru Invatare Continua
-- Colaborare si Suport in Echipa
+- Capacitatea de a transpune cerintele tehnice in planuri de proiect concrete si gestionabile
+- Gestionarea simultana a mai multor proiecte cu prioritati concurente
+- Comunicare eficienta la toate nivelurile (echipa tehnica, stakeholderi, management)
+- Rezolvare Analitica a Problemelor si gestionare proactiva a riscurilor
+- Experienta de lucru in echipe distribuite, multiculturale si full-remote
+- Mentorat si dezvoltarea competentelor echipei
 
 ---
 
