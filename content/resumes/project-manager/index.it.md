@@ -7,7 +7,7 @@ draft: false
 layout: "simple"
 ---
 
-**[Scarica PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})** | **[Profilo LinkedIn](https://www.linkedin.com/in/ivanluminaria)**
+**[Scarica PDF]({{% staticurl "downloads/CV_Project_Manager_Ivan_Luminaria_202603_EN.pdf" %}})** | **[Profilo LinkedIn](https://www.linkedin.com/in/ivanluminaria)**
 
 ---
 
@@ -146,4 +146,4 @@ Roma, Marzo 2026
 
 ---
 
-**[Scarica PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})** | **[Profilo LinkedIn](https://www.linkedin.com/in/ivanluminaria)** | **[Torna alla pagina precedente](/it/resumes/)**
+**[Scarica PDF]({{% staticurl "downloads/CV_Project_Manager_Ivan_Luminaria_202603_EN.pdf" %}})** | **[Profilo LinkedIn](https://www.linkedin.com/in/ivanluminaria)** | **[Torna alla pagina precedente](/it/resumes/)**

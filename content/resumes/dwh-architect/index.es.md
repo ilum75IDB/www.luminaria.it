@@ -7,7 +7,7 @@ draft: false
 layout: "simple"
 ---
 
-**[Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})** | **[Perfil LinkedIn](https://www.linkedin.com/in/ivanluminaria)**
+**[Descargar PDF]({{% staticurl "downloads/CV_DWH_Architect_Ivan_Luminaria_202603_EN.pdf" %}})** | **[Perfil LinkedIn](https://www.linkedin.com/in/ivanluminaria)**
 
 ---
 
@@ -173,4 +173,4 @@ Roma, Marzo 2026
 
 ---
 
-**[Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})** | **[Perfil LinkedIn](https://www.linkedin.com/in/ivanluminaria)** | **[Volver a la pagina anterior](/es/resumes/)**
+**[Descargar PDF]({{% staticurl "downloads/CV_DWH_Architect_Ivan_Luminaria_202603_EN.pdf" %}})** | **[Perfil LinkedIn](https://www.linkedin.com/in/ivanluminaria)** | **[Volver a la pagina anterior](/es/resumes/)**

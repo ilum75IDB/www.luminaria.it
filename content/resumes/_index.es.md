@@ -40,7 +40,7 @@ En automoción importa la sincronización de procesos y la calidad del dato a lo
 
 He diseñado arquitecturas de datos en entornos donde el margen de error no existe.
 
-👉 [__Lee la roadmap de mis competencias y experiencia como Data Warehouse Architect__](/es/resumes/dwh-architect/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
+👉 [__Lee la roadmap de mis competencias y experiencia como Data Warehouse Architect__](/es/resumes/dwh-architect/) | [Descargar PDF]({{% staticurl "downloads/CV_DWH_Architect_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -87,7 +87,7 @@ Conecto visión estratégica con detalle técnico.
 Roadmaps con implementación.
 Decisiones con consecuencias.
 
-👉 [__Lee la roadmap de mis competencias y experiencia como Project Manager__](/es/resumes/project-manager/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+👉 [__Lee la roadmap de mis competencias y experiencia como Project Manager__](/es/resumes/project-manager/) | [Descargar PDF]({{% staticurl "downloads/CV_Project_Manager_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -106,7 +106,7 @@ Responsabilidad real de guardia.
 Aquí el tuning no es una mejora estética.
 Es protección operativa.
 
-👉 [__Lee la roadmap de mis competencias y experiencia como Oracle DBA__](/es/resumes/oracle-dba/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
+👉 [__Lee la roadmap de mis competencias y experiencia como Oracle DBA__](/es/resumes/oracle-dba/) | [Descargar PDF]({{% staticurl "downloads/CV_Oracle_DBA_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ Puedo liderar.
 Puedo hacer mentoring.
 Puedo ayudar a desarrolladores a crecer en profundidad técnica y arquitectónica.
 
-👉 [__Lee la roadmap de mis competencias y experiencia como Oracle PL/SQL Developer__](/es/resumes/oracle-plsql/) | [Descargar PDF]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
+👉 [__Lee la roadmap de mis competencias y experiencia como Oracle PL/SQL Developer__](/es/resumes/oracle-plsql/) | [Descargar PDF]({{% staticurl "downloads/CV_Oracle_PLSQL_Ivan_Luminaria_202603_EN.pdf" %}})

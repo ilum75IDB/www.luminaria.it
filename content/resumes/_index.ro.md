@@ -40,7 +40,7 @@ Domenii diferite. Aceeași cerință: fiabilitate.
 
 Am proiectat arhitecturi de date în medii în care marja de eroare nu este acceptată.
 
-👉 [__Citește roadmap-ul competențelor și experienței mele ca Data Warehouse Architect__](/ro/resumes/dwh-architect/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
+👉 [__Citește roadmap-ul competențelor și experienței mele ca Data Warehouse Architect__](/ro/resumes/dwh-architect/) | [Descarcă PDF]({{% staticurl "downloads/CV_DWH_Architect_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -87,7 +87,7 @@ Conectez viziunea strategică cu detaliul tehnic.
 Roadmap-urile cu implementarea.
 Deciziile cu consecințele.
 
-👉 [__Citește roadmap-ul competențelor și experienței mele ca Project Manager__](/ro/resumes/project-manager/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+👉 [__Citește roadmap-ul competențelor și experienței mele ca Project Manager__](/ro/resumes/project-manager/) | [Descarcă PDF]({{% staticurl "downloads/CV_Project_Manager_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -106,7 +106,7 @@ Responsabilitate reală de on-call.
 Aici tuning-ul nu este o îmbunătățire estetică.
 Este protecție operațională.
 
-👉 [__Citește roadmap-ul competențelor și experienței mele ca Oracle DBA__](/ro/resumes/oracle-dba/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
+👉 [__Citește roadmap-ul competențelor și experienței mele ca Oracle DBA__](/ro/resumes/oracle-dba/) | [Descarcă PDF]({{% staticurl "downloads/CV_Oracle_DBA_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ Pot conduce.
 Pot face mentoring.
 Pot ajuta dezvoltatorii să crească în profunzime tehnică și arhitecturală.
 
-👉 [__Citește roadmap-ul competențelor și experienței mele ca Oracle PL/SQL Developer__](/ro/resumes/oracle-plsql/) | [Descarcă PDF]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
+👉 [__Citește roadmap-ul competențelor și experienței mele ca Oracle PL/SQL Developer__](/ro/resumes/oracle-plsql/) | [Descarcă PDF]({{% staticurl "downloads/CV_Oracle_PLSQL_Ivan_Luminaria_202603_EN.pdf" %}})

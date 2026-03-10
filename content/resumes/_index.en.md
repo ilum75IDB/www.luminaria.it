@@ -40,7 +40,7 @@ In automotive, process synchronization and data quality across the supply chain 
 
 I have designed data architectures in environments where error is not an option.
 
-👉 [__Read the roadmap of my skills and experience as a Data Warehouse Architect__](/en/resumes/dwh-architect/) | [Download PDF]({{% staticurl "downloads/CV-IvanLuminaria-DWHArchitect(English).pdf" %}})
+👉 [__Read the roadmap of my skills and experience as a Data Warehouse Architect__](/en/resumes/dwh-architect/) | [Download PDF]({{% staticurl "downloads/CV_DWH_Architect_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -87,7 +87,7 @@ I connect strategic vision with technical detail.
 Roadmaps with implementation.
 Decisions with consequences.
 
-👉 [__Read the roadmap of my skills and experience as a Project Manager__](/en/resumes/project-manager/) | [Download PDF]({{% staticurl "downloads/CV-IvanLuminaria-ProjectManager(ENG).pdf" %}})
+👉 [__Read the roadmap of my skills and experience as a Project Manager__](/en/resumes/project-manager/) | [Download PDF]({{% staticurl "downloads/CV_Project_Manager_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -106,7 +106,7 @@ Real on-call responsibility.
 Here, tuning is not cosmetic improvement.
 It is operational protection.
 
-👉 [__Read the roadmap of my skills and experience as an Oracle DBA__](/en/resumes/oracle-dba/) | [Download PDF]({{% staticurl "downloads/CV-IvanLuminaria-OracleDBAPerformanceTuningExpert(ENG).pdf" %}})
+👉 [__Read the roadmap of my skills and experience as an Oracle DBA__](/en/resumes/oracle-dba/) | [Download PDF]({{% staticurl "downloads/CV_Oracle_DBA_Ivan_Luminaria_202603_EN.pdf" %}})
 
 ---
 
@@ -124,4 +124,4 @@ I can lead.
 I can mentor.
 I can help developers grow in both technical depth and architectural thinking.
 
-👉 [__Read the roadmap of my skills and experience as an Oracle PL/SQL Developer__](/en/resumes/oracle-plsql/) | [Download PDF]({{% staticurl "downloads/CV-IvanLuminaria-OraclePLSQLDeveloper(ENG).pdf" %}})
+👉 [__Read the roadmap of my skills and experience as an Oracle PL/SQL Developer__](/en/resumes/oracle-plsql/) | [Download PDF]({{% staticurl "downloads/CV_Oracle_PLSQL_Ivan_Luminaria_202603_EN.pdf" %}})
