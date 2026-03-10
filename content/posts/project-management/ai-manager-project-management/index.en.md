@@ -1,7 +1,7 @@
 ---
 title: "AI Manager and Project Management: when artificial intelligence enters the project"
 description: "Managing AI in a project is not about using ChatGPT. It means governing the impact of artificial intelligence on architectures, processes and people. Reflections from nearly thirty years of mission-critical systems."
-date: "2026-03-24T10:00:00+01:00"
+date: "2026-03-17T10:00:00+01:00"
 draft: false
 translationKey: "ai_manager_project_management"
 tags: ["ai", "project-management", "ai-manager", "governance", "strategy"]

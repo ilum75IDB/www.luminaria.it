@@ -1,7 +1,7 @@
 ---
 title: "SCD Tipo 2: la storia che il business non sapeva di volere"
 description: "Un direttore commerciale chiede quanti clienti aveva la regione Nord a giugno scorso. Il DWH non sa rispondere perché ogni aggiornamento sovrascrive i dati precedenti. Come ho implementato una SCD Tipo 2 con chiavi surrogate e date di validità per restituire al business la memoria storica."
-date: "2026-03-17T10:00:00+01:00"
+date: "2025-11-11T10:00:00+01:00"
 draft: false
 translationKey: "scd_tipo_2"
 tags: ["scd", "dimensional-modeling", "etl", "kimball", "data-warehouse"]

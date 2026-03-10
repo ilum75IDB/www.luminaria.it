@@ -1,7 +1,7 @@
 ---
 title: "SCD Tip 2: istoria pe care business-ul nu știa că o vrea"
 description: "Un director comercial întreabă câți clienți avea regiunea Nord în iunie trecut. DWH-ul nu poate răspunde pentru că fiecare actualizare suprascrie datele anterioare. Cum am implementat o SCD Tip 2 cu chei surogat și date de valabilitate pentru a reda business-ului memoria istorică."
-date: "2026-03-17T10:00:00+01:00"
+date: "2025-11-11T10:00:00+01:00"
 draft: false
 translationKey: "scd_tipo_2"
 tags: ["scd", "dimensional-modeling", "etl", "kimball", "data-warehouse"]

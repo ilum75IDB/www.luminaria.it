@@ -1,7 +1,7 @@
 ---
 title: "SCD Type 2: the history the business didn't know it needed"
 description: "A sales director asks how many customers were in the North region last June. The DWH can't answer because every update overwrites previous data. How I implemented an SCD Type 2 with surrogate keys and validity dates to give the business back its historical memory."
-date: "2026-03-17T10:00:00+01:00"
+date: "2025-11-11T10:00:00+01:00"
 draft: false
 translationKey: "scd_tipo_2"
 tags: ["scd", "dimensional-modeling", "etl", "kimball", "data-warehouse"]
