@@ -74,9 +74,9 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 ### FREELANCE / INDEPENDENT CONSULTANT | Rome, Italy (Full Remote Europe)
 **Oracle DBA | Oracle Performance & Tuning Expert | DWH Architect** | 2013 – 2020
 
-- Design and development of Data Warehouses for various clients across banking, insurance, and telecom sectors, applying Kimball/Inmon methodologies.
+- Design and development of Data Warehouses for various clients across banking, insurance, and telecom sectors, applying Kimball/Inmon methodologies on Oracle and PostgreSQL platforms.
 - Development of ETL/ELT processes for DWH data loading — built pipelines handling 500M+ rows per load cycle.
-- Specialized consultancy on Oracle DB, SQL performance tuning, DWH architectures, PL/SQL, and ETL design.
+- Specialized consultancy on Oracle and PostgreSQL databases, SQL performance tuning, DWH architectures, PL/SQL, and ETL design.
 - Team Leadership (3-7 people teams) in multicultural contexts, managing tasks and priorities using Agile methodology.
 - Creation of reports and data analysis with Oracle Analytics Cloud (OAC).
 
