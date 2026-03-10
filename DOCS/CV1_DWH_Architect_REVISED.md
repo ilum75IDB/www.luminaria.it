@@ -9,7 +9,7 @@ Via Vetulonia, 43, 00183, Rome, Italy
 
 ## PROFESSIONAL PROFILE
 
-Data Warehouse Architect and IT professional with nearly 30 years of experience in designing, implementing, and managing complex, high-performing DWH solutions in Oracle and PostgreSQL environments. Expert in multidimensional data modeling methodologies (Kimball, Inmon) and in optimizing ETL/ELT processes and SQL queries on datasets ranging from hundreds of millions to billions of rows. Proven ability to lead end-to-end DWH projects — from requirements analysis to production deployment — ensuring data integrity, quality, and availability to support business decisions. Technical leadership and problem-solving attitude in international and full-remote contexts.
+Data Warehouse Architect and IT professional with nearly 30 years of experience in designing, implementing, and managing complex, high-performing DWH solutions in Oracle and PostgreSQL environments. Expert in multidimensional data modeling methodologies (Kimball, Inmon) and in optimizing ETL/ELT processes and SQL queries on datasets ranging from hundreds of millions to billions of rows. Proven ability to lead end-to-end DWH projects — from requirements analysis to production deployment — ensuring data integrity, quality, and availability to support business decisions. Technical leadership and problem-solving mindset in international and full-remote contexts.
 
 ---
 
@@ -34,9 +34,9 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 
 - **DWH Design and Architecture:**
   - Defined and implemented Data Warehouse architectures for clients in the banking sector and Telepass partners, following Kimball and Inmon methodologies.
-  - Multidimensional data modeling (Star Schema, Snowflake) to optimize analysis and reporting across datasets exceeding 2 billion rows.
+  - Applied multidimensional data modeling (Star Schema, Snowflake) to optimize analysis and reporting across datasets exceeding 2 billion rows.
   - Designed and developed ETL/ELT flows for integrating data from 15+ heterogeneous sources.
-  - Design and implementation of DWH solutions on PostgreSQL as cost-effective alternatives to Oracle-based architectures, including partitioning strategies and query performance optimization.
+  - Designed and implemented DWH solutions on PostgreSQL as cost-effective alternatives to Oracle-based architectures, including partitioning strategies and query performance optimization.
 
 - **Oracle Database Management and Optimization:**
   - Advanced administration, tuning, and performance optimization of Oracle databases, including OCI and Autonomous Database environments.
@@ -68,7 +68,7 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 **PL/SQL Expert | Oracle DBA & Tuning Expert** (for FINWAVE S.p.A.) | 2020 – 2022
 
 - Advanced PL/SQL development and query optimization for financial applications processing millions of daily transactions.
-- Consultancy on Oracle architectures and performance tuning best practices.
+- Consulting on Oracle architectures and performance tuning best practices.
 
 ---
 
@@ -78,8 +78,8 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 - Design and development of Data Warehouses for various clients across banking, insurance, and telecom sectors, applying Kimball/Inmon methodologies on Oracle and PostgreSQL platforms.
 - Development of ETL/ELT processes for DWH data loading — built pipelines handling 500M+ rows per load cycle.
 - Specialized consultancy on Oracle and PostgreSQL databases, SQL performance tuning, DWH architectures, PL/SQL, and ETL design.
-- Team Leadership (3-7 people teams) in multicultural contexts, managing tasks and priorities using Agile methodology.
-- Creation of reports and data analysis with Oracle Analytics Cloud (OAC).
+- Team leadership (teams of 3–7 people) in multicultural contexts, managing tasks and priorities using Agile methodology.
+- Created reports and performed data analysis with Oracle Analytics Cloud (OAC).
 
 ---
 
@@ -100,7 +100,7 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
   - Design and development of Data Warehouses for leading clients in Telco (TIM, Vodafone, TRE), Finance (Banca d'Italia, Generali, RAS), Pharmaceutical (Menarini), and other sectors.
   - Implementation of data models (Kimball/Inmon) and ETL/ELT processes with Oracle Warehouse Builder.
   - Consultancy on SQL Performance & Tuning, PL/SQL, BI Reports (Oracle Discoverer, HTMLDB), Oracle OLAP.
-  - Work in international contexts (Vodafone Spain, Madrid).
+  - International engagement with Vodafone Spain (Madrid).
 
 - **Training Specialist (2000-2001):**
   - Delivered Oracle courses: SQL (Basic and Advanced), PL/SQL (Basic and Advanced), Oracle Database Administration, Performance and Tuning, Oracle Discoverer, Forms, Reports.
@@ -149,7 +149,7 @@ Data Warehouse Architect and IT professional with nearly 30 years of experience 
 - Analytical and Creative Problem Solving
 - Teamwork and Collaboration in International Contexts
 - Project Management (Requirements definition, Prioritization, Gantt charts, ERD)
-- Effective Communication and Idea Development
+- Effective Communication and Stakeholder Engagement
 
 ---
 
