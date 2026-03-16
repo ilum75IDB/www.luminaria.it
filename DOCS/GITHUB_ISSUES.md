@@ -44,9 +44,7 @@ tool `WebFetch`.
 
 ## Issue Aperte — Sezione Project Management
 
-| #  | Issue | Titolo | Stato |
-|----|-------|--------|-------|
-| 55 | https://github.com/ilum75IDB/ivanluminaria.com/issues/55 | AI Manager e Project Management: quando l'intelligenza artificiale entra nei progetti | aperta |
+*Nessuna issue aperta.*
 
 ## Issue Chiuse
 
@@ -71,3 +69,4 @@ tool `WebFetch`.
 | 35 | https://github.com/ilum75IDB/ivanluminaria.com/issues/35 | Bici vs Auto a Roma - il commuting del consulente | 2026-03-09 |
 | 36 | https://github.com/ilum75IDB/ivanluminaria.com/issues/36 | Hugo build timeout on cover image resize for Si-E Yes-And article | 2026-03-09 |
 | 37 | https://github.com/ilum75IDB/ivanluminaria.com/issues/37 | SCD Tipo 2: la storia che il business non sapeva di volere | 2026-03-16 |
+| 55 | https://github.com/ilum75IDB/ivanluminaria.com/issues/55 | AI Manager e Project Management: quando l'intelligenza artificiale entra nei progetti | 2026-03-16 |
