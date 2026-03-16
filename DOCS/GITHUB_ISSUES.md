@@ -45,6 +45,12 @@ tool `WebFetch`.
 
 *Nessuna issue aperta.*
 
+## Issue Aperte — Bug
+
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 57 | https://github.com/ilum75IDB/ivanluminaria.com/issues/57 | Bug: hero image in homepage troncate invece di ridimensionate (Recenti e sezioni categoria) | aperta |
+
 ## Issue Chiuse
 
 | #  | Issue | Titolo | Chiusa il |
