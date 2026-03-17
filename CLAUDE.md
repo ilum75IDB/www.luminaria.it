@@ -335,3 +335,44 @@ git checkout <branch-name>
 ```
 
 Dove `<branch-name>` è la branch di sviluppo corrente.
+
+## LinkedIn Post per promozione articoli
+
+Quando l'utente chiede di creare un post LinkedIn per promuovere un nuovo articolo del blog (o dice "fammi il post LinkedIn", "prepara il post per LinkedIn", ecc.), **seguire automaticamente queste regole** senza bisogno che vengano ripetute ogni volta.
+
+### Formato
+
+- Due versioni: prima `🇮🇹 Versione italiana:` poi `🇬🇧 English version:`
+- Post **BREVE**: massimo 8-10 righe per lingua (deve essere letto in 15 secondi da cellulare)
+- La riga con il link all'articolo deve iniziare con 👉
+- Chiudere con un blocco unico di hashtag (10-15, mix italiano/inglese)
+
+### Tono
+
+- Prima persona singolare (è Ivan che parla)
+- Leggermente ironico, come chi racconta un aneddoto a un collega al bar
+- Aprire con un dato, un numero o una situazione concreta che agganci subito
+- Niente frasi motivazionali, niente "in conclusione", niente "scopri come"
+- Deve sembrare scritto da una persona vera, non da un'AI
+- Frasi corte, ritmo veloce, qualche frase secca ad effetto
+
+### Divieti
+
+- Non usare "In un mondo dove...", "È fondamentale...", "Let's dive in...", "In today's fast-paced world..."
+- Non usare elenchi puntati
+- Non fare il riassunto dell'articolo — creare curiosità
+- Non essere didattico o professorale
+- Non superare le 10 righe per versione
+
+### Hashtag
+
+- 10-15 hashtag in un blocco unico alla fine del post
+- Mix italiano/inglese per massimizzare la reach
+- Coprire: prodotto/tecnologia, tema dell'articolo, luogo se rilevante, angolo professionale
+
+### Procedura
+
+1. Leggere l'articolo (almeno la versione italiana) per capire il tema, l'angolo personale e i dati chiave
+2. Identificare l'hook migliore: un numero, un paradosso, una situazione concreta vissuta in prima persona
+3. Scrivere il post seguendo le regole sopra
+4. Proporre il risultato completo (IT + EN + hashtag) pronto per il copia-incolla su LinkedIn
