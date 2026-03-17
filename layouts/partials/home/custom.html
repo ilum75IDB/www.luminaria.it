@@ -65,10 +65,10 @@
             <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
               <img
                 class="editorial-grid-img"
-                srcset="{{ (.Fit "160x107 smart").Permalink }} 160w, {{ (.Fit "320x213 smart").Permalink }} 320w"
-                src="{{ (.Fit "160x107 smart").Permalink }}"
+                srcset="{{ (.Fit "300x200 smart").Permalink }} 300w, {{ (.Fit "600x400 smart").Permalink }} 600w"
+                src="{{ (.Fit "300x200 smart").Permalink }}"
                 alt="{{ $article.Title }}"
-                width="160" height="120"
+                width="300" height="200"
                 {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
               />
             </a>
@@ -80,6 +80,9 @@
             <div class="editorial-grid-meta">
               {{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min
             </div>
+            {{ if .Params.description }}
+              <p class="editorial-grid-desc">{{ .Params.description }}</p>
+            {{ end }}
           </div>
         </article>
       {{- end }}
@@ -140,8 +143,8 @@
           <a href="{{ $sHero.Permalink }}" class="editorial-category-hero-img-link">
             <img
               class="editorial-category-hero-img"
-              srcset="{{ (.Resize "200x").Permalink }} 200w, {{ (.Resize "400x").Permalink }} 400w"
-              src="{{ (.Resize "200x").Permalink }}"
+              srcset="{{ (.Resize "450x").Permalink }} 450w, {{ (.Resize "900x").Permalink }} 900w"
+              src="{{ (.Resize "450x").Permalink }}"
               alt="{{ $sHero.Title }}"
               width="{{ .Width }}" height="{{ .Height }}"
               {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
@@ -182,10 +185,10 @@
                 <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
                   <img
                     class="editorial-grid-img"
-                    srcset="{{ (.Fit "160x107 smart").Permalink }} 160w, {{ (.Fit "320x213 smart").Permalink }} 320w"
-                    src="{{ (.Fit "160x107 smart").Permalink }}"
+                    srcset="{{ (.Fit "300x200 smart").Permalink }} 300w, {{ (.Fit "600x400 smart").Permalink }} 600w"
+                    src="{{ (.Fit "300x200 smart").Permalink }}"
                     alt="{{ $article.Title }}"
-                    width="160" height="120"
+                    width="300" height="200"
                     {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
                   />
                 </a>
@@ -197,6 +200,9 @@
                 <div class="editorial-grid-meta">
                   {{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min
                 </div>
+                {{ if .Params.description }}
+                  <p class="editorial-grid-desc">{{ .Params.description }}</p>
+                {{ end }}
               </div>
             </article>
           {{- end }}

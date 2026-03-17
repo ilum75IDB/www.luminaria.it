@@ -397,7 +397,7 @@ nav[aria-label="Breadcrumb"] a:hover,
    (il tema crea vari stacking context: qui mettiamo i paletti)
    ============================ */
 
-/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido + padding */
+/* 1) Navbar davvero “sempre su” (fixed) con sfondo solido */
 nav {
   position: fixed !important;
   top: 0 !important;
@@ -407,10 +407,18 @@ nav {
   overflow: visible !important;
   background: #ffffff !important;
   backdrop-filter: none !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* 1b) Nav inner container: limita il contenuto a 1600px, centrato */
+.nav-inner {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 .dark nav {
   background: rgb(var(--color-neutral-800)) !important; /* matches body dark bg */
@@ -428,12 +436,14 @@ body {
   padding-top: 3rem !important;
 }
 
-/* 2c) Margini laterali ridotti + nessun max-width sul body */
+/* 2c) Margini laterali ridotti + max-width 1600px per schermi grandi */
 @media (min-width: 768px) {
   body {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
-    max-width: 100% !important;
+    max-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -846,7 +856,7 @@ footer {
    ============================ */
 
 .editorial-section {
-  max-width: 960px;
+  max-width: 1600px;
   margin: 0 auto 3rem auto;
   padding: 0 1rem;
 }
@@ -886,7 +896,7 @@ footer {
 }
 
 .editorial-hero-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 800;
   line-height: 1.2;
   margin: 0 0 0.5rem 0;
@@ -915,7 +925,7 @@ footer {
 }
 
 .editorial-hero-desc {
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: #4b5563;
   line-height: 1.6;
   margin: 0;
@@ -944,7 +954,7 @@ footer {
 }
 
 .editorial-category-hero-img {
-  width: 150px;
+  width: 220px;
   height: auto;
   border-radius: 0.4rem;
   object-fit: contain;
@@ -952,7 +962,13 @@ footer {
 
 @media (min-width: 641px) {
   .editorial-category-hero-img {
-    width: 200px;
+    width: 450px;
+  }
+  .editorial-category-hero-title {
+    font-size: 1.8rem;
+  }
+  .editorial-category-hero-desc {
+    font-size: 1.3rem;
   }
 }
 
@@ -1030,16 +1046,22 @@ footer {
 }
 
 .editorial-grid-img {
-  width: 100px;
-  height: 67px;
+  width: 140px;
+  height: 93px;
   object-fit: cover;
   border-radius: 0.35rem;
 }
 
 @media (min-width: 641px) {
   .editorial-grid-img {
-    width: 120px;
-    height: 80px;
+    width: 300px;
+    height: 200px;
+  }
+  .editorial-grid-title {
+    font-size: 1.15rem;
+  }
+  .editorial-grid-desc {
+    font-size: 0.95rem;
   }
 }
 
@@ -1073,6 +1095,27 @@ footer {
 
 .dark .editorial-grid-meta {
   color: #9ca3af;
+}
+
+.editorial-grid-desc {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0.35rem 0 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dark .editorial-grid-desc {
+  color: #9ca3af;
+}
+
+@media (max-width: 640px) {
+  .editorial-grid-desc {
+    display: none;
+  }
 }
 
 /* Show more link */

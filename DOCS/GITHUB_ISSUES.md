@@ -50,6 +50,7 @@ tool `WebFetch`.
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
 | 57 | https://github.com/ilum75IDB/ivanluminaria.com/issues/57 | Bug: hero image in homepage troncate invece di ridimensionate (Recenti e sezioni categoria) | aperta |
+| 58 | https://github.com/ilum75IDB/ivanluminaria.com/issues/58 | Bug: max-width 100% rende immagini troppo grandi su monitor 27 pollici | aperta |
 
 ## Issue Chiuse
 
