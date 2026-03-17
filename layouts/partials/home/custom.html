@@ -65,10 +65,10 @@
             <a href="{{ $article.Permalink }}" class="editorial-grid-img-link">
               <img
                 class="editorial-grid-img"
-                srcset="{{ (.Fit "160x107 smart").Permalink }} 160w, {{ (.Fit "320x213 smart").Permalink }} 320w"
-                src="{{ (.Fit "160x107 smart").Permalink }}"
+                srcset="{{ (.Fit "180x120 smart").Permalink }} 180w, {{ (.Fit "360x240 smart").Permalink }} 360w"
+                src="{{ (.Fit "180x120 smart").Permalink }}"
                 alt="{{ $article.Title }}"
-                width="160" height="120"
+                width="180" height="120"
                 {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
               />
             </a>
@@ -140,8 +140,8 @@
           <a href="{{ $sHero.Permalink }}" class="editorial-category-hero-img-link">
             <img
               class="editorial-category-hero-img"
-              srcset="{{ (.Resize "200x").Permalink }} 200w, {{ (.Resize "400x").Permalink }} 400w"
-              src="{{ (.Resize "200x").Permalink }}"
+              srcset="{{ (.Resize "300x").Permalink }} 300w, {{ (.Resize "600x").Permalink }} 600w"
+              src="{{ (.Resize "300x").Permalink }}"
               alt="{{ $sHero.Title }}"
               width="{{ .Width }}" height="{{ .Height }}"
               {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
@@ -185,7 +185,7 @@
                     srcset="{{ (.Fit "160x107 smart").Permalink }} 160w, {{ (.Fit "320x213 smart").Permalink }} 320w"
                     src="{{ (.Fit "160x107 smart").Permalink }}"
                     alt="{{ $article.Title }}"
-                    width="160" height="120"
+                    width="180" height="120"
                     {{ if site.Params.enableImageLazyLoading | default true }}loading="lazy"{{ end }}
                   />
                 </a>

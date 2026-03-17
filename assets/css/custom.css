@@ -954,7 +954,7 @@ footer {
 }
 
 .editorial-category-hero-img {
-  width: 150px;
+  width: 220px;
   height: auto;
   border-radius: 0.4rem;
   object-fit: contain;
@@ -962,7 +962,7 @@ footer {
 
 @media (min-width: 641px) {
   .editorial-category-hero-img {
-    width: 200px;
+    width: 300px;
   }
 }
 
@@ -1040,16 +1040,16 @@ footer {
 }
 
 .editorial-grid-img {
-  width: 100px;
-  height: 67px;
+  width: 140px;
+  height: 93px;
   object-fit: cover;
   border-radius: 0.35rem;
 }
 
 @media (min-width: 641px) {
   .editorial-grid-img {
-    width: 120px;
-    height: 80px;
+    width: 180px;
+    height: 120px;
   }
 }
 
