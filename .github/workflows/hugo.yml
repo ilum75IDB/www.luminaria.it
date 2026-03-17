@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # Every Tuesday at 09:05 UTC (10:05 CET) to publish scheduled articles
+    - cron: '5 9 * * 2'
 
 permissions:
   contents: read
