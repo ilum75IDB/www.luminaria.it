@@ -151,9 +151,9 @@ The homepage (`layouts/_partials/home/custom.html`) uses an editorial magazine-s
 | Element             | srcset                          | CSS class                        |
 |---------------------|---------------------------------|----------------------------------|
 | Latest hero         | `800x533` / `1200x800`         | `.editorial-hero-img`            |
-| Latest grid         | `210x140` / `420x280`          | `.editorial-grid-img`            |
+| Latest grid         | `300x200` / `600x400`          | `.editorial-grid-img`            |
 | Category hero       | `450x` / `900x`                | `.editorial-category-hero-img`   |
-| Category grid       | `210x140` / `420x280`          | `.editorial-grid-img`            |
+| Category grid       | `300x200` / `600x400`          | `.editorial-grid-img`            |
 
 ### Category hero layout
 
