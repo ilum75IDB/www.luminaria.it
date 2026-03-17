@@ -428,12 +428,14 @@ body {
   padding-top: 3rem !important;
 }
 
-/* 2c) Margini laterali ridotti + nessun max-width sul body */
+/* 2c) Margini laterali ridotti + max-width 1600px per schermi grandi */
 @media (min-width: 768px) {
   body {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
-    max-width: 100% !important;
+    max-width: 1600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
