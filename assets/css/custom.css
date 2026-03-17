@@ -912,6 +912,15 @@ footer {
   text-decoration: none !important;
 }
 
+@media (max-width: 640px) {
+  .editorial-hero-title {
+    font-size: 1.6rem;
+  }
+  .editorial-hero-desc {
+    font-size: 1.05rem;
+  }
+}
+
 .editorial-hero-meta {
   font-size: 0.8rem;
   color: #6b7280;
