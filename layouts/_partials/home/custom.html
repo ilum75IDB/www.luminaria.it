@@ -80,6 +80,9 @@
             <div class="editorial-grid-meta">
               {{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min
             </div>
+            {{ if .Params.description }}
+              <p class="editorial-grid-desc">{{ .Params.description }}</p>
+            {{ end }}
           </div>
         </article>
       {{- end }}
@@ -179,6 +182,9 @@
                 <div class="editorial-grid-meta">
                   {{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min
                 </div>
+                {{ if .Params.description }}
+                  <p class="editorial-grid-desc">{{ .Params.description }}</p>
+                {{ end }}
               </div>
             </article>
           {{- end }}
