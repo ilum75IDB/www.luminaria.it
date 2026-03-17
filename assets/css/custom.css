@@ -914,10 +914,10 @@ footer {
 
 @media (max-width: 640px) {
   .editorial-hero-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
   }
   .editorial-hero-desc {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
 }
 
