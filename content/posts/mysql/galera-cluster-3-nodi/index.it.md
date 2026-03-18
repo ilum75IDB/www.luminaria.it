@@ -89,7 +89,7 @@ innodb_autoinc_lock_mode=2
 innodb_flush_log_at_trx_commit=2
 innodb_buffer_pool_size=1G
 
-# === Configurazione WSREP (Galera) ===
+# === Configurazione {{< glossary term="wsrep" >}}WSREP{{< /glossary >}} (Galera) ===
 wsrep_on=ON
 wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 
@@ -149,7 +149,7 @@ Se perdi un nodo, i dati sono sugli altri due. Se perdi il datacenter intero... 
 
 ### `wsrep_sst_method=mariabackup`
 
-SST è il meccanismo con cui un nodo che si unisce al cluster riceve una copia completa dei dati. Le opzioni sono:
+{{< glossary term="sst" >}}SST{{< /glossary >}} è il meccanismo con cui un nodo che si unisce al cluster riceve una copia completa dei dati. Le opzioni sono:
 
 | Metodo | Pro | Contro |
 |--------|-----|--------|
@@ -329,13 +329,13 @@ exit 0
 
 ---
 
-## Il problema dello split-brain: perché tre nodi e non due
+## Il problema dello {{< glossary term="split-brain" >}}split-brain{{< /glossary >}}: perché tre nodi e non due
 
 Quando ho presentato la soluzione al cliente, la prima domanda è stata: "Servono davvero tre server? Non bastano due?"
 
 No. E non è una questione di costo — è una questione di matematica.
 
-Galera usa un algoritmo di consenso basato su **quorum**. Con tre nodi, il quorum è 2: se un nodo cade, gli altri due riconoscono di essere la maggioranza e continuano a operare. Con due nodi, il quorum è 2: se un nodo cade, quello rimasto **non ha quorum** e si blocca per evitare lo split-brain.
+Galera usa un algoritmo di consenso basato su {{< glossary term="quorum" >}}**quorum**{{< /glossary >}}. Con tre nodi, il quorum è 2: se un nodo cade, gli altri due riconoscono di essere la maggioranza e continuano a operare. Con due nodi, il quorum è 2: se un nodo cade, quello rimasto **non ha quorum** e si blocca per evitare lo split-brain.
 
 Esiste il parametro `pc.ignore_quorum` per forzare un nodo a operare senza quorum, ma è come disattivare l'allarme antincendio perché suona troppo spesso.
 
@@ -352,7 +352,7 @@ Ho spento il Nodo 3. L'applicazione ha continuato a funzionare senza interruzion
 Poi ho riavviato il Nodo 3. Cosa è successo:
 
 1. Il nodo si è avviato e ha contattato gli altri tramite `wsrep_cluster_address`
-2. Il gap di transazioni era piccolo, quindi ha ricevuto un **IST** (Incremental State Transfer) — solo le transazioni mancanti
+2. Il gap di transazioni era piccolo, quindi ha ricevuto un {{< glossary term="ist" >}}**IST** (Incremental State Transfer){{< /glossary >}} — solo le transazioni mancanti
 3. In meno di un minuto era di nuovo `Synced`
 
 Se il nodo fosse rimasto giù più a lungo e il gcache fosse stato superato, avrebbe ricevuto un **SST** completo — l'intero dataset. Per questo il parametro `gcache.size` è importante:
@@ -395,3 +395,17 @@ La cosa che mi ha colpito di più è stata la sua frase: "Prima vivevamo con l'a
 Questo è il vero valore di un cluster Galera ben configurato. Non è la tecnologia in sé — è la tranquillità che porta. La certezza che un singolo guasto non ferma più l'azienda.
 
 La parte tecnica è la più semplice. Quello che fa la differenza è capire **perché** ogni parametro è impostato in un certo modo, cosa succede quando le cose vanno male, e come diagnosticare i problemi prima che diventino emergenze. Un cluster che funziona in demo e uno che regge in produzione: la distanza tra i due è tutta nei dettagli che ho raccontato qui.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[Quorum](/it/glossary/quorum/)** — Meccanismo di consenso basato sulla maggioranza dei nodi. Con 3 nodi il quorum è 2: se uno cade, gli altri due continuano a operare. È ciò che previene lo split-brain.
+
+**[SST](/it/glossary/sst/)** — State Snapshot Transfer: meccanismo con cui un nodo che si unisce al cluster riceve una copia completa dell'intero dataset da un nodo donatore. Il metodo raccomandato è mariabackup.
+
+**[IST](/it/glossary/ist/)** — Incremental State Transfer: trasferimento delle sole transazioni mancanti a un nodo che rientra nel cluster dopo un'assenza breve. Molto più veloce di un SST completo.
+
+**[WSREP](/it/glossary/wsrep/)** — Write Set Replication: API e protocollo di replica sincrona usato da Galera Cluster. Ogni transazione viene replicata su tutti i nodi prima del commit tramite un processo di certification.
+
+**[Split-brain](/it/glossary/split-brain/)** — Condizione critica in cui due parti del cluster operano indipendentemente accettando scritture divergenti. Il quorum la previene: solo la partizione con la maggioranza dei nodi può continuare a operare.

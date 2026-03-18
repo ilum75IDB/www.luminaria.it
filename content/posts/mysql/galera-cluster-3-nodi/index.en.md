@@ -89,7 +89,7 @@ innodb_autoinc_lock_mode=2
 innodb_flush_log_at_trx_commit=2
 innodb_buffer_pool_size=1G
 
-# === WSREP (Galera) configuration ===
+# === {{< glossary term="wsrep" >}}WSREP{{< /glossary >}} (Galera) configuration ===
 wsrep_on=ON
 wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 
@@ -149,7 +149,7 @@ If you lose one node, the data is on the other two. If you lose the entire datac
 
 ### `wsrep_sst_method=mariabackup`
 
-SST is the mechanism by which a node joining the cluster receives a complete copy of the data. The options are:
+{{< glossary term="sst" >}}SST{{< /glossary >}} is the mechanism by which a node joining the cluster receives a complete copy of the data. The options are:
 
 | Method | Pro | Con |
 |--------|-----|-----|
@@ -329,13 +329,13 @@ exit 0
 
 ---
 
-## The split-brain problem: why three nodes and not two
+## The {{< glossary term="split-brain" >}}split-brain{{< /glossary >}} problem: why three nodes and not two
 
 When I presented the solution to the client, the first question was: "Do we really need three servers? Wouldn't two be enough?"
 
 No. And it's not a cost issue — it's a matter of mathematics.
 
-Galera uses a consensus algorithm based on **quorum**. With three nodes, the quorum is 2: if one node fails, the other two recognise they are the majority and continue operating. With two nodes, the quorum is 2: if one node fails, the remaining one **doesn't have quorum** and blocks to prevent split-brain.
+Galera uses a consensus algorithm based on {{< glossary term="quorum" >}}**quorum**{{< /glossary >}}. With three nodes, the quorum is 2: if one node fails, the other two recognise they are the majority and continue operating. With two nodes, the quorum is 2: if one node fails, the remaining one **doesn't have quorum** and blocks to prevent split-brain.
 
 The parameter `pc.ignore_quorum` exists to force a node to operate without quorum, but that's like disabling the fire alarm because it rings too often.
 
@@ -352,7 +352,7 @@ I shut down Node 3. The application kept running without interruption on nodes 1
 Then I restarted Node 3. What happened:
 
 1. The node started and contacted the others via `wsrep_cluster_address`
-2. The transaction gap was small, so it received an **IST** (Incremental State Transfer) — only the missing transactions
+2. The transaction gap was small, so it received an {{< glossary term="ist" >}}**IST** (Incremental State Transfer){{< /glossary >}} — only the missing transactions
 3. In less than a minute it was `Synced` again
 
 If the node had stayed down longer and the gcache had been exceeded, it would have received a full **SST** — the entire dataset. That's why the `gcache.size` parameter matters:
@@ -395,3 +395,17 @@ What struck me most was his comment: "We used to live with the anxiety of the da
 That's the real value of a well-configured Galera cluster. It's not the technology itself — it's the peace of mind it brings. The certainty that a single failure no longer stops the business.
 
 The technical part is the easiest. What makes the difference is understanding **why** each parameter is set a certain way, what happens when things go wrong, and how to diagnose problems before they become emergencies. A cluster that works in a demo and one that holds in production: the distance between the two is all in the details I've described here.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[Quorum](/en/glossary/quorum/)** — Majority-based consensus mechanism. With 3 nodes the quorum is 2: if one fails, the other two continue operating. This is what prevents split-brain.
+
+**[SST](/en/glossary/sst/)** — State Snapshot Transfer: mechanism by which a node joining the cluster receives a complete copy of the entire dataset from a donor node. The recommended method is mariabackup.
+
+**[IST](/en/glossary/ist/)** — Incremental State Transfer: transfer of only the missing transactions to a node rejoining the cluster after a brief absence. Much faster than a full SST.
+
+**[WSREP](/en/glossary/wsrep/)** — Write Set Replication: synchronous replication API and protocol used by Galera Cluster. Each transaction is replicated to all nodes before commit through a certification process.
+
+**[Split-brain](/en/glossary/split-brain/)** — Critical condition where two parts of the cluster operate independently accepting divergent writes. Quorum prevents it: only the partition with the majority of nodes can continue operating.

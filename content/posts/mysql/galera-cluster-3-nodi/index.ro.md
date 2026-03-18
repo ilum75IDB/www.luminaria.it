@@ -89,7 +89,7 @@ innodb_autoinc_lock_mode=2
 innodb_flush_log_at_trx_commit=2
 innodb_buffer_pool_size=1G
 
-# === Configurare WSREP (Galera) ===
+# === Configurare {{< glossary term="wsrep" >}}WSREP{{< /glossary >}} (Galera) ===
 wsrep_on=ON
 wsrep_provider=/usr/lib64/galera-4/libgalera_smm.so
 
@@ -149,7 +149,7 @@ Dacă pierzi un nod, datele sunt pe celelalte două. Dacă pierzi întregul data
 
 ### `wsrep_sst_method=mariabackup`
 
-SST este mecanismul prin care un nod care se alătură clusterului primește o copie completă a datelor. Opțiunile sunt:
+{{< glossary term="sst" >}}SST{{< /glossary >}} este mecanismul prin care un nod care se alătură clusterului primește o copie completă a datelor. Opțiunile sunt:
 
 | Metodă | Pro | Contra |
 |--------|-----|--------|
@@ -329,13 +329,13 @@ exit 0
 
 ---
 
-## Problema split-brain: de ce trei noduri și nu două
+## Problema {{< glossary term="split-brain" >}}split-brain{{< /glossary >}}: de ce trei noduri și nu două
 
 Când am prezentat soluția clientului, prima întrebare a fost: "Chiar avem nevoie de trei servere? Nu sunt suficiente două?"
 
 Nu. Și nu e o chestiune de cost — e o chestiune de matematică.
 
-Galera folosește un algoritm de consens bazat pe **quorum**. Cu trei noduri, quorum-ul este 2: dacă un nod cade, celelalte două recunosc că sunt majoritatea și continuă să funcționeze. Cu două noduri, quorum-ul este 2: dacă un nod cade, cel rămas **nu are quorum** și se blochează pentru a preveni split-brain-ul.
+Galera folosește un algoritm de consens bazat pe {{< glossary term="quorum" >}}**quorum**{{< /glossary >}}. Cu trei noduri, quorum-ul este 2: dacă un nod cade, celelalte două recunosc că sunt majoritatea și continuă să funcționeze. Cu două noduri, quorum-ul este 2: dacă un nod cade, cel rămas **nu are quorum** și se blochează pentru a preveni split-brain-ul.
 
 Parametrul `pc.ignore_quorum` există pentru a forța un nod să funcționeze fără quorum, dar e ca și cum ai dezactiva alarma de incendiu pentru că sună prea des.
 
@@ -352,7 +352,7 @@ Am oprit Nodul 3. Aplicația a continuat să funcționeze fără întrerupere pe
 Apoi am repornit Nodul 3. Ce s-a întâmplat:
 
 1. Nodul a pornit și a contactat celelalte prin `wsrep_cluster_address`
-2. Gap-ul de tranzacții era mic, deci a primit un **IST** (Incremental State Transfer) — doar tranzacțiile lipsă
+2. Gap-ul de tranzacții era mic, deci a primit un {{< glossary term="ist" >}}**IST** (Incremental State Transfer){{< /glossary >}} — doar tranzacțiile lipsă
 3. În mai puțin de un minut era din nou în starea `Synced`
 
 Dacă nodul ar fi rămas oprit mai mult timp și gcache-ul ar fi fost depășit, ar fi primit un **SST** complet — întregul set de date. De aceea parametrul `gcache.size` este important:
@@ -395,3 +395,17 @@ Ce m-a impresionat cel mai mult a fost fraza lui: "Înainte trăiam cu anxietate
 Aceasta este adevărata valoare a unui cluster Galera bine configurat. Nu este tehnologia în sine — este liniștea pe care o aduce. Certitudinea că o singură defecțiune nu mai oprește compania.
 
 Partea tehnică este cea mai simplă. Ceea ce face diferența este înțelegerea **de ce** fiecare parametru este setat într-un anumit fel, ce se întâmplă când lucrurile merg prost și cum să diagnostichezi problemele înainte ca ele să devină urgențe. Un cluster care funcționează în demo și unul care rezistă în producție: distanța dintre cele două stă toată în detaliile pe care le-am povestit aici.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[Quorum](/ro/glossary/quorum/)** — Mecanism de consens bazat pe majoritatea nodurilor. Cu 3 noduri quorum-ul este 2: dacă unul cade, celelalte două continuă să funcționeze. Este ceea ce previne split-brain-ul.
+
+**[SST](/ro/glossary/sst/)** — State Snapshot Transfer: mecanism prin care un nod care se alătură clusterului primește o copie completă a întregului set de date de la un nod donator. Metoda recomandată este mariabackup.
+
+**[IST](/ro/glossary/ist/)** — Incremental State Transfer: transferul doar al tranzacțiilor lipsă către un nod care revine în cluster după o absență scurtă. Mult mai rapid decât un SST complet.
+
+**[WSREP](/ro/glossary/wsrep/)** — Write Set Replication: API și protocol de replicare sincronă folosit de Galera Cluster. Fiecare tranzacție este replicată pe toate nodurile înainte de commit printr-un proces de certification.
+
+**[Split-brain](/ro/glossary/split-brain/)** — Condiție critică în care două părți ale clusterului operează independent acceptând scrieri divergente. Quorum-ul o previne: doar partiția cu majoritatea nodurilor poate continua să funcționeze.
