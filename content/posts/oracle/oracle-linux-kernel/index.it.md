@@ -301,3 +301,17 @@ Dieci minuti di configurazione. Nessun costo hardware. Nessuna licenza aggiuntiv
 Ma nessuno lo fa, perché il wizard non lo chiede, la documentazione è sepolta in una nota MOS, e il sistema "funziona anche senza." Funziona. Male. E la colpa ricade sempre su Oracle, mai sul fatto che nessuno ha preparato il terreno.
 
 Un database è buono quanto il sistema operativo su cui gira. E un sistema operativo lasciato ai default è un sistema operativo che lavora contro di te.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[Huge Pages](/it/glossary/huge-pages/)** — Pagine di memoria da 2 MB (invece dei 4 KB standard) che riducono drasticamente la pressione sulla MMU e sul TLB, migliorando le performance di Oracle su Linux.
+
+**[THP](/it/glossary/thp/)** — Transparent Huge Pages — funzione del kernel Linux che promuove automaticamente le pagine normali a pagine grandi, ma che causa latenze imprevedibili e deve essere disabilitata per Oracle.
+
+**[SGA](/it/glossary/sga/)** — System Global Area — area di memoria condivisa di Oracle Database che contiene buffer cache, shared pool, redo log buffer e altre strutture critiche per le performance.
+
+**[I/O Scheduler](/it/glossary/io-scheduler/)** — Componente del kernel Linux che decide l'ordine in cui le richieste di I/O vengono inviate al disco, con impatto diretto sulle performance del database.
+
+**[Swappiness](/it/glossary/swappiness/)** — Parametro kernel Linux (vm.swappiness) che controlla la propensione del sistema a spostare pagine di memoria nello swap, critico per i server database.
