@@ -28,7 +28,7 @@ Il problema è **a chi la affidano**.
 
 ## 💰 Primo atto: la grande multinazionale (2013-2018)
 
-Viene ingaggiata una delle Big della consulenza IT mondiale. Nome che tutti conoscono. Migliaia di consulenti, sedi in ogni continente, presentazioni in PowerPoint che farebbero piangere di commozione.
+Viene ingaggiata — in pieno {{< glossary term="outsourcing" >}}outsourcing{{< /glossary >}} — una delle Big della consulenza IT mondiale. Nome che tutti conoscono. Migliaia di consulenti, sedi in ogni continente, presentazioni in PowerPoint che farebbero piangere di commozione.
 
 Il progetto parte. Si definiscono i requisiti. Si stima il budget. Si firmano i contratti.
 
@@ -90,10 +90,10 @@ Una grande società di consulenza guadagna vendendo giornate-uomo. Più il proge
 **2. Il turnover è endemico.**\
 Le multinazionali della consulenza hanno tassi di turnover del 15-25% annuo. In un progetto che dura cinque anni, il team si rinnova completamente almeno due volte. Ogni volta si ricomincia: nuova curva di apprendimento, nuova interpretazione dei requisiti, nuovi errori.
 
-**3. Il know-how esce dalla porta.**\
+**3. Il know-how esce dalla porta ({{< glossary term="vendor-lock-in" >}}vendor lock-in{{< /glossary >}}).**\
 Quando il fornitore finisce (o viene cacciato), la conoscenza del sistema se ne va con lui. Il cliente resta con un software che non capisce, non sa manutenere e non può evolvere.
 
-**4. Le specifiche diventano un'arma.**\
+**4. Le specifiche diventano un'arma ({{< glossary term="scope-creep" >}}scope creep{{< /glossary >}}).**\
 In un progetto custom di questa portata, le specifiche sono sempre incomplete — perché il business è complesso e in evoluzione. Questo diventa l'alibi perfetto: "il software non funziona perché le specifiche sono cambiate". Ed è sempre colpa di qualcun altro.
 
 ------------------------------------------------------------------------
@@ -119,11 +119,11 @@ La lezione è brutale nella sua semplicità:
 
 E qui entra la parte della storia che conosco da dentro. Perché per la stessa azienda, nello stesso periodo, io e un collega abbiamo costruito qualcosa che funziona. Ogni singolo giorno.
 
-Un **Data Warehouse** completo. Progettato, sviluppato, messo in produzione e mantenuto **in due persone**.
+Un {{< glossary term="data-warehouse" >}}**Data Warehouse**{{< /glossary >}} completo. Progettato, sviluppato, messo in produzione e mantenuto **in due persone**.
 
 Non una demo. Non un prototipo. Un sistema di produzione che:
 
-- **Carica dati ogni giorno** — l'intero ciclo ETL gira in **un'ora e mezza**
+- **Carica dati ogni giorno** — l'intero ciclo {{< glossary term="etl" >}}ETL{{< /glossary >}} gira in **un'ora e mezza**
 - **Integra 4 sistemi sorgenti diversi** — ognuno con il suo formato, il suo protocollo, le sue particolarità
 - **Raccoglie dati da 4 aree geografiche**: Italia, Francia, paesi del Nord Europa, Spagna
 - **Comprende circa 60.000 righe di codice** scritte a quattro mani
@@ -183,3 +183,17 @@ Perché la differenza tra un progetto che funziona e uno che brucia milioni non 
 Sta nelle persone. Nella continuità. Nella responsabilità.
 
 E nella capacità di dire "no" a chi ti vende la complessità quando la soluzione è semplice.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[Data Warehouse](/it/glossary/data-warehouse/)** — Sistema centralizzato di raccolta e storicizzazione dati da fonti diverse, progettato per l'analisi e il supporto alle decisioni aziendali. Nel caso descritto, costruito in due persone con 60.000 righe di codice.
+
+**[ETL](/it/glossary/etl/)** — Extract, Transform, Load: processo di estrazione dati dai sistemi sorgente, trasformazione e caricamento nel data warehouse. Il ciclo ETL del DWH descritto gira in un'ora e mezza.
+
+**[Vendor Lock-in](/it/glossary/vendor-lock-in/)** — Dipendenza strutturale da un fornitore esterno che rende difficile cambiare provider. Si instaura quando il know-how e il codice restano nelle mani del fornitore.
+
+**[Scope Creep](/it/glossary/scope-creep/)** — Espansione incontrollata dei requisiti di progetto oltre il perimetro iniziale. Le specifiche incomplete diventano l'alibi per ritardi e costi aggiuntivi.
+
+**[Outsourcing](/it/glossary/outsourcing/)** — Esternalizzazione di attività IT a fornitori esterni. Rischioso per progetti strategici a lungo termine, dove il turnover dei consulenti e la perdita di know-how possono bruciare milioni.

@@ -28,7 +28,7 @@ Problema este **cui i-o încredințează**.
 
 ## 💰 Actul întâi: marea multinațională (2013–2018)
 
-Este angajată una dintre marile nume ale consultanței IT mondiale. Un nume pe care toată lumea îl cunoaște. Mii de consultanți, birouri pe fiecare continent, prezentări PowerPoint care te-ar face să plângi de emoție.
+Este angajată — în plin {{< glossary term="outsourcing" >}}outsourcing{{< /glossary >}} — una dintre marile nume ale consultanței IT mondiale. Un nume pe care toată lumea îl cunoaște. Mii de consultanți, birouri pe fiecare continent, prezentări PowerPoint care te-ar face să plângi de emoție.
 
 Proiectul pornește. Se definesc cerințele. Se estimează bugetul. Se semnează contractele.
 
@@ -90,10 +90,10 @@ O mare firmă de consultanță câștigă bani vânzând zile-om. Cu cât proiec
 **2. Rotația este endemică.**\
 Multinaționalele de consultanță au rate de rotație de 15-25% pe an. Într-un proiect care durează cinci ani, echipa se reînnoiește complet de cel puțin două ori. De fiecare dată se o ia de la capăt: nouă curbă de învățare, nouă interpretare a cerințelor, noi greșeli.
 
-**3. Know-how-ul iese pe ușă.**\
+**3. Know-how-ul iese pe ușă ({{< glossary term="vendor-lock-in" >}}vendor lock-in{{< /glossary >}}).**\
 Când furnizorul termină (sau este concediat), cunoașterea sistemului pleacă odată cu el. Clientul rămâne cu un software pe care nu-l înțelege, nu știe să-l întrețină și nu-l poate evolua.
 
-**4. Specificațiile devin o armă.**\
+**4. Specificațiile devin o armă ({{< glossary term="scope-creep" >}}scope creep{{< /glossary >}}).**\
 Într-un proiect custom de această amploare, specificațiile sunt întotdeauna incomplete — pentru că afacerea este complexă și în evoluție. Aceasta devine alibiul perfect: "software-ul nu funcționează pentru că specificațiile s-au schimbat". Și e mereu vina altcuiva.
 
 ------------------------------------------------------------------------
@@ -119,11 +119,11 @@ Lecția este brutală în simplitatea ei:
 
 Și aici intră partea poveștii pe care o cunosc din interior. Pentru că pentru aceeași companie, în aceeași perioadă, eu și un coleg am construit ceva ce funcționează. În fiecare zi.
 
-Un **Data Warehouse** complet. Proiectat, dezvoltat, pus în producție și întreținut **de două persoane**.
+Un {{< glossary term="data-warehouse" >}}**Data Warehouse**{{< /glossary >}} complet. Proiectat, dezvoltat, pus în producție și întreținut **de două persoane**.
 
 Nu o demo. Nu un prototip. Un sistem de producție care:
 
-- **Încarcă date în fiecare zi** — întregul ciclu ETL rulează în **o oră și jumătate**
+- **Încarcă date în fiecare zi** — întregul ciclu {{< glossary term="etl" >}}ETL{{< /glossary >}} rulează în **o oră și jumătate**
 - **Integrează 4 sisteme sursă diferite** — fiecare cu formatul său, protocolul său, particularitățile sale
 - **Colectează date din 4 zone geografice**: Italia, Franța, țări din Europa de Nord, Spania
 - **Cuprinde aproximativ 60.000 de linii de cod** scrise în patru mâini
@@ -183,3 +183,17 @@ Pentru că diferența dintre un proiect care funcționează și unul care arde m
 Ține de oameni. De continuitate. De responsabilitate.
 
 Și de capacitatea de a spune "nu" celor care îți vând complexitate când soluția este simplă.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[Data Warehouse](/ro/glossary/data-warehouse/)** — Sistem centralizat de colectare și istoricizare a datelor din surse diverse, proiectat pentru analiză și suport al deciziilor de afaceri. În cazul descris, construit de două persoane cu 60.000 de linii de cod.
+
+**[ETL](/ro/glossary/etl/)** — Extract, Transform, Load: procesul de extragere a datelor din sistemele sursă, transformare și încărcare în data warehouse. Ciclul ETL al DWH-ului descris rulează într-o oră și jumătate.
+
+**[Vendor Lock-in](/ro/glossary/vendor-lock-in/)** — Dependență structurală de un furnizor extern care face schimbarea providerului dificilă. Se instaurează când know-how-ul și codul rămân în mâinile furnizorului.
+
+**[Scope Creep](/ro/glossary/scope-creep/)** — Expansiune necontrolată a cerințelor proiectului dincolo de perimetrul inițial. Specificațiile incomplete devin alibiul pentru întârzieri și costuri suplimentare.
+
+**[Outsourcing](/ro/glossary/outsourcing/)** — Externalizarea activităților IT către furnizori externi. Riscant pentru proiecte strategice pe termen lung, unde rotația consultanților și pierderea know-how-ului pot arde milioane.

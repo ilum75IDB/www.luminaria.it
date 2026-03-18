@@ -28,7 +28,7 @@ The problem is **who they entrust it to**.
 
 ## 💰 Act one: the big multinational (2013–2018)
 
-One of the Big Names in global IT consulting is brought in. A name everyone knows. Thousands of consultants, offices on every continent, PowerPoint presentations that could bring you to tears.
+One of the Big Names in global IT consulting is brought in — full {{< glossary term="outsourcing" >}}outsourcing{{< /glossary >}}. A name everyone knows. Thousands of consultants, offices on every continent, PowerPoint presentations that could bring you to tears.
 
 The project kicks off. Requirements are defined. The budget is estimated. Contracts are signed.
 
@@ -90,10 +90,10 @@ A large consulting firm makes money by selling man-days. The longer the project 
 **2. Turnover is endemic.**\
 Major consulting multinationals have annual turnover rates of 15–25%. In a project lasting five years, the team is completely renewed at least twice. Each time you start over: new learning curve, new interpretation of requirements, new mistakes.
 
-**3. Know-how walks out the door.**\
+**3. Know-how walks out the door ({{< glossary term="vendor-lock-in" >}}vendor lock-in{{< /glossary >}}).**\
 When the supplier finishes (or gets fired), the system knowledge leaves with them. The client is left with software they don't understand, can't maintain, and can't evolve.
 
-**4. Specifications become a weapon.**\
+**4. Specifications become a weapon ({{< glossary term="scope-creep" >}}scope creep{{< /glossary >}}).**\
 In a custom project of this scale, specifications are always incomplete — because the business is complex and evolving. This becomes the perfect alibi: "the software doesn't work because the specifications changed." And it's always someone else's fault.
 
 ------------------------------------------------------------------------
@@ -119,11 +119,11 @@ The lesson is brutal in its simplicity:
 
 And here's the part of the story I know from the inside. Because for the same company, during the same period, a colleague and I built something that works. Every single day.
 
-A complete **Data Warehouse**. Designed, developed, deployed to production, and maintained **by two people**.
+A complete {{< glossary term="data-warehouse" >}}**Data Warehouse**{{< /glossary >}}. Designed, developed, deployed to production, and maintained **by two people**.
 
 Not a demo. Not a prototype. A production system that:
 
-- **Loads data every day** — the entire ETL cycle runs in **one and a half hours**
+- **Loads data every day** — the entire {{< glossary term="etl" >}}ETL{{< /glossary >}} cycle runs in **one and a half hours**
 - **Integrates 4 different source systems** — each with its own format, protocol, and quirks
 - **Collects data from 4 geographic areas**: Italy, France, Northern European countries, Spain
 - **Comprises approximately 60,000 lines of code** written by four hands
@@ -183,3 +183,17 @@ Because the difference between a project that works and one that burns millions 
 It's about the people. The continuity. The accountability.
 
 And the ability to say "no" to those who sell you complexity when the solution is simple.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[Data Warehouse](/en/glossary/data-warehouse/)** — Centralised data collection and historicisation system from diverse sources, designed for analysis and business decision support. In the case described, built by two people with 60,000 lines of code.
+
+**[ETL](/en/glossary/etl/)** — Extract, Transform, Load: the process of extracting data from source systems, transforming it and loading it into the data warehouse. The described DWH's ETL cycle runs in one and a half hours.
+
+**[Vendor Lock-in](/en/glossary/vendor-lock-in/)** — Structural dependency on an external supplier that makes switching providers difficult. It establishes itself when know-how and code remain in the supplier's hands.
+
+**[Scope Creep](/en/glossary/scope-creep/)** — Uncontrolled expansion of project requirements beyond the initial scope. Incomplete specifications become the alibi for delays and additional costs.
+
+**[Outsourcing](/en/glossary/outsourcing/)** — Externalisation of IT activities to external suppliers. Risky for long-term strategic projects, where consultant turnover and know-how loss can burn millions.

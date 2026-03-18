@@ -23,7 +23,8 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | COALESCE | Funzione SQL che restituisce il primo valore non NULL da una lista di espressioni. Spesso usata come workaround per le gerarchie incomplete, ma non risolve il problema strutturale nel modello | ragged-hierarchies |
 | Data Guard | Tecnologia Oracle per la replica in tempo reale di un database su uno o più server standby, garantendo alta disponibilità e disaster recovery | oracle-data-guard |
 | Drill-down | Navigazione nei report dal livello aggregato al livello di dettaglio. Richiede una gerarchia completa e bilanciata per funzionare correttamente | ragged-hierarchies |
-| ETL | Extract, Transform, Load — processo di estrazione, trasformazione e caricamento dati dai sistemi sorgente al data warehouse | scd-tipo-2, ragged-hierarchies |
+| Data Warehouse | Sistema centralizzato di raccolta e storicizzazione dati provenienti da fonti diverse, progettato per l'analisi e il supporto alle decisioni aziendali | 4-milioni-nessun-software |
+| ETL | Extract, Transform, Load — processo di estrazione, trasformazione e caricamento dati dai sistemi sorgente al data warehouse | scd-tipo-2, ragged-hierarchies, 4-milioni-nessun-software |
 | Execution Plan | Sequenza di operazioni (scan, join, sort) che il database sceglie per risolvere una query SQL. Si visualizza con EXPLAIN e EXPLAIN ANALYZE | explain-analyze-postgresql |
 | Fact table | Tabella centrale dello star schema che contiene le misure numeriche (importi, quantità, conteggi) e le chiavi esterne verso le tabelle dimensionali | scd-tipo-2 |
 | Full Table Scan | Operazione di lettura in cui il database legge tutti i blocchi di una tabella senza utilizzare indici. In Oracle si manifesta come wait event `db file scattered read` | oracle-awr-ash |
@@ -34,6 +35,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | MERGE | Istruzione SQL che combina INSERT e UPDATE in un'unica operazione: se il record esiste lo aggiorna, se non esiste lo inserisce. In Oracle anche nota come "upsert" | scd-tipo-2 |
 | mysqlbinlog | Utility da riga di comando di MySQL per leggere, filtrare e riapplicare il contenuto dei file binary log. Indispensabile per il point-in-time recovery e il debug della replica | binary-log-mysql |
 | Nested Loop | Strategia di join che per ogni riga della tabella esterna cerca le corrispondenze nella tabella interna. Ideale per poche righe, disastrosa su grandi volumi | explain-analyze-postgresql |
+| Outsourcing | Esternalizzazione di attività o progetti IT a fornitori esterni, con rischi significativi di perdita di know-how e vendor lock-in se non gestita correttamente | 4-milioni-nessun-software |
 | OLAP | Online Analytical Processing — elaborazione orientata all'analisi multidimensionale dei dati, tipica dei data warehouse. Contrapposta all'OLTP dei sistemi transazionali | ragged-hierarchies |
 | PITR | Point-in-Time Recovery — tecnica di ripristino che combina backup e binary log per riportare un database a un qualsiasi momento nel tempo | binary-log-mysql |
 | Quorum | Meccanismo di consenso basato sulla maggioranza dei nodi, usato nei cluster database per prevenire lo split-brain e garantire la consistenza dei dati | galera-cluster-3-nodi |
@@ -43,6 +45,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | RMAN | Recovery Manager — strumento nativo Oracle per backup, restore e recovery del database, inclusa la creazione di database standby per Data Guard | oracle-data-guard |
 | RPO | Recovery Point Objective — la quantità massima di dati che un'organizzazione può permettersi di perdere in caso di disastro, misurata in tempo | oracle-data-guard |
 | RTO | Recovery Time Objective — il tempo massimo accettabile per ripristinare un servizio dopo un guasto o un disastro | oracle-data-guard |
+| Scope Creep | Espansione incontrollata dei requisiti di progetto oltre il perimetro iniziale, che porta a ritardi, aumento dei costi e spesso al fallimento del progetto | 4-milioni-nessun-software |
 | SCD | Slowly Changing Dimension — tecnica di data warehouse per tracciare le variazioni nel tempo dei dati nelle tabelle dimensionali | scd-tipo-2 |
 | secure-file-priv | Direttiva di sicurezza MySQL che limita le directory in cui il server può leggere e scrivere file, proteggendo il filesystem da operazioni non autorizzate | mysql-multi-istanza-secure-file-priv |
 | Split-brain | Condizione critica in un cluster database dove due o più parti operano indipendentemente, accettando scritture divergenti sugli stessi dati | galera-cluster-3-nodi |
@@ -52,6 +55,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | Snapshot (Oracle) | Istantanea delle statistiche di performance catturata periodicamente da AWR (di default ogni 60 minuti) e usata per generare report diagnostici comparativi | oracle-awr-ash |
 | Star schema | Modello di dati tipico del data warehouse: una fact table al centro collegata a più tabelle dimensionali tramite chiavi esterne. Semplifica le query analitiche e ottimizza le performance | scd-tipo-2 |
 | systemd | Sistema di init e gestore dei servizi su Linux, usato per gestire istanze multiple di MySQL/MariaDB sullo stesso server tramite unit file separati | mysql-multi-istanza-secure-file-priv |
+| Vendor Lock-in | Dipendenza strutturale da un fornitore esterno che rende difficile o costoso cambiare provider, spesso causata dalla perdita di know-how e dalla proprietà del codice | 4-milioni-nessun-software |
 | Unix Socket | Meccanismo di comunicazione inter-processo locale su sistemi Unix/Linux, usato da MySQL per connessioni più veloci rispetto a TCP quando client e server sono sullo stesso host | mysql-multi-istanza-secure-file-priv |
 | Wait Event | Evento di attesa registrato da Oracle ogni volta che una sessione non può procedere e deve attendere una risorsa (I/O, lock, CPU, rete). L'analisi dei wait event è la base della metodologia diagnostica Oracle | oracle-awr-ash |
 | WSREP | Write Set Replication — API e protocollo di replica sincrona usato da Galera Cluster per mantenere i nodi del cluster allineati in tempo reale | galera-cluster-3-nodi |
@@ -59,5 +63,5 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 ---
 
 **Ultimo aggiornamento**: 2026-03-18
-**Totale termini**: 42
-**Totale articoli con glossario**: 8
+**Totale termini**: 46
+**Totale articoli con glossario**: 9
