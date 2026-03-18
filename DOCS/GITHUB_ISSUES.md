@@ -47,6 +47,7 @@ tool `WebFetch`.
 
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
+| 59 | https://github.com/ilum75IDB/ivanluminaria.com/issues/59 | Grid images in homepage croppate su desktop | aperta |
 
 ## Issue Chiuse
 
