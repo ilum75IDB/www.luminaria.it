@@ -259,3 +259,19 @@ Uită-te la ceas când ajungi. Uită-te cum te simți. Uită-te în portofel la 
 
 Cifrele vorbesc de la sine.\
 Dar zâmbetul cu care ajungi la birou, acela, nu are preț.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[Brompton](/ro/glossary/brompton/)** — Bicicletă pliabilă britanică considerată referința mondială pentru calitatea construcției, compactitatea în stare pliată și practicitatea în navetismul urban.
+
+**[Pedalare Asistată](/ro/glossary/pedalata-assistita/)** — Sistem de propulsie electrică care amplifică forța de pedalare, eliminând problema pantelor și a transpirației pe traseele urbane.
+
+**[Bicicletă Pliabilă](/ro/glossary/bicicletta-pieghevole/)** — Bicicletă care se pliază în 10-20 secunde devenind un bagaj transportabil la birou, în metrou sau în tren.
+
+**[Navetism](/ro/glossary/pendolarismo/)** — Deplasarea zilnică casă-serviciu și retur, care în marile orașe poate absorbi 2-4 ore pe zi și sute de euro pe lună.
+
+**[Carbon Footprint](/ro/glossary/carbon-footprint/)** — Cantitatea totală de gaze cu efect de seră emise de o activitate — o mașină în traficul roman produce 120-150 g de CO₂ pe km, o bicicletă zero.
+
+**[Mobilitate Durabilă](/ro/glossary/mobilita-sostenibile/)** — Abordare a transportului urban care privilegiază mijloace cu impact scăzut asupra mediului, reducând emisiile, traficul și costurile.

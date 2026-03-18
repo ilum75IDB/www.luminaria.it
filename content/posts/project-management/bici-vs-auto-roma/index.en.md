@@ -259,3 +259,19 @@ Check your watch when you arrive. Check how you feel. Check your wallet at the e
 
 The numbers speak for themselves.\
 But the smile on your face when you reach your desk — that's priceless.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[Brompton](/en/glossary/brompton/)** — British folding bicycle considered the world reference for build quality, folded compactness and practicality in urban commuting.
+
+**[Pedal Assist](/en/glossary/pedalata-assistita/)** — Electric propulsion system that amplifies the cyclist's pedaling force, eliminating the problem of hills and sweat on urban commutes.
+
+**[Folding Bike](/en/glossary/bicicletta-pieghevole/)** — Bicycle that folds in 10-20 seconds becoming a portable package for the office, metro or train.
+
+**[Commuting](/en/glossary/pendolarismo/)** — Daily home-to-work travel and back, which in large cities can absorb 2-4 hours per day and hundreds of euros per month.
+
+**[Carbon Footprint](/en/glossary/carbon-footprint/)** — Total amount of greenhouse gases emitted by an activity — a car in Roman traffic produces 120-150 g of CO₂ per km, a bike zero.
+
+**[Sustainable Mobility](/en/glossary/mobilita-sostenibile/)** — Approach to urban transport that favors low environmental impact means, reducing emissions, traffic and costs.

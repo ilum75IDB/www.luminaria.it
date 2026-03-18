@@ -259,3 +259,19 @@ Mira el reloj cuando llegues. Mira cómo te sientes. Mira la cartera a final de 
 
 Los números hablan por sí solos.\
 Pero la sonrisa con la que llegas al escritorio, esa, no tiene precio.
+
+------------------------------------------------------------------------
+
+## Glosario
+
+**[Brompton](/es/glossary/brompton/)** — Bicicleta plegable británica considerada la referencia mundial por calidad constructiva, compacidad plegada y practicidad en el pendularismo urbano.
+
+**[Pedaleo Asistido](/es/glossary/pedalata-assistita/)** — Sistema de propulsión eléctrica que amplifica la fuerza del pedaleo, eliminando el problema de las cuestas y el sudor en los trayectos urbanos.
+
+**[Bicicleta Plegable](/es/glossary/bicicletta-pieghevole/)** — Bicicleta que se pliega en 10-20 segundos convirtiéndose en un equipaje transportable a la oficina, al metro o al tren.
+
+**[Pendularismo](/es/glossary/pendolarismo/)** — Desplazamiento diario casa-trabajo y vuelta, que en las grandes ciudades puede absorber 2-4 horas al día y cientos de euros al mes.
+
+**[Carbon Footprint](/es/glossary/carbon-footprint/)** — Cantidad total de gases de efecto invernadero emitidos por una actividad — un coche en el tráfico romano produce 120-150 g de CO₂ por km, una bici cero.
+
+**[Movilidad Sostenible](/es/glossary/mobilita-sostenibile/)** — Enfoque del transporte urbano que privilegia medios de bajo impacto ambiental, reduciendo emisiones, tráfico y costes.

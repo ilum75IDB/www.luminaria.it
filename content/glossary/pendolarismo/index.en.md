@@ -5,6 +5,7 @@ translationKey: "glossary_pendolarismo"
 aka: "Pendolarismo"
 articles:
   - "/posts/project-management/smartworking-consulenza-it"
+  - "/posts/project-management/bici-vs-auto-roma"
 ---
 
 **Commuting** is the daily travel between home and workplace. In large Italian cities like Rome, the average commute absorbs 2-4 hours per day, with direct costs (fuel, parking, public transport) and indirect costs (stress, fatigue, lost productivity).

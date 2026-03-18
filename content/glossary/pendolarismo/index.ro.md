@@ -5,6 +5,7 @@ translationKey: "glossary_pendolarismo"
 aka: "Commuting / Pendolarismo"
 articles:
   - "/posts/project-management/smartworking-consulenza-it"
+  - "/posts/project-management/bici-vs-auto-roma"
 ---
 
 **Navetismul** (commuting) este deplasarea zilnică între casă și locul de muncă. În marile orașe italiene precum Roma, naveta medie absoarbe 2-4 ore pe zi, cu costuri directe (combustibil, parcare, transport public) și indirecte (stres, oboseală, productivitate pierdută).

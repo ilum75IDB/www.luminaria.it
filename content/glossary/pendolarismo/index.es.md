@@ -5,6 +5,7 @@ translationKey: "glossary_pendolarismo"
 aka: "Commuting"
 articles:
   - "/posts/project-management/smartworking-consulenza-it"
+  - "/posts/project-management/bici-vs-auto-roma"
 ---
 
 El **Pendularismo** (commuting) es el desplazamiento diario entre casa y lugar de trabajo. En las grandes ciudades italianas como Roma, el desplazamiento medio absorbe 2-4 horas al día, con costes directos (combustible, aparcamiento, transporte público) e indirectos (estrés, cansancio, productividad perdida).

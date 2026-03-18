@@ -5,6 +5,7 @@ translationKey: "glossary_pendolarismo"
 aka: "Commuting"
 articles:
   - "/posts/project-management/smartworking-consulenza-it"
+  - "/posts/project-management/bici-vs-auto-roma"
 ---
 
 Il **Pendolarismo** (commuting) è lo spostamento quotidiano tra casa e luogo di lavoro. Nelle grandi città italiane come Roma, il pendolarismo medio assorbe 2-4 ore al giorno, con costi diretti (carburante, parcheggio, mezzi pubblici) e indiretti (stress, stanchezza, produttività persa).

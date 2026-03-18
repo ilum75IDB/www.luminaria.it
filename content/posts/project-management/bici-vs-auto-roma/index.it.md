@@ -259,3 +259,19 @@ Guarda l'orologio quando arrivi. Guarda come ti senti. Guarda il portafoglio a f
 
 I numeri parlano da soli.\
 Ma il sorriso con cui arrivi alla scrivania, quello, non ha prezzo.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[Brompton](/it/glossary/brompton/)** — Bicicletta pieghevole britannica considerata il riferimento mondiale per qualità costruttiva, compattezza da piegata e praticità nel pendolarismo urbano.
+
+**[Pedalata Assistita](/it/glossary/pedalata-assistita/)** — Sistema di propulsione elettrica che amplifica la forza della pedalata, eliminando il problema delle salite e del sudore nei tragitti urbani.
+
+**[Bicicletta Pieghevole](/it/glossary/bicicletta-pieghevole/)** — Bicicletta che si ripiega in 10-20 secondi diventando un bagaglio trasportabile in ufficio, in metro o in treno.
+
+**[Pendolarismo](/it/glossary/pendolarismo/)** — Spostamento quotidiano casa-lavoro e ritorno, che nelle grandi città può assorbire 2-4 ore al giorno e centinaia di euro al mese.
+
+**[Carbon Footprint](/it/glossary/carbon-footprint/)** — Quantità totale di gas serra emessi da un'attività — un'auto nel traffico romano produce 120-150 g di CO₂ per chilometro, una bici zero.
+
+**[Mobilità Sostenibile](/it/glossary/mobilita-sostenibile/)** — Approccio ai trasporti urbani che privilegia mezzi a basso impatto ambientale, riducendo emissioni, traffico e costi.
