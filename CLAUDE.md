@@ -138,6 +138,7 @@ When writing a new blog article, **always** follow these steps:
 4. **Riferimenti temporali vicini** — evitare riferimenti troppo indietro nel tempo (es. "due anni fa", "tre mesi fa") a meno che non sia richiesto esplicitamente dal contesto dell'articolo. Preferire sempre espressioni vicine: "l'altro giorno", "qualche giorno fa", "ieri", "la settimana scorsa", "la scorsa settimana". Se il racconto richiede un arco temporale più lungo (mese precedente, un paio di mesi fa), giustificarlo nel testo con frasi tipo: "È un po' che volevo scrivere su questo argomento e non ho trovato il tempo… finalmente eccomi" o simili.
 5. **No generalizzazioni da clickbait** — evitare frasi come "quello che nessuno ti dice", "che nessuno sa", "che non tutti sanno", "il segreto che…". Queste generalizzazioni svalorizzano il lavoro e suonano come marketing. Il valore dell'articolo deve emergere dal contenuto, non da promesse sensazionalistiche nel titolo o nel testo.
 6. **Variare i settori di business dei clienti** — nei racconti e negli aneddoti, alternare i mercati e i settori dei clienti (es. manifatturiero, bancario, retail, logistica, sanità, PA, energy, telco…). Questo rende il blog più inclusivo e coinvolge lettori di settori diversi, evitando di sembrare focalizzati su un unico tipo di azienda.
+7. **Generare il prompt per l'immagine di copertina** — dopo aver completato la scrittura dell'articolo in tutte le lingue, generare **sempre** il prompt per la cover image. Leggere `DOCS/prompt-master.md` per il template base, poi aggiungere nella sezione `SCENA DA RAPPRESENTARE` una descrizione specifica della scena che rappresenti il tema dell'articolo tramite una metafora visiva coerente con lo stile del blog. Il prompt va presentato all'utente pronto per il copia-incolla in un generatore di immagini AI. **Non creare file placeholder** per la cover image — sarà l'utente a generare l'immagine e inserirla nella cartella dell'articolo con il nome `<slug>.cover.jpg`.
 
 ## Homepage Layout
 
@@ -199,11 +200,12 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 5. **Backdated articles**: if the user asks to publish an article in the past, assign it to the **Previous available slot** date. Then update the Previous available slot to the Tuesday before the new oldest article
 6. **All 4 language versions** of each article share the same date
 7. **Schedule table format**: always show the columns below. When reorganising dates, fill the "New Date" column; use `—` if no change is needed
-8. **Article status values**:
+8. **Colonna "Scritto il"**: ogni articolo ha una colonna `Scritto il` che indica la **data effettiva in cui l'articolo è stato scritto e committato** (corrisponde alla data di chiusura della issue). Questa data è indipendente dalla data di pubblicazione — un articolo può essere scritto oggi ma avere una data di pubblicazione passata (backdating) o futura (scheduling). Quando si scrive un nuovo articolo, compilare sempre questa colonna con la data del giorno corrente. Quando l'utente chiede "l'ultimo articolo scritto", ordinare per `Scritto il` (non per `Date`).
+9. **Article status values**:
    - **published**: article is live on the site (publication date is in the past)
    - **scheduled**: article is written in all 4 languages, committed to the repo, and has a future publication date. The corresponding GitHub issue should be closed
    - **planned**: only the GitHub issue exists (article not yet written). The corresponding issue is still open
-9. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
+10. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
    - **Previous available slot**: the first Tuesday before the oldest article's date. Used when inserting backdated articles
    - **Next available slot**: the first Tuesday after the most recent article's date. Used for new articles
    - Both must be updated after every schedule change
@@ -218,9 +220,11 @@ When adding a new article, update the table in `DOCS/HUGO_PUBLICATIONS_TABLE.md`
 
 When the user asks for the "tabella delle pubblicazioni" (publication table), **always show 3 tables**:
 
-1. **Tabella pubblicazioni** — the Current Schedule table above (all published, scheduled and planned articles with dates)
+1. **Tabella pubblicazioni** — the Current Schedule table above (all published, scheduled and planned articles with dates), **inclusa la colonna "Scritto il"** che mostra quando l'articolo è stato effettivamente scritto. La tabella deve essere ordinata per data di pubblicazione (`Date`), ma la colonna `Scritto il` permette di identificare rapidamente l'ordine cronologico di scrittura
 2. **Tabella issue aperte** — all open issues grouped by section (from `DOCS/GITHUB_ISSUES.md`)
 3. **Riepilogo per sezione** — a summary table with columns: Sezione, Pubblicati, Programmati (scheduled), Pianificati (issue aperte), Totale
+
+When the user asks for "l'ultimo articolo scritto" or similar, **always refer to the `Scritto il` column** (most recent date), not the publication date.
 
 ## Important Notes
 
