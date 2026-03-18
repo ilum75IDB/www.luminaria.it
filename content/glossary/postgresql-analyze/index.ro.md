@@ -1,7 +1,7 @@
 ---
 title: "ANALYZE"
 description: "Comanda PostgreSQL care actualizeaza statisticile tabelelor folosite de optimizator pentru a alege planul de executie."
-translationKey: "glossary_analyze"
+translationKey: "glossary_postgresql_analyze"
 aka: "ANALYZE (PostgreSQL)"
 articles:
   - "/posts/postgresql/explain-analyze-postgresql"

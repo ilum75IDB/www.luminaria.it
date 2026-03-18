@@ -1,7 +1,7 @@
 ---
 title: "default_statistics_target"
 description: "Il parametro PostgreSQL che controlla quanti campioni raccoglie ANALYZE per stimare la distribuzione dei dati in ogni colonna."
-translationKey: "glossary_default_statistics_target"
+translationKey: "glossary_postgresql_default_statistics_target"
 aka: "default_statistics_target (PostgreSQL)"
 articles:
   - "/posts/postgresql/explain-analyze-postgresql"

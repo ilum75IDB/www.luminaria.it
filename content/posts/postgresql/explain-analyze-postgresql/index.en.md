@@ -224,6 +224,6 @@ But for that remaining 30%, you need to read. Line by line. Node by node. There'
 
 **[Hash Join](/en/glossary/hash-join/)** — a join strategy that builds a hash table from the smaller table and then scans the larger one looking for matches with O(1) lookups. Efficient on large volumes without indexes.
 
-**[ANALYZE](/en/glossary/analyze/)** — PostgreSQL command that collects statistics on data distribution in tables, used by the optimizer to estimate cardinality and choose the execution plan.
+**[ANALYZE](/en/glossary/postgresql-analyze/)** — PostgreSQL command that collects statistics on data distribution in tables, used by the optimizer to estimate cardinality and choose the execution plan.
 
-**[default_statistics_target](/en/glossary/default-statistics-target/)** — PostgreSQL parameter that defines how many samples to collect per column during ANALYZE. The default is 100; for columns with skewed distribution it should be raised to 500-1000.
+**[default_statistics_target](/en/glossary/postgresql-default-statistics-target/)** — PostgreSQL parameter that defines how many samples to collect per column during ANALYZE. The default is 100; for columns with skewed distribution it should be raised to 500-1000.

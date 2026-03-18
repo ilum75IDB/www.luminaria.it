@@ -1,7 +1,7 @@
 ---
 title: "default_statistics_target"
 description: "Parametrul PostgreSQL care controleaza cate esantioane colecteaza ANALYZE pentru a estima distributia datelor in fiecare coloana."
-translationKey: "glossary_default_statistics_target"
+translationKey: "glossary_postgresql_default_statistics_target"
 aka: "default_statistics_target (PostgreSQL)"
 articles:
   - "/posts/postgresql/explain-analyze-postgresql"

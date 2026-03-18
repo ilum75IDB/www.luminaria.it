@@ -255,7 +255,29 @@ Use clear, short headings in the page language. Good examples:
   "default value is 100")
 - Avoid generic filler; every sentence should add information
 
-## 9.5 Consistency Rules
+## 9.5 Slug Naming — DB-specific vs Universal Terms
+
+Glossary term directory names (slugs) follow these rules:
+
+- **Universal or unambiguous terms** — use the term name directly, without any
+  database prefix: `etl/`, `scd/`, `awr/`, `hash-join/`, `nested-loop/`,
+  `execution-plan/`
+- **DB-specific terms** — when a term exists on multiple databases with different
+  behavior or meaning (e.g. ANALYZE, EXPLAIN, VACUUM), or when a term is a
+  parameter/feature exclusive to one database (e.g. `default_statistics_target`),
+  prefix the slug with the database name:
+  `postgresql-analyze/`, `oracle-analyze/`, `mysql-analyze/`,
+  `postgresql-default-statistics-target/`
+
+This prevents slug collisions and makes it immediately clear which database
+context the term refers to. The `translationKey` must follow the same convention
+(e.g. `glossary_postgresql_analyze`).
+
+**Rule of thumb**: if the term could reasonably have a separate glossary page
+for another database, use the prefix. If it's a universal concept (algorithms,
+design patterns, architectural terms), don't.
+
+## 9.6 Consistency Rules
 
 - All 4 language versions must have the **same structure** (same number of
   sections, same heading intent, same level of detail)

@@ -224,6 +224,6 @@ Pero para ese 30% restante, hay que leer. Linea por linea. Nodo por nodo. No hay
 
 **[Hash Join](/es/glossary/hash-join/)** — estrategia de join que construye una hash table a partir de la tabla más pequeña y luego escanea la más grande buscando correspondencias con lookups O(1). Eficiente en grandes volúmenes sin índices.
 
-**[ANALYZE](/es/glossary/analyze/)** — comando PostgreSQL que recopila estadísticas sobre la distribución de datos en las tablas, usadas por el optimizer para estimar la cardinalidad y elegir el plan de ejecución.
+**[ANALYZE](/es/glossary/postgresql-analyze/)** — comando PostgreSQL que recopila estadísticas sobre la distribución de datos en las tablas, usadas por el optimizer para estimar la cardinalidad y elegir el plan de ejecución.
 
-**[default_statistics_target](/es/glossary/default-statistics-target/)** — parámetro PostgreSQL que define cuántas muestras recopilar por columna durante el ANALYZE. El valor por defecto es 100; en columnas con distribución asimétrica conviene subirlo a 500-1000.
+**[default_statistics_target](/es/glossary/postgresql-default-statistics-target/)** — parámetro PostgreSQL que define cuántas muestras recopilar por columna durante el ANALYZE. El valor por defecto es 100; en columnas con distribución asimétrica conviene subirlo a 500-1000.
