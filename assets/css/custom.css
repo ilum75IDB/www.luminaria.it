@@ -1176,6 +1176,8 @@ footer {
 
 /* Letter navigation bar */
 .glossary-letter-nav {
+  position: relative;
+  z-index: 1;
   border-bottom: 1px solid #e5e7eb;
   padding-bottom: 0.75rem;
 }
@@ -1203,6 +1205,7 @@ footer {
 /* Letter group */
 .glossary-letter-group {
   margin-top: 2rem;
+  scroll-margin-top: 5rem;
 }
 
 .glossary-letter-heading {
