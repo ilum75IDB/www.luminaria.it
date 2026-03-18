@@ -42,6 +42,14 @@ tool `WebFetch`.
 
 *Nessuna issue aperta.*
 
+## Issue Aperte — Enhancement (Glossario)
+
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 61 | https://github.com/ilum75IDB/ivanluminaria.com/issues/61 | Glossario: creare sezione content/glossary/ con struttura e template | aperta |
+| 62 | https://github.com/ilum75IDB/ivanluminaria.com/issues/62 | Glossario: shortcode Hugo per tooltip inline dei termini | aperta |
+| 63 | https://github.com/ilum75IDB/ivanluminaria.com/issues/63 | Glossario: applicare shortcode tooltip nei testi degli articoli | aperta |
+
 ## Issue Aperte — Bug
 
 *Nessuna issue aperta.*
