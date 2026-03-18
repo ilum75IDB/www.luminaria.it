@@ -360,3 +360,17 @@ Il direttore commerciale non sapeva di avere bisogno della storia finché non gl
 Questo è il punto. Non si implementa la Tipo 2 perché "è best practice" o perché "Kimball lo dice nel capitolo 5". Si implementa perché un data warehouse senza storia è un database operativo con una star schema appiccicata sopra. Funziona per i report del mese corrente, ma non risponde alla domanda che prima o poi qualcuno farà: "Com'era prima?"
 
 La domanda arriva sempre. La questione è se il tuo DWH è pronto a rispondere.
+
+---
+
+## Glossario
+
+**Chiave surrogata** — Identificativo numerico generato dal data warehouse, distinto dalla chiave naturale del sistema sorgente. Nella SCD Tipo 2 è indispensabile perché lo stesso record può avere più versioni, e la chiave naturale non è più univoca.
+
+**Fact table** — Tabella centrale dello star schema che contiene le misure numeriche (importi, quantità, conteggi) e le chiavi esterne verso le tabelle dimensionali. Ogni riga rappresenta un evento o una transazione di business.
+
+**Kimball** — Ralph Kimball, autore della metodologia di progettazione data warehouse basata su dimensional modeling, star schema e processi ETL bottom-up. Il suo framework classifica le Slowly Changing Dimensions nei tipi da 0 a 7.
+
+**MERGE** — Istruzione SQL che combina INSERT e UPDATE in un'unica operazione: se il record esiste lo aggiorna, se non esiste lo inserisce. In Oracle è anche nota come "upsert" ed è il meccanismo base dell'ETL per le dimensioni SCD.
+
+**Star schema** — Modello di dati tipico del data warehouse: una fact table al centro collegata a più tabelle dimensionali tramite chiavi esterne. Semplifica le query analitiche e ottimizza le performance delle aggregazioni.
