@@ -19,12 +19,12 @@ No es la primera vez que veo este escenario. De hecho, diría que es uno de los 
 
 ## Qué son los binary log, en la práctica
 
-El binary log es un registro secuencial de todos los eventos que modifican datos en la base de datos. Cada INSERT, UPDATE, DELETE, cada DDL — todo se escribe en archivos binarios numerados progresivamente: `mysql-bin.000001`, `mysql-bin.000002` y así sucesivamente.
+El {{< glossary term="binary-log" >}}binary log{{< /glossary >}} es un registro secuencial de todos los eventos que modifican datos en la base de datos. Cada INSERT, UPDATE, DELETE, cada DDL — todo se escribe en archivos binarios numerados progresivamente: `mysql-bin.000001`, `mysql-bin.000002` y así sucesivamente.
 
 El nombre engaña un poco. No es un "log" en el sentido del syslog o del error log — no está hecho para ser leído por un humano. Es un flujo binario estructurado que MySQL usa internamente para dos propósitos fundamentales:
 
 1. **Replicación**: el slave lee los binlog del master para replicar las mismas operaciones
-2. **Point-in-time recovery (PITR)**: después de restaurar un backup, puedes "reaplicar" los binlog para llevar los datos hasta un momento preciso
+2. **{{< glossary term="pitr" >}}Point-in-time recovery (PITR){{< /glossary >}}**: después de restaurar un backup, puedes "reaplicar" los binlog para llevar los datos hasta un momento preciso
 
 Sin el binary log, no puedes hacer ni una cosa ni la otra. Esta es la razón por la que el primer instinto — "desactivemos los binlog para que no llenen el disco" — es casi siempre equivocado.
 
@@ -73,8 +73,8 @@ En una arquitectura master-slave, el binary log es el mecanismo de transporte de
 
 1. El master escribe cada transacción en el binlog
 2. El slave tiene un hilo (I/O thread) que se conecta al master y lee los binlog
-3. El slave escribe lo que recibe en su propio relay log
-4. Un segundo hilo (SQL thread) en el slave ejecuta los eventos del relay log
+3. El slave escribe lo que recibe en su propio {{< glossary term="relay-log" >}}relay log{{< /glossary >}}
+4. Un segundo hilo (SQL thread) en el slave ejecuta los eventos del {{< glossary term="relay-log" >}}relay log{{< /glossary >}}
 
 Esto significa que los binlog en el master **deben permanecer disponibles hasta que todos los slaves los hayan leído**. Si borras un binlog que el slave no ha consumido todavía, la replicación se rompe.
 
@@ -249,7 +249,7 @@ LIMIT 10000;
 
 ## `mysqlbinlog`: leer los binlog cuando hace falta
 
-La herramienta de línea de comandos `mysqlbinlog` es el único modo de inspeccionar el contenido de los archivos binlog. Se usa en dos escenarios: debug de problemas de replicación y point-in-time recovery.
+La herramienta de línea de comandos {{< glossary term="mysqlbinlog" >}}`mysqlbinlog`{{< /glossary >}} es el único modo de inspeccionar el contenido de los archivos binlog. Se usa en dos escenarios: debug de problemas de replicación y point-in-time recovery.
 
 ```bash
 # Leer un binlog en formato legible
@@ -285,7 +285,7 @@ Sí, resuelve el problema de disco. Pero elimina:
 - La posibilidad de configurar una réplica en el futuro
 - El point-in-time recovery
 - La capacidad de analizar qué pasó en la base de datos después de un incidente
-- La compatibilidad con herramientas de CDC (Change Data Capture) como Debezium
+- La compatibilidad con herramientas de {{< glossary term="cdc" >}}CDC (Change Data Capture){{< /glossary >}} como Debezium
 
 Los binlog no son un problema. Los binlog **no gestionados** son un problema. La diferencia es un parámetro de configuración y un chequeo semanal. En el servidor que arreglé, la configuración final fue:
 
@@ -338,3 +338,17 @@ fi
 Tres semanas después de la intervención, los binlog ocupaban 8 GB — exactamente dentro de la ventana prevista. El disco no ha vuelto a superar el 45%.
 
 El binlog es como el aceite del motor: nunca piensas en él hasta que se enciende el testigo. La diferencia es que el motor te avisa. MySQL no — sigue escribiendo binlog mientras el filesystem responda. Cuando deja de responder, ya es tarde para preguntarse por qué no habías configurado la retención.
+
+------------------------------------------------------------------------
+
+## Glosario
+
+**[Binary log](/es/glossary/binary-log/)** — Registro binario secuencial de MySQL que rastrea todas las modificaciones de datos (INSERT, UPDATE, DELETE, DDL), usado para la replicación y el point-in-time recovery. Habilitado por defecto desde MySQL 8.0.
+
+**[PITR](/es/glossary/pitr/)** — Point-in-Time Recovery: técnica de restauración que combina un backup completo con los binary log para llevar la base de datos a cualquier momento en el tiempo, no solo al momento del backup.
+
+**[Relay log](/es/glossary/relay-log/)** — Archivo de log intermedio en el slave MySQL que recibe los eventos del binary log del master antes de ser ejecutados localmente por el hilo SQL.
+
+**[CDC](/es/glossary/cdc/)** — Change Data Capture: técnica para interceptar los cambios en los datos en tiempo real leyendo los logs de transacciones. Herramientas como Debezium leen los binary log de MySQL para propagar los cambios hacia sistemas externos.
+
+**[mysqlbinlog](/es/glossary/mysqlbinlog/)** — Utilidad de línea de comandos de MySQL para leer, filtrar y reaplicar el contenido de los archivos binary log. Indispensable para el point-in-time recovery y el debug de replicación.
