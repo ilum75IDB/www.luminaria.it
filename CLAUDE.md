@@ -135,6 +135,9 @@ When writing a new blog article, **always** follow these steps:
    - `DOCS/DESCRIZIONE_PROGETTO_DATABASE_STRATEGY_BLOG.md` and `DOCS/database_strategy_blog_project_description_FULL.md` (project context)
 2. **Write like a human** — the text **must not** sound AI-generated. Avoid generic filler, motivational closings, bullet-point-heavy structures, and overly polished phrasing. Use Ivan's voice: direct, experienced, occasionally ironic, grounded in real-world project stories. Vary sentence length, use colloquial turns where appropriate, and let opinions show.
 3. **No AI tells** — never use patterns like "In conclusion…", "It's worth noting that…", "Let's dive in…", "In today's fast-paced world…", or similar clichés typical of LLM output.
+4. **Riferimenti temporali vicini** — evitare riferimenti troppo indietro nel tempo (es. "due anni fa", "tre mesi fa") a meno che non sia richiesto esplicitamente dal contesto dell'articolo. Preferire sempre espressioni vicine: "l'altro giorno", "qualche giorno fa", "ieri", "la settimana scorsa", "la scorsa settimana". Se il racconto richiede un arco temporale più lungo (mese precedente, un paio di mesi fa), giustificarlo nel testo con frasi tipo: "È un po' che volevo scrivere su questo argomento e non ho trovato il tempo… finalmente eccomi" o simili.
+5. **No generalizzazioni da clickbait** — evitare frasi come "quello che nessuno ti dice", "che nessuno sa", "che non tutti sanno", "il segreto che…". Queste generalizzazioni svalorizzano il lavoro e suonano come marketing. Il valore dell'articolo deve emergere dal contenuto, non da promesse sensazionalistiche nel titolo o nel testo.
+6. **Variare i settori di business dei clienti** — nei racconti e negli aneddoti, alternare i mercati e i settori dei clienti (es. manifatturiero, bancario, retail, logistica, sanità, PA, energy, telco…). Questo rende il blog più inclusivo e coinvolge lettori di settori diversi, evitando di sembrare focalizzati su un unico tipo di azienda.
 
 ## Homepage Layout
 
@@ -196,7 +199,11 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 5. **Backdated articles**: if the user asks to publish an article in the past, assign it to the **Previous available slot** date. Then update the Previous available slot to the Tuesday before the new oldest article
 6. **All 4 language versions** of each article share the same date
 7. **Schedule table format**: always show the columns below. When reorganising dates, fill the "New Date" column; use `—` if no change is needed
-8. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
+8. **Article status values**:
+   - **published**: article is live on the site (publication date is in the past)
+   - **scheduled**: article is written in all 4 languages, committed to the repo, and has a future publication date. The corresponding GitHub issue should be closed
+   - **planned**: only the GitHub issue exists (article not yet written). The corresponding issue is still open
+9. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
    - **Previous available slot**: the first Tuesday before the oldest article's date. Used when inserting backdated articles
    - **Next available slot**: the first Tuesday after the most recent article's date. Used for new articles
    - Both must be updated after every schedule change
@@ -211,9 +218,9 @@ When adding a new article, update the table in `DOCS/HUGO_PUBLICATIONS_TABLE.md`
 
 When the user asks for the "tabella delle pubblicazioni" (publication table), **always show 3 tables**:
 
-1. **Tabella pubblicazioni** — the Current Schedule table above (all published + planned articles with dates)
+1. **Tabella pubblicazioni** — the Current Schedule table above (all published, scheduled and planned articles with dates)
 2. **Tabella issue aperte** — all open issues grouped by section (from `DOCS/GITHUB_ISSUES.md`)
-3. **Riepilogo per sezione** — a summary table with columns: Sezione, Pubblicati, Pianificati (issue aperte), Totale
+3. **Riepilogo per sezione** — a summary table with columns: Sezione, Pubblicati, Programmati (scheduled), Pianificati (issue aperte), Totale
 
 ## Important Notes
 

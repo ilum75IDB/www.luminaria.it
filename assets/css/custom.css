@@ -1056,7 +1056,7 @@ footer {
 .editorial-grid-img {
   width: 140px;
   height: 93px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 0.35rem;
 }
 
