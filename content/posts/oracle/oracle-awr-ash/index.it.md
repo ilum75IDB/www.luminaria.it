@@ -122,7 +122,7 @@ I risultati erano chiari:
 - **Prima occorrenza**: 17:12 — esattamente dopo il deploy del pomeriggio
 - **SQL_PLAN_HASH_VALUE**: `2891047563`
 
-Il piano di esecuzione era cambiato. Prima del deploy, quella query usava un piano diverso.
+Il {{< glossary term="execution-plan" >}}piano di esecuzione{{< /glossary >}} era cambiato. Prima del deploy, quella query usava un piano diverso.
 
 ------------------------------------------------------------------------
 

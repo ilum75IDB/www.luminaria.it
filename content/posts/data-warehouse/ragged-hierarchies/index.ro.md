@@ -127,7 +127,7 @@ Principiul este simplu: **cine nu are părinte devine propriul părinte**. Aceas
 
 Un Client fără Group? Acel client devine propriul Group. Un Group fără Top Group? Acel grup devine propriul Top Group. În acest mod ierarhia este întotdeauna completă pe trei niveluri, fără goluri, fără NULL.
 
-Nu este un truc. Este o tehnică standard în modelarea dimensională, descrisă de Kimball și folosită în producție de decenii. Ideea este că dimensiunea ierarhică în DWH trebuie să fie **echilibrată**: fiecare înregistrare trebuie să aibă o valoare validă pentru fiecare nivel al ierarhiei. Dacă sursa nu garantează acest lucru, ETL-ul o face.
+Nu este un truc. Este o tehnică standard în modelarea dimensională, descrisă de {{< glossary term="kimball" >}}Kimball{{< /glossary >}} și folosită în producție de decenii. Ideea este că dimensiunea ierarhică în DWH trebuie să fie **echilibrată**: fiecare înregistrare trebuie să aibă o valoare validă pentru fiecare nivel al ierarhiei. Dacă sursa nu garantează acest lucru, {{< glossary term="etl" >}}ETL{{< /glossary >}}-ul o face.
 
 ### Tabela dimensională
 

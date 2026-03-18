@@ -122,7 +122,7 @@ Los resultados eran claros:
 - **Primera ocurrencia**: 17:12 — exactamente después del deploy de la tarde
 - **SQL_PLAN_HASH_VALUE**: `2891047563`
 
-El plan de ejecución había cambiado. Antes del deploy, esa query usaba un plan diferente.
+El {{< glossary term="execution-plan" >}}plan de ejecución{{< /glossary >}} había cambiado. Antes del deploy, esa query usaba un plan diferente.
 
 ------------------------------------------------------------------------
 

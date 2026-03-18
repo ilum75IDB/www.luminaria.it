@@ -122,7 +122,7 @@ Rezultatele erau clare:
 - **Prima apariție**: 17:12 — exact după deploy-ul din după-amiază
 - **SQL_PLAN_HASH_VALUE**: `2891047563`
 
-Planul de execuție se schimbase. Înainte de deploy, acea query folosea un plan diferit.
+{{< glossary term="execution-plan" >}}Planul de execuție{{< /glossary >}} se schimbase. Înainte de deploy, acea query folosea un plan diferit.
 
 ------------------------------------------------------------------------
 
