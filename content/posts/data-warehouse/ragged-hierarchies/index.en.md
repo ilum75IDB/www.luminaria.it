@@ -127,7 +127,7 @@ The principle is simple: **whoever has no parent becomes their own parent**. Thi
 
 A Client without a Group? That client becomes its own Group. A Group without a Top Group? That group becomes its own Top Group. This way the hierarchy is always complete at three levels, with no holes, no NULLs.
 
-It is not a trick. It is a standard technique in dimensional modeling, described by Kimball and used in production for decades. The idea is that the hierarchical dimension in the DWH must be **balanced**: every record must have a valid value for every level of the hierarchy. If the source does not guarantee it, the ETL does.
+It is not a trick. It is a standard technique in dimensional modeling, described by {{< glossary term="kimball" >}}Kimball{{< /glossary >}} and used in production for decades. The idea is that the hierarchical dimension in the DWH must be **balanced**: every record must have a valid value for every level of the hierarchy. If the source does not guarantee it, the {{< glossary term="etl" >}}ETL{{< /glossary >}} does.
 
 ### The dimensional table
 

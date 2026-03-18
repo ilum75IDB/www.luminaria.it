@@ -37,7 +37,7 @@ CREATE TABLE dim_customer (
 );
 ```
 
-The nightly ETL was a simple {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: if the customer exists, update all fields; if not, insert.
+The nightly {{< glossary term="etl" >}}ETL{{< /glossary >}} was a simple {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: if the customer exists, update all fields; if not, insert.
 
 ``` sql
 MERGE INTO dim_customer d

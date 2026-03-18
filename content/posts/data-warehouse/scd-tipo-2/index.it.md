@@ -37,7 +37,7 @@ CREATE TABLE dim_cliente (
 );
 ```
 
-L'ETL notturno era un semplice {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: se il cliente esiste, aggiorna tutti i campi; se non esiste, inserisci.
+L'{{< glossary term="etl" >}}ETL{{< /glossary >}} notturno era un semplice {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: se il cliente esiste, aggiorna tutti i campi; se non esiste, inserisci.
 
 ``` sql
 MERGE INTO dim_cliente d

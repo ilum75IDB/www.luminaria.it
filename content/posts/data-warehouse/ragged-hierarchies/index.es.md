@@ -127,7 +127,7 @@ El principio es simple: **quien no tiene padre se convierte en padre de sí mism
 
 ¿Un Client sin Group? Ese cliente se convierte en su propio Group. ¿Un Group sin Top Group? Ese grupo se convierte en su propio Top Group. De esta forma la jerarquía siempre está completa a tres niveles, sin huecos, sin NULL.
 
-No es un truco. Es una técnica estándar en modelado dimensional, descrita por Kimball y usada en producción desde hace décadas. La idea es que la dimensión jerárquica en el DWH debe ser **balanceada**: cada registro debe tener un valor válido para cada nivel de la jerarquía. Si la fuente no lo garantiza, lo garantiza el ETL.
+No es un truco. Es una técnica estándar en modelado dimensional, descrita por {{< glossary term="kimball" >}}Kimball{{< /glossary >}} y usada en producción desde hace décadas. La idea es que la dimensión jerárquica en el DWH debe ser **balanceada**: cada registro debe tener un valor válido para cada nivel de la jerarquía. Si la fuente no lo garantiza, lo garantiza el {{< glossary term="etl" >}}ETL{{< /glossary >}}.
 
 ### La tabla dimensional
 
