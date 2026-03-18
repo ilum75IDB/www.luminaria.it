@@ -13,7 +13,7 @@ The other day a colleague sends me a screenshot on Teams. A query running on a 2
 
 > "I ran EXPLAIN ANALYZE, but I can't figure out what's wrong. The plan looks fine."
 
-Spoiler: the plan was anything but fine. The optimizer had chosen a nested loop join where a hash join was needed, and the reason was trivial — stale statistics. But to get there I had to read the plan line by line, and that's when I realized that most DBAs I know use EXPLAIN ANALYZE as a binary oracle: if the time is high, the query is slow. End of analysis.
+Spoiler: the plan was anything but fine. The optimizer had chosen a {{< glossary term="nested-loop" >}}nested loop{{< /glossary >}} join where a {{< glossary term="hash-join" >}}hash join{{< /glossary >}} was needed, and the reason was trivial — stale statistics. But to get there I had to read the plan line by line, and that's when I realized that most DBAs I know use EXPLAIN ANALYZE as a binary oracle: if the time is high, the query is slow. End of analysis.
 
 No. EXPLAIN ANALYZE is a diagnostic tool, not a verdict. You need to know how to read it.
 
@@ -56,7 +56,7 @@ Personal rule: if someone sends me an EXPLAIN without BUFFERS, I send it back.
 
 ## 📖 Anatomy of a node: what to read and in what order
 
-An execution plan is a tree. Each node looks like this:
+An {{< glossary term="execution-plan" >}}execution plan{{< /glossary >}} is a tree. Each node looks like this:
 
 ``` text
 ->  Hash Join  (cost=1234.56..5678.90 rows=50000 width=120)
@@ -106,7 +106,7 @@ PostgreSQL maintains table statistics in `pg_statistic` (readable through `pg_st
 
 The optimizer uses this information to estimate the selectivity of every WHERE condition and the cardinality of every join.
 
-The problem? Statistics are updated by `ANALYZE` — which can be manual or handled by autovacuum. But autovacuum triggers ANALYZE only when the number of modified rows exceeds a threshold:
+The problem? Statistics are updated by {{< glossary term="postgresql-analyze" >}}`ANALYZE`{{< /glossary >}} — which can be manual or handled by autovacuum. But autovacuum triggers ANALYZE only when the number of modified rows exceeds a threshold:
 
 ``` text
 threshold = autovacuum_analyze_threshold + autovacuum_analyze_scale_factor × n_live_tuples
@@ -157,7 +157,7 @@ ALTER COLUMN customer_id SET STATISTICS 500;
 ANALYZE orders;
 ```
 
-After raising the target to 500, the optimizer's cardinality estimates for joins with `customers` became much more accurate.
+After raising the {{< glossary term="postgresql-default-statistics-target" >}}target{{< /glossary >}} to 500, the optimizer's cardinality estimates for joins with `customers` became much more accurate.
 
 Rule: if a column is frequently used in WHERE or JOIN clauses and has non-uniform distribution, raise the target. 500 is a good starting point. You can go up to 1000, but beyond that it rarely helps and slows down ANALYZE itself.
 

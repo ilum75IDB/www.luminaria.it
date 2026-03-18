@@ -11,9 +11,9 @@ image: "ragged-hierarchies.cover.jpg"
 
 Three levels. Top Group, Group, Client. It looks like a trivial structure — the kind of hierarchy you draw on a whiteboard in five minutes and that any BI tool should handle without issues.
 
-Then you discover that not all clients belong to a group. And that not all groups belong to a top group. And that the aggregation reports the business asks for — revenue by top group, client count by group, drill-down from the top to the leaf — produce wrong or incomplete results because the hierarchy has holes.
+Then you discover that not all clients belong to a group. And that not all groups belong to a top group. And that the aggregation reports the business asks for — revenue by top group, client count by group, {{< glossary term="drill-down" >}}drill-down{{< /glossary >}} from the top to the leaf — produce wrong or incomplete results because the hierarchy has holes.
 
-In technical jargon it is called a **ragged hierarchy**: a hierarchy where not all branches reach the same depth. In the real world it is called "the problem nobody sees until they open the report and the numbers do not add up."
+In technical jargon it is called a **{{< glossary term="ragged-hierarchy" >}}ragged hierarchy{{< /glossary >}}**: a hierarchy where not all branches reach the same depth. In the real world it is called "the problem nobody sees until they open the report and the numbers do not add up."
 
 ---
 
@@ -101,7 +101,7 @@ The Top Group total is wrong because the NULL rows are missing. If you sum only 
 
 ## The classic approach: COALESCE and prayers
 
-The first reaction, the one I see in 90% of cases, is to add `COALESCE` to the query:
+The first reaction, the one I see in 90% of cases, is to add {{< glossary term="coalesce" >}}`COALESCE`{{< /glossary >}} to the query:
 
 ``` sql
 SELECT COALESCE(top_group_name, group_name, client_name) AS top_group_name,
@@ -123,7 +123,7 @@ The root problem is that COALESCE is a patch applied at the presentation layer. 
 
 ## The solution: self-parenting
 
-The principle is simple: **whoever has no parent becomes their own parent**.
+The principle is simple: **whoever has no parent becomes their own parent**. This technique is called {{< glossary term="self-parenting" >}}self-parenting{{< /glossary >}}.
 
 A Client without a Group? That client becomes its own Group. A Group without a Top Group? That group becomes its own Top Group. This way the hierarchy is always complete at three levels, with no holes, no NULLs.
 
@@ -345,7 +345,7 @@ Self-parenting works well when:
 
 - The hierarchy has a **fixed number of levels** (typically 2-5)
 - The main use case is **aggregation and drill-down** in reports
-- The model is a **data warehouse** or an OLAP cube
+- The model is a **data warehouse** or an {{< glossary term="olap" >}}OLAP{{< /glossary >}} cube
 - Missing levels are the exception, not the rule
 
 It does not work well when:

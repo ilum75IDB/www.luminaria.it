@@ -37,7 +37,7 @@ CREATE TABLE dim_cliente (
 );
 ```
 
-L'ETL notturno era un semplice MERGE: se il cliente esiste, aggiorna tutti i campi; se non esiste, inserisci.
+L'ETL notturno era un semplice {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: se il cliente esiste, aggiorna tutti i campi; se non esiste, inserisci.
 
 ``` sql
 MERGE INTO dim_cliente d
@@ -57,7 +57,7 @@ WHEN NOT MATCHED THEN INSERT (
 
 Semplice, pulito, veloce. E completamente sbagliato per un data warehouse.
 
-Questo è quello che Kimball chiama **SCD Tipo 1** — Slowly Changing Dimension di Tipo 1. Sovrascrivi il vecchio valore con il nuovo. Nessuna storia, nessun versioning. Il dato attuale cancella il dato precedente.
+Questo è quello che {{< glossary term="kimball" >}}Kimball{{< /glossary >}} chiama **SCD Tipo 1** — Slowly Changing Dimension di Tipo 1. Sovrascrivi il vecchio valore con il nuovo. Nessuna storia, nessun versioning. Il dato attuale cancella il dato precedente.
 
 Per un sistema OLTP è perfetto: vuoi sempre l'indirizzo corrente del cliente, il telefono aggiornato, la mail valida. Ma un data warehouse non è un sistema transazionale. Un data warehouse è una macchina del tempo. E una macchina del tempo che sovrascrive il passato è inutile.
 
@@ -87,7 +87,7 @@ Quando un attributo cambia, il record corrente viene chiuso — gli si assegna u
 
 Per farlo servono tre elementi aggiuntivi nella tabella dimensionale:
 
-1. **Una chiave surrogata** — un identificativo generato dal DWH, distinto dalla chiave naturale del sistema sorgente. Serve perché lo stesso cliente avrà più record (uno per ogni versione), quindi la chiave naturale non è più univoca.
+1. **Una {{< glossary term="chiave-surrogata" >}}chiave surrogata{{< /glossary >}}** — un identificativo generato dal DWH, distinto dalla chiave naturale del sistema sorgente. Serve perché lo stesso cliente avrà più record (uno per ogni versione), quindi la chiave naturale non è più univoca.
 2. **Date di validità** — `valid_from` e `valid_to` — che definiscono l'intervallo temporale in cui ogni versione del record era corrente.
 3. **Un flag di versione corrente** — `is_current` — che permette di recuperare rapidamente la versione attiva senza filtrare sulle date.
 
@@ -282,7 +282,7 @@ Un singolo scan della tabella, due conteggi distinti filtrati per data. Il CFO h
 
 ## La fact table e le chiavi surrogate
 
-Un punto che spesso viene sottovalutato: la fact table deve usare la **chiave surrogata**, non la chiave naturale.
+Un punto che spesso viene sottovalutato: la {{< glossary term="fact-table" >}}fact table{{< /glossary >}} deve usare la **chiave surrogata**, non la chiave naturale.
 
 ``` sql
 CREATE TABLE fact_sinistro (
@@ -357,7 +357,7 @@ Ma per il caso più comune — anagrafiche clienti, prodotti, dipendenti, punti 
 
 Il direttore commerciale non sapeva di avere bisogno della storia finché non gli è servita. E quando gli è servita, il DWH non ce l'aveva.
 
-Questo è il punto. Non si implementa la Tipo 2 perché "è best practice" o perché "Kimball lo dice nel capitolo 5". Si implementa perché un data warehouse senza storia è un database operativo con una star schema appiccicata sopra. Funziona per i report del mese corrente, ma non risponde alla domanda che prima o poi qualcuno farà: "Com'era prima?"
+Questo è il punto. Non si implementa la Tipo 2 perché "è best practice" o perché "Kimball lo dice nel capitolo 5". Si implementa perché un data warehouse senza storia è un database operativo con una {{< glossary term="star-schema" >}}star schema{{< /glossary >}} appiccicata sopra. Funziona per i report del mese corrente, ma non risponde alla domanda che prima o poi qualcuno farà: "Com'era prima?"
 
 La domanda arriva sempre. La questione è se il tuo DWH è pronto a rispondere.
 

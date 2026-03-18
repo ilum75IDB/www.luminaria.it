@@ -37,7 +37,7 @@ Patruzeci și șapte de sesiuni active. Baza de date se îneca.
 
 Echipa de dezvoltare terminase ultimul deploy al codului aplicativ în acea după-amiază. Totul părea să funcționeze pe mediul de test. Dar când au lansat batch-ul de verificare pre-go-live — cel care simulează sarcina de producție — timpii de răspuns au explodat.
 
-Query-urile care în mod normal rulau în 2-3 secunde durau 45. Batch-urile care terminau în 20 de minute erau încă în execuție după o oră. Wait event-urile dominante erau `db file sequential read` și `db file scattered read` — semn clar de I/O fizic masiv.
+Query-urile care în mod normal rulau în 2-3 secunde durau 45. Batch-urile care terminau în 20 de minute erau încă în execuție după o oră. {{< glossary term="wait-event" >}}Wait event{{< /glossary >}}-urile dominante erau `db file sequential read` și `db file scattered read` — semn clar de I/O fizic masiv.
 
 Ceva citea cantități enorme de date de pe disc. Ceva care înainte nu era acolo.
 
@@ -45,7 +45,7 @@ Ceva citea cantități enorme de date de pe disc. Ceva care înainte nu era acol
 
 ## 📊 AWR: fotografia problemei
 
-AWR — Automatic Workload Repository — este cel mai puternic instrument de diagnostic pe care Oracle îl pune la dispoziție. În fiecare oră, Oracle face o captură (snapshot) a statisticilor de performanță și o stochează în repository-ul intern. Comparând două snapshot-uri, obții un raport care îți spune exact ce s-a întâmplat în acea perioadă.
+{{< glossary term="awr" >}}AWR{{< /glossary >}} — Automatic Workload Repository — este cel mai puternic instrument de diagnostic pe care Oracle îl pune la dispoziție. În fiecare oră, Oracle face o captură ({{< glossary term="snapshot-oracle" >}}snapshot{{< /glossary >}}) a statisticilor de performanță și o stochează în repository-ul intern. Comparând două snapshot-uri, obții un raport care îți spune exact ce s-a întâmplat în acea perioadă.
 
 Am generat un snapshot manual pentru a captura situația curentă:
 
@@ -86,7 +86,7 @@ Secțiunea **Top 5 Timed Foreground Events** era grăitoare:
 | log file sync | 12.445 | 287 | 4,3% |
 | direct path read | 8.221 | 198 | 3,0% |
 
-`db file scattered read` la 58%. Sunt full table scan-uri. Ceva citea tabele întregi, bloc cu bloc, fără a folosi indecși.
+`db file scattered read` la 58%. Sunt {{< glossary term="full-table-scan" >}}full table scan{{< /glossary >}}-uri. Ceva citea tabele întregi, bloc cu bloc, fără a folosi indecși.
 
 Secțiunea **SQL ordered by Elapsed Time** arăta un singur SQL_ID care consuma 71% din timpul total al bazei de date: `g4f2h8k1nw3z9`.
 
@@ -98,7 +98,7 @@ Acum știam ce să caut.
 
 AWR îmi dăduse fotografia de ansamblu. Dar trebuia să înțeleg **când** a început acel SQL, **cine** îl executa și **ce program** l-a lansat.
 
-ASH — Active Session History — înregistrează starea fiecărei sesiuni active o dată pe secundă. Este microscopul DBA-ului: unde AWR îți arată medii pe o oră, ASH îți arată ce se întâmpla secundă cu secundă.
+{{< glossary term="ash" >}}ASH{{< /glossary >}} — Active Session History — înregistrează starea fiecărei sesiuni active o dată pe secundă. Este microscopul DBA-ului: unde AWR îți arată medii pe o oră, ASH îți arată ce se întâmpla secundă cu secundă.
 
 ``` sql
 SELECT sample_time,

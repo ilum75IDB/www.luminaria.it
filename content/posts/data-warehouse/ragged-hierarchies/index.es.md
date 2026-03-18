@@ -11,9 +11,9 @@ image: "ragged-hierarchies.cover.jpg"
 
 Tres niveles. Top Group, Group, Client. Parece una estructura trivial — el tipo de jerarquía que dibujas en una pizarra en cinco minutos y que cualquier herramienta de BI debería manejar sin problemas.
 
-Luego descubres que no todos los clientes pertenecen a un grupo. Y que no todos los grupos pertenecen a un top group. Y que los reportes de agregación que el negocio pide — facturación por top group, número de clientes por grupo, drill-down desde la cima hasta la hoja — producen resultados erróneos o incompletos porque la jerarquía tiene huecos.
+Luego descubres que no todos los clientes pertenecen a un grupo. Y que no todos los grupos pertenecen a un top group. Y que los reportes de agregación que el negocio pide — facturación por top group, número de clientes por grupo, {{< glossary term="drill-down" >}}drill-down{{< /glossary >}} desde la cima hasta la hoja — producen resultados erróneos o incompletos porque la jerarquía tiene huecos.
 
-En jerga técnica se llama **ragged hierarchy**: una jerarquía en la que no todas las ramas alcanzan la misma profundidad. En el mundo real se llama "el problema que nadie ve hasta que abre el reporte y los números no cuadran."
+En jerga técnica se llama **{{< glossary term="ragged-hierarchy" >}}ragged hierarchy{{< /glossary >}}**: una jerarquía en la que no todas las ramas alcanzan la misma profundidad. En el mundo real se llama "el problema que nadie ve hasta que abre el reporte y los números no cuadran."
 
 ---
 
@@ -101,7 +101,7 @@ El total por Top Group está mal porque faltan las filas con NULL. Si sumas solo
 
 ## El enfoque clásico: COALESCE y rezos
 
-La primera reacción, la que veo en el 90% de los casos, es añadir `COALESCE` en la consulta:
+La primera reacción, la que veo en el 90% de los casos, es añadir {{< glossary term="coalesce" >}}`COALESCE`{{< /glossary >}} en la consulta:
 
 ``` sql
 SELECT COALESCE(top_group_name, group_name, client_name) AS top_group_name,
@@ -123,7 +123,7 @@ El problema de fondo es que la COALESCE es un parche aplicado en la capa de pres
 
 ## La solución: self-parenting
 
-El principio es simple: **quien no tiene padre se convierte en padre de sí mismo**.
+El principio es simple: **quien no tiene padre se convierte en padre de sí mismo**. Esta técnica se llama {{< glossary term="self-parenting" >}}self-parenting{{< /glossary >}}.
 
 ¿Un Client sin Group? Ese cliente se convierte en su propio Group. ¿Un Group sin Top Group? Ese grupo se convierte en su propio Top Group. De esta forma la jerarquía siempre está completa a tres niveles, sin huecos, sin NULL.
 
@@ -345,7 +345,7 @@ El self-parenting funciona bien cuando:
 
 - La jerarquía tiene un **número fijo de niveles** (típicamente 2-5)
 - El caso de uso principal es la **agregación y el drill-down** en reportes
-- El modelo es un **data warehouse** o un cubo OLAP
+- El modelo es un **data warehouse** o un cubo {{< glossary term="olap" >}}OLAP{{< /glossary >}}
 - Los niveles faltantes son la excepción, no la regla
 
 No funciona bien cuando:

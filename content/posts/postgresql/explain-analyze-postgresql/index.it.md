@@ -13,7 +13,7 @@ L'altro giorno un collega mi manda uno screenshot su Teams. Una query che gira s
 
 > "Ho fatto EXPLAIN ANALYZE, ma non capisco cosa c'è che non va. Il piano sembra corretto."
 
-Spoiler: il piano non era affatto corretto. L'optimizer aveva scelto un nested loop join dove serviva un hash join, e la ragione era banale — statistiche non aggiornate. Ma per arrivarci ho dovuto leggere il piano riga per riga, e lì mi sono reso conto che la maggior parte dei DBA che conosco usa EXPLAIN ANALYZE come un oracolo binario: se il tempo è alto, la query è lenta. Fine dell'analisi.
+Spoiler: il piano non era affatto corretto. L'optimizer aveva scelto un {{< glossary term="nested-loop" >}}nested loop{{< /glossary >}} join dove serviva un {{< glossary term="hash-join" >}}hash join{{< /glossary >}}, e la ragione era banale — statistiche non aggiornate. Ma per arrivarci ho dovuto leggere il piano riga per riga, e lì mi sono reso conto che la maggior parte dei DBA che conosco usa EXPLAIN ANALYZE come un oracolo binario: se il tempo è alto, la query è lenta. Fine dell'analisi.
 
 No. EXPLAIN ANALYZE è uno strumento di diagnostica, non un verdetto. Bisogna saperlo leggere.
 
@@ -56,7 +56,7 @@ Regola personale: se qualcuno mi manda un EXPLAIN senza BUFFERS, glielo rimando 
 
 ## 📖 Anatomia di un nodo: cosa leggere e in che ordine
 
-Un piano di esecuzione è un albero. Ogni nodo ha questa struttura:
+Un {{< glossary term="execution-plan" >}}piano di esecuzione{{< /glossary >}} è un albero. Ogni nodo ha questa struttura:
 
 ``` text
 ->  Hash Join  (cost=1234.56..5678.90 rows=50000 width=120)
@@ -106,7 +106,7 @@ PostgreSQL mantiene statistiche sulle tabelle in `pg_statistic` (leggibili trami
 
 L'optimizer usa queste informazioni per stimare la selettività di ogni condizione WHERE e la cardinalità di ogni join.
 
-Il problema? Le statistiche si aggiornano con `ANALYZE` — che può essere manuale o gestito dall'autovacuum. Ma l'autovacuum lancia ANALYZE solo quando il numero di righe modificate supera una soglia:
+Il problema? Le statistiche si aggiornano con {{< glossary term="postgresql-analyze" >}}`ANALYZE`{{< /glossary >}} — che può essere manuale o gestito dall'autovacuum. Ma l'autovacuum lancia ANALYZE solo quando il numero di righe modificate supera una soglia:
 
 ``` text
 threshold = autovacuum_analyze_threshold + autovacuum_analyze_scale_factor × n_live_tuples
@@ -157,7 +157,7 @@ ALTER COLUMN customer_id SET STATISTICS 500;
 ANALYZE orders;
 ```
 
-Dopo aver aumentato il target a 500, le stime dell'optimizer sulla cardinalità dei join con `customers` sono diventate molto più accurate.
+Dopo aver aumentato il {{< glossary term="postgresql-default-statistics-target" >}}target{{< /glossary >}} a 500, le stime dell'optimizer sulla cardinalità dei join con `customers` sono diventate molto più accurate.
 
 Regola: se una colonna è usata frequentemente in WHERE o JOIN e ha distribuzione non uniforme, alza il target. 500 è un buon punto di partenza. Puoi arrivare a 1000, ma oltre raramente porta benefici e rallenta l'ANALYZE stesso.
 

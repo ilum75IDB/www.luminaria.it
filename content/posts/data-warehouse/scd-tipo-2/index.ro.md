@@ -37,7 +37,7 @@ CREATE TABLE dim_client (
 );
 ```
 
-ETL-ul de noapte era un simplu MERGE: dacă clientul există, actualizează toate câmpurile; dacă nu există, inserează.
+ETL-ul de noapte era un simplu {{< glossary term="merge-sql" >}}MERGE{{< /glossary >}}: dacă clientul există, actualizează toate câmpurile; dacă nu există, inserează.
 
 ``` sql
 MERGE INTO dim_client d
@@ -57,7 +57,7 @@ WHEN NOT MATCHED THEN INSERT (
 
 Simplu, curat, rapid. Și complet greșit pentru un data warehouse.
 
-Aceasta este ceea ce Kimball numește **SCD Tip 1** — Slowly Changing Dimension de Tip 1. Suprascrii valoarea veche cu cea nouă. Fără istorie, fără versionare. Valoarea actuală șterge valoarea anterioară.
+Aceasta este ceea ce {{< glossary term="kimball" >}}Kimball{{< /glossary >}} numește **SCD Tip 1** — Slowly Changing Dimension de Tip 1. Suprascrii valoarea veche cu cea nouă. Fără istorie, fără versionare. Valoarea actuală șterge valoarea anterioară.
 
 Pentru un sistem OLTP este perfect: vrei întotdeauna adresa curentă a clientului, telefonul actualizat, email-ul valid. Dar un data warehouse nu este un sistem tranzacțional. Un data warehouse este o mașină a timpului. Și o mașină a timpului care suprascrie trecutul este inutilă.
 
@@ -87,7 +87,7 @@ Când un atribut se schimbă, înregistrarea curentă este închisă — i se at
 
 Pentru ca acest lucru să funcționeze sunt necesare trei elemente suplimentare în tabela dimensională:
 
-1. **O cheie surogat** — un identificator generat de DWH, distinct de cheia naturală a sistemului sursă. Este necesar deoarece același client va avea mai multe înregistrări (câte una pentru fiecare versiune), deci cheia naturală nu mai este unică.
+1. **O {{< glossary term="chiave-surrogata" >}}cheie surogat{{< /glossary >}}** — un identificator generat de DWH, distinct de cheia naturală a sistemului sursă. Este necesar deoarece același client va avea mai multe înregistrări (câte una pentru fiecare versiune), deci cheia naturală nu mai este unică.
 2. **Date de valabilitate** — `valid_from` și `valid_to` — care definesc intervalul temporal în care fiecare versiune a înregistrării era curentă.
 3. **Un flag de versiune curentă** — `is_current` — care permite recuperarea rapidă a versiunii active fără a filtra pe date.
 
@@ -282,7 +282,7 @@ Un singur scan al tabelei, două contorizări distincte filtrate pe dată. CFO-u
 
 ## Tabela de fapte și cheile surogat
 
-Un punct adesea subestimat: tabela de fapte trebuie să folosească **cheia surogat**, nu cheia naturală.
+Un punct adesea subestimat: {{< glossary term="fact-table" >}}tabela de fapte{{< /glossary >}} trebuie să folosească **cheia surogat**, nu cheia naturală.
 
 ``` sql
 CREATE TABLE fact_dauna (
@@ -357,7 +357,7 @@ Dar pentru cazul cel mai frecvent — date master de clienți, produse, angajaț
 
 Directorul comercial nu știa că are nevoie de istorie până când a avut nevoie de ea. Și când a avut nevoie, DWH-ul nu o avea.
 
-Acesta este punctul. Nu implementezi Tipul 2 pentru că "e best practice" sau pentru că "Kimball spune așa în capitolul 5". Îl implementezi pentru că un data warehouse fără istorie este o bază de date operațională cu o star schema lipită deasupra. Funcționează pentru rapoartele lunii curente, dar nu răspunde la întrebarea pe care mai devreme sau mai târziu cineva o va pune: "Cum era înainte?"
+Acesta este punctul. Nu implementezi Tipul 2 pentru că "e best practice" sau pentru că "Kimball spune așa în capitolul 5". Îl implementezi pentru că un data warehouse fără istorie este o bază de date operațională cu o {{< glossary term="star-schema" >}}star schema{{< /glossary >}} lipită deasupra. Funcționează pentru rapoartele lunii curente, dar nu răspunde la întrebarea pe care mai devreme sau mai târziu cineva o va pune: "Cum era înainte?"
 
 Întrebarea vine întotdeauna. Singura întrebare este dacă DWH-ul tău este pregătit să răspundă.
 

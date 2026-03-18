@@ -11,9 +11,9 @@ image: "ragged-hierarchies.cover.jpg"
 
 Trei niveluri. Top Group, Group, Client. Pare o structură banală — tipul de ierarhie pe care o desenezi pe o tablă în cinci minute și pe care orice instrument de BI ar trebui să o gestioneze fără probleme.
 
-Apoi descoperi că nu toți clienții aparțin unui grup. Și că nu toate grupurile aparțin unui top group. Și că rapoartele de agregare pe care business-ul le solicită — cifra de afaceri per top group, număr de clienți per grup, drill-down de la vârf la frunză — produc rezultate greșite sau incomplete pentru că ierarhia are goluri.
+Apoi descoperi că nu toți clienții aparțin unui grup. Și că nu toate grupurile aparțin unui top group. Și că rapoartele de agregare pe care business-ul le solicită — cifra de afaceri per top group, număr de clienți per grup, {{< glossary term="drill-down" >}}drill-down{{< /glossary >}} de la vârf la frunză — produc rezultate greșite sau incomplete pentru că ierarhia are goluri.
 
-În jargon tehnic se numește **ragged hierarchy**: o ierarhie în care nu toate ramurile ajung la aceeași adâncime. În lumea reală se numește „problema pe care nimeni nu o vede până nu deschide raportul și numerele nu se potrivesc."
+În jargon tehnic se numește **{{< glossary term="ragged-hierarchy" >}}ragged hierarchy{{< /glossary >}}**: o ierarhie în care nu toate ramurile ajung la aceeași adâncime. În lumea reală se numește „problema pe care nimeni nu o vede până nu deschide raportul și numerele nu se potrivesc."
 
 ---
 
@@ -101,7 +101,7 @@ Totalul per Top Group este greșit pentru că lipsesc rândurile cu NULL. Dacă 
 
 ## Abordarea clasică: COALESCE și rugăciuni
 
-Prima reacție, cea pe care o văd în 90% din cazuri, este să adaugi `COALESCE` în interogare:
+Prima reacție, cea pe care o văd în 90% din cazuri, este să adaugi {{< glossary term="coalesce" >}}`COALESCE`{{< /glossary >}} în interogare:
 
 ``` sql
 SELECT COALESCE(top_group_name, group_name, client_name) AS top_group_name,
@@ -123,7 +123,7 @@ Problema de fond este că COALESCE este un plasture aplicat la nivelul de prezen
 
 ## Soluția: self-parenting
 
-Principiul este simplu: **cine nu are părinte devine propriul părinte**.
+Principiul este simplu: **cine nu are părinte devine propriul părinte**. Această tehnică se numește {{< glossary term="self-parenting" >}}self-parenting{{< /glossary >}}.
 
 Un Client fără Group? Acel client devine propriul Group. Un Group fără Top Group? Acel grup devine propriul Top Group. În acest mod ierarhia este întotdeauna completă pe trei niveluri, fără goluri, fără NULL.
 
@@ -345,7 +345,7 @@ Self-parenting-ul funcționează bine când:
 
 - Ierarhia are un **număr fix de niveluri** (de obicei 2-5)
 - Cazul de utilizare principal este **agregarea și drill-down-ul** în rapoarte
-- Modelul este un **data warehouse** sau un cub OLAP
+- Modelul este un **data warehouse** sau un cub {{< glossary term="olap" >}}OLAP{{< /glossary >}}
 - Nivelurile lipsă sunt excepția, nu regula
 
 Nu funcționează bine când:

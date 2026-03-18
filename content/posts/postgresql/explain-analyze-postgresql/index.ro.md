@@ -13,7 +13,7 @@ Zilele trecute un coleg imi trimite o captura de ecran pe Teams. Un query care r
 
 > "Am facut EXPLAIN ANALYZE, dar nu inteleg ce e in neregula. Planul pare corect."
 
-Spoiler: planul nu era deloc corect. Optimizatorul alesese un nested loop join unde era nevoie de un hash join, iar motivul era banal — statistici neactualizate. Dar ca sa ajung acolo a trebuit sa citesc planul rand cu rand, si atunci mi-am dat seama ca majoritatea DBA-ilor pe care ii cunosc folosesc EXPLAIN ANALYZE ca pe un oracol binar: daca timpul e mare, query-ul e lent. Sfarsitul analizei.
+Spoiler: planul nu era deloc corect. Optimizatorul alesese un {{< glossary term="nested-loop" >}}nested loop{{< /glossary >}} join unde era nevoie de un {{< glossary term="hash-join" >}}hash join{{< /glossary >}}, iar motivul era banal — statistici neactualizate. Dar ca sa ajung acolo a trebuit sa citesc planul rand cu rand, si atunci mi-am dat seama ca majoritatea DBA-ilor pe care ii cunosc folosesc EXPLAIN ANALYZE ca pe un oracol binar: daca timpul e mare, query-ul e lent. Sfarsitul analizei.
 
 Nu. EXPLAIN ANALYZE e un instrument de diagnostic, nu un verdict. Trebuie sa stii sa-l citesti.
 
@@ -56,7 +56,7 @@ Regula personala: daca cineva imi trimite un EXPLAIN fara BUFFERS, i-l trimit in
 
 ## 📖 Anatomia unui nod: ce sa citesti si in ce ordine
 
-Un plan de executie e un arbore. Fiecare nod arata asa:
+Un {{< glossary term="execution-plan" >}}plan de executie{{< /glossary >}} e un arbore. Fiecare nod arata asa:
 
 ``` text
 ->  Hash Join  (cost=1234.56..5678.90 rows=50000 width=120)
@@ -106,7 +106,7 @@ PostgreSQL mentine statistici despre tabele in `pg_statistic` (citibile prin `pg
 
 Optimizatorul foloseste aceste informatii pentru a estima selectivitatea fiecarei conditii WHERE si cardinalitatea fiecarui join.
 
-Problema? Statisticile se actualizeaza cu `ANALYZE` — care poate fi manual sau gestionat de autovacuum. Dar autovacuum-ul lanseaza ANALYZE doar cand numarul de randuri modificate depaseste un prag:
+Problema? Statisticile se actualizeaza cu {{< glossary term="postgresql-analyze" >}}`ANALYZE`{{< /glossary >}} — care poate fi manual sau gestionat de autovacuum. Dar autovacuum-ul lanseaza ANALYZE doar cand numarul de randuri modificate depaseste un prag:
 
 ``` text
 threshold = autovacuum_analyze_threshold + autovacuum_analyze_scale_factor × n_live_tuples
@@ -157,7 +157,7 @@ ALTER COLUMN customer_id SET STATISTICS 500;
 ANALYZE orders;
 ```
 
-Dupa ce am crescut target-ul la 500, estimarile de cardinalitate ale optimizatorului pentru join-urile cu `customers` au devenit mult mai precise.
+Dupa ce am crescut {{< glossary term="postgresql-default-statistics-target" >}}target{{< /glossary >}}-ul la 500, estimarile de cardinalitate ale optimizatorului pentru join-urile cu `customers` au devenit mult mai precise.
 
 Regula: daca o coloana e folosita frecvent in WHERE sau JOIN si are distributie neuniforma, creste target-ul. 500 e un bun punct de plecare. Poti ajunge la 1000, dar peste aceasta valoare rareori ajuta si incetineste ANALYZE-ul insusi.
 

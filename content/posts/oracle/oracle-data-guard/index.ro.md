@@ -29,7 +29,7 @@ CEO-ul a trimis în seara aceea un email întregii companii. A doua zi m-a sunat
 
 Răspunsul era simplu ca și concept, mai puțin simplu în realizare: aveau nevoie de o a doua bază de date, sincronizată în timp real, gata să preia rolul primarului în caz de defecțiune.
 
-Oracle Active Data Guard face exact asta. O bază de date primară generează redo log-uri, iar un standby le primește și le aplică continuu. Dacă primarul moare, standby-ul devine primar. Dacă totul e în ordine, standby-ul poate fi folosit și în mod read-only — pentru rapoarte, pentru backup-uri, pentru a ușura încărcarea.
+Oracle Active {{< glossary term="data-guard" >}}Data Guard{{< /glossary >}} face exact asta. O bază de date primară generează {{< glossary term="redo-log" >}}redo log{{< /glossary >}}-uri, iar un standby le primește și le aplică continuu. Dacă primarul moare, standby-ul devine primar. Dacă totul e în ordine, standby-ul poate fi folosit și în mod read-only — pentru rapoarte, pentru backup-uri, pentru a ușura încărcarea.
 
 Am proiectat o arhitectură cu două noduri:
 
@@ -116,7 +116,7 @@ Sufixul `_DGMGRL` este folosit de Data Guard Broker pentru a identifica instanț
 
 ### Crearea standby-ului
 
-Pentru copia inițială a bazei de date am folosit un `DUPLICATE` prin RMAN prin rețea. Fără backup pe bandă, fără transfer manual de fișiere. Direct, de la primar la standby:
+Pentru copia inițială a bazei de date am folosit un `DUPLICATE` prin {{< glossary term="rman" >}}RMAN{{< /glossary >}} prin rețea. Fără backup pe bandă, fără transfer manual de fișiere. Direct, de la primar la standby:
 
 ```
 -- Pe serverul standby, pornirea instanței în NOMOUNT
@@ -239,8 +239,8 @@ La șase luni de la implementare, bilanțul era clar:
 
 | Metrică | Înainte | După |
 |---------|---------|------|
-| RPO (Recovery Point Objective) | ~10 ore (backup nocturn) | < 5 secunde |
-| RTO (Recovery Time Objective) | 6+ ore (restore din backup) | < 1 minut (switchover) |
+| {{< glossary term="rpo" >}}RPO{{< /glossary >}} (Recovery Point Objective) | ~10 ore (backup nocturn) | < 5 secunde |
+| {{< glossary term="rto" >}}RTO{{< /glossary >}} (Recovery Time Objective) | 6+ ore (restore din backup) | < 1 minut (switchover) |
 | Disponibilitate rapoarte în paralel | Nu | Da (Active Data Guard) |
 | Cost infrastructură suplimentară | — | 1 server + linie dedicată |
 | Teste de switchover efectuate | 0 | 6 (unul pe lună) |

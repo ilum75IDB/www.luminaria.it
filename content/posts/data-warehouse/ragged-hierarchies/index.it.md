@@ -11,9 +11,9 @@ image: "ragged-hierarchies.cover.jpg"
 
 Tre livelli. Top Group, Group, Client. Sembra una struttura banale — il tipo di gerarchia che disegni su una lavagna in cinque minuti e che qualsiasi tool di BI dovrebbe gestire senza problemi.
 
-Poi scopri che non tutti i clienti hanno un gruppo. E che non tutti i gruppi hanno un top group. E che i report di aggregazione che il business ti chiede — fatturato per top group, numero clienti per gruppo, drill-down dal vertice alla foglia — producono risultati sbagliati o incompleti perché la gerarchia ha dei buchi.
+Poi scopri che non tutti i clienti hanno un gruppo. E che non tutti i gruppi hanno un top group. E che i report di aggregazione che il business ti chiede — fatturato per top group, numero clienti per gruppo, {{< glossary term="drill-down" >}}drill-down{{< /glossary >}} dal vertice alla foglia — producono risultati sbagliati o incompleti perché la gerarchia ha dei buchi.
 
-In gergo tecnico si chiama **ragged hierarchy**: una gerarchia in cui non tutti i rami raggiungono la stessa profondità. Nel mondo reale si chiama "il problema che nessuno vede finché non apre il report e i numeri non tornano."
+In gergo tecnico si chiama **{{< glossary term="ragged-hierarchy" >}}ragged hierarchy{{< /glossary >}}**: una gerarchia in cui non tutti i rami raggiungono la stessa profondità. Nel mondo reale si chiama "il problema che nessuno vede finché non apre il report e i numeri non tornano."
 
 ---
 
@@ -101,7 +101,7 @@ Il totale per Top Group è sbagliato perché mancano le righe con NULL. Se sommi
 
 ## L'approccio classico: COALESCE e preghiere
 
-La prima reazione, quella che vedo fare nel 90% dei casi, è aggiungere `COALESCE` nella query:
+La prima reazione, quella che vedo fare nel 90% dei casi, è aggiungere {{< glossary term="coalesce" >}}`COALESCE`{{< /glossary >}} nella query:
 
 ``` sql
 SELECT COALESCE(top_group_name, group_name, client_name) AS top_group_name,
@@ -123,7 +123,7 @@ Il problema di fondo è che la COALESCE è un cerotto applicato nel layer di pre
 
 ## La soluzione: self-parenting
 
-Il principio è semplice: **chi non ha un padre diventa padre di sé stesso**.
+Il principio è semplice: **chi non ha un padre diventa padre di sé stesso**. Questa tecnica si chiama {{< glossary term="self-parenting" >}}self-parenting{{< /glossary >}}.
 
 Un Client senza Group? Quel client diventa il proprio Group. Un Group senza Top Group? Quel group diventa il proprio Top Group. In questo modo la gerarchia è sempre completa a tre livelli, senza buchi, senza NULL.
 

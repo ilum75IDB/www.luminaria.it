@@ -29,7 +29,7 @@ Esa noche el CEO envió un email a toda la empresa. Al día siguiente me llamó:
 
 La respuesta era simple en concepto, menos en la ejecución: necesitaban una segunda base de datos, sincronizada en tiempo real, lista para asumir el rol del primario en caso de fallo.
 
-Oracle Active Data Guard hace exactamente eso. Una base de datos primaria genera redo logs, y un standby los recibe y aplica continuamente. Si el primario muere, el standby se convierte en primario. Si todo va bien, el standby también se puede usar en modo solo lectura — para informes, para backups, para aligerar la carga.
+Oracle Active {{< glossary term="data-guard" >}}Data Guard{{< /glossary >}} hace exactamente eso. Una base de datos primaria genera {{< glossary term="redo-log" >}}redo logs{{< /glossary >}}, y un standby los recibe y aplica continuamente. Si el primario muere, el standby se convierte en primario. Si todo va bien, el standby también se puede usar en modo solo lectura — para informes, para backups, para aligerar la carga.
 
 Diseñé una arquitectura de dos nodos:
 
@@ -116,7 +116,7 @@ El sufijo `_DGMGRL` lo usa el Data Guard Broker para identificar la instancia. S
 
 ### Creación del standby
 
-Para la copia inicial de la base de datos usé un `DUPLICATE` vía RMAN a través de la red. Sin backup en cinta, sin transferencia manual de archivos. Directo, del primario al standby:
+Para la copia inicial de la base de datos usé un `DUPLICATE` vía {{< glossary term="rman" >}}RMAN{{< /glossary >}} a través de la red. Sin backup en cinta, sin transferencia manual de archivos. Directo, del primario al standby:
 
 ```
 -- En el servidor standby, iniciar la instancia en NOMOUNT
@@ -239,8 +239,8 @@ A seis meses de la implementación, el balance era claro:
 
 | Métrica | Antes | Después |
 |---------|-------|---------|
-| RPO (Recovery Point Objective) | ~10 horas (backup nocturno) | < 5 segundos |
-| RTO (Recovery Time Objective) | 6+ horas (restore desde backup) | < 1 minuto (switchover) |
+| {{< glossary term="rpo" >}}RPO{{< /glossary >}} (Recovery Point Objective) | ~10 horas (backup nocturno) | < 5 segundos |
+| {{< glossary term="rto" >}}RTO{{< /glossary >}} (Recovery Time Objective) | 6+ horas (restore desde backup) | < 1 minuto (switchover) |
 | Disponibilidad de informes en paralelo | No | Sí (Active Data Guard) |
 | Coste de infraestructura adicional | — | 1 servidor + línea dedicada |
 | Pruebas de switchover realizadas | 0 | 6 (una al mes) |
