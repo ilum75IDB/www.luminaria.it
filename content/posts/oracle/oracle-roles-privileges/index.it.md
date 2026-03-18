@@ -293,3 +293,17 @@ Il cliente non ha notato miglioramenti nelle performance. Non era quello l'obiet
 La sicurezza in Oracle non è questione di strumenti — gli strumenti ci sono, e sono potenti. È questione di progettazione: decidere chi può fare cosa, documentarlo, implementarlo e poi verificare che funzioni.
 
 Non è il lavoro più glamour del mondo. Ma è quello che fa la differenza tra un database che sopravvive e uno che è davvero sotto controllo.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[System Privilege](/it/glossary/system-privilege/)** — Privilegio Oracle che autorizza operazioni globali sul database come CREATE TABLE, CREATE SESSION o ALTER SYSTEM, indipendenti da qualsiasi oggetto specifico.
+
+**[Object Privilege](/it/glossary/object-privilege/)** — Privilegio Oracle che autorizza operazioni su un oggetto specifico del database come SELECT, INSERT o EXECUTE su una tabella, vista o procedura.
+
+**[REVOKE](/it/glossary/revoke/)** — Comando SQL per rimuovere privilegi o ruoli precedentemente assegnati a un utente o ruolo, complementare al comando GRANT.
+
+**[Unified Audit](/it/glossary/unified-audit/)** — Sistema di audit centralizzato introdotto in Oracle 12c che unifica tutti i tipi di audit in un'unica infrastruttura, sostituendo il vecchio audit tradizionale.
+
+**[Least Privilege](/it/glossary/least-privilege/)** — Principio di sicurezza che prevede l'assegnazione a ogni utente solo dei permessi strettamente necessari per svolgere la propria funzione.

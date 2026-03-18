@@ -5,6 +5,7 @@ translationKey: "glossary_least-privilege"
 aka: "Principle of Least Privilege"
 articles:
   - "/posts/mysql/mysql-users-and-hosts"
+  - "/posts/oracle/oracle-roles-privileges"
 ---
 
 **Least Privilege** is a fundamental information security principle: every user, process or system should have only the permissions strictly necessary to perform their function, nothing more.

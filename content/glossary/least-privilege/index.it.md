@@ -5,6 +5,7 @@ translationKey: "glossary_least-privilege"
 aka: "Principio del privilegio minimo"
 articles:
   - "/posts/mysql/mysql-users-and-hosts"
+  - "/posts/oracle/oracle-roles-privileges"
 ---
 
 Il **Least Privilege** (principio del privilegio minimo) è un principio fondamentale della sicurezza informatica: ogni utente, processo o sistema deve avere solo i permessi strettamente necessari per svolgere la propria funzione, niente di più.
