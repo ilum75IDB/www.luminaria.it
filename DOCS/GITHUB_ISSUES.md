@@ -51,7 +51,9 @@ tool `WebFetch`.
 
 ## Issue Aperte — Bug
 
-*Nessuna issue aperta.*
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 60 | https://github.com/ilum75IDB/ivanluminaria.com/issues/60 | Bug: sezione Glossario mancante in tutti i 23 articoli pubblicati | aperta |
 
 ## Issue Chiuse
 
