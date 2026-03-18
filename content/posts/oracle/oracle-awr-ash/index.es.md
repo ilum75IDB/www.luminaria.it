@@ -273,3 +273,17 @@ Tres lecciones que llevo conmigo.
 Esa noche salí de la oficina a las 19:20. Cuarenta minutos después de la llamada. Al día siguiente el go-live arrancó sin contratiempos, y el lunes el sistema funcionaba con normalidad.
 
 No soy un héroe. Solo usé las herramientas correctas.
+
+------------------------------------------------------------------------
+
+## Glosario
+
+**AWR** — Automatic Workload Repository. Componente integrado en Oracle que recopila estadisticas de rendimiento mediante snapshots periodicos y genera informes diagnosticos comparativos.
+
+**ASH** — Active Session History. Componente Oracle que muestrea el estado de cada sesion activa una vez por segundo, almacenandolo en memoria y luego en AWR. Es el microscopio del DBA para el diagnostico puntual.
+
+**Full Table Scan** — Operacion de lectura en la que Oracle lee todos los bloques de una tabla sin usar indices. En los wait events aparece como `db file scattered read`.
+
+**Wait Event** — Evento de espera registrado por Oracle cada vez que una sesion no puede continuar porque espera un recurso (I/O, lock, CPU, red). El analisis de wait events es la base de la metodologia diagnostica de Oracle.
+
+**Snapshot** — Captura puntual de las estadisticas de rendimiento tomada periodicamente por AWR (por defecto cada 60 minutos). La comparacion entre dos snapshots genera el informe AWR.
