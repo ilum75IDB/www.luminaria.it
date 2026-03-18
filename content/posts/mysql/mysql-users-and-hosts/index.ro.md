@@ -13,7 +13,7 @@ Acum câteva săptămâni un client mă sună. Ton pragmatic, cerere aparent ban
 
 > „Trebuie să creez un utilizator pe MySQL pentru o aplicație care trebuie să acceseze o bază de date. Te poți ocupa?"
 
-Sigur. `CREATE USER`, `GRANT`, următorul.
+Sigur. `CREATE USER`, {{< glossary term="grant" >}}`GRANT`{{< /glossary >}}, următorul.
 
 Doar că apoi adaugă: „Aplicația rulează pe două servere diferite. Și uneori ne vom conecta și local pentru mentenanță."
 
@@ -96,7 +96,7 @@ Trei utilizatori. Același nume. Privilegii calibrate.
 
 Utilizatorul local are doar `SELECT` pentru că servește la verificări, nu la scrierea datelor. Parolă diferită pentru că contextul de utilizare este diferit.
 
-Principiul privilegiului minim. Aplicat în punctul potrivit.
+Principiul {{< glossary term="least-privilege" >}}privilegiului minim{{< /glossary >}}. Aplicat în punctul potrivit.
 
 ---
 
@@ -134,7 +134,7 @@ Dacă nu o faci înainte, o vei face după. Cu mai multă urgență și mai puț
 
 Modelul `utilizator@host` este identic între MySQL și MariaDB. Dar există diferențe de implementare care merită cunoscute.
 
-**Autentificarea implicită:**
+**{{< glossary term="authentication-plugin" >}}Autentificarea{{< /glossary >}} implicită:**
 
 | Versiune | Plugin implicit |
 |---|---|
@@ -183,7 +183,7 @@ Diferența pare cosmetică (ghilimele sau nu), dar în scripturi automatizate po
 
 ## Utilizatorul anonim: fantoma pe care nimeni n-a invitat-o
 
-MySQL vine instalat cu un utilizator anonim: `''@'localhost'`. Fără nume, fără parolă.
+MySQL vine instalat cu un {{< glossary term="anonymous-user" >}}utilizator anonim{{< /glossary >}}: `''@'localhost'`. Fără nume, fără parolă.
 
 Acest utilizator este un artefact istoric al instalărilor de dezvoltare. În producție este un risc de securitate pur.
 
@@ -199,7 +199,7 @@ SELECT user, host FROM mysql.user WHERE user = '';
 -- Dacă se găsește:
 DROP USER ''@'localhost';
 DROP USER ''@'%';  -- dacă există
-FLUSH PRIVILEGES;
+{{< glossary term="flush-privileges" >}}FLUSH PRIVILEGES{{< /glossary >}};
 ```
 
 Nu este paranoia. Este igienă.
@@ -229,3 +229,17 @@ Acest model este puternic pentru că permite segmentarea accesului fără infras
 Data viitoare când cineva îți cere „creează un utilizator pe MySQL", înainte de a scrie primul `CREATE USER`, întreabă-te: **de unde se va conecta?**
 
 Răspunsul la această întrebare schimbă totul.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[GRANT](/ro/glossary/grant/)** — Comandă SQL pentru atribuirea de privilegii unui utilizator sau rol. În MySQL 8 nu mai creează utilizatori implicit: mai întâi `CREATE USER`, apoi `GRANT`.
+
+**[Least Privilege](/ro/glossary/least-privilege/)** — Principiu de securitate care prevede atribuirea doar a permisiunilor strict necesare. În MySQL se aplică calibrând privilegiile per pereche utilizator/host.
+
+**[Authentication Plugin](/ro/glossary/authentication-plugin/)** — Modul care gestionează verificarea credențialelor. Default-ul se schimbă între MySQL 5.7 (`mysql_native_password`), MySQL 8 (`caching_sha2_password`) și MariaDB.
+
+**[Anonymous User](/ro/glossary/anonymous-user/)** — Utilizator MySQL fără nume (`''@'localhost'`) creat automat în timpul instalării. Poate interfera cu matching-ul utilizatorilor legitimi și trebuie eliminat în producție.
+
+**[FLUSH PRIVILEGES](/ro/glossary/flush-privileges/)** — Comandă care reîncarcă tabelele de grant în memorie, făcând efective modificările manuale ale privilegiilor. Necesară după operații directe pe tabelul `mysql.user`.

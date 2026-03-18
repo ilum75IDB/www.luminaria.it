@@ -13,7 +13,7 @@ A few weeks ago a client calls me. Pragmatic tone, seemingly trivial request:
 
 > "I need to create a user on MySQL for an application that needs to access a database. Can you take care of it?"
 
-Sure. `CREATE USER`, `GRANT`, next.
+Sure. `CREATE USER`, {{< glossary term="grant" >}}`GRANT`{{< /glossary >}}, next.
 
 Then he adds: "The application runs on two different servers. And sometimes we'll also connect locally for maintenance."
 
@@ -96,7 +96,7 @@ Three users. Same name. Calibrated privileges.
 
 The local user has only `SELECT` because it's for checks, not for writing data. Different password because the usage context is different.
 
-Principle of least privilege. Applied at the right point.
+Principle of {{< glossary term="least-privilege" >}}least privilege{{< /glossary >}}. Applied at the right point.
 
 ---
 
@@ -134,7 +134,7 @@ If you don't do it before, you'll do it after. With more urgency and less calm.
 
 The `user@host` model is identical between MySQL and MariaDB. But there are implementation differences worth knowing.
 
-**Default authentication:**
+**Default {{< glossary term="authentication-plugin" >}}authentication{{< /glossary >}}:**
 
 | Version | Default Plugin |
 |---|---|
@@ -183,7 +183,7 @@ The difference looks cosmetic (quotes or not), but in automated scripts it can g
 
 ## The Anonymous User: The Ghost Nobody Invited
 
-MySQL ships with an anonymous user: `''@'localhost'`. No name, no password.
+MySQL ships with an {{< glossary term="anonymous-user" >}}anonymous user{{< /glossary >}}: `''@'localhost'`. No name, no password.
 
 This user is a historical artifact from development installations. In production it is a pure security risk.
 
@@ -199,7 +199,7 @@ SELECT user, host FROM mysql.user WHERE user = '';
 -- If found:
 DROP USER ''@'localhost';
 DROP USER ''@'%';  -- if it exists
-FLUSH PRIVILEGES;
+{{< glossary term="flush-privileges" >}}FLUSH PRIVILEGES{{< /glossary >}};
 ```
 
 It's not paranoia. It's hygiene.
@@ -229,3 +229,17 @@ This model is powerful because it allows you to segment access without additiona
 The next time someone asks you to "create a user on MySQL", before writing the first `CREATE USER`, ask yourself: **where will they connect from?**
 
 The answer to that question changes everything.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[GRANT](/en/glossary/grant/)** — SQL command to assign privileges to a user or role. In MySQL 8 it no longer creates users implicitly: `CREATE USER` first, then `GRANT`.
+
+**[Least Privilege](/en/glossary/least-privilege/)** — Security principle that prescribes assigning only the strictly necessary permissions. In MySQL it's applied by calibrating privileges per user/host pair.
+
+**[Authentication Plugin](/en/glossary/authentication-plugin/)** — Module handling credential verification. The default changes between MySQL 5.7 (`mysql_native_password`), MySQL 8 (`caching_sha2_password`) and MariaDB.
+
+**[Anonymous User](/en/glossary/anonymous-user/)** — MySQL user with no name (`''@'localhost'`) automatically created during installation. Can interfere with legitimate user matching and should be removed in production.
+
+**[FLUSH PRIVILEGES](/en/glossary/flush-privileges/)** — Command that reloads grant tables into memory, making manual privilege changes effective. Needed after direct operations on the `mysql.user` table.
