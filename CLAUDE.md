@@ -329,12 +329,28 @@ Significa: merge nella branch main, push al remoto, e ritorno sulla branch di sv
 ```bash
 git checkout main
 git pull origin main
-git merge <branch-name>
+git merge <branch-name> -m "Merge <branch-name>: <descrizione>"
 git push -u origin main
 git checkout <branch-name>
 ```
 
 Dove `<branch-name>` è la branch di sviluppo corrente.
+
+**Messaggio di merge obbligatorio**: il comando `git merge` deve **sempre** includere un messaggio esplicativo (flag `-m`) che riassuma cosa è stato fatto nella branch. Il messaggio deve:
+
+1. Iniziare con `Merge <branch-name>:` seguito da una descrizione
+2. Elencare in modo sintetico le modifiche principali (nuovi articoli, bug fix, modifiche CSS, ecc.)
+3. Se ci sono issue chiuse, menzionarle (es. `Fix #57, #58`)
+
+Esempio:
+```
+git merge claude/blog-fix-homepage-xyz -m "Merge claude/blog-fix-homepage-xyz: fix hero images e layout homepage
+
+- Fix #57: sostituito .Fill con .Fit per hero images (no cropping)
+- Fix #58: max-width 1600px per monitor grandi, navbar contenuta
+- Ottimizzate dimensioni font e layout griglia per desktop e mobile
+- Aggiunte descrizioni articoli nella griglia homepage"
+```
 
 ## LinkedIn Post per promozione articoli
 
