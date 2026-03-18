@@ -49,7 +49,6 @@ tool `WebFetch`.
 
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
-| 57 | https://github.com/ilum75IDB/ivanluminaria.com/issues/57 | Bug: hero image in homepage troncate invece di ridimensionate (Recenti e sezioni categoria) | aperta |
 
 ## Issue Chiuse
 
@@ -76,4 +75,5 @@ tool `WebFetch`.
 | 37 | https://github.com/ilum75IDB/ivanluminaria.com/issues/37 | SCD Tipo 2: la storia che il business non sapeva di volere | 2026-03-16 |
 | 55 | https://github.com/ilum75IDB/ivanluminaria.com/issues/55 | AI Manager e Project Management: quando l'intelligenza artificiale entra nei progetti | 2026-03-16 |
 | 47 | https://github.com/ilum75IDB/ivanluminaria.com/issues/47 | VACUUM e autovacuum: perche PostgreSQL ha bisogno che qualcuno pulisca | 2026-03-16 |
+| 57 | https://github.com/ilum75IDB/ivanluminaria.com/issues/57 | Bug: hero image in homepage troncate invece di ridimensionate (Recenti e sezioni categoria) | 2026-03-18 |
 | 58 | https://github.com/ilum75IDB/ivanluminaria.com/issues/58 | Bug: max-width 100% rende immagini troppo grandi su monitor 27 pollici | 2026-03-18 |
