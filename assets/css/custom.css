@@ -431,9 +431,9 @@ header.print\:hidden {
   margin: 0 !important;
 }
 
-/* 2b) Body padding-top: solo lo stretto necessario per la navbar fixed (~48px) */
+/* 2b) Body padding-top per compensare la navbar fixed */
 body {
-  padding-top: 3rem !important;
+  padding-top: 4.5rem !important;
 }
 
 /* 2c) Margini laterali ridotti + max-width 1600px per schermi grandi */
@@ -1176,13 +1176,14 @@ footer {
 
 /* Extra top margin so the glossary title clears the fixed navbar */
 .glossary-page {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 /* Letter navigation bar */
 .glossary-letter-nav {
   border-bottom: 1px solid #e5e7eb;
   padding: 0.75rem 0;
+  gap: 1.25rem !important;
 }
 
 .glossary-letter-link {
