@@ -1183,7 +1183,8 @@ footer {
 .glossary-letter-nav {
   border-bottom: 1px solid #e5e7eb;
   padding: 0.75rem 0;
-  gap: 1.25rem !important;
+  margin-top: 1rem !important;
+  gap: 0.4rem !important;
 }
 
 .glossary-letter-link {
