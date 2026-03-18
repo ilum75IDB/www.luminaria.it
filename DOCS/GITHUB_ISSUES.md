@@ -44,10 +44,7 @@ tool `WebFetch`.
 
 ## Issue Aperte — Enhancement (Glossario)
 
-| #  | Issue | Titolo | Stato |
-|----|-------|--------|-------|
-| 62 | https://github.com/ilum75IDB/ivanluminaria.com/issues/62 | Glossario: shortcode Hugo per tooltip inline dei termini | aperta |
-| 63 | https://github.com/ilum75IDB/ivanluminaria.com/issues/63 | Glossario: applicare shortcode tooltip nei testi degli articoli | aperta |
+*Nessuna issue aperta.*
 
 ## Issue Aperte — Bug
 
@@ -87,3 +84,5 @@ tool `WebFetch`.
 | 59 | https://github.com/ilum75IDB/ivanluminaria.com/issues/59 | Grid images in homepage croppate su desktop | 2026-03-18 |
 | 51 | https://github.com/ilum75IDB/ivanluminaria.com/issues/51 | EXPLAIN ANALYZE non basta: come leggere un piano di esecuzione PostgreSQL | 2026-03-18 |
 | 61 | https://github.com/ilum75IDB/ivanluminaria.com/issues/61 | Glossario: creare sezione content/glossary/ con struttura e template | 2026-03-18 |
+| 62 | https://github.com/ilum75IDB/ivanluminaria.com/issues/62 | Glossario: shortcode Hugo per tooltip inline dei termini | 2026-03-18 |
+| 63 | https://github.com/ilum75IDB/ivanluminaria.com/issues/63 | Glossario: applicare shortcode tooltip nei testi degli articoli | 2026-03-18 |
