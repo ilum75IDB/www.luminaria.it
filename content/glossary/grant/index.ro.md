@@ -4,6 +4,7 @@ description: "Comandă SQL pentru atribuirea de privilegii specifice unui utiliz
 translationKey: "glossary_grant"
 articles:
   - "/posts/mysql/mysql-users-and-hosts"
+  - "/posts/postgresql/postgresql_roles_and_users"
 ---
 
 **GRANT** este comanda SQL folosită pentru atribuirea de privilegii unui utilizator sau rol pe obiecte specifice ale bazei de date. În MySQL și MariaDB, privilegiile se atribuie perechii `'utilizator'@'host'`, nu doar numelui de utilizator.

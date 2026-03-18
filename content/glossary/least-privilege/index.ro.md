@@ -6,6 +6,7 @@ aka: "Principiul privilegiului minim"
 articles:
   - "/posts/mysql/mysql-users-and-hosts"
   - "/posts/oracle/oracle-roles-privileges"
+  - "/posts/postgresql/postgresql_roles_and_users"
 ---
 
 **Least Privilege** (principiul privilegiului minim) este un principiu fundamental al securității informatice: fiecare utilizator, proces sau sistem trebuie să aibă doar permisiunile strict necesare pentru a-și îndeplini funcția, nimic mai mult.

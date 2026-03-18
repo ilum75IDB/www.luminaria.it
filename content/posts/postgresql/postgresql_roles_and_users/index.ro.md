@@ -193,3 +193,17 @@ pentru a proiecta o securitate curată, scalabilă și mentenabilă.
 
 Diferența nu este în comenzi.\
 Este în modelul mental pe care îl folosești când le aplici.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[ROLE](/ro/glossary/postgresql-role/)** — Entitatea fundamentală a PostgreSQL care unifică conceptul de utilizator și grup de permisiuni: un ROLE cu LOGIN este un utilizator, fără LOGIN este un container de privilegii.
+
+**[DEFAULT PRIVILEGES](/ro/glossary/default-privileges/)** — Mecanism PostgreSQL care definește automat privilegiile de atribuit tuturor obiectelor viitoare create într-o schemă, evitând repetarea manuală a GRANT-urilor.
+
+**[Schema](/ro/glossary/schema/)** — Namespace logic în cadrul unei baze de date care grupează tabele, vizualizări, funcții și alte obiecte, permițând organizarea și separarea permisiunilor.
+
+**[GRANT](/ro/glossary/grant/)** — Comandă SQL pentru atribuirea privilegiilor specifice unui utilizator sau rol pe baze de date, tabele sau coloane.
+
+**[Least Privilege](/ro/glossary/least-privilege/)** — Principiu de securitate care prevede atribuirea fiecărui utilizator doar a permisiunilor strict necesare pentru îndeplinirea funcției sale.

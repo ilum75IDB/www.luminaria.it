@@ -4,6 +4,7 @@ description: "Comando SQL per assegnare privilegi specifici a un utente o ruolo 
 translationKey: "glossary_grant"
 articles:
   - "/posts/mysql/mysql-users-and-hosts"
+  - "/posts/postgresql/postgresql_roles_and_users"
 ---
 
 **GRANT** è il comando SQL usato per assegnare privilegi a un utente o ruolo su oggetti specifici del database. In MySQL e MariaDB, i privilegi vengono assegnati alla coppia `'utente'@'host'`, non solo al nome utente.

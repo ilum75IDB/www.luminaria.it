@@ -191,3 +191,17 @@ tool to design clean, scalable and maintainable security.
 
 The difference is not in the commands.\
 It is in the mental model you use when applying them.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[ROLE](/en/glossary/postgresql-role/)** — PostgreSQL's fundamental entity that unifies the concept of user and permission group: a ROLE with LOGIN is a user, without LOGIN it is a privilege container.
+
+**[DEFAULT PRIVILEGES](/en/glossary/default-privileges/)** — PostgreSQL mechanism that automatically defines privileges to assign to all future objects created in a schema, avoiding the need to repeat GRANTs manually.
+
+**[Schema](/en/glossary/schema/)** — Logical namespace within a database that groups tables, views, functions and other objects, enabling organization and permission separation.
+
+**[GRANT](/en/glossary/grant/)** — SQL command to assign specific privileges to a user or role on databases, tables, or columns.
+
+**[Least Privilege](/en/glossary/least-privilege/)** — Security principle that prescribes assigning to each user only the permissions strictly necessary to perform their function.
