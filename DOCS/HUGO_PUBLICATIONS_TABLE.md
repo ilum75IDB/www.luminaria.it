@@ -26,8 +26,8 @@ ogni volta che si aggiunge, ripianifica o pubblica un articolo.
 | 17 | 2026-03-03 | —        | Tue | Bici vs Auto a Roma                                        | project-management | #35   | published |
 | 18 | 2026-03-10 | —        | Tue | Pagamenti a 60-90-120 giorni                               | project-management | #26   | published |
 | 19 | 2026-03-17 | —        | Tue | AI Manager e Project Management                            | project-management | #55   | published |
-| 20 | 2026-03-24 | —        | Tue | VACUUM e autovacuum PostgreSQL                             | postgresql         | #47   | published |
-| 21 | 2026-03-31 | —        | Tue | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | mysql | #42 | planned |
+| 20 | 2026-03-24 | —        | Tue | VACUUM e autovacuum PostgreSQL                             | postgresql         | #47   | scheduled |
+| 21 | 2026-03-31 | —        | Tue | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | mysql | #42 | scheduled |
 
 **Previous available slot**: 2025-11-04 (Tuesday)
 **Next available slot**: 2026-04-07 (Tuesday)

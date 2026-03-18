@@ -196,7 +196,11 @@ Articles are published **one per week, every Tuesday at 10:00 CET**, starting fr
 5. **Backdated articles**: if the user asks to publish an article in the past, assign it to the **Previous available slot** date. Then update the Previous available slot to the Tuesday before the new oldest article
 6. **All 4 language versions** of each article share the same date
 7. **Schedule table format**: always show the columns below. When reorganising dates, fill the "New Date" column; use `—` if no change is needed
-8. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
+8. **Article status values**:
+   - **published**: article is live on the site (publication date is in the past)
+   - **scheduled**: article is written in all 4 languages, committed to the repo, and has a future publication date. The corresponding GitHub issue should be closed
+   - **planned**: only the GitHub issue exists (article not yet written). The corresponding issue is still open
+9. **Slot markers** (at the bottom of `DOCS/HUGO_PUBLICATIONS_TABLE.md`):
    - **Previous available slot**: the first Tuesday before the oldest article's date. Used when inserting backdated articles
    - **Next available slot**: the first Tuesday after the most recent article's date. Used for new articles
    - Both must be updated after every schedule change
@@ -211,9 +215,9 @@ When adding a new article, update the table in `DOCS/HUGO_PUBLICATIONS_TABLE.md`
 
 When the user asks for the "tabella delle pubblicazioni" (publication table), **always show 3 tables**:
 
-1. **Tabella pubblicazioni** — the Current Schedule table above (all published + planned articles with dates)
+1. **Tabella pubblicazioni** — the Current Schedule table above (all published, scheduled and planned articles with dates)
 2. **Tabella issue aperte** — all open issues grouped by section (from `DOCS/GITHUB_ISSUES.md`)
-3. **Riepilogo per sezione** — a summary table with columns: Sezione, Pubblicati, Pianificati (issue aperte), Totale
+3. **Riepilogo per sezione** — a summary table with columns: Sezione, Pubblicati, Programmati (scheduled), Pianificati (issue aperte), Totale
 
 ## Important Notes
 

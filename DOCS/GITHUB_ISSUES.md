@@ -24,7 +24,6 @@ tool `WebFetch`.
 
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
-| 42 | https://github.com/ilum75IDB/ivanluminaria.com/issues/42 | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | aperta |
 | 43 | https://github.com/ilum75IDB/ivanluminaria.com/issues/43 | mysqldump vs mysqlpump vs mydumper: il backup che non ti fa dormire la notte | aperta |
 | 44 | https://github.com/ilum75IDB/ivanluminaria.com/issues/44 | InnoDB buffer pool: il parametro che cambia tutto e che nessuno dimensiona | aperta |
 | 45 | https://github.com/ilum75IDB/ivanluminaria.com/issues/45 | Replica MySQL: quando lo slave resta indietro e nessuno se ne accorge | aperta |
@@ -77,3 +76,4 @@ tool `WebFetch`.
 | 47 | https://github.com/ilum75IDB/ivanluminaria.com/issues/47 | VACUUM e autovacuum: perche PostgreSQL ha bisogno che qualcuno pulisca | 2026-03-16 |
 | 57 | https://github.com/ilum75IDB/ivanluminaria.com/issues/57 | Bug: hero image in homepage troncate invece di ridimensionate (Recenti e sezioni categoria) | 2026-03-18 |
 | 58 | https://github.com/ilum75IDB/ivanluminaria.com/issues/58 | Bug: max-width 100% rende immagini troppo grandi su monitor 27 pollici | 2026-03-18 |
+| 42 | https://github.com/ilum75IDB/ivanluminaria.com/issues/42 | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | 2026-03-18 |
