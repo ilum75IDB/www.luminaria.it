@@ -191,3 +191,17 @@ E di agire di conseguenza.
 Io nel frattempo domattina mi alzo alle 6, vado a correre, e alle 7:45 sono operativo.\
 Con il sorriso. Senza traffico. Senza stress.\
 E con la testa già sul primo problema da risolvere.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[Smart Working](/it/glossary/smart-working/)** — Modello di lavoro flessibile che combina lavoro da remoto e presenza in ufficio, basato su obiettivi misurabili invece che su orari e presenza fisica.
+
+**[Pendolarismo](/it/glossary/pendolarismo/)** — Spostamento quotidiano casa-lavoro e ritorno, che nelle grandi città può assorbire 2-4 ore al giorno e centinaia di euro al mese.
+
+**[Presenteismo](/it/glossary/presenteismo/)** — Cultura organizzativa che equipara la presenza fisica in ufficio alla produttività, indipendentemente dai risultati effettivamente prodotti.
+
+**[KPI](/it/glossary/kpi/)** — Key Performance Indicator — metrica misurabile che valuta l'efficacia di un'attività rispetto a un obiettivo definito, usata per misurare risultati concreti invece di ore di presenza.
+
+**[Hot Desk](/it/glossary/hot-desk/)** — Modello di organizzazione degli spazi ufficio in cui le postazioni non sono assegnate: chi viene in ufficio occupa una scrivania libera.

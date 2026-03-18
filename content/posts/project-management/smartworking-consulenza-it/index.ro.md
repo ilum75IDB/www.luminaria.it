@@ -191,3 +191,17 @@ Nu e nevoie de revoluții. E nevoie de curajul de a privi acele cifre.\
 Eu, între timp, mâine dimineață mă trezesc la 6, merg la alergat, și la 7:45 sunt operațional.\
 Cu zâmbetul pe buze. Fără trafic. Fără stres.\
 Și cu mintea deja la prima problemă de rezolvat.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[Smart Working](/ro/glossary/smart-working/)** — Model de lucru flexibil care combină munca la distanță și prezența la birou, bazat pe obiective măsurabile în loc de program și prezență fizică.
+
+**[Navetism](/ro/glossary/pendolarismo/)** — Deplasarea zilnică casă-serviciu și retur, care în marile orașe poate absorbi 2-4 ore pe zi și sute de euro pe lună.
+
+**[Presenteism](/ro/glossary/presenteismo/)** — Cultură organizațională care echivalează prezența fizică la birou cu productivitatea, indiferent de rezultatele efectiv produse.
+
+**[KPI](/ro/glossary/kpi/)** — Key Performance Indicator — metrică măsurabilă care evaluează eficacitatea unei activități față de un obiectiv definit, folosită pentru a măsura rezultate concrete în loc de ore de prezență.
+
+**[Hot Desk](/ro/glossary/hot-desk/)** — Model de organizare a spațiilor de birou în care posturile nu sunt atribuite: cine vine la birou ocupă un birou liber.

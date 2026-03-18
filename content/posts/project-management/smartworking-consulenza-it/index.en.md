@@ -191,3 +191,17 @@ And to act accordingly.
 Meanwhile, tomorrow morning I'll wake up at 6, go for a run, and by 7:45 I'll be operational.\
 With a smile. No traffic. No stress.\
 And my mind already on the first problem to solve.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[Smart Working](/en/glossary/smart-working/)** — Flexible work model combining remote work and office presence, based on measurable objectives instead of schedules and physical presence.
+
+**[Commuting](/en/glossary/pendolarismo/)** — Daily home-to-work travel and back, which in large cities can absorb 2-4 hours per day and hundreds of euros per month in direct costs.
+
+**[Presenteeism](/en/glossary/presenteismo/)** — Organizational culture that equates physical office presence with productivity, regardless of results actually produced.
+
+**[KPI](/en/glossary/kpi/)** — Key Performance Indicator — measurable metric that evaluates the effectiveness of an activity against a defined objective, used to measure concrete results instead of hours of presence.
+
+**[Hot Desk](/en/glossary/hot-desk/)** — Office space model where workstations are unassigned: whoever comes to the office takes an available desk.
