@@ -45,9 +45,7 @@ tool `WebFetch`.
 
 ## Issue Aperte — Bug
 
-| #  | Issue | Titolo | Stato |
-|----|-------|--------|-------|
-| 59 | https://github.com/ilum75IDB/ivanluminaria.com/issues/59 | Grid images in homepage croppate su desktop | aperta |
+*Nessuna issue aperta.*
 
 ## Issue Chiuse
 
@@ -78,3 +76,4 @@ tool `WebFetch`.
 | 58 | https://github.com/ilum75IDB/ivanluminaria.com/issues/58 | Bug: max-width 100% rende immagini troppo grandi su monitor 27 pollici | 2026-03-18 |
 | 42 | https://github.com/ilum75IDB/ivanluminaria.com/issues/42 | Binary log in MySQL: cosa sono, come gestirli e quando puoi cancellarli | 2026-03-18 |
 | 56 | https://github.com/ilum75IDB/ivanluminaria.com/issues/56 | MySQL multi-istanza: un ticket, un CSV e il muro di secure-file-priv | 2026-03-18 |
+| 59 | https://github.com/ilum75IDB/ivanluminaria.com/issues/59 | Grid images in homepage croppate su desktop | 2026-03-18 |
