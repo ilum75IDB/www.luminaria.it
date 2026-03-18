@@ -164,3 +164,19 @@ No cuesta nada. No necesita aprobación. No requiere presupuesto.\
 Solo requiere la capacidad de contenerte un segundo antes de decir "no" — y sustituirlo por "sí, y...".
 
 El resultado podría sorprenderte.
+
+------------------------------------------------------------------------
+
+## Glosario
+
+**[Yes-And](/es/glossary/yes-and/)** — Técnica de comunicación nacida en el teatro de improvisación que sustituye el "No, pero..." por "Sí, y...", transformando las discusiones en construcción colaborativa.
+
+**[Stakeholder](/es/glossary/stakeholder/)** — Persona o grupo con un interés directo en el resultado de un proyecto: cliente, usuario final, sponsor, equipo técnico o cualquier parte afectada por las decisiones del proyecto.
+
+**[Scope](/es/glossary/scope/)** — Perímetro de un proyecto que define qué está incluido y qué excluido: funcionalidades, entregables, restricciones y límites acordados con los stakeholders.
+
+**[Lift-and-Shift](/es/glossary/lift-and-shift/)** — Estrategia de migración que traslada un sistema de un entorno a otro sin modificar su arquitectura, código o configuración.
+
+**[Timeboxing](/es/glossary/timeboxing/)** — Técnica de gestión del tiempo que asigna un intervalo fijo y no negociable a una actividad, forzando la conclusión dentro del límite establecido.
+
+El resultado podría sorprenderte.

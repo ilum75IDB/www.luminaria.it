@@ -164,3 +164,19 @@ Nu costă nimic. Nu are nevoie de aprobare. Nu necesită buget.\
 Are nevoie doar de capacitatea de a te abține o secundă înainte de a spune "nu" — și de a-l înlocui cu "da, și...".
 
 Rezultatul te-ar putea surprinde.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[Yes-And](/ro/glossary/yes-and/)** — Tehnică de comunicare născută în teatrul de improvizație care înlocuiește "Nu, dar..." cu "Da, și...", transformând discuțiile în construcție colaborativă.
+
+**[Stakeholder](/ro/glossary/stakeholder/)** — Persoană sau grup cu un interes direct în rezultatul unui proiect: client, utilizator final, sponsor, echipă tehnică sau orice parte afectată de deciziile proiectului.
+
+**[Scope](/ro/glossary/scope/)** — Perimetrul unui proiect care definește ce este inclus și ce este exclus: funcționalități, livrabile, constrângeri și limite convenite cu stakeholderii.
+
+**[Lift-and-Shift](/ro/glossary/lift-and-shift/)** — Strategie de migrare care mută un sistem dintr-un mediu în altul fără a-i modifica arhitectura, codul sau configurația.
+
+**[Timeboxing](/ro/glossary/timeboxing/)** — Tehnică de gestionare a timpului care atribuie un interval fix și nenegociabil unei activități, forțând încheierea în limita stabilită.
+
+Rezultatul te-ar putea surprinde.
