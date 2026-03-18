@@ -13,7 +13,7 @@ Ticket-ul spunea: „Avem nevoie de un export CSV din tabelul ordini al aplicaț
 
 Era 11 dimineața. Trei ore pentru un SELECT cu INTO OUTFILE — treabă de cinci minute, mă gândeam. Apoi am deschis VPN-ul, m-am conectat la server și am înțeles că cinci minute n-o să fie de ajuns.
 
-Serverul era o mașină CentOS 7 cu patru instanțe MySQL. Patru. Pe același host, cu patru servicii systemd diferite, patru porturi diferite, patru socket-uri Unix diferite, patru directoare de date diferite. Un setup pe care cineva îl pusese în picioare cu ani în urmă — probabil ca să economisească un al doilea server — și pe care de atunci nimeni nu-l mai atinsese și nici nu-l documentase.
+Serverul era o mașină CentOS 7 cu patru instanțe MySQL. Patru. Pe același host, cu patru servicii {{< glossary term="systemd" >}}systemd{{< /glossary >}} diferite, patru porturi diferite, patru socket-uri Unix diferite, patru directoare de date diferite. Un setup pe care cineva îl pusese în picioare cu ani în urmă — probabil ca să economisească un al doilea server — și pe care de atunci nimeni nu-l mai atinsese și nici nu-l documentase.
 
 Prima problemă nu era query-ul. Prima problemă era: la care dintre cele patru instanțe trebuie să mă conectez?
 
@@ -68,7 +68,7 @@ mysql --socket=/var/run/mysqld/mysqld-legacy.sock -u root -p -e "SHOW DATABASES;
 
 Baza de date `gestionale_prod` era pe a doua instanță — cea de pe portul 3307 cu socket-ul `/var/run/mysqld/mysqld-app2.sock`.
 
-Un detaliu care pare banal dar care într-un mediu multi-instanță face diferența: când te conectezi la MySQL specificând doar `-h localhost`, clientul nu folosește TCP. Folosește socket-ul Unix implicit, care aproape întotdeauna e cel al instanței primare de pe portul 3306. Dacă baza de date pe care o cauți e pe altă instanță, te conectezi la cea greșită fără să-ți dai seama.
+Un detaliu care pare banal dar care într-un mediu multi-instanță face diferența: când te conectezi la MySQL specificând doar `-h localhost`, clientul nu folosește TCP. Folosește {{< glossary term="unix-socket" >}}socket-ul Unix{{< /glossary >}} implicit, care aproape întotdeauna e cel al instanței primare de pe portul 3306. Dacă baza de date pe care o cauți e pe altă instanță, te conectezi la cea greșită fără să-ți dai seama.
 
 ---
 
@@ -122,7 +122,7 @@ WHERE o.data_ordine >= '2025-07-01'
 ORDER BY o.data_ordine;
 ```
 
-Primul instinct a fost să folosesc `INTO OUTFILE`, metoda nativă a MySQL-ului pentru a scrie rezultate în fișier:
+Primul instinct a fost să folosesc {{< glossary term="into-outfile" >}}`INTO OUTFILE`{{< /glossary >}}, metoda nativă a MySQL-ului pentru a scrie rezultate în fișier:
 
 ```sql
 SELECT o.id_ordine, o.data_ordine, c.ragione_sociale, o.importo_totale
@@ -147,7 +147,7 @@ Iată zidul.
 
 ---
 
-## secure-file-priv: directiva care blochează totul (și face bine)
+## {{< glossary term="secure-file-priv" >}}secure-file-priv{{< /glossary >}}: directiva care blochează totul (și face bine)
 
 Variabila `secure_file_priv` este modul în care MySQL limitează operațiunile de citire și scriere pe fișiere. Controlează unde `LOAD DATA INFILE`, `SELECT INTO OUTFILE` și funcția `LOAD_FILE()` pot opera.
 
@@ -239,7 +239,7 @@ Fără `secure_file_priv`, un utilizator MySQL cu privilegiul `FILE` poate:
 - Citi orice fișier accesibil utilizatorului de sistem `mysql` — inclusiv `/etc/passwd`, fișiere de configurare, chei SSH dacă permisiunile nu sunt blindate
 - Scrie fișiere oriunde utilizatorul `mysql` are permisiuni de scriere — inclusiv în webroot-ul unui eventual Apache sau Nginx de pe același server
 
-Într-un context de SQL injection, privilegiul `FILE` combinat cu un `secure_file_priv` gol e o ușă deschisă. Atacatorul poate citi fișiere de sistem, scrie web shell-uri, face escaladare de privilegii. Nu e teorie — este unul dintre vectorii de atac cei mai documentați în testele de penetrare pe aplicații web cu MySQL în spate.
+Într-un context de {{< glossary term="sql-injection" >}}SQL injection{{< /glossary >}}, privilegiul `FILE` combinat cu un `secure_file_priv` gol e o ușă deschisă. Atacatorul poate citi fișiere de sistem, scrie web shell-uri, face escaladare de privilegii. Nu e teorie — este unul dintre vectorii de atac cei mai documentați în testele de penetrare pe aplicații web cu MySQL în spate.
 
 Regula e simplă: `secure_file_priv` se configurează cu o cale specifică, se creează directoarele necesare pentru fiecare instanță în momentul setup-ului și se lasă acolo. Dacă trebuie să faci exporturi ocazionale, clientul mysql din shell face aceeași treabă fără să atingi configurația de securitate.
 
@@ -256,3 +256,17 @@ Al doilea: **secure-file-priv nu e un obstacol, e o protecție**. Când te bloch
 Al treilea: **clientul mysql din linia de comandă e mai puternic decât îi recunosc majoritatea DBA-ilor**. Cu `-B`, `-N`, `-e` și o pipe spre `sed` sau `awk`, poți face exporturi, transformări și automatizări fără să atingi vreodată `INTO OUTFILE`. E mai puțin elegant, poate. Dar funcționează mereu, nu necesită permisiuni speciale și nu depinde de faptul că cineva a creat directorul potrivit cu șase luni înainte.
 
 CSV-ul a ajuns la 11:45. Solicitantul n-a aflat niciodată că în spatele a cinci coloane și 12.400 de rânduri se ascundeau patruzeci și cinci de minute de arheologie de sistem. Dar așa funcționează ticket-urile: cine le deschide vede rezultatul, cine le rezolvă vede drumul.
+
+------------------------------------------------------------------------
+
+## Glosar
+
+**[secure-file-priv](/ro/glossary/secure-file-priv/)** — Directivă de securitate MySQL care limitează directoarele în care serverul poate citi și scrie fișiere prin `INTO OUTFILE`, `LOAD DATA INFILE` și `LOAD_FILE()`.
+
+**[Unix Socket](/ro/glossary/unix-socket/)** — Mecanism de comunicare locală între procese pe sisteme Linux, folosit de MySQL ca metodă de conectare implicită la `localhost`.
+
+**[INTO OUTFILE](/ro/glossary/into-outfile/)** — Clauză SQL MySQL pentru exportul rezultatelor interogărilor direct într-un fișier pe filesystem-ul serverului. Supusă restricțiilor `secure-file-priv`.
+
+**[systemd](/ro/glossary/systemd/)** — Manager de servicii pe Linux modern, folosit pentru gestionarea instanțelor multiple MySQL pe același server prin unit file separate.
+
+**[SQL Injection](/ro/glossary/sql-injection/)** — Tehnică de atac care inserează cod SQL malițios în input-urile unei aplicații. Directiva `secure-file-priv` contribuie la mitigarea impactului acesteia.

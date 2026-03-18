@@ -13,7 +13,7 @@ Il ticket diceva: "Serve un export CSV dalla tabella ordini del gestionale. Entr
 
 Erano le 11. Tre ore per una SELECT con INTO OUTFILE — roba da cinque minuti, pensavo. Poi ho aperto la VPN, mi sono collegato al server e ho capito che cinque minuti non sarebbero bastati.
 
-Il server era una macchina CentOS 7 con quattro istanze MySQL. Quattro. Sullo stesso host, con quattro servizi systemd diversi, quattro porte diverse, quattro socket Unix diverse, quattro directory dati diverse. Un setup che qualcuno aveva messo in piedi anni prima — probabilmente per risparmiare su un secondo server — e che da allora nessuno aveva più toccato né documentato.
+Il server era una macchina CentOS 7 con quattro istanze MySQL. Quattro. Sullo stesso host, con quattro servizi {{< glossary term="systemd" >}}systemd{{< /glossary >}} diversi, quattro porte diverse, quattro socket Unix diverse, quattro directory dati diverse. Un setup che qualcuno aveva messo in piedi anni prima — probabilmente per risparmiare su un secondo server — e che da allora nessuno aveva più toccato né documentato.
 
 Il primo problema non era la query. Il primo problema era: a quale delle quattro istanze devo collegarmi?
 
@@ -68,7 +68,7 @@ mysql --socket=/var/run/mysqld/mysqld-legacy.sock -u root -p -e "SHOW DATABASES;
 
 Il database `gestionale_prod` era sulla seconda istanza — quella sulla porta 3307 con socket `/var/run/mysqld/mysqld-app2.sock`.
 
-Un dettaglio che sembra banale ma che in un ambiente multi-istanza fa la differenza: quando ti colleghi a MySQL specificando solo `-h localhost`, il client non usa TCP. Usa il socket Unix di default, che quasi sempre è quello dell'istanza primaria sulla porta 3306. Se il database che cerchi sta su un'altra istanza, ti colleghi a quella sbagliata senza nemmeno accorgertene.
+Un dettaglio che sembra banale ma che in un ambiente multi-istanza fa la differenza: quando ti colleghi a MySQL specificando solo `-h localhost`, il client non usa TCP. Usa il {{< glossary term="unix-socket" >}}socket Unix{{< /glossary >}} di default, che quasi sempre è quello dell'istanza primaria sulla porta 3306. Se il database che cerchi sta su un'altra istanza, ti colleghi a quella sbagliata senza nemmeno accorgertene.
 
 ---
 
@@ -122,7 +122,7 @@ WHERE o.data_ordine >= '2025-07-01'
 ORDER BY o.data_ordine;
 ```
 
-Il primo istinto è stato usare `INTO OUTFILE`, il modo nativo di MySQL per scrivere risultati su file:
+Il primo istinto è stato usare {{< glossary term="into-outfile" >}}`INTO OUTFILE`{{< /glossary >}}, il modo nativo di MySQL per scrivere risultati su file:
 
 ```sql
 SELECT o.id_ordine, o.data_ordine, c.ragione_sociale, o.importo_totale
@@ -147,7 +147,7 @@ Ecco il muro.
 
 ---
 
-## secure-file-priv: la direttiva che blocca tutto (e fa bene)
+## {{< glossary term="secure-file-priv" >}}secure-file-priv{{< /glossary >}}: la direttiva che blocca tutto (e fa bene)
 
 La variabile `secure_file_priv` è il modo in cui MySQL limita le operazioni di lettura e scrittura su file. Controlla dove `LOAD DATA INFILE`, `SELECT INTO OUTFILE` e la funzione `LOAD_FILE()` possono operare.
 
@@ -239,7 +239,7 @@ Senza `secure_file_priv`, un utente MySQL con il privilegio `FILE` può:
 - Leggere qualsiasi file leggibile dall'utente di sistema `mysql` — inclusi `/etc/passwd`, file di configurazione, chiavi SSH se i permessi non sono blindati
 - Scrivere file ovunque l'utente `mysql` abbia permessi di scrittura — inclusa la webroot di un eventuale Apache o Nginx sullo stesso server
 
-In un contesto di SQL injection, il privilegio `FILE` combinato con un `secure_file_priv` vuoto è una porta aperta. L'attaccante può leggere file di sistema, scrivere web shell, fare escalation. Non è teoria — è uno dei vettori di attacco più documentati nelle penetration test su applicazioni web con MySQL dietro.
+In un contesto di {{< glossary term="sql-injection" >}}SQL injection{{< /glossary >}}, il privilegio `FILE` combinato con un `secure_file_priv` vuoto è una porta aperta. L'attaccante può leggere file di sistema, scrivere web shell, fare escalation. Non è teoria — è uno dei vettori di attacco più documentati nelle penetration test su applicazioni web con MySQL dietro.
 
 La regola è semplice: `secure_file_priv` si configura con un percorso specifico, si creano le directory necessarie per ogni istanza al momento del setup, e si lasciano lì. Se serve fare export occasionali, il client mysql da shell fa lo stesso lavoro senza toccare la configurazione di sicurezza.
 
@@ -256,3 +256,17 @@ La seconda: **secure-file-priv non è un ostacolo, è una protezione**. Quando t
 La terza: **il client mysql da riga di comando è più potente di quanto la maggior parte dei DBA gli riconosca**. Con `-B`, `-N`, `-e` e una pipe verso `sed` o `awk`, puoi fare export, trasformazioni e automazioni senza mai toccare `INTO OUTFILE`. È meno elegante, forse. Ma funziona sempre, non richiede permessi speciali e non ha bisogno che qualcuno abbia creato la directory giusta sei mesi prima.
 
 Il CSV è arrivato alle 11:45. Il richiedente non ha mai saputo che dietro cinque colonne e 12.400 righe c'erano quarantacinque minuti di archeologia sistemistica. Ma è così che funzionano i ticket: chi li apre vede il risultato, chi li risolve vede il percorso.
+
+------------------------------------------------------------------------
+
+## Glossario
+
+**[secure-file-priv](/it/glossary/secure-file-priv/)** — Direttiva di sicurezza MySQL che limita le directory in cui il server può leggere e scrivere file tramite `INTO OUTFILE`, `LOAD DATA INFILE` e `LOAD_FILE()`.
+
+**[Unix Socket](/it/glossary/unix-socket/)** — Meccanismo di comunicazione locale tra processi su sistemi Linux, usato da MySQL come metodo di connessione predefinito quando ci si collega a `localhost`.
+
+**[INTO OUTFILE](/it/glossary/into-outfile/)** — Clausola SQL di MySQL per esportare il risultato di una query direttamente in un file sul filesystem del server. Soggetta alle restrizioni di `secure-file-priv`.
+
+**[systemd](/it/glossary/systemd/)** — Gestore dei servizi su Linux moderno, usato per gestire istanze multiple di MySQL sullo stesso server tramite unit file separati.
+
+**[SQL Injection](/it/glossary/sql-injection/)** — Tecnica di attacco che inserisce codice SQL malevolo negli input di un'applicazione. La direttiva `secure-file-priv` contribuisce a mitigarne l'impatto.

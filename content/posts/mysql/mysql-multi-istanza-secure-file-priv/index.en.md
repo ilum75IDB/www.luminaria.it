@@ -13,7 +13,7 @@ The ticket said: "We need a CSV export from the orders table in the ERP database
 
 It was 11 AM. Three hours for a SELECT with INTO OUTFILE — a five-minute job, I thought. Then I opened the VPN, connected to the server and realized five minutes were not going to cut it.
 
-The server was a CentOS 7 box running four MySQL instances. Four. On the same host, with four different systemd services, four different ports, four different Unix sockets, four different data directories. A setup someone had put together years earlier — probably to save on a second server — and that no one had touched or documented since.
+The server was a CentOS 7 box running four MySQL instances. Four. On the same host, with four different {{< glossary term="systemd" >}}systemd{{< /glossary >}} services, four different ports, four different Unix sockets, four different data directories. A setup someone had put together years earlier — probably to save on a second server — and that no one had touched or documented since.
 
 The first problem was not the query. The first problem was: which of the four instances do I need to connect to?
 
@@ -68,7 +68,7 @@ mysql --socket=/var/run/mysqld/mysqld-legacy.sock -u root -p -e "SHOW DATABASES;
 
 The `gestionale_prod` database was on the second instance — the one on port 3307 with socket `/var/run/mysqld/mysqld-app2.sock`.
 
-One detail that seems trivial but makes all the difference in a multi-instance environment: when you connect to MySQL specifying only `-h localhost`, the client does not use TCP. It uses the default Unix socket, which almost always belongs to the primary instance on port 3306. If the database you are looking for lives on a different instance, you connect to the wrong one without even realizing it.
+One detail that seems trivial but makes all the difference in a multi-instance environment: when you connect to MySQL specifying only `-h localhost`, the client does not use TCP. It uses the default {{< glossary term="unix-socket" >}}Unix socket{{< /glossary >}}, which almost always belongs to the primary instance on port 3306. If the database you are looking for lives on a different instance, you connect to the wrong one without even realizing it.
 
 ---
 
@@ -122,7 +122,7 @@ WHERE o.data_ordine >= '2025-07-01'
 ORDER BY o.data_ordine;
 ```
 
-My first instinct was to use `INTO OUTFILE`, MySQL's native way of writing results to a file:
+My first instinct was to use {{< glossary term="into-outfile" >}}`INTO OUTFILE`{{< /glossary >}}, MySQL's native way of writing results to a file:
 
 ```sql
 SELECT o.id_ordine, o.data_ordine, c.ragione_sociale, o.importo_totale
@@ -147,7 +147,7 @@ There it was. The wall.
 
 ---
 
-## secure-file-priv: The Directive That Blocks Everything (And Rightly So)
+## {{< glossary term="secure-file-priv" >}}secure-file-priv{{< /glossary >}}: The Directive That Blocks Everything (And Rightly So)
 
 The `secure_file_priv` variable is how MySQL restricts file read and write operations. It controls where `LOAD DATA INFILE`, `SELECT INTO OUTFILE` and the `LOAD_FILE()` function are allowed to operate.
 
@@ -239,7 +239,7 @@ Without `secure_file_priv`, a MySQL user with the `FILE` privilege can:
 - Read any file readable by the `mysql` system user — including `/etc/passwd`, configuration files, SSH keys if permissions are not locked down
 - Write files anywhere the `mysql` user has write access — including the webroot of an Apache or Nginx running on the same server
 
-In a SQL injection scenario, the `FILE` privilege combined with an empty `secure_file_priv` is an open door. The attacker can read system files, write web shells, escalate privileges. This is not theory — it is one of the most well-documented attack vectors in penetration tests against web applications backed by MySQL.
+In a {{< glossary term="sql-injection" >}}SQL injection{{< /glossary >}} scenario, the `FILE` privilege combined with an empty `secure_file_priv` is an open door. The attacker can read system files, write web shells, escalate privileges. This is not theory — it is one of the most well-documented attack vectors in penetration tests against web applications backed by MySQL.
 
 The rule is simple: configure `secure_file_priv` with a specific path, create the necessary directories for each instance at setup time, and leave them there. If you need to do occasional exports, the mysql command-line client does the same job without touching the security configuration.
 
@@ -256,3 +256,17 @@ The second: **secure-file-priv is not an obstacle, it is a safeguard**. When it 
 The third: **the mysql command-line client is more powerful than most DBAs give it credit for**. With `-B`, `-N`, `-e` and a pipe to `sed` or `awk`, you can do exports, transformations and automations without ever touching `INTO OUTFILE`. Less elegant, maybe. But it always works, requires no special permissions and does not need someone to have created the right directory six months earlier.
 
 The CSV arrived at 11:45. The requester never knew that behind five columns and 12,400 rows there were forty-five minutes of system archaeology. But that is how tickets work: the person who opens them sees the result, the person who resolves them sees the journey.
+
+------------------------------------------------------------------------
+
+## Glossary
+
+**[secure-file-priv](/en/glossary/secure-file-priv/)** — MySQL security directive that limits the directories where the server can read and write files via `INTO OUTFILE`, `LOAD DATA INFILE` and `LOAD_FILE()`.
+
+**[Unix Socket](/en/glossary/unix-socket/)** — Local inter-process communication mechanism on Linux systems, used by MySQL as the default connection method when connecting to `localhost`.
+
+**[INTO OUTFILE](/en/glossary/into-outfile/)** — MySQL SQL clause for exporting query results directly to a file on the server's filesystem. Subject to `secure-file-priv` restrictions.
+
+**[systemd](/en/glossary/systemd/)** — Modern Linux service manager, used to manage multiple MySQL instances on the same server through separate unit files.
+
+**[SQL Injection](/en/glossary/sql-injection/)** — Attack technique that inserts malicious SQL code into application inputs. The `secure-file-priv` directive helps mitigate its impact.
