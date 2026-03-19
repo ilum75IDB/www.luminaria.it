@@ -58,8 +58,8 @@ L'immagine deve sembrare una singola illustrazione coerente, non un collage.
 - uomo sui 45-50 anni, corporatura media
 - capelli mossi, leggermente spettinati e voluminosi sulla parte alta, fondo scuro con evidenti sfumature brizzolate (sale e pepe)
 - vistosi baffi a manubrio (handlebar mustache), scuri, ben curvati verso l'alto alle punte — questo è il tratto più riconoscibile e distintivo
-- occhiali rettangolari con montatura sottile metallica
 - viso rasato, senza barba né pizzetto (al massimo un accenno di ricrescita di un giorno)
+- senza occhiali
 - espressione intelligente, sicura, con un accenno di ironia
 - abbigliamento: giacca elegante scura, stile professionale anni '50
 
