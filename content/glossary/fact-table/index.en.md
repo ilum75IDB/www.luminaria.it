@@ -5,6 +5,7 @@ translationKey: "glossary_fact_table"
 aka: "Tabella dei fatti"
 articles:
   - "/posts/data-warehouse/scd-tipo-2"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 A **fact table** is the central table of a star schema in a data warehouse. It contains numeric measures — amounts, quantities, counts, durations — and the foreign keys that connect it to dimension tables.

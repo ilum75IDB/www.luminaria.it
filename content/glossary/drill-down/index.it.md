@@ -5,6 +5,7 @@ translationKey: "glossary_drill_down"
 aka: "Navigazione gerarchica, Dettaglio progressivo"
 articles:
   - "/posts/data-warehouse/ragged-hierarchies"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 Il **drill-down** è l'operazione di navigazione nei report che permette di passare da un livello aggregato a un livello di maggiore dettaglio, scendendo lungo una gerarchia.

@@ -5,6 +5,7 @@ translationKey: "glossary_star_schema"
 aka: "Schema a stella"
 articles:
   - "/posts/data-warehouse/scd-tipo-2"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 Lo **star schema** (schema a stella) è il modello di dati più usato nel data warehouse. Prende il nome dalla sua forma: una tabella centrale dei fatti (fact table) collegata a più tabelle dimensionali che le stanno intorno, come i raggi di una stella.

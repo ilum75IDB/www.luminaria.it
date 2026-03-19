@@ -6,6 +6,7 @@ aka: "Extract, Transform, Load"
 articles:
   - "/posts/data-warehouse/scd-tipo-2"
   - "/posts/data-warehouse/ragged-hierarchies"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 **ETL** (Extract, Transform, Load) este procesul fundamental prin care datele sunt mutate din sistemele sursa (baze de date operationale, fisiere, API-uri) in data warehouse.

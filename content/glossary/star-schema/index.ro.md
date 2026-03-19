@@ -5,6 +5,7 @@ translationKey: "glossary_star_schema"
 aka: "Schemă stea"
 articles:
   - "/posts/data-warehouse/scd-tipo-2"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 **Star schema** (schema stea) este cel mai utilizat model de date în data warehouse. Își primește numele de la forma sa: o tabelă centrală de fapte (fact table) conectată la mai multe tabele dimensionale care o înconjoară, ca razele unei stele.

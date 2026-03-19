@@ -5,6 +5,7 @@ translationKey: "glossary_drill_down"
 aka: "Navigare ierarhică, Detaliu progresiv"
 articles:
   - "/posts/data-warehouse/ragged-hierarchies"
+  - "/posts/data-warehouse/fatto-grana-sbagliata"
 ---
 
 **Drill-down-ul** este operațiunea de navigare în rapoarte care permite trecerea de la un nivel agregat la un nivel de detaliu mai mare, coborând de-a lungul unei ierarhii.
