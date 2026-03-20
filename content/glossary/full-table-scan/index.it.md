@@ -5,6 +5,7 @@ translationKey: "glossary_full_table_scan"
 aka: "TABLE ACCESS FULL"
 articles:
   - "/posts/oracle/oracle-awr-ash"
+  - "/posts/data-warehouse/partitioning-dwh"
 ---
 
 **Full Table Scan** (o TABLE ACCESS FULL) è un'operazione in cui il database legge tutti i blocchi dati di una tabella, dall'inizio alla fine, senza passare per alcun indice.

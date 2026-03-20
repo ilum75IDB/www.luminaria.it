@@ -4,6 +4,7 @@ description: "Mecanism automat Oracle care exclude partițiile nerelevante în t
 translationKey: "glossary_partition-pruning"
 articles:
   - "/posts/oracle/oracle-partitioning"
+  - "/posts/data-warehouse/partitioning-dwh"
 ---
 
 **Partition Pruning** este mecanismul prin care Oracle, în timpul execuției unei interogări pe o tabelă partițională, identifică și exclude automat partițiile care nu pot conține date relevante pentru predicatul interogării.

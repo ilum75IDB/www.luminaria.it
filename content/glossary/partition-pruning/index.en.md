@@ -4,6 +4,7 @@ description: "Automatic Oracle mechanism that excludes irrelevant partitions dur
 translationKey: "glossary_partition-pruning"
 articles:
   - "/posts/oracle/oracle-partitioning"
+  - "/posts/data-warehouse/partitioning-dwh"
 ---
 
 **Partition Pruning** is the mechanism by which Oracle, during query execution on a partitioned table, automatically identifies and excludes partitions that cannot contain data relevant to the query predicate.

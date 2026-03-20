@@ -4,6 +4,7 @@ description: "Meccanismo automatico di Oracle che esclude le partizioni non rile
 translationKey: "glossary_partition-pruning"
 articles:
   - "/posts/oracle/oracle-partitioning"
+  - "/posts/data-warehouse/partitioning-dwh"
 ---
 
 Il **Partition Pruning** è il meccanismo con cui Oracle, durante l'esecuzione di una query su una tabella partizionata, identifica ed esclude automaticamente le partizioni che non possono contenere dati rilevanti per il predicato della query.
