@@ -1,0 +1,85 @@
+{{/* Google Fonts: preconnect + stylesheet (moved from @import in custom.css for better LCP/FCP) */}}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" />
+
+{{/* JSON-LD Structured Data for articles */}}
+{{ if .IsPage }}
+  {{ if eq .Section "posts" }}
+    {{- $images := .Resources.ByType "image" }}
+    {{- $cover := $images.GetMatch (.Params.cover | default "*cover*") }}
+    {{- $feature := $images.GetMatch (.Params.feature | default "*feature*") | default $cover }}
+    {{- if and (not $feature) .Params.image }}
+      {{- $feature = $images.GetMatch .Params.image }}
+    {{- end }}
+    {{- $desc := .Description | default (.Summary | plainify | truncate 160) }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ .Title | jsonify }},
+      "description": {{ $desc | jsonify }},
+      "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+      "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+      "inLanguage": {{ site.Language.Lang | jsonify }},
+      {{ with $feature }}
+      "image": {
+        "@type": "ImageObject",
+        "url": {{ .Permalink | jsonify }},
+        "width": {{ .Width }},
+        "height": {{ .Height }}
+      },
+      {{ end }}
+      "author": {
+        "@type": "Person",
+        "name": "Ivan Luminaria",
+        "url": "https://ivanluminaria.com",
+        "jobTitle": "DWH Architect, Oracle DBA & Project Manager"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ivan Luminaria",
+        "url": "https://ivanluminaria.com"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ .Permalink | jsonify }}
+      }
+    }
+    </script>
+  {{ end }}
+{{ end }}
+
+{{/* JSON-LD BreadcrumbList */}}
+{{ if and .IsPage (.Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false)) }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": {{ .Site.Title | jsonify }},
+        "item": {{ .Site.BaseURL | jsonify }}
+      }
+      {{ range $i, $ancestor := .Ancestors.Reverse }}
+        {{ if $ancestor.RelPermalink }}
+        ,{
+          "@type": "ListItem",
+          "position": {{ add $i 2 }},
+          "name": {{ $ancestor.Title | jsonify }},
+          "item": {{ $ancestor.Permalink | jsonify }}
+        }
+        {{ end }}
+      {{ end }}
+      ,{
+        "@type": "ListItem",
+        "position": {{ add (len .Ancestors) 2 }},
+        "name": {{ .Title | jsonify }},
+        "item": {{ .Permalink | jsonify }}
+      }
+    ]
+  }
+  </script>
+{{ end }}
