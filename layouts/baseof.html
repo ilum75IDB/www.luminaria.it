@@ -46,13 +46,87 @@
     <!-- GoatCounter -->
     <script data-goatcounter="https://ilum75idb.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HLN4R5N3B"></script>
+
+    <!-- Google Consent Mode v2: default denied -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8HLN4R5N3B');
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'wait_for_update': 500
+      });
+    </script>
+
+    <!-- Google Analytics: load only if consent was previously granted -->
+    <script>
+      (function() {
+        var consent = localStorage.getItem('cookie_consent');
+        if (consent === 'granted') {
+          gtag('consent', 'update', { 'analytics_storage': 'granted' });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HLN4R5N3B';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-8HLN4R5N3B');
+        }
+      })();
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    {{ $lang := site.Language.Lang }}
+    <div id="cookie-consent-banner" class="cookie-banner" style="display:none;">
+      <div class="cookie-banner-inner">
+        <p class="cookie-banner-text">
+          {{ if eq $lang "en" }}
+            This site uses cookies for anonymous analytics via Google Analytics. No data is shared with third parties for advertising.
+          {{ else if eq $lang "es" }}
+            Este sitio utiliza cookies para análisis anónimos a través de Google Analytics. No se comparten datos con terceros para publicidad.
+          {{ else if eq $lang "ro" }}
+            Acest site folosește cookie-uri pentru analize anonime prin Google Analytics. Nu se partajează date cu terți pentru publicitate.
+          {{ else }}
+            Questo sito usa cookie per analisi anonime tramite Google Analytics. Nessun dato viene condiviso con terzi per pubblicità.
+          {{ end }}
+        </p>
+        <div class="cookie-banner-buttons">
+          <button id="cookie-reject" class="cookie-btn cookie-btn-reject">
+            {{ if eq $lang "en" }}Reject{{ else if eq $lang "es" }}Rechazar{{ else if eq $lang "ro" }}Refuză{{ else }}Rifiuta{{ end }}
+          </button>
+          <button id="cookie-accept" class="cookie-btn cookie-btn-accept">
+            {{ if eq $lang "en" }}Accept{{ else if eq $lang "es" }}Aceptar{{ else if eq $lang "ro" }}Acceptă{{ else }}Accetta{{ end }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        var consent = localStorage.getItem('cookie_consent');
+        if (!consent) {
+          document.getElementById('cookie-consent-banner').style.display = 'flex';
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'granted');
+          document.getElementById('cookie-consent-banner').style.display = 'none';
+          // Update consent and load GA
+          gtag('consent', 'update', { 'analytics_storage': 'granted' });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HLN4R5N3B';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-8HLN4R5N3B');
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+          localStorage.setItem('cookie_consent', 'denied');
+          document.getElementById('cookie-consent-banner').style.display = 'none';
+        });
+      })();
     </script>
     <script src="/js/glossary-tooltip.js" defer></script>
   </body>
