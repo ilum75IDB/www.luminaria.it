@@ -622,11 +622,10 @@ a.skip-to-content:focus {
 }
 
 /* Footer full-width: break out of body's max-w-7xl container
-   to align with the fixed navbar (both get px-6 = 1.5rem padding),
-   but constrained to 1600px like the navbar on large screens */
+   to align with the fixed navbar. Same pattern as nav:
+   outer element full-width, inner container capped at 1600px */
 footer {
   width: 100vw !important;
-  max-width: 1600px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -634,6 +633,12 @@ footer {
   padding-right: 1.5rem !important;
   border-top: 1px solid;
   border-color: rgb(229 231 235); /* neutral-200 */
+}
+.footer-inner {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 .dark footer {
   border-color: rgb(var(--color-neutral-700)); /* coerente col tema */
