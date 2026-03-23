@@ -27,118 +27,121 @@ Când am ajuns, planul era deja făcut: lift-and-shift pe AWS. Integratorul prop
 
 ## De ce am spus nu la AWS
 
-Primul lucru pe care l-am cerut a fost raportul de licențe. Oracle 19c Enterprise Edition cu RAC, Data Guard, Partitioning și Advanced Compression.
+Primul lucru pe care l-am cerut a fost raportul de licențe. Oracle 19c Enterprise Edition cu opțiunile RAC, Data Guard, Partitioning și Advanced Compression. Pe hardware on-premises cu un contract de suport direct cu Oracle.
 
-Aici începe distracția.
+Aici lucrurile se complică. Oracle are o politică de licențiere pentru cloud care nu e deloc intuitivă. Pe AWS, fiecare vCPU contează ca jumătate de procesor în scopul licențierii. Două noduri RAC pe EC2 cu, să zicem, 8 vCPU fiecare înseamnă 8 licențe de procesor. Cu Enterprise Edition plus opțiunile active, factura de licențe explodează. Și Oracle, când face audit — iar asta face — nu se uită la ce scrie în contractul providerului cloud. Se uită la ce rulează efectiv pe servere.
 
-Oracle are reguli de licențiere în cloud care nu sunt deloc intuitive. Pe AWS, fiecare vCPU contează ca jumătate de procesor. Două noduri RAC cu câte 8 vCPU = 8 licențe de procesor. Cu Enterprise Edition + opțiuni, costul explodează.
+Pe OCI — Oracle Cloud Infrastructure — situația e diferită. Oracle recunoaște propriile OCPU cu un raport 1:1, și mai ales oferă programul BYOL (Bring Your Own License) care permite reutilizarea licențelor on-premises existente. Clientul plătise deja acele licențe. Mutarea lor pe OCI nu costa nimic în plus. Mutarea pe AWS însemna să le cumpere din nou sau să riște un audit.
 
-Și Oracle, când face audit — pentru că face — nu se uită la contractul AWS. Se uită la ce rulează efectiv.
+Am pregătit un tabel comparativ cu trei scenarii: AWS cu licențe noi, AWS cu riscul de audit, OCI cu BYOL. Cifrele vorbeau de la sine. Managementul și-a schimbat părerea în jumătate de oră.
 
-Pe OCI lucrurile sunt diferite:
-- raport 1:1 pentru OCPU
-- program BYOL (Bring Your Own License)
+## Evaluarea: două săptămâni care valorează șase
 
-Clientul deja plătise licențele. Pe OCI le refolosea gratuit. Pe AWS trebuia să le cumpere din nou sau să riște audit.
+Înainte să atingem ceva, am cerut două săptămâni pentru un assessment complet. Nu e o fază pe care o poți sări. Am învățat asta pe pielea mea într-un proiect anterior, unde am descoperit la jumătatea migrației că baza de date folosea Advanced Queuing cu proceduri PL/SQL care depindeau de o adresă IP hardcodată. Două zile de downtime pentru ceva ce puteam descoperi în cinci minute cu un grep.
 
-Am făcut un tabel cu trei scenarii:
-- AWS cu licențe noi
-- AWS cu risc de audit
-- OCI cu BYOL
+Assessment-ul a acoperit patru zone.
 
-Decizia s-a schimbat în 30 de minute.
+**Funcționalități utilizate.** Am rulat Database Feature Usage Report de la Oracle (`DBMS_FEATURE_USAGE_INTERNAL`) pentru a înțelege care opțiuni Enterprise Edition erau efectiv active. RAC-ul era evident, Data Guard la fel. Dar Partitioning era folosit doar pe trei tabele, iar Advanced Compression fusese activat cu ani în urmă de un consultant și nimeni nu mai știa dacă mai era necesar. Am verificat: tabelele comprimate erau toate în arhiva istorică, lucruri care se citeau o dată pe an pentru auditori. Advanced Compression putea fi dezactivat fără niciun impact.
 
-## Evaluarea: două săptămâni care au salvat luni
+**Dependențe externe.** Baza de date primea date de la patru sisteme sursă prin DB link-uri, două dintre care indicau către baze de date MySQL pe servere din același data center. Existau și apeluri HTTP outbound din proceduri PL/SQL către un API REST intern. Toate trebuiau să continue să funcționeze după migrare, ceea ce însemna VPN site-to-site sau FastConnect între OCI și data center-ul on-premises.
 
-Înainte să atingem ceva, am cerut două săptămâni pentru assessment complet.
+**Rețea și latență.** Am măsurat latența între data center și regiunea OCI cea mai apropiată (Frankfurt). Cu un test susținut pe tnsping, round-trip-ul era de 12 milisecunde. Acceptabil pentru query-uri interactive, dar batch-ul nocturn făcea un join masiv prin DB link cu un MySQL remote — iar acolo, 12 milisecunde înmulțite cu milioane de rânduri însemnau ore în plus de procesare. Soluția a fost simplă: replicarea datelor MySQL într-o staging table pe Oracle înainte de lansarea batch-ului. Un pas în plus, dar batch-ul a trecut de la șase ore la două.
 
-Nu e opțional.
+**Sizing.** Am analizat rapoartele AWR din ultimele patru săptămâni pentru a înțelege profilul real de încărcare. Vârful de CPU era la 35% pe cele două noduri RAC, memoria utilizată nu depășea niciodată 48 GB. Pe OCI am dimensionat două instanțe VM.Standard.E4.Flex cu 16 OCPU și 256 GB RAM fiecare pentru RAC, plus o a treia pentru standby-ul Data Guard. Storage pe Block Volumes cu performance tier echilibrat — 60 IOPS per GB, suficient pentru profilul I/O măsurat.
 
-Am învățat asta pe pielea mea într-un proiect unde am descoperit în mijlocul migrației că baza de date folosea Advanced Queuing cu IP hardcodat. Două zile de downtime pentru ceva ce puteam descoperi în 5 minute.
+## Strategia de migrare: Data Guard, nu Data Pump
 
-Am analizat patru lucruri.
+Când vine vorba de migrare Oracle, opțiunile principale sunt trei: Data Pump (export/import logic), Zero Downtime Migration (ZDM) și Data Guard.
 
-**Funcționalități folosite.**  
-RAC și Data Guard — clar.  
-Partitioning — doar 3 tabele.  
-Advanced Compression — inutil pentru producție.
+Data Pump era exclus. Două terabyte de date cu export logic înseamnă ore de export, ore de transfer, ore de import. Și în tot acest timp baza de date sursă trebuie să rămână oprită, sau te trezești cu date inconsistente. Pentru o companie de producție care lucrează în trei schimburi, oprirea bazei de date o zi întreagă nu era o opțiune.
 
-**Dependențe externe.**  
-DB link-uri către MySQL, API-uri interne — toate trebuiau să continue să funcționeze.
+ZDM este instrumentul pe care Oracle îl propune pentru migrările către OCI. Funcționează, dar adaugă un layer de automatizare peste Data Guard și Data Pump. Pe o infrastructură cu RAC și configurații non-standard — cum ar fi DB link-urile cross-engine — prefer să am control direct.
 
-**Rețea și latență.**  
-12 ms către OCI Frankfurt. OK pentru query-uri.  
-Catastrofă pentru batch-uri cu milioane de rânduri.
+Strategia a fost: configurarea Data Guard între RAC-ul on-premises și o instanță standby pe OCI, lăsăm să se sincronizeze, apoi facem cutover-ul cu un switchover controlat. Downtime estimat: sub o oră. Downtime efectiv: patruzeci și două de minute.
 
-Soluția: staging local.
+### Configurarea Data Guard cross-site
 
-**Sizing.**  
-CPU max 35%, RAM max 48 GB.  
-Configurație OCI: 2 noduri + standby.
+Partea complicată nu a fost Data Guard în sine — ăsta îl configurăm în fiecare săptămână. Partea complicată a fost să-l facă să funcționeze prin rețea. Data Guard are nevoie de un canal de redo transport între primary și standby, iar acel canal trebuie să fie fiabil și cu latență previzibilă.
 
-## Strategia: Data Guard, fără compromisuri
+Am configurat un tunel VPN site-to-site între data center și OCI, cu o bandă dedicată de 500 Mbps. Rata medie de generare a redo-ului era de 15 MB pe minut — confortabil în bugetul de bandă. Dar am vrut să testez cel mai rău caz: în timpul batch-ului nocturn, redo-ul ajungea la 180 MB pe minut. Și ăsta trecea, dar cu un transport lag care urca la 45 de secunde. Acceptabil pentru un Data Guard în modul Maximum Performance.
 
-Data Pump → exclus  
-ZDM → prea abstract pentru acest setup  
+Configurația broker-ului a fost standard:
 
-Data Guard → control total
+    DGMGRL> CREATE CONFIGURATION dg_migration AS
+             PRIMARY DATABASE IS prod_rac
+             CONNECT IDENTIFIER IS prod_rac;
 
-Downtime estimat: < 1 oră  
-Downtime real: 42 minute
+    DGMGRL> ADD DATABASE oci_standby AS
+             CONNECT IDENTIFIER IS oci_standby
+             MAINTAINED AS PHYSICAL;
 
-### Configurarea Data Guard
+    DGMGRL> ENABLE CONFIGURATION;
 
-VPN 500 Mbps  
-Redo peak: 180 MB/min → lag ~45 sec → acceptabil
+Prima sincronizare completă a durat 14 ore — două terabyte printr-un VPN la 500 Mbps dau exact atât. După sincronizarea inițială, Data Guard a menținut standby-ul aliniat cu un apply lag mediu de 3 secunde.
 
-Sincronizare inițială: 14 ore  
-Lag mediu: 3 secunde
+## Cutover-ul: o noapte, un plan, zero surprize
 
-## Cutover: fără improvizații
+Cutover-ul era planificat pentru o sâmbătă seara. Am pregătit un runbook de 47 de pași — da, patruzeci și șapte. Fiecare pas cu timpul estimat, comanda exactă, criteriul de succes și procedura de rollback. Pentru că dacă ceva merge prost la trei dimineața, nu vrei să improvizezi.
 
-Runbook: 47 pași (și da, fiecare contează)
+Secvența critică:
 
-Totul a mers conform planului.
+1. **22:00** — Oprire aplicație. Verificat că toate sesiunile active s-au terminat.
+2. **22:15** — Ultimul check al transport lag-ului: 2 secunde. Apply lag: 0.
+3. **22:20** — Switchover prin Data Guard Broker:
 
-Downtime total: 42 minute.
+        DGMGRL> SWITCHOVER TO oci_standby;
 
-## După migrare: realitatea
+4. **22:22** — Switchover-ul s-a completat în 98 de secunde. Noul primary era pe OCI.
+5. **22:25** — Actualizarea connection string-urilor în connection pool-ul aplicației. SCAN listener-ul pe OCI era deja configurat.
+6. **22:30** — Test de conectivitate: login, query-uri pe tabele critice, insert de test.
+7. **22:45** — Test batch job: execuția unui mini-batch pe un eșantion de date.
+8. **23:00** — Deschidere graduală pentru utilizatorii din schimbul de noapte.
+9. **23:30** — Monitorizare: snapshot-uri AWR la fiecare 15 minute în loc de cele 60 implicite.
 
-Aici începe partea interesantă.
+La miezul nopții și jumătate totul funcționa. Downtime-ul real — din momentul în care ultimul utilizator s-a deconectat până în momentul în care primul s-a reconectat — a fost de 42 de minute.
 
-**Timezone**  
-UTC vs Europe/Rome → date „din viitor”
+## După migrare: lucrurile pe care niciun plan nu le prevede
 
-**TLS**  
-Wallet invalid → ORA-29024
+Prima săptămână după cutover e cea care separă o migrare reușită de una „tehnic reușită, dar toată lumea se plânge”. Au apărut trei lucruri.
 
-**Scheduler**  
-Job-uri decalate → fix manual
+**Timezone-urile.** VM-urile pe OCI foloseau UTC, baza de date on-premises folosea Europe/Rome. Procedurile PL/SQL care calculau date cu `SYSDATE` returnau ore greșite. `ALTER DATABASE SET TIME_ZONE` necesită restart-ul bazei de date și reconstruirea coloanelor `TIMESTAMP WITH LOCAL TIME ZONE`. Am descoperit asta luni dimineață, când responsabilul de logistică m-a sunat spunând că comenzile aveau date „din viitor”. Rezolvat în două ore, dar se putea evita dacă includeam timezone-ul în runbook.
 
-Nimic critic. Dar toate enervante.
+**TLS-ul.** Apelurile HTTP outbound din procedurile PL/SQL foloseau `UTL_HTTP` cu wallet Oracle pentru certificate. Wallet-ul fusese configurat cu certificatele data center-ului. Pe OCI, certificatele CA erau diferite. Procedurile eșuau cu `ORA-29024: Certificate validation failure`. A trebuit să recreez wallet-ul importând noile certificate CA și să-l redistribui.
 
-## Costuri reale
+**Scheduler-ul.** Job-urile Oracle Scheduler (`DBMS_SCHEDULER`) aveau window-uri și schedule-uri bazate pe timezone-ul bazei de date. După fix-ul de timezone, ferestrele de mentenanță s-au realiniat, dar trei job-uri care foloseau `SYSTIMESTAMP` direct în codul PL/SQL au continuat să pornească cu o oră mai devreme timp de o săptămână — până le-am găsit și corectat pe rând.
 
-OCI: ~63k/an  
-On-prem: ~120k/an
+## Costurile reale: dincolo de foaia Excel
 
-Dar:
-- networking mai scump
-- consultanță (da, inclusiv eu)
+La trei luni după migrare, am pregătit un raport de costuri reale pentru management. Comparația cu vechiul hosting a fost instructivă.
+
+| Element | On-premises | OCI |
+|---------|-------------|-----|
+| Compute (RAC 2 noduri + standby) | inclus în contractul de hosting | €4.200/lună |
+| Storage (2 TB + backup) | inclus | €680/lună |
+| Networking (VPN + egress) | €200/lună | €350/lună |
+| Licențiere Oracle | €18.000/an (suport) | €0 (BYOL) |
+| Hosting/colocare | €8.500/lună | €0 |
+| Total anual | ~€120.000 | ~€63.000 |
+
+Economia era acolo, și era semnificativă. Dar cifra care l-a impresionat cel mai mult pe CFO nu era totalul: era costul networking-ului. VPN-ul site-to-site și traficul egress din OCI costau aproape dublu față de înainte. E un rând care în ofertele cloud e întotdeauna subestimat.
+
+Și apoi era costul ascuns: timpul meu. Două luni de consultanță pentru assessment, planificare, migrare și tuning post-migrare. Costul ăla nu apărea în comparația lunară, dar era real.
 
 ## Ce am învățat (din nou)
 
-Licențierea Oracle în cloud = teren minat.
+Fiecare migrare te învață ceva, chiar și când crezi că le-ai văzut pe toate.
 
-Assessment-ul nu e negociabil.
+Licențierea Oracle în cloud e un câmp minat. Nu e suficient să citești documentația: trebuie să vorbești cu Oracle, să obții confirmări scrise și să ții evidența la tot. Un audit post-migrare poate transforma o economie într-o catastrofă.
 
-Data Guard este cea mai curată soluție.
+Assessment-ul nu e opțional. Cele două săptămâni de la început au prevenit cel puțin trei probleme care ar fi necesitat săptămâni de remediere după migrare. Raportul de funcționalități utilizate, harta dependențelor externe, testele de latență — sunt lucruri plicticoase, dar sunt diferența între un cutover de 42 de minute și unul de 42 de ore.
 
-Și… timezone-ul. Pune-l primul pe listă.
+Data Guard cross-site e cea mai curată strategie de migrare pentru Oracle. Îți oferă o plasă de siguranță permanentă: dacă ceva merge prost, faci switchback și ești la punctul de plecare. Cu Data Pump, dacă ceva merge prost la jumătatea importului, o iei de la zero.
+
+Și timezone-ul. Doamne, timezone-ul. Pune-l în capul listei.
 
 ------------------------------------------------------------------------
 
-## Glossary
+## Glosar
 
 **[OCI](/ro/glossary/oci/)** — Oracle Cloud Infrastructure, platforma cloud a Oracle. Pentru bazele de date Oracle oferă avantaje semnificative de licențiere prin programul BYOL și raportul 1:1 pentru OCPU.
 
