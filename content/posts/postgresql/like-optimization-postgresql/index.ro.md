@@ -145,14 +145,49 @@ Precauții:
 
 ------------------------------------------------------------------------
 
-## 📈 Rezultatul așteptat
+## 📈 Rezultatul: planul de execuție înainte și după
 
-După crearea indexului:
+Iată planul de execuție complet al interogării — înainte și după crearea indexului trigram.
 
--   Eliminarea Seq Scan
--   Utilizarea GIN index scan
--   Reducere drastică a I/O
--   Timp de execuție de la secunde → milisecunde
+**Înainte** (fără index trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Seq Scan on payment_report as r
+          Filter: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+**După** (cu index trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Bitmap Heap Scan on payment_report as r
+          Recheck Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+        → Bitmap Index Scan using idx_payment_report_reference_trgm
+            Index Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+Punctul cheie este la pașii 4–5: `Seq Scan` — care citea întreaga tabelă rând cu rând — a fost înlocuit cu un `Bitmap Heap Scan` condus de indexul trigram `idx_payment_report_reference_trgm`. PostgreSQL filtrează acum direct prin index și face recheck doar pe rândurile candidate.
+
+Aceeași interogare, aceleași date, dar un access path complet diferit. De la secunde la milisecunde.
 
 ------------------------------------------------------------------------
 

@@ -146,14 +146,49 @@ Precauzioni:
 
 ------------------------------------------------------------------------
 
-## 📈 Risultato atteso
+## 📈 Risultato: il piano di esecuzione prima e dopo
 
-Dopo l'indice:
+Ecco il piano di esecuzione completo della query — prima e dopo la creazione dell'indice trigram.
 
--   Eliminazione del Seq Scan
--   Utilizzo di GIN index scan
--   Riduzione drastica I/O
--   Tempo query da secondi → millisecondi
+**Prima** (senza indice trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Seq Scan on payment_report as r
+          Filter: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+**Dopo** (con indice trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Bitmap Heap Scan on payment_report as r
+          Recheck Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+        → Bitmap Index Scan using idx_payment_report_reference_trgm
+            Index Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+Il punto chiave è allo step 4–5: il `Seq Scan` — che leggeva l'intera tabella riga per riga — è stato sostituito da un `Bitmap Heap Scan` guidato dall'indice trigram `idx_payment_report_reference_trgm`. PostgreSQL ora filtra direttamente via indice e fa il recheck solo sulle righe candidate.
+
+Stessa query, stesso dato, ma un access path completamente diverso. Da secondi a millisecondi.
 
 ------------------------------------------------------------------------
 

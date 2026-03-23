@@ -145,14 +145,49 @@ Precauciones:
 
 ------------------------------------------------------------------------
 
-## 📈 Resultado esperado
+## 📈 Resultado: el plan de ejecución antes y después
 
-Después del índice:
+Este es el plan de ejecución completo de la query — antes y después de crear el índice trigram.
 
--   Eliminación del Seq Scan
--   Uso de GIN index scan
--   Reducción drástica de I/O
--   Tiempo de query de segundos → milisegundos
+**Antes** (sin índice trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Seq Scan on payment_report as r
+          Filter: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+**Después** (con índice trigram):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Bitmap Heap Scan on payment_report as r
+          Recheck Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+        → Bitmap Index Scan using idx_payment_report_reference_trgm
+            Index Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+El punto clave está en los pasos 4–5: el `Seq Scan` — que leía toda la tabla fila por fila — ha sido reemplazado por un `Bitmap Heap Scan` guiado por el índice trigram `idx_payment_report_reference_trgm`. PostgreSQL ahora filtra directamente a través del índice y solo hace el recheck en las filas candidatas.
+
+Misma query, mismo dato, pero un access path completamente diferente. De segundos a milisegundos.
 
 ------------------------------------------------------------------------
 

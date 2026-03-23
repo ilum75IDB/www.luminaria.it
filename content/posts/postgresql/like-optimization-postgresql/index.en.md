@@ -144,14 +144,49 @@ Precautions:
 
 ------------------------------------------------------------------------
 
-## 📈 Expected result
+## 📈 Result: the execution plan before and after
 
-After the index:
+Here is the full execution plan for the query — before and after creating the trigram index.
 
--   Sequential scan eliminated
--   GIN index scan used
--   Drastic I/O reduction
--   Query time from seconds → milliseconds
+**Before** (without trigram index):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Seq Scan on payment_report as r
+          Filter: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+**After** (with trigram index):
+
+``` text
+Nested Loop Inner Join
+  → Nested Loop Inner Join
+    → Nested Loop Inner Join
+      → Bitmap Heap Scan on payment_report as r
+          Recheck Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+        → Bitmap Index Scan using idx_payment_report_reference_trgm
+            Index Cond: ((reference_code)::text ~~ '%ABC123%'::text)
+      → Index Scan using payment_cart_pkey on payment_cart as c
+          Filter: (service_id = 1001)
+          Index Cond: (id = r.cart_id)
+    → Index Only Scan using payment_cart_pkey on payment_cart as c2
+        Index Cond: (id = c.id)
+  → Index Only Scan using payment_cart_pkey on payment_cart as c3
+      Index Cond: (id = c.id)
+```
+
+The key change is at steps 4–5: the `Seq Scan` — which read the entire table row by row — has been replaced by a `Bitmap Heap Scan` driven by the trigram index `idx_payment_report_reference_trgm`. PostgreSQL now filters directly through the index and only rechecks the candidate rows.
+
+Same query, same data, but a completely different access path. From seconds to milliseconds.
 
 ------------------------------------------------------------------------
 
