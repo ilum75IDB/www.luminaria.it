@@ -41,6 +41,7 @@ ogni volta che si aggiunge, ripianifica o pubblica un articolo.
 | 26 | 2026-04-14 | —        | Tue | mysqldump vs mysqlpump vs mydumper: il backup che non ti fa dormire la notte | mysql | #43 | 2026-03-20 | scheduled |
 | 27 | 2026-04-21 | —        | Tue | pg_stat_statements: la prima cosa da installare su qualsiasi PostgreSQL | postgresql | #48 | 2026-03-21 | scheduled |
 | 28 | 2026-04-28 | —        | Tue | Oracle da on-premises a cloud: strategia, pianificazione e cutover | oracle | #53 | 2026-03-23 | scheduled |
+| 29 | 2026-05-05 | —        | Tue | MySQL pre-upgrade assessment: dimensioni, crescita, backup e tempi di restore | mysql | #64 | — | planned |
 
 **Previous available slot**: 2025-10-14 (Tuesday)
-**Next available slot**: 2026-05-05 (Tuesday)
+**Next available slot**: 2026-05-12 (Tuesday)
