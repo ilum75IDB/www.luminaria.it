@@ -1,8 +1,8 @@
 ---
 title: "VACUUM y autovacuum: por qué PostgreSQL necesita que alguien limpie"
 description: "Una base de datos PostgreSQL de 200 GB con tablas infladas al triple de su tamaño real. El autovacuum estaba activo, pero mal configurado. Cómo diagnosticar el bloat, leer pg_stat_user_tables y hacer tuning sin desactivar nada."
-date: "2026-03-24T08:00:00+01:00"
-lastmod: "2026-03-24T08:00:00+01:00"
+date: "2026-03-24T08:03:00+01:00"
+lastmod: "2026-03-24T08:03:00+01:00"
 draft: false
 translationKey: "vacuum_autovacuum_postgresql"
 tags: ["vacuum", "autovacuum", "mvcc", "performance", "bloat"]

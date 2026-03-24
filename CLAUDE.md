@@ -237,12 +237,12 @@ Each category section hero uses a **2-column layout** (CSS class `.editorial-cat
 
 ## Publication Schedule
 
-Articles are published **one per week, every Tuesday at 10:00 CET**, starting from 16 December 2025.
+Articles are published **one per week, every Tuesday at 08:03 CET**, starting from 16 December 2025. Hugo cron runs at 08:10, so the article is already online before the LinkedIn post goes out (scheduled on Buffer at ~10:05–10:15 CET).
 
 ### Rules
 
 1. **Cadence**: one article per Tuesday, no gaps
-2. **Time**: always `T10:00:00+01:00`
+2. **Time**: always `T08:03:00+01:00`
 3. **First article**: 2025-11-18 (Tuesday)
 4. **New articles**: take the next available Tuesday slot after the last published article
 5. **Backdated articles**: if the user asks to publish an article in the past, assign it to the **Previous available slot** date. Then update the Previous available slot to the Tuesday before the new oldest article
@@ -417,7 +417,7 @@ Quando l'utente chiede di creare un post LinkedIn per promuovere un nuovo artico
 
 ### Cadenza settimanale
 
-Ogni **martedì alle 10:15 CET** (subito dopo la pubblicazione dell'articolo alle 10:00), proporre all'utente il post LinkedIn per l'articolo della settimana. Quando l'utente chiede "fammi i post della settimana" o simili, identificare l'articolo in uscita dalla tabella delle pubblicazioni (`docs/HUGO_PUBLICATIONS_TABLE.md`) e generare il post corrispondente.
+Ogni **martedì** proporre all'utente il post LinkedIn per l'articolo della settimana (l'articolo è online dalle 08:10 CET, il post va schedulato su Buffer per le ~10:05–10:15 CET). Quando l'utente chiede "fammi i post della settimana" o simili, identificare l'articolo in uscita dalla tabella delle pubblicazioni (`docs/HUGO_PUBLICATIONS_TABLE.md`) e generare il post corrispondente.
 
 ### Formato
 
