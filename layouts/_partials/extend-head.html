@@ -29,11 +29,18 @@
   <meta name="twitter:image" content="{{ .Permalink }}" />
   {{ end }}
 {{ else }}
+  {{- $siteDesc := site.Language.Params.description | default .Site.Params.description | default "" }}
   <meta property="og:title" content="{{ .Title | default .Site.Title }}" />
-  <meta property="og:description" content="{{ .Site.Params.description | default "" }}" />
+  <meta property="og:description" content="{{ $siteDesc }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="og:locale" content="{{ site.Language.Lang }}" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}img/ivan_luminaria_avatar.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ .Title | default .Site.Title }}" />
+  <meta name="twitter:description" content="{{ $siteDesc }}" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}img/ivan_luminaria_avatar.png" />
 {{ end }}
 
 {{/* JSON-LD Structured Data for articles */}}
