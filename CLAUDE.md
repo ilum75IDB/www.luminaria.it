@@ -417,7 +417,20 @@ Quando l'utente chiede di creare un post LinkedIn per promuovere un nuovo artico
 
 ### Cadenza settimanale
 
-Ogni **martedì** proporre all'utente il post LinkedIn per l'articolo della settimana (l'articolo è online dalle 08:10 CET, il post va schedulato su Buffer per le ~10:05–10:15 CET). Quando l'utente chiede "fammi i post della settimana" o simili, identificare l'articolo in uscita dalla tabella delle pubblicazioni (`docs/HUGO_PUBLICATIONS_TABLE.md`) e generare il post corrispondente.
+Due post a settimana:
+
+1. **Martedì** — post principale con link all'articolo appena pubblicato (l'articolo è online dalle 08:10 CET, il post va schedulato su Buffer per le ~10:05–10:15 CET)
+2. **Venerdì ~15:00** — post teaser che anticipa l'articolo del martedì successivo, creando curiosità senza spoilerare il contenuto
+
+Quando l'utente chiede "fammi i post della settimana" o simili, generare **entrambi** i post: quello del martedì per l'articolo in uscita e quello del venerdì per l'articolo della settimana successiva.
+
+### Post teaser del venerdì — regole specifiche
+
+- **NON includere il link all'articolo** — l'articolo non è ancora pubblicato. Usare solo il link alla homepage: `👉 https://ivanluminaria.com`
+- **NON spoilerare** il contenuto — non dire esplicitamente di cosa parla l'articolo. Lanciare un indizio, un numero, una situazione misteriosa che crei curiosità
+- **Chiudere con** "Martedì prossimo sul blog." / "Next Tuesday on the blog."
+- **NON aggiungere** la riga sulle traduzioni disponibili (l'articolo non è ancora online)
+- Stesse regole di tono, formato e hashtag del post principale
 
 ### Formato
 
