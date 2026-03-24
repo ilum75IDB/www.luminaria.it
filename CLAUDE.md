@@ -438,6 +438,7 @@ Ogni **martedì alle 10:15 CET** (subito dopo la pubblicazione dell'articolo all
 ### Divieti
 
 - Non usare "In un mondo dove...", "È fondamentale...", "Let's dive in...", "In today's fast-paced world..."
+- Non usare assolutismi da clickbait: "quello che nessuno ti dice", "tutti sanno", "non tutti sanno", "il segreto che...", "cosa nessuno sa". Il valore deve emergere dal contenuto, non da promesse sensazionalistiche
 - Non usare elenchi puntati
 - Non fare il riassunto dell'articolo — creare curiosità
 - Non essere didattico o professorale
