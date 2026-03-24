@@ -415,6 +415,10 @@ git merge claude/blog-fix-homepage-xyz -m "Merge claude/blog-fix-homepage-xyz: f
 
 Quando l'utente chiede di creare un post LinkedIn per promuovere un nuovo articolo del blog (o dice "fammi il post LinkedIn", "prepara il post per LinkedIn", ecc.), **seguire automaticamente queste regole** senza bisogno che vengano ripetute ogni volta.
 
+### Cadenza settimanale
+
+Ogni **martedì alle 10:15 CET** (subito dopo la pubblicazione dell'articolo alle 10:00), proporre all'utente il post LinkedIn per l'articolo della settimana. Quando l'utente chiede "fammi i post della settimana" o simili, identificare l'articolo in uscita dalla tabella delle pubblicazioni (`docs/HUGO_PUBLICATIONS_TABLE.md`) e generare il post corrispondente.
+
 ### Formato
 
 - Due versioni: prima `🇮🇹 Versione italiana:` poi `🇬🇧 English version:`
