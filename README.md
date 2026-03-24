@@ -32,6 +32,10 @@ This project uses **Claude Code** (Anthropic) as a development and writing tool.
 - **The code is AI-assisted too.** Custom layouts, CSS, GitHub Actions workflows, and site structure are built in collaboration with Claude Code. I review, test, and approve everything.
 - **Why be transparent?** Because I think hiding AI usage is dishonest, and because using AI well is a skill worth showing — not something to be embarrassed about. The puppeteer is human. The puppet is artificial. The show is real.
 
-## License
+## License & Disclaimer
 
-Content and code © Ivan Luminaria. All rights reserved.
+All articles, texts, and editorial content on this site are **personal and proprietary**. They reflect real-world experiences shared freely for the benefit of the technical community — take what's useful, learn from it, adapt it to your context. But **republishing, copying, or redistributing the content is not permitted** without explicit written consent.
+
+Code snippets, SQL commands, and technical examples shared in the articles may be freely used in your own projects — but they are provided **as-is, with no warranty or liability** on my part. You use them at your own risk.
+
+Site code (layouts, CSS, workflows) © Ivan Luminaria.
