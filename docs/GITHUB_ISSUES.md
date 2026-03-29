@@ -36,7 +36,9 @@ tool `WebFetch`.
 
 ## Issue Aperte — Sezione Project Management
 
-*Nessuna issue aperta.*
+| #  | Issue | Titolo | Stato |
+|----|-------|--------|-------|
+| 65 | https://github.com/ilum75IDB/ivanluminaria.com/issues/65 | Articolo PM: 5 regole per creare team efficienti e di successo | aperta |
 
 ## Issue Aperte — Enhancement (Glossario)
 
