@@ -39,6 +39,7 @@ tool `WebFetch`.
 | #  | Issue | Titolo | Stato |
 |----|-------|--------|-------|
 | 65 | https://github.com/ilum75IDB/ivanluminaria.com/issues/65 | Articolo PM: 5 regole per creare team efficienti e di successo | aperta |
+| 66 | https://github.com/ilum75IDB/ivanluminaria.com/issues/66 | Articolo PM: importanza documentazione progettuale per il successo di un progetto | aperta |
 
 ## Issue Aperte — Enhancement (Glossario)
 
