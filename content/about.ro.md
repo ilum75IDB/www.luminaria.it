@@ -1,5 +1,5 @@
 ---
-title: "Câte ceva despre mine"
+title: "Despre mine"
 description: "Aproape 30 de ani de experiență în baze de date, arhitecturi de date și transformare digitală—construiți pe metodă, impact și curiozitate."
 date: "2026-02-20"
 lastmod: "2026-02-26"
@@ -22,6 +22,10 @@ layout: "simple"
     </h3>
     <p class="mt-4">
       Profesionist IT cu aproximativ <strong>30 de ani de experiență</strong> în proiectarea, implementarea și gestionarea soluțiilor de baze de date și Data Warehouse în medii Oracle, PostgreSQL și MySQL.
+    </p>
+    <p class="mt-2" style="font-size: 0.9em;">
+      <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">Profilul meu pe LinkedIn</a><br>
+      ivan (dot) luminaria (at) gmail (dot) com
     </p>
   </div>
 </div>

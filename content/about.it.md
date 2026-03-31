@@ -1,5 +1,5 @@
 ---
-title: "Un po’ di me"
+title: "Chi sono"
 description: "Oltre 30 anni di esperienza tra database, architetture dati e trasformazione digitale. Una storia professionale costruita su metodo, impatto e curiosità."
 date: "2026-02-20"
 lastmod: "2026-02-26"
@@ -22,6 +22,10 @@ layout: "simple"
     </h3>
     <p class="mt-4">
       Professionista IT con circa <strong>30 anni di esperienza</strong> nella progettazione, implementazione e gestione di soluzioni database e Data Warehouse in ambienti Oracle, PostgreSQL e MySQL.
+    </p>
+    <p class="mt-2" style="font-size: 0.9em;">
+      <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">Il mio profilo su LinkedIn</a><br>
+      ivan (dot) luminaria (at) gmail (dot) com
     </p>
   </div>
 </div>
