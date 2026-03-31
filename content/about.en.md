@@ -24,8 +24,8 @@ layout: "simple"
       IT professional with approximately <strong>30 years of experience</strong> in designing, implementing and managing database and Data Warehouse solutions across Oracle, PostgreSQL and MySQL environments.
     </p>
     <p class="mt-2" style="font-size: 0.9em;">
-      <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">My LinkedIn profile</a><br>
-      ivan (dot) luminaria (at) gmail (dot) com
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">ivanluminaria</a><br>
+      <strong>Email:</strong> ivan (dot) luminaria (at) gmail (dot) com
     </p>
   </div>
 </div>

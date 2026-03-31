@@ -24,8 +24,8 @@ layout: "simple"
       Profesionist IT cu aproximativ <strong>30 de ani de experiență</strong> în proiectarea, implementarea și gestionarea soluțiilor de baze de date și Data Warehouse în medii Oracle, PostgreSQL și MySQL.
     </p>
     <p class="mt-2" style="font-size: 0.9em;">
-      <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">Profilul meu pe LinkedIn</a><br>
-      ivan (dot) luminaria (at) gmail (dot) com
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">ivanluminaria</a><br>
+      <strong>Email:</strong> ivan (dot) luminaria (at) gmail (dot) com
     </p>
   </div>
 </div>

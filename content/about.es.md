@@ -24,8 +24,8 @@ layout: "simple"
       Profesional IT con aproximadamente <strong>30 años de experiencia</strong> en el diseño, implementación y gestión de soluciones de bases de datos y Data Warehouse en entornos Oracle, PostgreSQL y MySQL.
     </p>
     <p class="mt-2" style="font-size: 0.9em;">
-      <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">Mi perfil en LinkedIn</a><br>
-      ivan (dot) luminaria (at) gmail (dot) com
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ivanluminaria/" target="_blank" rel="noopener">ivanluminaria</a><br>
+      <strong>Email:</strong> ivan (dot) luminaria (at) gmail (dot) com
     </p>
   </div>
 </div>
