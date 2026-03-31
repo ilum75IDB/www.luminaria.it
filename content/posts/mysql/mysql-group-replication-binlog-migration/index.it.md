@@ -274,3 +274,13 @@ Un DBA senior e un DBA junior conoscono entrambi il comando `systemctl stop mysq
 ------------------------------------------------------------------------
 
 ## Glossario
+
+**[Group Replication](/it/glossary/group-replication/)** — Meccanismo nativo di MySQL per la replica sincrona multi-nodo con failover automatico e gestione del quorum. Supporta modalità single-primary e multi-primary.
+
+**[Binary log](/it/glossary/binary-log/)** — Registro binario sequenziale di MySQL che traccia tutte le modifiche ai dati (INSERT, UPDATE, DELETE, DDL), usato per la replica e il point-in-time recovery.
+
+**[GTID](/it/glossary/gtid/)** — Global Transaction Identifier — identificativo univoco assegnato a ogni transazione in MySQL, che semplifica la gestione della replica e il tracking delle transazioni tra i nodi del cluster.
+
+**[Quorum](/it/glossary/quorum/)** — Numero minimo di nodi che devono essere attivi e in comunicazione perché un cluster possa continuare a operare. In un cluster a 3 nodi, il quorum è 2.
+
+**[Single-primary](/it/glossary/single-primary/)** — Modalità di Group Replication in cui un solo nodo accetta scritture, mentre gli altri sono in sola lettura con failover automatico.

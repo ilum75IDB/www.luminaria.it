@@ -20,7 +20,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | ANALYZE | Comando PostgreSQL che raccoglie statistiche sulla distribuzione dei dati nelle tabelle, usate dall'optimizer per scegliere il piano di esecuzione | explain-analyze-postgresql, pg-stat-statements |
 | ASH | Active Session History — componente Oracle che campiona lo stato di ogni sessione attiva una volta al secondo, usato per la diagnosi puntuale dei problemi di performance | oracle-awr-ash |
 | BYOL | Bring Your Own License — programma Oracle che permette di riutilizzare le licenze on-premises nel cloud OCI senza costi aggiuntivi di licensing | oracle-cloud-migration |
-| Binary log | Registro binario sequenziale di MySQL che traccia tutte le modifiche ai dati (INSERT, UPDATE, DELETE, DDL), usato per la replica e il point-in-time recovery | binary-log-mysql |
+| Binary log | Registro binario sequenziale di MySQL che traccia tutte le modifiche ai dati (INSERT, UPDATE, DELETE, DDL), usato per la replica e il point-in-time recovery | binary-log-mysql, mysql-group-replication-binlog-migration |
 | Brompton | Bicicletta pieghevole britannica considerata il riferimento mondiale per qualità costruttiva, compattezza e praticità nel pendolarismo urbano | bici-vs-auto-roma |
 | Branch | Ramo di sviluppo indipendente in un sistema di version control, permette di lavorare su modifiche isolate senza influenzare il codice principale | ai-github-project-management |
 | Bicicletta Pieghevole | Bicicletta che si ripiega in 10-20 secondi diventando un bagaglio trasportabile in ufficio, in metro o in treno | bici-vs-auto-roma |
@@ -61,7 +61,8 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | GIN Index | Generalized Inverted Index — tipo di indice PostgreSQL ottimizzato per ricerche full-text, pattern matching con trigrammi e query su array e JSONB | like-optimization-postgresql |
 | Grain | Livello di dettaglio (granularità) di una fact table nel data warehouse. Determina cosa rappresenta ciascuna riga e quali domande il modello dimensionale può soddisfare | fatto-grana-sbagliata |
 | Full Table Scan | Operazione di lettura in cui il database legge tutti i blocchi di una tabella senza utilizzare indici. In Oracle si manifesta come wait event `db file scattered read` | oracle-awr-ash, partitioning-dwh |
-| GTID | Global Transaction Identifier — identificativo univoco assegnato a ogni transazione in MySQL, che semplifica la gestione della replica e il tracking delle transazioni tra master e slave | mysqldump-mysqlpump-mydumper |
+| GTID | Global Transaction Identifier — identificativo univoco assegnato a ogni transazione in MySQL, che semplifica la gestione della replica e il tracking delle transazioni tra master e slave | mysqldump-mysqlpump-mydumper, mysql-group-replication-binlog-migration |
+| Group Replication | Meccanismo nativo di MySQL per la replica sincrona multi-nodo con failover automatico e gestione del quorum | mysql-group-replication-binlog-migration |
 | Hash Join | Strategia di join che costruisce una hash table dalla tabella più piccola e poi scansiona la più grande cercando corrispondenze con lookup O(1). Efficiente su grandi volumi senza indici | explain-analyze-postgresql |
 | Hot Desk | Modello di organizzazione degli spazi ufficio in cui le postazioni non sono assegnate: chi viene in ufficio occupa una scrivania libera | smartworking-consulenza-it |
 | Huge Pages | Pagine di memoria da 2 MB che riducono drasticamente la pressione sulla MMU e sul TLB, migliorando le performance di Oracle su Linux | oracle-linux-kernel |
@@ -98,7 +99,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | Outsourcing | Esternalizzazione di attività o progetti IT a fornitori esterni, con rischi significativi di perdita di know-how e vendor lock-in se non gestita correttamente | 4-milioni-nessun-software |
 | OLAP | Online Analytical Processing — elaborazione orientata all'analisi multidimensionale dei dati, tipica dei data warehouse. Contrapposta all'OLTP dei sistemi transazionali | ragged-hierarchies |
 | PITR | Point-in-Time Recovery — tecnica di ripristino che combina backup e binary log per riportare un database a un qualsiasi momento nel tempo | binary-log-mysql, mysqldump-mysqlpump-mydumper |
-| Quorum | Meccanismo di consenso basato sulla maggioranza dei nodi, usato nei cluster database per prevenire lo split-brain e garantire la consistenza dei dati | galera-cluster-3-nodi |
+| Quorum | Meccanismo di consenso basato sulla maggioranza dei nodi, usato nei cluster database per prevenire lo split-brain e garantire la consistenza dei dati | galera-cluster-3-nodi, mysql-group-replication-binlog-migration |
 | RAC | Real Application Clusters — tecnologia Oracle che permette a più istanze di accedere contemporaneamente allo stesso database, garantendo alta disponibilità e scalabilità orizzontale | oracle-cloud-migration |
 | Ragged hierarchy | Gerarchia in cui non tutti i rami raggiungono la stessa profondità: alcuni livelli intermedi sono assenti. Tipica nelle anagrafiche clienti e strutture organizzative | ragged-hierarchies |
 | Range Partitioning | Strategia di partizionamento che divide una tabella in segmenti basati su intervalli di valori di una colonna (tipicamente una data). Ogni partizione contiene le righe il cui valore cade nell'intervallo definito | partitioning-dwh, oracle-partitioning |
@@ -124,6 +125,7 @@ Tabella centralizzata di tutti i termini tecnici e acronimi presenti nelle sezio
 | SST | State Snapshot Transfer — meccanismo di Galera Cluster per trasferire una copia completa dei dati a un nodo che si unisce al cluster | galera-cluster-3-nodi |
 | Sequential Scan | Operazione di lettura in cui PostgreSQL legge tutti i blocchi di una tabella senza utilizzare indici, efficiente su tabelle piccole ma problematica su tabelle grandi | pg-stat-statements |
 | Self-parenting | Tecnica di bilanciamento delle gerarchie sbilanciate: chi non ha un padre diventa padre di sé stesso, eliminando i NULL dalla dimensione | ragged-hierarchies |
+| Single-primary | Modalità di MySQL Group Replication in cui un solo nodo accetta scritture, mentre gli altri sono in sola lettura con failover automatico | mysql-group-replication-binlog-migration |
 | Snapshot (Oracle) | Istantanea delle statistiche di performance catturata periodicamente da AWR (di default ogni 60 minuti) e usata per generare report diagnostici comparativi | oracle-awr-ash |
 | Star schema | Modello di dati tipico del data warehouse: una fact table al centro collegata a più tabelle dimensionali tramite chiavi esterne. Semplifica le query analitiche e ottimizza le performance | scd-tipo-2, fatto-grana-sbagliata |
 | Tablespace | Unità logica di storage in Oracle che raggruppa uno o più datafile fisici, usata per organizzare e gestire lo spazio su disco per tabelle, indici e partizioni | oracle-partitioning |

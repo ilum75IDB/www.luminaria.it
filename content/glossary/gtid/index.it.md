@@ -4,6 +4,7 @@ description: "Global Transaction Identifier — identificativo univoco assegnato
 translationKey: "glossary_gtid"
 aka: "Global Transaction Identifier"
 articles:
+  - "/posts/mysql/mysql-group-replication-binlog-migration"
   - "/posts/mysql/mysqldump-mysqlpump-mydumper"
 ---
 

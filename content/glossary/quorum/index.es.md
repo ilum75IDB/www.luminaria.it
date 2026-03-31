@@ -3,6 +3,7 @@ title: "Quorum"
 description: "Mecanismo de consenso basado en la mayoría de nodos, usado en clusters de bases de datos para prevenir el split-brain y garantizar la consistencia de datos."
 translationKey: "glossary_quorum"
 articles:
+  - "/posts/mysql/mysql-group-replication-binlog-migration"
   - "/posts/mysql/galera-cluster-3-nodi"
 ---
 

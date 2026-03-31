@@ -4,6 +4,7 @@ description: "Registro binario sequenziale di MySQL che traccia tutte le modific
 translationKey: "glossary_binary-log"
 aka: "binlog"
 articles:
+  - "/posts/mysql/mysql-group-replication-binlog-migration"
   - "/posts/mysql/binary-log-mysql"
 ---
 
