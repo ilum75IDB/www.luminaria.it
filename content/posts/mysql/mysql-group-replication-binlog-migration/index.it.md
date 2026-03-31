@@ -42,10 +42,10 @@ SHOW VARIABLES LIKE 'binlog_expire_logs_seconds';
 ```
 
 ```
-604800
+2592000
 ```
 
-Sette giorni. Non un valore assurdo, ma con tre nodi che scrivono binlog locali su un volume condiviso con i dati, sette giorni di binlog possono pesare parecchio — specialmente se il carico di scrittura è alto.
+Trenta giorni. Poi ho voluto capire quanto pesava davvero questa configurazione. Ho controllato la dimensione dei singoli file binlog e il ritmo di scrittura: ogni file pesava circa 1 GB, e il server ne generava uno ogni due ore. Dodici file al giorno, per trenta giorni di retention: circa 360 GB di binary log sul volume principale. Su un volume da 3 TB condiviso con i dati, i binlog da soli occupavano più del 10% dello spazio. E quei file non stanno solo sul primary — in Group Replication ogni nodo scrive i propri binlog locali per la sincronizzazione, quindi il problema si moltiplicava su tutti e tre i nodi.
 
 Il problema era chiaro: i binary log stavano mangiando lo spazio del filesystem principale. Non un bug, non una tabella che cresce a dismisura. Solo una scelta architetturale iniziale mai rivista.
 

@@ -42,10 +42,10 @@ SHOW VARIABLES LIKE 'binlog_expire_logs_seconds';
 ```
 
 ```
-604800
+2592000
 ```
 
-Siete días. No es un valor disparatado, pero con tres nodos escribiendo binlogs locales en un volumen compartido con los datos, siete días pueden pesar mucho — especialmente si la carga de escritura es alta.
+Treinta días. Después quise entender cuánto pesaba realmente esta configuración. Comprobé el tamaño de los archivos binlog individuales y el ritmo de escritura: cada archivo pesaba aproximadamente 1 GB, y el servidor generaba uno cada dos horas. Doce archivos al día, por treinta días de retención: unos 360 GB de binary logs en el volumen principal. En un volumen de 3 TB compartido con los datos, los binlogs por sí solos ocupaban más del 10% del espacio. Y esos archivos no están solo en el primary — en Group Replication cada nodo escribe sus propios binlogs locales para la sincronización, así que el problema se multiplicaba en los tres nodos.
 
 El cuadro era claro: los binary logs estaban devorando el filesystem principal. No un bug, no una tabla descontrolada. Solo una elección arquitectónica hecha en la instalación y nunca revisada.
 

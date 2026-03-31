@@ -42,10 +42,10 @@ SHOW VARIABLES LIKE 'binlog_expire_logs_seconds';
 ```
 
 ```
-604800
+2592000
 ```
 
-Șapte zile. Nu e o valoare absurdă, dar cu trei noduri care scriu binlog-uri locale pe un volum partajat cu datele, șapte zile pot cântări mult — mai ales dacă încărcarea de scriere este mare.
+Treizeci de zile. Apoi am vrut să înțeleg cât cântărește de fapt această configurație. Am verificat dimensiunea fișierelor binlog individuale și ritmul de scriere: fiecare fișier avea aproximativ 1 GB, iar serverul genera unul la fiecare două ore. Douăsprezece fișiere pe zi, înmulțite cu treizeci de zile de retenție: aproximativ 360 GB de binary logs pe volumul principal. Pe un volum de 3 TB partajat cu datele, binlog-urile singure ocupau peste 10% din spațiu. Și acele fișiere nu stau doar pe primary — în Group Replication fiecare nod scrie propriile binlog-uri locale pentru sincronizare, deci problema se multiplica pe toate cele trei noduri.
 
 Imaginea era clară: binary logs mâncau spațiul filesystem-ului principal. Nu un bug, nu o tabelă scăpată de sub control. Doar o alegere arhitecturală făcută la instalare și niciodată revizuită.
 
