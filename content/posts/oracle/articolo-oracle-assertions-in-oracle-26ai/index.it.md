@@ -2,22 +2,22 @@
 categories:
 - oracle
 date: '2026-08-04'
+description: Oracle 26ai introduce CREATE ASSERTION, il vincolo cross-tabella promesso
+  da SQL-92. Sintassi, confronto con i trigger e un caso reale assicurativo.
 draft: false
 image: articolo-oracle-assertions-in-oracle-26ai.cover.jpg
-tags: []
+seoTitle: 'Assertions in Oracle 26ai: vincoli cross-tabella dichiarativi'
+tags:
+- oracle-26ai
+- integrity-constraints
+- assertions
+- sql-standard
+- oracle-23ai
 title: 'Assertions in Oracle 26ai: finalmente un vincolo che attraversa le tabelle'
 translationKey: articolo_oracle_assertions_in_oracle_26ai
 webo_generated_at: 2026-07-31
 webo_status: scheduled
 ---
-
-```yaml
----
-seoTitle: "Assertions in Oracle 26ai: vincoli cross-tabella dichiarativi"
-description: "Oracle 26ai introduce CREATE ASSERTION, il vincolo cross-tabella che SQL-92 prometteva da decenni. Sintassi, confronto con trigger e casi d'uso reali in ambito assicurativo."
-tags: ["oracle-26ai", "integrity-constraints", "assertions", "sql-standard", "oracle-23ai"]
----
-```
 
 ## Tre trigger, un job notturno e 1.247 polizze orfane
 
